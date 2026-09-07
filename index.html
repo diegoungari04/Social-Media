@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PostForge — Máquina de posts no seu tom de voz</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%234c5c2b'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23f4f1e8' font-family='Georgia,serif'%3E%E2%97%86%3C/text%3E%3C/svg%3E" />
+  <meta name="description" content="Crie posts para Instagram alinhados ao seu perfil e tom de voz. Manual da Marca + IA + templates editáveis." />
+
+  <!-- Fontes (CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Bebas+Neue&family=Lora:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <!-- ==================== TOPBAR ==================== -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">◆</div>
+      <div>
+        <div class="brand-name">PostForge</div>
+        <div class="brand-tag">sua máquina de posts</div>
+      </div>
+    </div>
+
+    <nav class="tabs" id="tabs">
+      <button class="tab is-active" data-view="manual">1 · Manual da Marca</button>
+      <button class="tab" data-view="generate">2 · Gerar posts</button>
+      <button class="tab" data-view="studio">3 · Estúdio</button>
+      <button class="tab" data-view="library">Biblioteca</button>
+    </nav>
+
+    <div class="topbar-actions">
+      <span class="key-status" id="keyStatus" title="Status da chave da API">● sem chave</span>
+      <button class="btn btn-ghost" id="openSettings">⚙ Config</button>
+    </div>
+  </header>
+
+  <main class="app">
+    <!-- ==================== VIEW: MANUAL DA MARCA ==================== -->
+    <section class="view is-active" id="view-manual">
+      <div class="view-head">
+        <h1>Manual da Marca</h1>
+        <p class="muted">O cérebro do sistema. Todo post nasce daqui — cliente ideal, diferenciais, tom de voz, cores e assuntos. Preencha na mão ou deixe a IA extrair do seu conteúdo.</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Coluna esquerda: extrair da IA -->
+        <div class="card">
+          <h2>Extrair do meu conteúdo</h2>
+          <p class="muted small">Cole de 3 a 10 legendas/textos que <b>você mesmo</b> escreveu. A IA lê e monta seu Manual da Marca — igual ao "raio-x" do Ravia, mas com o seu material.</p>
+          <textarea id="analyzeInput" rows="10" placeholder="Cole aqui posts, legendas, bios, textos de site... quanto mais autêntico, melhor o retrato do seu tom de voz."></textarea>
+          <div class="row">
+            <input id="analyzeNiche" type="text" placeholder="Nicho / área de atuação (ex.: liderança e carreira)" />
+          </div>
+          <button class="btn btn-primary" id="btnAnalyze">✨ Analisar e montar Manual</button>
+          <div class="hint" id="analyzeHint"></div>
+        </div>
+
+        <!-- Coluna direita: formulário do manual -->
+        <div class="card">
+          <div class="card-head-row">
+            <h2>Seu Manual</h2>
+            <div class="card-head-actions">
+              <button class="btn btn-ghost small" id="btnLoadSample">Exemplo</button>
+              <button class="btn btn-ghost small" id="btnClearManual">Limpar</button>
+            </div>
+          </div>
+
+          <label>Nome da marca / perfil</label>
+          <input id="m_brand" type="text" placeholder="Ex.: Diego Ungari" />
+
+          <label>Nicho</label>
+          <input id="m_niche" type="text" placeholder="Ex.: liderança, carreira e bem-estar" />
+
+          <label>Cliente ideal <span class="muted small">(quem é, dores, desejos)</span></label>
+          <textarea id="m_client" rows="3" placeholder="Ex.: profissionais e líderes que se sentem exaustos, buscam equilíbrio real sem perder performance..."></textarea>
+
+          <label>Diferenciais <span class="muted small">(um por linha)</span></label>
+          <textarea id="m_diff" rows="3" placeholder="Olhar crítico sobre produtividade tóxica&#10;Dados + provocação&#10;Fala direta, sem clichê de coach"></textarea>
+
+          <label>Tom de voz <span class="muted small">(adjetivos, um por linha)</span></label>
+          <textarea id="m_tone" rows="3" placeholder="Provocativo&#10;Direto&#10;Empático&#10;Reflexivo&#10;Coloquial brasileiro"></textarea>
+
+          <div class="row">
+            <div>
+              <label>Pessoa / voz</label>
+              <select id="m_person">
+                <option value="Fala como 'a gente' / nós, incluindo o leitor">"a gente" / nós (inclusivo)</option>
+                <option value="Fala em primeira pessoa (eu)">1ª pessoa (eu)</option>
+                <option value="Fala direto com 'você'">2ª pessoa (você)</option>
+              </select>
+            </div>
+            <div>
+              <label>Emojis</label>
+              <select id="m_emoji">
+                <option value="poucos e pontuais">Poucos e pontuais</option>
+                <option value="nenhum">Nenhum</option>
+                <option value="moderado">Moderado</option>
+                <option value="muitos">Muitos</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Assuntos / pilares de conteúdo <span class="muted small">(um por linha)</span></label>
+          <textarea id="m_topics" rows="3" placeholder="Equilíbrio vida-trabalho&#10;Produtividade real vs. aparência&#10;Cultura e gestão&#10;Autoconhecimento na carreira"></textarea>
+
+          <label>Frases/bordões típicos seus <span class="muted small">(um por linha, opcional)</span></label>
+          <textarea id="m_phrases" rows="2" placeholder="Isso não é X, é Y disfarçado.&#10;Você já foi pego nessa armadilha?"></textarea>
+
+          <label>Hashtags base <span class="muted small">(separadas por espaço)</span></label>
+          <input id="m_hashtags" type="text" placeholder="#carreira #equilibriodevida #lideranca" />
+
+          <label>CTA preferido</label>
+          <input id="m_cta" type="text" placeholder="Ex.: Comenta aqui como você lida com isso 👇" />
+
+          <h3 class="section-label">Identidade visual</h3>
+          <div class="palette-row">
+            <div class="color-field"><label>Destaque</label><input type="color" id="c_accent" value="#4c5c2b" /></div>
+            <div class="color-field"><label>Texto escuro</label><input type="color" id="c_dark" value="#2e3a1c" /></div>
+            <div class="color-field"><label>Fundo claro</label><input type="color" id="c_light" value="#f4f1e8" /></div>
+            <div class="color-field"><label>Texto claro</label><input type="color" id="c_ontext" value="#ffffff" /></div>
+          </div>
+          <div class="row">
+            <div>
+              <label>Fonte de título</label>
+              <select id="f_head">
+                <option>Playfair Display</option>
+                <option>DM Serif Display</option>
+                <option>Lora</option>
+                <option>Poppins</option>
+                <option>Bebas Neue</option>
+                <option>Inter</option>
+              </select>
+            </div>
+            <div>
+              <label>Fonte de corpo</label>
+              <select id="f_body">
+                <option>Inter</option>
+                <option>Poppins</option>
+                <option>Lora</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary block" id="btnSaveManual">💾 Salvar Manual da Marca</button>
+          <div class="hint" id="manualHint"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW: GERAR ==================== -->
+    <section class="view" id="view-generate">
+      <div class="view-head">
+        <h1>Gerar posts</h1>
+        <p class="muted">Diga o tema (ou peça ideias). A IA escreve título, legenda no seu tom, hashtags e explica <i>por que</i> o post funciona — como as sugestões do Ravia.</p>
+      </div>
+
+      <div class="card generate-bar">
+        <div class="row">
+          <input id="g_topic" type="text" placeholder="Tema do post (ex.: por que trabalhar mais horas não é produtividade)" />
+          <select id="g_format">
+            <option value="imagem-unica">Imagem única</option>
+            <option value="quote">Frase de impacto</option>
+            <option value="checklist">Checklist / lista</option>
+            <option value="carrossel">Carrossel</option>
+          </select>
+        </div>
+        <div class="row">
+          <select id="g_objective">
+            <option value="engajamento">Objetivo: engajamento / debate</option>
+            <option value="autoridade">Objetivo: autoridade / educar</option>
+            <option value="conexao">Objetivo: conexão / história</option>
+            <option value="conversao">Objetivo: conversão / oferta</option>
+          </select>
+          <select id="g_count">
+            <option value="1">1 post</option>
+            <option value="3" selected>3 posts</option>
+            <option value="5">5 posts</option>
+          </select>
+          <button class="btn btn-ghost" id="btnIdeas" title="Gerar ideias de tema a partir dos seus pilares">💡 Ideias</button>
+          <button class="btn btn-primary" id="btnGenerate">⚡ Gerar</button>
+        </div>
+        <div class="hint" id="genHint"></div>
+      </div>
+
+      <div id="genResults" class="results"></div>
+    </section>
+
+    <!-- ==================== VIEW: STUDIO ==================== -->
+    <section class="view" id="view-studio">
+      <div class="view-head">
+        <h1>Estúdio</h1>
+        <p class="muted">Escolha a variação de template, edite tudo e exporte em PNG (1080×1350).</p>
+      </div>
+
+      <div class="studio">
+        <!-- preview -->
+        <div class="studio-canvas">
+          <div class="canvas-frame" id="canvasFrame">
+            <div class="post-card" id="postCard"><!-- template renderiza aqui --></div>
+          </div>
+          <div class="canvas-actions">
+            <button class="btn btn-ghost" id="btnZoomOut">−</button>
+            <span id="zoomLabel">62%</span>
+            <button class="btn btn-ghost" id="btnZoomIn">+</button>
+            <span class="spacer"></span>
+            <button class="btn btn-primary" id="btnExport">⬇ Exportar PNG</button>
+          </div>
+        </div>
+
+        <!-- controles -->
+        <aside class="studio-panel">
+          <div class="panel-tabs">
+            <button class="ptab is-active" data-panel="variacoes">Variações</button>
+            <button class="ptab" data-panel="texto">Texto</button>
+            <button class="ptab" data-panel="cores">Cores</button>
+            <button class="ptab" data-panel="foto">Foto</button>
+            <button class="ptab" data-panel="legenda">Legenda</button>
+          </div>
+
+          <div class="panel-body">
+            <div class="panel is-active" id="panel-variacoes">
+              <p class="muted small">Variações de modelo para este post</p>
+              <div class="variants" id="variantList"></div>
+            </div>
+
+            <div class="panel" id="panel-texto">
+              <label>Título</label>
+              <textarea id="e_headline" rows="2"></textarea>
+              <label>Palavras em destaque <span class="muted small">(separadas por vírgula — ganham a caixa colorida)</span></label>
+              <input id="e_highlight" type="text" placeholder="ex.: produzir mais" />
+              <label>Subtítulo / corpo na imagem</label>
+              <textarea id="e_sub" rows="3"></textarea>
+              <div id="itemsEditor" class="items-editor" hidden>
+                <label>Itens da lista <span class="muted small">(um por linha)</span></label>
+                <textarea id="e_items" rows="5"></textarea>
+              </div>
+              <label>Tamanho do título</label>
+              <input type="range" id="e_headsize" min="48" max="130" value="86" />
+              <label>Alinhamento</label>
+              <select id="e_align"><option value="left">Esquerda</option><option value="center">Centro</option></select>
+            </div>
+
+            <div class="panel" id="panel-cores">
+              <div class="palette-row">
+                <div class="color-field"><label>Destaque</label><input type="color" id="s_accent" /></div>
+                <div class="color-field"><label>Texto escuro</label><input type="color" id="s_dark" /></div>
+                <div class="color-field"><label>Fundo</label><input type="color" id="s_light" /></div>
+                <div class="color-field"><label>Texto claro</label><input type="color" id="s_ontext" /></div>
+              </div>
+              <label>Escurecer foto (overlay)</label>
+              <input type="range" id="s_overlay" min="0" max="80" value="35" />
+              <label>Fonte de título</label>
+              <select id="s_fhead"><option>Playfair Display</option><option>DM Serif Display</option><option>Lora</option><option>Poppins</option><option>Bebas Neue</option><option>Inter</option></select>
+            </div>
+
+            <div class="panel" id="panel-foto">
+              <p class="muted small">Fundo do post</p>
+              <div class="row">
+                <button class="btn btn-ghost small" id="btnUploadPhoto">📁 Enviar foto</button>
+                <button class="btn btn-ghost small" id="btnUnsplash">🔎 Buscar (Unsplash)</button>
+              </div>
+              <input type="file" id="photoFile" accept="image/*" hidden />
+              <input id="photoQuery" type="text" placeholder="palavra-chave da foto (ex.: home office)" />
+              <input id="photoUrl" type="text" placeholder="ou cole a URL de uma imagem" />
+              <button class="btn btn-ghost small block" id="btnApplyUrl">Aplicar URL</button>
+              <label>Ou fundo em degradê (sem foto)</label>
+              <button class="btn btn-ghost small block" id="btnGradient">Usar degradê da marca</button>
+            </div>
+
+            <div class="panel" id="panel-legenda">
+              <label>Legenda</label>
+              <textarea id="e_caption" rows="10"></textarea>
+              <label>Hashtags</label>
+              <textarea id="e_tags" rows="2"></textarea>
+              <div class="row">
+                <button class="btn btn-ghost small" id="btnCopyCaption">📋 Copiar legenda</button>
+                <button class="btn btn-ghost small" id="btnRewrite">🔁 Reescrever (IA)</button>
+              </div>
+              <div class="why" id="whyBox"></div>
+            </div>
+          </div>
+          <button class="btn btn-primary block" id="btnSaveToLibrary">★ Salvar na biblioteca</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW: LIBRARY ==================== -->
+    <section class="view" id="view-library">
+      <div class="view-head">
+        <h1>Biblioteca</h1>
+        <p class="muted">Seus posts salvos. Clique para reabrir no Estúdio.</p>
+      </div>
+      <div id="libraryGrid" class="results"></div>
+    </section>
+  </main>
+
+  <!-- ==================== MODAL: SETTINGS ==================== -->
+  <div class="modal" id="settingsModal" hidden>
+    <div class="modal-card">
+      <div class="modal-head"><h2>Configurações</h2><button class="icon-btn" id="closeSettings">✕</button></div>
+      <label>Chave da API da Anthropic <span class="muted small">(fica só no seu navegador)</span></label>
+      <input id="apiKey" type="password" placeholder="sk-ant-..." />
+      <label>Modelo</label>
+      <select id="modelSelect">
+        <option value="claude-sonnet-5">Claude Sonnet 5 (rápido, recomendado)</option>
+        <option value="claude-opus-5">Claude Opus 5 (mais criativo)</option>
+        <option value="claude-haiku-4-5-20251001">Claude Haiku 4.5 (mais barato)</option>
+      </select>
+      <p class="muted small">A chave é guardada em <code>localStorage</code> e enviada apenas para <code>api.anthropic.com</code>. Pegue uma em console.anthropic.com. Sem chave, o app usa um gerador de reserva (offline) mais simples.</p>
+      <button class="btn btn-primary block" id="saveSettings">Salvar</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <!-- html2canvas para exportar PNG (local, sem depender de CDN) -->
+  <script src="vendor/html2canvas.min.js"></script>
+
+  <!-- App (scripts clássicos, funcionam abrindo o arquivo direto) -->
+  <script src="js/store.js"></script>
+  <script src="js/prompts.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/studio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
