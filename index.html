@@ -29,6 +29,7 @@
       <button class="tab is-active" data-view="manual">1 · Manual da Marca</button>
       <button class="tab" data-view="generate">2 · Gerar posts</button>
       <button class="tab" data-view="studio">3 · Estúdio</button>
+      <button class="tab" data-view="calendar">Calendário</button>
       <button class="tab" data-view="library">Biblioteca</button>
     </nav>
 
@@ -109,6 +110,9 @@
 
           <label>Frases/bordões típicos seus <span class="muted small">(um por linha, opcional)</span></label>
           <textarea id="m_phrases" rows="2" placeholder="Isso não é X, é Y disfarçado.&#10;Você já foi pego nessa armadilha?"></textarea>
+
+          <label>Estilo visual das imagens <span class="muted small">(usado para gerar fundos por IA)</span></label>
+          <textarea id="m_visual" rows="2" placeholder="Ex.: fotografia realista de escritório aconchegante, notebook e café, luz de janela, tons terrosos e quentes."></textarea>
 
           <label>Hashtags base <span class="muted small">(separadas por espaço)</span></label>
           <input id="m_hashtags" type="text" placeholder="#carreira #equilibriodevida #lideranca" />
@@ -269,6 +273,15 @@
               <button class="btn btn-ghost small block" id="btnApplyUrl">Aplicar URL</button>
               <label>Ou fundo em degradê (sem foto)</label>
               <button class="btn btn-ghost small block" id="btnGradient">Usar degradê da marca</button>
+
+              <hr style="border:none;border-top:1px solid var(--line);margin:16px 0" />
+              <p class="muted small">🖼 Gerar imagem com IA</p>
+              <textarea id="imgPrompt" rows="3" placeholder="descreva a imagem de fundo (cena, clima, luz)..."></textarea>
+              <div class="row">
+                <button class="btn btn-ghost small" id="btnSuggestPrompt">✨ Sugerir</button>
+                <button class="btn btn-primary small" id="btnGenImage">Gerar imagem</button>
+              </div>
+              <div class="hint small" id="imgHint"></div>
             </div>
 
             <div class="panel" id="panel-legenda">
@@ -286,6 +299,54 @@
           <button class="btn btn-primary block" id="btnSaveToLibrary">★ Salvar na biblioteca</button>
         </aside>
       </div>
+    </section>
+
+    <!-- ==================== VIEW: CALENDAR ==================== -->
+    <section class="view" id="view-calendar">
+      <div class="view-head">
+        <h1>Calendário de conteúdo</h1>
+        <p class="muted">Planeje um lote de posts a partir dos seus pilares. A IA distribui temas, ângulos e formatos ao longo dos dias. Gere cada post com 1 clique e exporte o plano.</p>
+      </div>
+
+      <div class="card">
+        <div class="row">
+          <div>
+            <label>Início</label>
+            <input id="cal_start" type="date" />
+          </div>
+          <div>
+            <label>Quantidade</label>
+            <select id="cal_count"><option>8</option><option selected>12</option><option>20</option><option>30</option></select>
+          </div>
+          <div>
+            <label>Frequência</label>
+            <select id="cal_freq">
+              <option value="1">Diária</option>
+              <option value="2" selected>3x por semana</option>
+              <option value="3">2x por semana</option>
+              <option value="7">Semanal</option>
+            </select>
+          </div>
+          <div>
+            <label>Objetivo geral</label>
+            <select id="cal_objective">
+              <option value="mix equilibrado de engajamento, autoridade e conexão">Mix equilibrado</option>
+              <option value="engajamento e debate">Engajamento</option>
+              <option value="autoridade e educação">Autoridade</option>
+              <option value="conexão e história pessoal">Conexão</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary" id="btnPlan">🗓 Gerar plano</button>
+          <button class="btn btn-ghost" id="btnExportCSV">⬇ CSV</button>
+          <button class="btn btn-ghost" id="btnExportICS">⬇ .ics (agenda)</button>
+          <button class="btn btn-ghost" id="btnClearCal">Limpar</button>
+        </div>
+        <div class="hint" id="calHint"></div>
+      </div>
+
+      <div id="calList" class="cal-list"></div>
     </section>
 
     <!-- ==================== VIEW: LIBRARY ==================== -->
@@ -311,6 +372,16 @@
         <option value="claude-haiku-4-5-20251001">Claude Haiku 4.5 (mais barato)</option>
       </select>
       <p class="muted small">A chave é guardada em <code>localStorage</code> e enviada apenas para <code>api.anthropic.com</code>. Pegue uma em console.anthropic.com. Sem chave, o app usa um gerador de reserva (offline) mais simples.</p>
+
+      <h3 class="section-label">Imagens de fundo por IA</h3>
+      <label>Gerador de imagem</label>
+      <select id="imgProvider">
+        <option value="pollinations">Pollinations — grátis, sem chave</option>
+        <option value="openai">OpenAI (gpt-image-1) — precisa de chave</option>
+      </select>
+      <label>Chave OpenAI <span class="muted small">(opcional, só p/ imagens)</span></label>
+      <input id="openaiKey" type="password" placeholder="sk-..." />
+
       <button class="btn btn-primary block" id="saveSettings">Salvar</button>
     </div>
   </div>
@@ -324,8 +395,10 @@
   <script src="js/store.js"></script>
   <script src="js/prompts.js"></script>
   <script src="js/ai.js"></script>
+  <script src="js/image.js"></script>
   <script src="js/templates.js"></script>
   <script src="js/studio.js"></script>
+  <script src="js/calendar.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ window.Store = (function () {
     manual: "pf_manual",
     settings: "pf_settings",
     library: "pf_library",
+    calendar: "pf_calendar",
   };
 
   function read(key, fallback) {
@@ -35,6 +36,7 @@ window.Store = (function () {
     phrases: [],
     hashtags: [],
     cta: "",
+    visualStyle: "",
     colors: { accent: "#4c5c2b", dark: "#2e3a1c", light: "#f4f1e8", ontext: "#ffffff" },
     fonts: { head: "Playfair Display", body: "Inter" },
   };
@@ -64,6 +66,7 @@ window.Store = (function () {
     ],
     hashtags: ["#carreira", "#equilibriodevida", "#bemestar", "#lideranca", "#ungari"],
     cta: "Comenta aqui como você tem lidado com isso 👇",
+    visualStyle: "Fotografia realista de escritório aconchegante e natural: notebook, café, caderno e planta com luz de janela. Tons terrosos e quentes, clima calmo e sofisticado.",
     colors: { accent: "#4c5c2b", dark: "#2e3a1c", light: "#f4f1e8", ontext: "#ffffff" },
     fonts: { head: "Playfair Display", body: "Inter" },
   };
@@ -75,8 +78,11 @@ window.Store = (function () {
     defaultManual: () => structuredClone(defaultManual),
     sampleManual: () => structuredClone(sampleManual),
 
-    getSettings: () => read(K.settings, { apiKey: "", model: "claude-sonnet-5" }),
+    getSettings: () => read(K.settings, { apiKey: "", model: "claude-sonnet-5", imgProvider: "pollinations", openaiKey: "" }),
     saveSettings: (s) => write(K.settings, s),
+
+    getCalendar: () => read(K.calendar, []),
+    saveCalendar: (arr) => write(K.calendar, arr),
 
     getLibrary: () => read(K.library, []),
     saveLibrary: (arr) => write(K.library, arr),

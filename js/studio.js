@@ -95,6 +95,7 @@ window.Studio = (function () {
     $("s_accent").value = s.accent; $("s_dark").value = s.dark;
     $("s_light").value = s.light; $("s_ontext").value = s.ontext;
     $("s_overlay").value = s.overlay; $("s_fhead").value = s.head;
+    $("imgPrompt").value = p.imagePrompt || "";
     $("e_caption").value = p.caption || "";
     $("e_tags").value = (p.hashtags || []).join(" ");
     $("whyBox").innerHTML = p.rationale ? `<b>Por que esse post?</b>${escapeHtml(p.rationale)}` : "";
@@ -204,6 +205,40 @@ window.Studio = (function () {
       App.toast("Imagem de exemplo carregada. Para o export final, envie um arquivo próprio.");
     });
     on("btnGradient", "click", () => { current.style.photo = ""; rerender(); renderVariants(); });
+
+    // imagem por IA
+    on("btnSuggestPrompt", "click", async () => {
+      const manual = window.App.manual;
+      if (window.AI.hasKey()) {
+        $("imgHint").textContent = "Sugerindo…";
+        try {
+          const txt = await window.AI.call(Prompts.imagePromptSystem(), Prompts.imagePromptUser(manual, current.post), 300);
+          $("imgPrompt").value = txt.trim();
+          current.post.imagePrompt = txt.trim();
+          $("imgHint").textContent = "";
+        } catch (e) { $("imgHint").textContent = "Erro: " + e.message; }
+      } else {
+        const base = manual.visualStyle || "fotografia de escritório aconchegante, tons terrosos, luz natural";
+        $("imgPrompt").value = `${base} — tema: ${current.post.headline}`;
+      }
+    });
+    on("btnGenImage", "click", async () => {
+      const prompt = $("imgPrompt").value.trim();
+      if (!prompt) { $("imgHint").textContent = "Escreva ou sugira um prompt."; return; }
+      current.post.imagePrompt = prompt;
+      $("imgHint").innerHTML = 'Gerando imagem<span class="dots"></span>';
+      $("btnGenImage").disabled = true;
+      try {
+        const dataUrl = await window.ImageGen.generate(prompt);
+        current.style.photo = dataUrl;
+        rerender(); renderVariants();
+        $("imgHint").textContent = "Imagem aplicada ✓";
+      } catch (e) {
+        $("imgHint").textContent = "Erro: " + e.message;
+      } finally {
+        $("btnGenImage").disabled = false;
+      }
+    });
 
     // caption tools
     on("btnCopyCaption", "click", async () => {

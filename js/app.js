@@ -32,6 +32,7 @@ window.App = (function () {
     $("m_emoji").value = m.emoji || "poucos e pontuais";
     $("m_topics").value = (m.topics || []).join("\n");
     $("m_phrases").value = (m.phrases || []).join("\n");
+    $("m_visual").value = m.visualStyle || "";
     $("m_hashtags").value = (m.hashtags || []).join(" ");
     $("m_cta").value = m.cta || "";
     $("c_accent").value = m.colors?.accent || "#4c5c2b";
@@ -52,6 +53,7 @@ window.App = (function () {
       emoji: $("m_emoji").value,
       topics: lines($("m_topics").value),
       phrases: lines($("m_phrases").value),
+      visualStyle: $("m_visual").value.trim(),
       hashtags: $("m_hashtags").value.split(/\s+/).filter(Boolean),
       cta: $("m_cta").value.trim(),
       colors: { accent: $("c_accent").value, dark: $("c_dark").value, light: $("c_light").value, ontext: $("c_ontext").value },
@@ -101,10 +103,20 @@ window.App = (function () {
   }
 
   // ---------- generate ----------
+  async function generatePosts(opts) {
+    let data;
+    if (AI.hasKey()) data = await AI.callJSON(Prompts.generateSystem(), Prompts.generateUser(manual, opts), 3200);
+    else data = Offline.generate(manual, opts);
+    return (data.posts || []).map((p) => ({ ...p, format: p.format || opts.format }));
+  }
+  function manualReady() {
+    return manual.brand || manual.niche || (manual.tone || []).length;
+  }
+
   async function generate() {
     const topic = $("g_topic").value.trim();
     if (!topic) return hint("genHint", "Escreva um tema.", "err");
-    if (!manual.brand && !manual.niche && !(manual.tone||[]).length)
+    if (!manualReady())
       return hint("genHint", "Preencha e salve seu Manual da Marca primeiro (aba 1).", "err");
     const opts = {
       topic, format: $("g_format").value, objective: $("g_objective").value,
@@ -114,10 +126,7 @@ window.App = (function () {
     $("btnGenerate").disabled = true;
     $("genResults").innerHTML = "";
     try {
-      let data;
-      if (AI.hasKey()) data = await AI.callJSON(Prompts.generateSystem(), Prompts.generateUser(manual, opts), 3000);
-      else data = Offline.generate(manual, opts);
-      const posts = (data.posts || []).map((p) => ({ ...p, format: p.format || opts.format }));
+      const posts = await generatePosts(opts);
       renderResults(posts);
       $("genHint").classList.remove("dots");
       hint("genHint", posts.length + " post(s) gerado(s) ✓", "ok");
@@ -234,11 +243,28 @@ window.App = (function () {
   function openSettings() {
     const s = Store.getSettings();
     $("apiKey").value = s.apiKey || ""; $("modelSelect").value = s.model || "claude-sonnet-5";
+    $("imgProvider").value = s.imgProvider || "pollinations";
+    $("openaiKey").value = s.openaiKey || "";
     $("settingsModal").hidden = false;
   }
   function saveSettings() {
-    Store.saveSettings({ apiKey: $("apiKey").value.trim(), model: $("modelSelect").value });
+    Store.saveSettings({
+      apiKey: $("apiKey").value.trim(),
+      model: $("modelSelect").value,
+      imgProvider: $("imgProvider").value,
+      openaiKey: $("openaiKey").value.trim(),
+    });
     $("settingsModal").hidden = true; refreshKeyStatus(); toast("Configurações salvas ✓");
+  }
+
+  // ---------- calendar bridge ----------
+  async function generateForCalendar(item) {
+    if (!manualReady()) { toast("Preencha o Manual da Marca primeiro."); showView("manual"); return; }
+    toast("Gerando post do calendário…");
+    try {
+      const posts = await generatePosts({ topic: item.title + " — " + (item.angle || ""), format: item.format || "imagem-unica", objective: "engajamento", count: 1 });
+      if (posts[0]) { Studio.open(posts[0]); return posts[0]; }
+    } catch (e) { toast("Erro: " + e.message); }
   }
 
   // ---------- init ----------
@@ -247,6 +273,7 @@ window.App = (function () {
     refreshKeyStatus();
     refreshLibrary();
     Studio.bind();
+    if (window.Calendar) Calendar.bind();
 
     document.querySelectorAll(".tab").forEach((t) => t.addEventListener("click", () => showView(t.dataset.view)));
 
@@ -271,7 +298,7 @@ window.App = (function () {
   }
 
   return {
-    init, showView, toast, refreshLibrary, rewriteCaption,
+    init, showView, toast, refreshLibrary, rewriteCaption, generateForCalendar,
     get manual() { return manual; },
   };
 })();

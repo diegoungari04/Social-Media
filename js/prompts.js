@@ -25,7 +25,8 @@ Frases/bordões típicos do autor (imite o ritmo, não copie literalmente):
 ${list(m.phrases)}
 
 CTA preferido: ${m.cta || "(livre)"}
-Hashtags base: ${(m.hashtags || []).join(" ") || "(nenhuma)"}`;
+Hashtags base: ${(m.hashtags || []).join(" ") || "(nenhuma)"}
+Estilo visual das imagens: ${m.visualStyle || "(não informado)"}`;
   }
 
   // ---------- 1) Extrair Manual da Marca a partir de textos do usuário ----------
@@ -78,7 +79,8 @@ Responda SOMENTE com JSON válido (sem markdown). Formato:
       "items": string[],              // itens (checklist/carrossel) ou []
       "caption": string,              // legenda completa, no tom da marca, com quebras de linha (\\n)
       "hashtags": string[],           // 4 a 8 hashtags relevantes
-      "rationale": string             // "Por que esse post?": 1-2 frases de estratégia
+      "rationale": string,            // "Por que esse post?": 1-2 frases de estratégia
+      "imagePrompt": string           // descrição da FOTO de fundo ideal (cena/clima/luz), coerente com o estilo visual da marca, SEM texto na imagem
     }
   ]
 }
@@ -117,11 +119,31 @@ Cada post deve explorar um ângulo distinto do tema. Retorne o JSON com "posts".
     return `${manualToBrief(m)}\n\nLegenda atual:\n"""\n${caption}\n"""\n\nInstrução: ${instruction || "reescreva mantendo o sentido, melhore o gancho e o ritmo, mantenha o tom da marca."}\nRetorne JSON.`;
   }
 
+  // ---------- 5) Sugerir prompt de imagem ----------
+  function imagePromptSystem() {
+    return `Você cria prompts de imagem para modelos de geração (Flux/DALL·E). Descreve uma FOTO de fundo — cena, composição vertical, luz, clima, paleta — coerente com a marca e o post. Nunca inclua texto/letras na imagem. Responda com UMA linha (o prompt), sem aspas, sem explicação.`;
+  }
+  function imagePromptUser(m, post) {
+    return `${manualToBrief(m)}\n\nPost:\nTítulo: ${post.headline}\nSubtítulo: ${post.subheadline || ""}\n\nEscreva o prompt de imagem de fundo ideal.`;
+  }
+
+  // ---------- 6) Plano de conteúdo (calendário) ----------
+  function planSystem() {
+    return `Você é estrategista de conteúdo brasileiro. Cria um calendário editorial coerente com a marca, variando pilares, formatos e ângulos para não ficar repetitivo.
+Responda SOMENTE JSON: { "items": [ { "pillar": string, "format": "imagem-unica"|"quote"|"checklist"|"carrossel", "title": string, "angle": string } ] }.
+"title" = ideia de tema específica e chamativa. "angle" = 1 frase com o ângulo/gancho. Distribua os formatos de forma variada e escolha o formato que melhor serve cada ideia.`;
+  }
+  function planUser(m, { count, objective }) {
+    return `${manualToBrief(m)}\n\nCrie um plano com exatamente ${count} posts. Objetivo geral: ${objective}. Cubra os pilares de forma equilibrada, sem repetir temas. Retorne o JSON com "items".`;
+  }
+
   return {
     manualToBrief,
     analyzeSystem, analyzeUser,
     generateSystem, generateUser,
     ideasSystem, ideasUser,
     rewriteSystem, rewriteUser,
+    imagePromptSystem, imagePromptUser,
+    planSystem, planUser,
   };
 })();

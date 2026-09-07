@@ -124,9 +124,27 @@ window.Offline = (function () {
         caption,
         hashtags: m.hashtags || [],
         rationale: "Gancho de quebra de padrão + desenvolvimento + CTA. (Gerado no modo offline — conecte a Claude API para textos no seu tom real.)",
+        imagePrompt: (m.visualStyle || "fotografia de escritório aconchegante, tons terrosos, luz natural") + `, tema: ${topic}`,
       });
     }
     return { posts };
+  }
+
+  function plan(m, { count }) {
+    const pillars = (m.topics && m.topics.length) ? m.topics : [m.niche || "seu tema"];
+    const formats = ["imagem-unica", "quote", "checklist", "carrossel"];
+    const angles = ["o mito mais comum", "o erro que quase todo mundo comete", "o que ninguém te conta", "como eu penso sobre isso", "um passo prático hoje"];
+    const items = [];
+    for (let i = 0; i < count; i++) {
+      const p = pillars[i % pillars.length];
+      items.push({
+        pillar: p,
+        format: formats[i % formats.length],
+        title: `${cap(p)}: ${angles[i % angles.length]}`,
+        angle: `Explorar ${p.toLowerCase()} pelo ângulo de "${angles[i % angles.length]}".`,
+      });
+    }
+    return { items };
   }
 
   function ideas(m) {
@@ -145,5 +163,5 @@ window.Offline = (function () {
     return { caption: caption, hashtags: m.hashtags || [] };
   }
 
-  return { analyze, generate, ideas, rewrite };
+  return { analyze, generate, ideas, rewrite, plan };
 })();
