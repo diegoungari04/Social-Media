@@ -197,6 +197,57 @@ h4.sub::after{content:"";flex:1;height:1px;background:var(--line)}
 .col h3{font-size:34px;font-weight:850;font-stretch:68%;text-transform:uppercase;color:var(--c);margin:0 0 6px}
 .col .meta{font-size:14px;color:var(--mute);margin:0 0 16px;max-width:60ch}
 
+
+/* prioridades */
+.vox{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 22px}
+@media (max-width:700px){.vox{grid-template-columns:1fr}}
+.vox>div{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px 18px;min-width:0}
+.vox h3{font-size:22px;font-weight:750;font-stretch:75%;margin:0 0 10px}
+.vox .k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px}
+.hb{display:grid;grid-template-columns:110px minmax(0,1fr) 44px;gap:8px;align-items:center;font-size:14px;margin:6px 0}
+.hb i{display:block;height:10px;background:var(--line);border-radius:2px;overflow:hidden}
+.hb i b{display:block;height:100%;background:var(--ink)}
+.hb.top i b{background:var(--hl)}
+.hb em{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--mute);text-align:right;font-variant-numeric:tabular-nums}
+.vox ol{margin:4px 0 0;padding-left:20px;font-size:14.5px}.vox li{margin:5px 0}
+.vox .src{margin-top:10px}
+.crit4{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--ink);margin:0 0 18px}
+@media (max-width:760px){.crit4{grid-template-columns:1fr 1fr}}
+.crit4 div{padding:12px 14px 12px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--mute)}
+.crit4 b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+.sortbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 12px}
+.sortbar .seg{display:flex;flex-wrap:wrap;max-width:100%}
+.sortbar .seg button{white-space:nowrap}
+.sortbar span{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.prio{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.prio>li{border-bottom:1px solid var(--line)}
+.prio details{border:0;padding:0}
+.prio summary{list-style:none;display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 0;cursor:pointer}
+.prio summary::-webkit-details-marker{display:none}
+.prio .rk{font-family:var(--disp);font-stretch:62%;font-weight:900;font-size:54px;line-height:.85;color:var(--mute);font-variant-numeric:tabular-nums}
+.prio li:first-child .rk{color:var(--hl)}
+.prio .tt{font-family:var(--disp);font-stretch:75%;font-weight:750;font-size:23px;line-height:1.1}
+.prio .one{display:block;font-family:var(--sans);font-size:14px;font-weight:400;color:var(--mute);margin-top:4px;font-stretch:100%}
+.meters{display:grid;grid-template-columns:repeat(4,auto);gap:4px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
+.meters span{display:flex;flex-direction:column;gap:3px}
+.mt{display:inline-flex;gap:2px}
+.mt s{width:8px;height:8px;border-radius:1px;background:var(--line);display:block}
+.mt s.on{background:var(--ink)}
+.mt.fac s.on{background:var(--ok)}
+@media (max-width:640px){.prio summary{grid-template-columns:44px minmax(0,1fr)}.prio .rk{font-size:40px}.meters{grid-column:2;grid-template-columns:repeat(2,auto);justify-content:start}}
+.prio .tog{font-family:var(--mono);font-size:11px;color:var(--acc)}
+.pd{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;padding:0 0 18px 78px}
+@media (max-width:640px){.pd{padding-left:0}}
+.pd>div{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px;font-size:14px;min-width:0}
+.pd h5{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 6px}
+.pd ul{margin:0;padding-left:18px}.pd li{margin:4px 0}.pd p{margin:0}
+.pd .go{grid-column:1/-1;background:none;border:0;padding:0;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.pd .go button{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:underline;text-decoration-color:var(--hl);text-decoration-thickness:2px;text-underline-offset:4px}
+.pd .go small{font-family:var(--mono);font-size:11px;color:var(--mute)}
+.win{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 0}
+@media (max-width:700px){.win{grid-template-columns:1fr}}
+.win div{background:var(--panel2);border-radius:6px;padding:12px 14px;font-size:14px}
+.win b{display:block;font-family:var(--mono);font-size:12px;color:var(--acc);margin-bottom:2px}
 /* ficha limpa */
 .legend{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px}
 .st{font-family:var(--mono);font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:4px;border:1px solid currentColor;white-space:nowrap;background:var(--panel);cursor:pointer}
@@ -252,10 +303,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
 <nav class="bar" aria-label="Seções"><div class="chips" id="chips">
  <a href="#cenario" data-id="cenario" data-n="01">Cenário atual</a>
  <a href="#desafios" data-id="desafios" data-n="02">Desafios da gestão</a>
- <a href="#propostas" data-id="propostas" data-n="03">Propostas e eficácia</a>
- <a href="#trajetoria" data-id="trajetoria" data-n="04">Trajetória e conquistas</a>
- <a href="#ficha" data-id="ficha" data-n="05">Ficha limpa</a>
- <a href="#metodo" data-id="metodo" data-n="06">Fontes e método</a>
+ <a href="#prioridades" data-id="prioridades" data-n="03">Prioridades</a>
+ <a href="#propostas" data-id="propostas" data-n="04">Propostas e eficácia</a>
+ <a href="#trajetoria" data-id="trajetoria" data-n="05">Trajetória e conquistas</a>
+ <a href="#ficha" data-id="ficha" data-n="06">Ficha limpa</a>
+ <a href="#metodo" data-id="metodo" data-n="07">Fontes e método</a>
 </div><div class="prog" id="prog"></div></nav>
 
 <main class="wrap">
@@ -274,8 +326,39 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <div class="dgrid" id="desGrid"></div>
 </section>
 
+<section class="blk" id="prioridades" aria-labelledby="h-pri">
+ <div class="sh"><span class="num">03</span><h2 id="h-pri">Por onde começar: a <span class="hl">ordem de prioridades</span></h2></div>
+ <p class="intro">Com os dados de hoje, o que o próximo presidente deveria atacar primeiro? O ranking cruza o que a população aponta nas pesquisas, o que dizem especialistas de diferentes linhas e o que é factível com os instrumentos e o orçamento disponíveis. Vale para quem vencer.</p>
+ <div class="vox">
+  <div><span class="k">O que diz a população</span><h3>Violência lidera; saúde vem logo atrás</h3>
+   <div class="hb top"><span>Violência</span><i><b style="width:93%"></b></i><em>28%</em></div>
+   <div class="hb"><span>Corrupção</span><i><b style="width:73%"></b></i><em>22%</em></div>
+   <div class="hb"><span>Economia</span><i><b style="width:63%"></b></i><em>19%</em></div>
+   <div class="hb"><span>Saúde</span><i><b style="width:50%"></b></i><em>15%</em></div>
+   <p class="src">Quaest, setembro de 2026: principal problema do país. No Datafolha de março de 2026, saúde aparecia em 1º (21%), segurança em 2º (19%) e economia em 3º (11%).</p></div>
+  <div><span class="k">O que dizem os especialistas</span><h3>Ajuste fiscal primeiro, crime organizado em seguida</h3>
+   <ol><li>Ajuste das contas públicas: 1º lugar em levantamento do g1 com mais de 20 economistas de diferentes linhas.</li><li>A IFI calcula que estabilizar a dívida exige superávit de 2,1% do PIB e projeta déficit em 2027, ao contrário do orçamento enviado.</li><li>Crime organizado já ameaça a economia, inclusive o sistema financeiro (Elena Landau).</li><li>Reorganizar as políticas sociais, com foco nos mais pobres e portas de saída.</li></ol>
+   <p class="src">IFI/Senado, RAF set/2026; g1; PlatôBR (set/2026).</p></div>
+ </div>
+ <div class="crit4">
+  <div><b>Urgência</b>Quanto o problema piora se nada for feito nos próximos 2 anos.</div>
+  <div><b>Impacto</b>Quantas pessoas atinge e quanto destrava os outros temas.</div>
+  <div><b>Demanda popular</b>Peso nas pesquisas de opinião de 2026.</div>
+  <div><b>Factibilidade</b>Instrumentos do governo federal, custo, necessidade de PEC e tempo até o resultado.</div>
+ </div>
+ <p style="max-width:72ch;margin:0 0 16px;font-size:15px">Urgência e impacto definem o topo da lista. A factibilidade decide empates e a ordem de execução. A demanda popular pesa, mas não decide sozinha: o ajuste fiscal fica em 1º mesmo sem liderar as pesquisas, porque juros e falta de orçamento limitam tudo o que vem depois, inclusive segurança e saúde.</p>
+ <div class="sortbar" role="group" aria-label="Ordenar prioridades"><span>Ordenar por</span><div class="seg" style="margin:0" id="prSort"><button data-k="n" aria-pressed="true">Recomendada</button><button data-k="u" aria-pressed="false">Urgência</button><button data-k="p" aria-pressed="false">Demanda popular</button><button data-k="f" aria-pressed="false">Factibilidade</button></div></div>
+ <ol class="prio" id="prio"></ol>
+ <div class="win">
+  <div><b>2016 · Temer, 1º ano</b>Teto de gastos aprovado em 7 meses.</div>
+  <div><b>2019 · Bolsonaro, 1º ano</b>Reforma da Previdência promulgada em novembro.</div>
+  <div><b>2023 · Lula, 1º ano</b>Reforma tributária do consumo promulgada em dezembro.</div>
+ </div>
+ <p class="note">Por que a ordem importa: no Brasil, as grandes reformas recentes passaram no primeiro ano de governo, quando o presidente tem mais capital político. Os temas que dependem do Congresso (ajuste fiscal, segurança via PEC) precisam entrar nessa janela; os que dependem de gestão (educação, desmatamento, focalização de programas) podem andar em paralelo. A factibilidade também depende do Congresso eleito em 4 de outubro, cuja composição final ainda está sendo analisada.</p>
+</section>
+
 <section class="blk" id="propostas" aria-labelledby="h-pro">
- <div class="sh"><span class="num">03</span><h2 id="h-pro">Propostas, tema a tema, e qual tende a <span class="hl">funcionar melhor</span></h2></div>
+ <div class="sh"><span class="num">04</span><h2 id="h-pro">Propostas, tema a tema, e qual tende a <span class="hl">funcionar melhor</span></h2></div>
  <p class="intro">Para cada tema: o que cada candidato registrou no plano de governo (TSE) e disse em campanha, o que a pesquisa técnica diz, casos reais de sucesso ou fracasso e uma conclusão sobre qual proposta tende a ser mais eficaz. Clique numa linha do placar ou use o menu.</p>
  <div class="score" id="score"></div>
  <div class="tw"><table><thead><tr><th>Tema</th><th>Tende a ser mais eficaz</th><th>Confiança da análise</th></tr></thead><tbody id="scoreTb"></tbody></table></div>
@@ -287,14 +370,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
 </section>
 
 <section class="blk" id="trajetoria" aria-labelledby="h-tra">
- <div class="sh"><span class="num">04</span><h2 id="h-tra">Trajetória: o que cada um <span class="hl">já entregou</span></h2></div>
+ <div class="sh"><span class="num">05</span><h2 id="h-tra">Trajetória: o que cada um <span class="hl">já entregou</span></h2></div>
  <p class="intro">Conquistas documentadas ao longo da vida pública, com a fonte e, quando necessário, a ressalva. Os cargos são diferentes: Lula governou o país por três mandatos; Flávio foi deputado estadual e é senador. Por isso as listas não se comparam item a item.</p>
  <div class="seg" role="group" aria-label="Exibir trajetória"><button data-v="" aria-pressed="true">Lado a lado</button><button data-v="only-lu" aria-pressed="false">Só Lula</button><button data-v="only-fl" aria-pressed="false">Só Flávio</button></div>
  <div class="trj" id="trj"></div>
 </section>
 
 <section class="blk" id="ficha" aria-labelledby="h-fic">
- <div class="sh"><span class="num">05</span><h2 id="h-fic"><span class="hl">Ficha limpa</span></h2></div>
+ <div class="sh"><span class="num">06</span><h2 id="h-fic"><span class="hl">Ficha limpa</span></h2></div>
  <p class="intro">Casos criminais e de corrupção com envolvimento direto de cada candidato: investigações, denúncias, condenações e como terminaram. Entram só casos em que o próprio candidato foi investigado, denunciado ou julgado. Escândalos que atingiram governos, partidos ou aliados dos dois (mensalão e Petrobras; fraude no INSS; Banco Master, que cita aliados de ambos) ficam de fora porque não há acusação formal contra o candidato.</p>
  <div class="elig">
   <div><b>Lula: elegível.</b> Foi réu em 11 ações penais. Não tem condenação válida: duas condenações foram anuladas pelo STF em 2021, três ações terminaram em absolvição e as demais foram arquivadas ou trancadas, a maioria sem julgamento de mérito.</div>
@@ -307,7 +390,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
 </section>
 
 <section class="blk met" id="metodo" aria-labelledby="h-met">
- <div class="sh"><span class="num">06</span><h2 id="h-met">Fontes e método</h2></div>
+ <div class="sh"><span class="num">07</span><h2 id="h-met">Fontes e método</h2></div>
  <p class="intro">Como as informações foram reunidas e onde conferir.</p>
  <details open><summary>Dados do cenário</summary><ul>
   <li>Desemprego e ocupação: IBGE, PNAD Contínua, trimestre até agosto de 2026 (divulgada em 29/09/2026).</li>
@@ -316,6 +399,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
   <li>Violência: Atlas da Violência 2026 (Ipea/FBSP), dados de 2024.</li>
   <li>Desmatamento: Inpe, Prodes 2025 e Deter. Fogo: MapBiomas Fogo 2024.</li>
   <li>Eleição: TSE, resultado do 1º turno de 04/10/2026.</li></ul></details>
+ <details><summary>Ordem de prioridades</summary><ul>
+  <li>Opinião pública: Quaest (setembro de 2026) e Datafolha (março de 2026), pergunta sobre o principal problema do país.</li>
+  <li>Especialistas: IFI/Senado (Relatórios de Acompanhamento Fiscal de agosto e setembro de 2026), levantamento do g1 com mais de 20 economistas e entrevistas de Jeferson Bittencourt e Elena Landau ao PlatôBR (setembro de 2026).</li>
+  <li>As notas de 1 a 5 são uma síntese editorial desses dados, explicada em cada tema. Leitores podem reordenar a lista por qualquer critério.</li></ul></details>
  <details><summary>Propostas e análise de eficácia</summary><ul>
   <li>Propostas: planos de governo registrados no TSE e cobertura de imprensa (Band, Estado de Minas, Congresso em Foco, Poder360).</li>
   <li>Análise técnica: literatura acadêmica e relatórios de IFI/Senado, FMI, Banco Mundial, OCDE, Ipea, FGV, FBSP e Todos pela Educação, citados em cada tema.</li>
@@ -668,6 +755,58 @@ renderFL();
 /* contagem regressiva */
 (()=>{const t=Date.UTC(2026,9,25,11),d=Math.ceil((t-Date.now())/864e5);const el=$("#days"),lb=$("#daysLbl");
  if(d>1){el.textContent=d}else if(d===1){el.textContent="1";lb.textContent="dia para o 2º turno"}else{el.textContent="Hoje";el.style.fontSize="72px";lb.textContent=d===0?"é dia de 2º turno":"o 2º turno já aconteceu"}})();
+
+/* ================= 3b. PRIORIDADES ================= */
+const PRI=[
+{n:1,t:"Contas públicas e juros",link:"contas",u:5,i:5,p:3,f:3,one:"Condição para todo o resto: sem ajuste, juros altos e falta de orçamento travam as demais áreas.",
+dados:["IFI: superávit de 2,1% do PIB estabilizaria a dívida; sem isso ela passa de 100% do PIB em 2032","Para 2027, a IFI prevê déficit de R$ 86 bi; o orçamento enviado prevê superávit de R$ 18,6 bi","1º lugar entre mais de 20 economistas de diferentes linhas (g1)"],
+fact:"Média. Desvincular e desindexar despesas e mudar regras de benefícios exige maioria no Congresso; a janela do 1º ano favorece. Revisão de benefícios tributários e pente-fino de cadastros podem começar por ato do Executivo.",
+cedo:["Meta fiscal crível no orçamento de 2027","Pacote de revisão de gastos tributários e de regras de benefícios no 1º semestre"],src:"IFI/Senado (RAF set/2026); g1; Jeferson Bittencourt (PlatôBR)"},
+{n:2,t:"Crime organizado e segurança",link:"seguranca",u:5,i:5,p:5,f:3,one:"Maior preocupação da população e risco crescente para a economia.",
+dados:["Quaest (set/2026): violência é o principal problema para 28% a 31%","Homicídios caíram, mas os “homicídios ocultos” subiram 88,6% (Atlas 2026)","Facções entraram em combustíveis, fintechs e no sistema financeiro"],
+fact:"Média. As polícias são estaduais, mas a União controla as alavancas com mais evidência: inteligência financeira (Coaf, Receita, PF), fronteiras e presídios federais. O resultado leva anos.",
+cedo:["Força-tarefa permanente para bloquear o dinheiro das facções","Metas de esclarecimento de homicídios pactuadas com os estados"],src:"Quaest; Ipea/FBSP; Elena Landau (PlatôBR)"},
+{n:3,t:"Saúde e envelhecimento",link:"saude",u:4,i:4,p:5,f:3,one:"Lidera as queixas no Datafolha; filas e envelhecimento pressionam o SUS.",
+dados:["Datafolha (mar/2026): saúde é o principal problema para 21%, em 1º lugar","A população deve começar a encolher no início dos anos 2040, com mais idosos (IBGE)"],
+fact:"Média. Gestão de filas e contratação da rede privada podem andar rápido; ampliar atenção primária e cuidado domiciliar exige orçamento num cenário apertado.",
+cedo:["Fila nacional regulada com prazo máximo e uso da rede privada quando estourar (modelo de Portugal)","Prontuário do SUS integrado"],src:"Datafolha; IBGE; OCDE"},
+{n:4,t:"Alfabetização e aprendizagem",link:"educacao",u:4,i:5,p:2,f:4,one:"Maior retorno de longo prazo com custo relativamente baixo.",
+dados:["O aprendizado explica boa parte da diferença de crescimento entre países (Hanushek & Woessmann)","O Ceará elevou a alfabetização com orçamento limitado"],
+fact:"Alta. Depende de coordenação com estados e municípios, material estruturado e avaliação; não precisa de PEC.",
+cedo:["Alfabetização estruturada, com método fônico, e avaliação anual em todas as redes","Repasses premiando municípios que melhorarem, como no Ceará"],src:"Inep; Todos pela Educação; Hanushek & Woessmann (2015)"},
+{n:5,t:"Produtividade e reforma tributária",link:"tributos",u:3,i:5,p:2,f:4,one:"A reforma já aprovada é a maior aposta de produtividade; o risco é desfigurá-la.",
+dados:["Transição do novo IVA entre 2026 e 2033","Ganho estimado de PIB entre cerca de 2% e 12% no longo prazo"],
+fact:"Alta. A lei existe; cabe executar a transição e evitar novas exceções que elevam a alíquota.",
+cedo:["Sistema de cobrança do IVA funcionando no prazo","Nenhuma nova exceção à alíquota-padrão"],src:"Ipea; Centro de Cidadania Fiscal; Banco Mundial"},
+{n:6,t:"Clima e desmatamento",link:"ambiente",u:4,i:4,p:1,f:4,one:"Queda do desmatamento é recente e reversível; desastres já custam bilhões.",
+dados:["Desmatamento na Amazônia caiu 50% desde 2022","30 milhões de hectares queimados em 2024; enchente no RS"],
+fact:"Alta para manter o controle do desmatamento, que depende de fiscalização e crédito rural condicionado, ambos do Executivo. A adaptação a desastres exige investimento com estados.",
+cedo:["Manter fiscalização e embargos","Plano de adaptação priorizando áreas de risco"],src:"Inpe; MapBiomas; Banco Mundial (CCDR 2023)"},
+{n:7,t:"Pobreza e focalização dos programas",link:"social",u:3,i:4,p:2,f:4,one:"Manter o ganho recente com programas mais focalizados e portas de saída.",
+dados:["Pobreza de 23,1% e extrema pobreza de 3,5% em 2024, menores da série","Economistas de diferentes linhas defendem rever regras de acesso"],
+fact:"Alta. Revisão de cadastros e regras de saída são administrativas ou dependem de lei ordinária.",
+cedo:["Cruzamento de cadastros","Regra de permanência temporária para quem consegue emprego formal"],src:"IBGE; Elena Landau (PlatôBR)"},
+{n:8,t:"Trabalho e jornada",link:"trabalho",u:2,i:4,p:3,f:2,one:"Tema forte da campanha, mas com evidência mista e risco de pressão sobre preços.",
+dados:["A redução de 1988 não causou perda relevante de empregos","Economistas apontam a mudança da 6x1 como possível pressão inflacionária"],
+fact:"Baixa no curto prazo: o fim da 6x1 depende de PEC (3/5 do Congresso). Uma transição gradual, como no Chile, aumenta a viabilidade.",
+cedo:["Regular o trabalho por aplicativos, tema já em tramitação"],src:"Gonzaga et al. (2003); Jeferson Bittencourt (PlatôBR)"},
+{n:9,t:"Instituições e emendas",link:"instituicoes",u:3,i:4,p:3,f:1,one:"Afeta a capacidade de executar tudo, mas depende do próprio Congresso para mudar.",
+dados:["R$ 50,4 bi em emendas na LOA 2025","Corrupção é o 2º problema mais citado na Quaest (22%)"],
+fact:"Baixa. Exige PEC ou acordo com o Congresso; é mais realista negociar transparência e critérios do que reduzir valores.",
+cedo:["Rastreabilidade total das emendas, já cobrada pelo STF"],src:"LOA 2025; Quaest; STF"}
+];
+const MT=(v,c)=>`<i class="mt ${c||""}">${[1,2,3,4,5].map(k=>`<s class="${k<=v?"on":""}"></s>`).join("")}</i>`;
+let prKey="n";
+function renderPri(){
+ const L=[...PRI].sort((a,b)=>prKey==="n"?a.n-b.n:(b[prKey]-a[prKey])||(a.n-b.n));
+ $("#prio").innerHTML=L.map((x,i)=>`<li><details${i===0?" open":""}><summary><span class="rk">${String(prKey==="n"?x.n:i+1).padStart(2,"0")}</span><span class="tt">${x.t}<span class="one">${x.one}</span></span><span class="meters"><span>Urgência${MT(x.u)}</span><span>Impacto${MT(x.i)}</span><span>Demanda${MT(x.p)}</span><span>Factível${MT(x.f,"fac")}</span></span></summary>
+ <div class="pd"><div><h5>Dados e especialistas</h5><ul>${x.dados.map(d=>`<li>${d}</li>`).join("")}</ul></div><div><h5>Factibilidade</h5><p>${x.fact}</p></div><div><h5>Primeiras medidas factíveis</h5><ul>${x.cedo.map(d=>`<li>${d}</li>`).join("")}</ul></div>
+ <div class="go"><button data-theme="${x.link}">Ver o que cada candidato propõe neste tema →</button><small>Fontes: ${x.src}</small></div></div></details></li>`).join("");
+}
+$("#prSort").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;prKey=b.dataset.k;$("#prSort").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderPri()});
+$("#prio").addEventListener("click",e=>{const b=e.target.closest("[data-theme]");if(b){e.preventDefault();goTheme(b.dataset.theme)}});
+
+renderPri();
 
 /* navegação */
 const chips=$("#chips");
