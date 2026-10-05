@@ -981,7 +981,7 @@ fetch("checagens.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.js
 }).catch(()=>{$("#fkUpd").textContent="indisponível";$("#fkGrid").innerHTML='<p class="meta">Não foi possível carregar as checagens agora. Recarregue a página em instantes.</p>'});
 
 /* enquete */
-const ENQ={url:"",key:"",site:"https://diegoungari04.github.io/Social-Media/brasil-2026/"};
+const ENQ={url:"https://zoqydcdnwjcdzvcfbkcx.supabase.co",key:"sb_publishable_rAjJ4YuU96x-xymC22Bh5g_eeNmQ99I",site:"https://diegoungari04.github.io/Social-Media/brasil-2026/"};
 const ENQ_OP=[["seguranca","Violência e segurança"],["saude","Saúde"],["economia","Economia, inflação e custo de vida"],["emprego","Desemprego e renda"],["corrupcao","Corrupção"],["educacao","Educação"],["fome","Fome e pobreza"],["ambiente","Meio ambiente e clima"],["outro","Outro"]];
 const ENQ_L=Object.fromEntries(ENQ_OP);
 const ls={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
