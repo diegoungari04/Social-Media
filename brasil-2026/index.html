@@ -827,6 +827,8 @@ const FLMETA={lu:"11 ações penais, agrupadas em 5 blocos",fl:"1 denúncia e 1 
 
 /* ================= RENDER ================= */
 const $=s=>document.querySelector(s);
+/* centraliza um item dentro de uma barra com rolagem horizontal, sem mexer na rolagem da página */
+function hCenter(box,el){if(!box||!el||box.scrollWidth<=box.clientWidth)return;const b=box.getBoundingClientRect(),r=el.getBoundingClientRect();const left=box.scrollLeft+(r.left-b.left)-(box.clientWidth-r.width)/2;box.scrollTo({left:Math.max(0,left),behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}
 const CN={lula:["Lula","var(--lu)","var(--lu-s)"],flavio:["Flávio","var(--fl)","var(--fl-s)"],empate:["Empate","var(--neu)","var(--neu-s)"]};
 const CL={alta:"Alta",media:"Média",baixa:"Baixa"};
 const RL={ok:"Deu certo",mx:"Resultado misto",bad:"Não deu certo"};
@@ -866,7 +868,7 @@ function cand(k,nm,party,props,a){return `<div class="cand ${k}" style="--c:var(
 function renderTheme(id){
  const i=T.findIndex(x=>x.id===id),t=T[i];
  $("#plist").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",b.dataset.id===id));
- const sel=$("#plist").querySelector(`[data-id="${id}"]`);if(sel&&window.innerWidth<=760)sel.scrollIntoView({block:"nearest",inline:"center"});
+ const sel=$("#plist").querySelector(`[data-id="${id}"]`);if(sel&&window.innerWidth<=820)hCenter($("#plist"),sel);
  const vc=CN[t.v];
  $("#pbody").innerHTML=`<h3 class="pt">${t.t}</h3><p class="why">${t.why}</p>
  <div class="seg" role="group" aria-label="Exibir candidatos"><button data-v="" aria-pressed="${view===""}">Lado a lado</button><button data-v="only-lu" aria-pressed="${view==="only-lu"}">Só Lula</button><button data-v="only-fl" aria-pressed="${view==="only-fl"}">Só Flávio</button></div>
@@ -1032,7 +1034,8 @@ function closeEnq(){const d=$("#enqDlg");if(d.close)d.close();else d.removeAttri
 /* navegação */
 const chips=$("#chips");
 const secs=[...document.querySelectorAll("main section.blk")];
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;chips.querySelectorAll("a").forEach(a=>{const o=a.dataset.id===id;a.classList.toggle("on",o);if(o)a.scrollIntoView({block:"nearest",inline:"center"})})}})},{rootMargin:"-45% 0px -50% 0px"});
+let navOn="";
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting||e.target.id===navOn)return;navOn=e.target.id;chips.querySelectorAll("a").forEach(a=>{const o=a.dataset.id===navOn;a.classList.toggle("on",o);if(o)hCenter(chips,a)})})},{rootMargin:"-45% 0px -50% 0px"});
 secs.forEach(s=>obs.observe(s));
 const prog=$("#prog");
 addEventListener("scroll",()=>{const h=document.documentElement;prog.style.width=(100*h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight))+"%"},{passive:true});
