@@ -255,12 +255,18 @@ h4.sub::after{content:"";flex:1;height:1px;background:var(--line)}
 @media (max-width:700px){.win{grid-template-columns:1fr}}
 .win div{background:var(--panel2);border-radius:6px;padding:12px 14px;font-size:14px}
 .win b{display:block;font-family:var(--mono);font-size:12px;color:var(--acc);margin-bottom:2px}
+/* seletor de cargo */
+.who{display:inline-flex;gap:0;margin:0 12px 14px 0;border:2px solid var(--ink);border-radius:6px;overflow:hidden;vertical-align:top}
+.who button{font:inherit;font-family:var(--disp);font-stretch:78%;font-weight:750;font-size:16px;letter-spacing:.02em;text-transform:uppercase;color:var(--ink);background:var(--panel);border:0;padding:7px 16px;cursor:pointer}
+.who button+button{border-left:2px solid var(--ink)}
+.who button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.col .tag-v{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
 /* ficha limpa */
 .legend{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px}
 .st{font-family:var(--mono);font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:4px;border:1px solid currentColor;white-space:nowrap;background:var(--panel);cursor:pointer}
 .st::before{content:"✓ "}
 .st[aria-pressed="false"]{opacity:.45}.st[aria-pressed="false"]::before{content:"○ "}
-.st.anul{color:var(--warn)}.st.arq{color:var(--neu)}.st.abs{color:var(--ok)}.st.inv{color:var(--risk)}.st.ind{color:var(--mute);border-style:dashed}
+.st.anul{color:var(--warn)}.st.arq{color:var(--neu)}.st.abs{color:var(--ok)}.st.inv{color:var(--risk)}.st.pre{color:var(--acc)}.st.ind{color:var(--mute);border-style:dashed}
 .fl-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 @media (max-width:820px){.fl-grid{grid-template-columns:1fr}}
 .case-f{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px;margin:0 0 12px}
@@ -378,18 +384,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
 
 <section class="blk" id="trajetoria" aria-labelledby="h-tra">
  <div class="sh"><span class="num">05</span><h2 id="h-tra">Trajetória: o que cada um <span class="hl">já entregou</span></h2></div>
- <p class="intro">Conquistas documentadas ao longo da vida pública, com a fonte e, quando necessário, a ressalva. Os cargos são diferentes: Lula governou o país por três mandatos; Flávio foi deputado estadual e é senador. Por isso as listas não se comparam item a item.</p>
- <div class="seg" role="group" aria-label="Exibir trajetória"><button data-v="" aria-pressed="true">Lado a lado</button><button data-v="only-lu" aria-pressed="false">Só Lula</button><button data-v="only-fl" aria-pressed="false">Só Flávio</button></div>
+ <p class="intro">Conquistas documentadas ao longo da vida pública, com a fonte e, quando necessário, a ressalva. Os cargos são diferentes: Lula governou o país por três mandatos; Flávio foi deputado estadual e é senador. Por isso as listas não se comparam item a item. Use o seletor para ver também os candidatos a vice, que assumem em caso de ausência ou vacância do presidente.</p>
+ <div class="who" role="group" aria-label="Escolher cargo" id="trjWho"><button data-w="" aria-pressed="true">Presidente</button><button data-w="v" aria-pressed="false">Vice</button></div>
+ <div class="seg" role="group" aria-label="Exibir trajetória"><button data-v="" aria-pressed="true">Lado a lado</button><button data-v="only-lu" aria-pressed="false">Só chapa de Lula</button><button data-v="only-fl" aria-pressed="false">Só chapa de Flávio</button></div>
  <div class="trj" id="trj"></div>
 </section>
 
 <section class="blk" id="ficha" aria-labelledby="h-fic">
  <div class="sh"><span class="num">06</span><h2 id="h-fic"><span class="hl">Ficha limpa</span></h2></div>
- <p class="intro">Casos criminais e de corrupção com envolvimento direto de cada candidato: investigações, denúncias, condenações e como terminaram. Entram só casos em que o próprio candidato foi investigado, denunciado ou julgado. Escândalos que atingiram governos, partidos ou aliados dos dois (mensalão e Petrobras; fraude no INSS; Banco Master, que cita aliados de ambos) ficam de fora porque não há acusação formal contra o candidato.</p>
- <div class="elig">
-  <div><b>Lula: elegível.</b> Foi réu em 11 ações penais. Não tem condenação válida: duas condenações foram anuladas pelo STF em 2021, três ações terminaram em absolvição e as demais foram arquivadas ou trancadas, a maioria sem julgamento de mérito.</div>
-  <div><b>Flávio Bolsonaro: elegível.</b> Nunca foi condenado. Teve uma denúncia arquivada sem julgamento de mérito e responde a inquérito no STF aberto em julho de 2026.</div>
- </div>
+ <p class="intro">Casos criminais e de corrupção com envolvimento direto de cada candidato: investigações, denúncias, condenações e como terminaram. Entram só casos em que o próprio candidato foi investigado, denunciado ou julgado. Escândalos que atingiram governos, partidos ou aliados dos dois (mensalão e Petrobras; fraude no INSS; Banco Master, que cita aliados de ambos) ficam de fora porque não há acusação formal contra o candidato. A mesma régua vale para os candidatos a vice.</p>
+ <div class="who" role="group" aria-label="Escolher cargo" id="flWho"><button data-w="" aria-pressed="true">Presidente</button><button data-w="v" aria-pressed="false">Vice</button></div>
+ <div class="elig" id="elig"></div>
  <p style="margin:0 0 8px;font-size:14px;color:var(--mute)">Filtrar por situação:</p>
  <div class="legend" id="stFil"></div>
  <div class="fl-grid" id="flGrid"></div>
@@ -418,7 +423,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <details><summary>Trajetória e ficha limpa</summary><ul>
   <li>Decisões do STF, STJ, TRF-4, TJ-RJ e Justiça Federal do DF; notícias oficiais dos tribunais e da Agência Brasil.</li>
   <li>Produção legislativa de Flávio Bolsonaro: Senado Federal e levantamentos publicados em abril e maio de 2026.</li>
-  <li>Programas dos governos Lula: leis de criação e avaliações do Ipea, IBGE, Inpe e FAO.</li></ul></details>
+  <li>Programas dos governos Lula: leis de criação e avaliações do Ipea, IBGE, Inpe e FAO.</li>
+  <li>Candidatos a vice: decisões do STF (Lewandowski, 2023; Toffoli, 2024; Gilmar Mendes e Flávio Dino, 2026), TCU, Câmara dos Deputados, Agência Senado, governos de SP e de Alagoas e cobertura de Poder360, Metrópoles, Correio Braziliense e Migalhas. A mesma régua dos titulares foi aplicada: só entram casos em que o próprio candidato é alvo.</li></ul></details>
  <details open><summary>Auditoria de viés (5 de outubro de 2026)</summary>
   <p>Depois da primeira versão, o guia foi revisado item a item com quatro perguntas: o mesmo critério foi aplicado aos dois candidatos? Os fatos estão confirmados em fonte primária ou neutra? A linguagem é descritiva, sem adjetivos de torcida? Algum tema ou fato relevante foi omitido para um dos lados? Correções feitas:</p>
   <ul>
@@ -668,11 +674,29 @@ fl:{nm:"Flávio Bolsonaro",meta:"Advogado e empresário. Deputado estadual no Ri
 ["2020–2026","R$ 271 milhões em emendas","Metade destinada à saúde (obrigatório); do restante, prioridade para segurança pública e Forças Armadas.","Portal da Transparência; levantamento de mai/2026"],
 ["Mandato no Senado","Lei do microcrédito produtivo","Coautor do projeto que altera o Programa Nacional de Microcrédito Produtivo Orientado (PL 3.190/2023), único com sua assinatura aprovado nas duas Casas.","Senado Federal"],
 ["Mandato no Senado","Três projetos aprovados no Senado","Reciclagem de baterias de carros elétricos (PL 2.327/2021), redes de rádio e TV (PL 6.106/2023) e verba de loteria para a ABBR (PL 3.071/2019). Aguardam a Câmara.","Senado Federal"]],
-notes:[["Ressalva","Não tem experiência no Poder Executivo. No Senado, dos 57 projetos de lei que assinou, só um foi aprovado nas duas Casas, e em coautoria."]]}
+notes:[["Ressalva","Não tem experiência no Poder Executivo. No Senado, dos 57 projetos de lei que assinou, só um foi aprovado nas duas Casas, e em coautoria."]]},
+luv:{nm:"Geraldo Alckmin",vice:"Vice de Lula · PSB",meta:"Médico. Prefeito de Pindamonhangaba (1977–1982), deputado estadual e federal, governador de São Paulo de 2001 a 2006 e de 2011 a 2018, e vice-presidente desde 2023, acumulando o Ministério do Desenvolvimento, Indústria, Comércio e Serviços.",it:[
+["1987–1991","Deputado constituinte","Participou da Assembleia que escreveu a Constituição de 1988.","Câmara dos Deputados"],
+["2001–2006","Bom Prato e Poupatempo ampliados","Os restaurantes populares com refeição a R$ 1 chegaram a 21 unidades e 30,7 mil refeições por dia; o Poupatempo foi levado a mais bairros e cidades.","Governo de SP"],
+["2002 e 2014","Rodoanel: trechos Oeste e Leste","Entregou o primeiro trecho do anel viário da Grande São Paulo e, no segundo período de governo, o trecho Leste.","Governo de SP; DERSA"],
+["2004","Linha 4-Amarela do Metrô","Iniciou a primeira linha de metrô do país feita por parceria público-privada.","Metrô-SP"],
+["2006–2016","Queda dos homicídios em SP","Os homicídios no estado caíram 46,7% no período, que inclui o governo José Serra (2007–2010). Pesquisadores atribuem a queda a políticas de segurança, ao desarmamento e também à hegemonia do PCC no crime paulista.","SSP-SP; FBSP"],
+["2012","Univesp","Criou a Universidade Virtual do Estado de São Paulo, primeira universidade pública totalmente a distância do país.","Univesp"],
+["2024","Política industrial e Mover","Como ministro, coordenou a Nova Indústria Brasil e o programa Mover, de incentivo a veículos menos poluentes (Lei 14.902/2024).","MDIC"],
+["2025","Negociação do tarifaço dos EUA","Conduziu pelo governo a negociação após a sobretaxa americana de 2025. Houve retirada parcial de tarifas (celulose, ferroníquel, madeira e móveis), que ele mesmo chamou de “pequeno passo”.","Agência Gov; MDIC"]],
+notes:[["Ressalva","Crise hídrica de 2014–2015 na Grande São Paulo; desabamento nas obras da Linha 4 em 2007, com sete mortos; alta letalidade policial em seus governos, criticada por organizações de direitos humanos."]]},
+flv:{nm:"Alfredo Gaspar",vice:"Vice de Flávio · PL",meta:"Advogado e ex-promotor de Justiça. Procurador-geral de Justiça de Alagoas, secretário de Segurança Pública do estado e deputado federal desde 2023. Primeira candidatura nacional.",it:[
+["1996–2020","24 anos no Ministério Público de Alagoas","Coordenou o grupo estadual de combate a organizações criminosas e, em 2018, presidiu o Grupo Nacional de Combate às Organizações Criminosas, que reúne os MPs do país.","Câmara dos Deputados; MP-AL"],
+["2017–2020","Procurador-geral de Justiça de Alagoas","Chefiou o Ministério Público estadual por dois mandatos.","MP-AL"],
+["2015","Queda da violência em Alagoas","Como secretário de Segurança, o estado registrou queda de 18% nos crimes violentos letais e de 20,3% nos homicídios em 2015. Deixou o cargo em 2016 após decisão do STF que proibiu promotores em cargos do Executivo.","Governo de Alagoas"],
+["2021–2022","Volta à Secretaria de Segurança","Segundo período à frente da segurança de Alagoas, até deixar o cargo para disputar a eleição.","Governo de Alagoas"],
+["2022","Deputado federal","Eleito com 102.039 votos, o 2º mais votado de Alagoas e o 1º em Maceió.","TSE"],
+["2025–2026","Relator da CPMI do INSS","Apresentou relatório de 4.340 páginas com pedidos de indiciamento de 216 pessoas. A comissão rejeitou o texto por 19 votos a 12; ele e parlamentares de oposição entregaram o relatório ao STF em abril de 2026.","Agência Senado; Agência Brasil"]],
+notes:[["Ressalva","Não teve cargo no Executivo além de secretarias estaduais. Os números da violência em Alagoas vêm do próprio governo estadual. Seu relatório na CPMI não foi aprovado pela comissão."]]}
 };
 
 /* ================= 5. FICHA LIMPA ================= */
-const STL={anul:["Condenação anulada","var(--warn)"],arq:["Arquivado ou trancado","var(--neu)"],abs:["Absolvido","var(--ok)"],inv:["Investigação em andamento","var(--risk)"]};
+const STL={anul:["Condenação anulada","var(--warn)"],arq:["Arquivado ou trancado","var(--neu)"],abs:["Absolvido","var(--ok)"],inv:["Investigação em andamento","var(--risk)"],pre:["Apuração preliminar","var(--acc)"]};
 const FL={
 lu:[
 {st:"anul",t:"Lava Jato: tríplex do Guarujá",o:"Acusado de receber um apartamento da OAS como propina em troca de contratos na Petrobras (corrupção passiva e lavagem).",d:"Condenado por Sergio Moro (2017) e pelo TRF-4 (2018); pena fixada pelo STJ em 8 anos e 10 meses. Ficou preso 580 dias (abr/2018 a nov/2019). Em 2021 o STF anulou a condenação: a vara de Curitiba não era competente e Moro foi declarado parcial. Em 2022, o Comitê de Direitos Humanos da ONU concluiu que o processo violou direitos de Lula.",s:"Em janeiro de 2022 a Justiça Federal do DF declarou a prescrição (prazo cai pela metade para maiores de 70 anos) e arquivou o caso. Não houve rejulgamento nem absolvição de mérito.",f:"STF (HC 193.726 e HC 164.493); 12ª Vara Federal do DF; ConJur"},
@@ -682,8 +706,21 @@ lu:[
 {st:"abs",t:"Absolvições: obstrução, “quadrilhão” e Zelotes",o:"Tentativa de comprar o silêncio de Nestor Cerveró; organização criminosa com dirigentes do PT; propina na edição de medida provisória para montadoras (2ª ação da Zelotes).",d:"Absolvido por falta de provas no caso Cerveró (2018) e na Zelotes (2021), e absolvido sumariamente no “quadrilhão” (2019). Nos três, pela Justiça Federal do DF.",s:"Absolvido.",f:"Justiça Federal do DF; Poder360"}],
 fl:[
 {st:"inv",t:"Banco Master e o filme “Dark Horse”",o:"Suspeita de lavagem de dinheiro, corrupção e evasão de divisas. Segundo documentos revelados pela imprensa, Flávio negociou com Daniel Vorcaro, dono do Banco Master, financiamento de R$ 134 milhões para um filme sobre o pai, dos quais ao menos R$ 61 milhões foram pagos (2024–2025). Flávio admitiu ter recebido recursos por intermediários. A PF também apura se emendas ou projetos do senador favoreceram o banco.",d:"Inquérito aberto no STF em julho de 2026 pelo ministro André Mendonça, a pedido da PF e com aval da PGR. Não há denúncia.",s:"Em andamento. Flávio diz que foi “patrocínio privado para um filme privado” e nega contrapartidas.",f:"STF; Bloomberg Línea; reportagem original de The Intercept Brasil"},
-{st:"arq",t:"“Rachadinha” na Alerj",o:"Acusado de recolher parte dos salários de assessores do gabinete de deputado estadual, em esquema operado por Fabrício Queiroz (peculato, lavagem, organização criminosa e apropriação indébita).",d:"Denunciado pelo MP-RJ em 2020. O STJ anulou quebras de sigilo (2021) e as decisões do juiz de 1ª instância por causa do foro; o STF invalidou relatórios do Coaf. O TJ-RJ arquivou a denúncia em maio de 2022. Em 2025, o ministro Gilmar Mendes negou recursos do MP-RJ.",s:"Arquivado por nulidade das provas, sem julgamento de mérito. O MP pode apresentar nova denúncia com outras provas.",f:"STJ; STF (2ª Turma); TJ-RJ; Agência Brasil"}]
+{st:"arq",t:"“Rachadinha” na Alerj",o:"Acusado de recolher parte dos salários de assessores do gabinete de deputado estadual, em esquema operado por Fabrício Queiroz (peculato, lavagem, organização criminosa e apropriação indébita).",d:"Denunciado pelo MP-RJ em 2020. O STJ anulou quebras de sigilo (2021) e as decisões do juiz de 1ª instância por causa do foro; o STF invalidou relatórios do Coaf. O TJ-RJ arquivou a denúncia em maio de 2022. Em 2025, o ministro Gilmar Mendes negou recursos do MP-RJ.",s:"Arquivado por nulidade das provas, sem julgamento de mérito. O MP pode apresentar nova denúncia com outras provas.",f:"STJ; STF (2ª Turma); TJ-RJ; Agência Brasil"}],
+luv:[
+{st:"arq",t:"Odebrecht: caixa 2 nas campanhas de 2010 e 2014",o:"Acusado pelo Ministério Público Eleitoral de receber cerca de R$ 11,9 milhões da Odebrecht por caixa 2 (corrupção passiva, lavagem e falsidade ideológica eleitoral).",d:"Denunciado em 2020; a Justiça Eleitoral de SP manteve a ação em 2022. Em abril de 2023 o ministro Ricardo Lewandowski, do STF, encerrou o processo porque se baseava em provas do acordo da Odebrecht consideradas inválidas.",s:"Encerrado sem julgamento de mérito.",f:"STF; Correio Braziliense; Poder360"},
+{st:"arq",t:"Odebrecht: ação de improbidade (campanha de 2014)",o:"Ação civil pelo suposto repasse de R$ 8,3 milhões não declarados à campanha ao governo de SP, por meio do tesoureiro Marcos Monteiro.",d:"Arquivada pelo ministro Dias Toffoli em outubro de 2024 por usar as mesmas provas anuladas; decisão confirmada pelo STF após recurso da PGR.",s:"Arquivada sem julgamento de mérito. A defesa diz que a decisão confirma a inexistência dos fatos.",f:"STF; Poder360"},
+{st:"arq",t:"Ecovias: caixa 2 em campanhas (2002–2014)",o:"Investigação sobre suposto recebimento de R$ 3 milhões em caixa 2, a partir da delação de um ex-presidente da concessionária Ecovias.",d:"Arquivada pela Justiça em 2022.",s:"Arquivada.",f:"Migalhas"}],
+flv:[
+{st:"pre",t:"Pedido de investigação por estupro de vulnerável",o:"Notícia-crime apresentada em março de 2026 por adversários políticos, o deputado Lindbergh Farias (PT) e a senadora Soraya Thronicke (PSB), afirma que Gaspar teria mantido relação com uma adolescente de 13 anos, anos atrás, da qual teria nascido uma filha.",d:"Em abril de 2026 a PF pediu autorização para abrir inquérito. O ministro Gilmar Mendes, do STF, autorizou apenas diligências preliminares. Não há inquérito aberto nem denúncia.",s:"Apuração preliminar. Gaspar nega, diz ser alvo de perseguição política, ofereceu material genético para exame de DNA e afirma que o pai biológico seria um primo.",f:"STF; Metrópoles; GC Mais"},
+{st:"pre",t:"Emendas Pix para São José da Laje (AL)",o:"Auditoria do TCU apontou falta de rastreabilidade e de prestação de contas em três transferências, de cerca de R$ 6,2 milhões, indicadas pelo deputado.",d:"Uma representação anterior foi arquivada pela PGR, que não viu participação do deputado. Em agosto de 2026 o ministro Flávio Dino, do STF, mandou a PF investigar.",s:"Apuração inicial. Gaspar diz que as emendas seguiram as regras e que a execução cabe ao município.",f:"TCU; STF; GC Mais"}]
 };
+const ELIG={
+lu:["Lula: elegível.","Foi réu em 11 ações penais. Não tem condenação válida: duas condenações foram anuladas pelo STF em 2021, três ações terminaram em absolvição e as demais foram arquivadas ou trancadas, a maioria sem julgamento de mérito."],
+fl:["Flávio Bolsonaro: elegível.","Nunca foi condenado. Teve uma denúncia arquivada sem julgamento de mérito e responde a inquérito no STF aberto em julho de 2026."],
+luv:["Geraldo Alckmin: elegível.","Nunca foi condenado. Uma ação penal eleitoral e uma ação de improbidade foram encerradas sem julgamento de mérito, por uso de provas anuladas; outra investigação foi arquivada."],
+flv:["Alfredo Gaspar: elegível.","Nunca foi denunciado. É alvo de duas apurações preliminares no STF, sem inquérito aberto."]};
+const FLMETA={lu:"11 ações penais, agrupadas em 5 blocos",fl:"1 denúncia e 1 inquérito",luv:"1 ação penal, 1 ação de improbidade e 1 investigação",flv:"2 apurações preliminares"};
 
 /* ================= RENDER ================= */
 const $=s=>document.querySelector(s);
@@ -747,17 +784,21 @@ $("#pbody").addEventListener("click",e=>{
 renderTheme(T[0].id);
 
 /* trajetória */
-function col(k){const d=TRJ[k];return `<div class="col ${k}" style="--c:var(--${k})"><h3>${d.nm}</h3><p class="meta">${d.meta}</p><ol class="tl">${d.it.map(x=>`<li><span class="yr">${x[0]}</span><b>${x[1]}</b><p>${x[2]}</p><small>Fonte: ${x[3]}</small></li>`).join("")}${d.notes.map(n=>`<li class="note"><span class="yr" style="color:var(--neu)">${n[0]}</span><p>${n[1]}</p></li>`).join("")}</ol></div>`}
-$("#trj").innerHTML=col("lu")+col("fl");
-document.querySelector("#trajetoria .seg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;b.parentElement.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));$("#trj").className="trj"+(b.dataset.v?" "+b.dataset.v:"")});
+let trjW="",flW="";
+function col(k){const d=TRJ[k+trjW];return `<div class="col ${k}" style="--c:var(--${k})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${d.meta}</p><ol class="tl">${d.it.map(x=>`<li><span class="yr">${x[0]}</span><b>${x[1]}</b><p>${x[2]}</p><small>Fonte: ${x[3]}</small></li>`).join("")}${d.notes.map(n=>`<li class="note"><span class="yr" style="color:var(--neu)">${n[0]}</span><p>${n[1]}</p></li>`).join("")}</ol></div>`}
+function renderTrj(){$("#trj").innerHTML=col("lu")+col("fl")}
+renderTrj();
+$("#trjWho").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;trjW=b.dataset.w;$("#trjWho").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderTrj()});
+document.querySelector("#trajetoria .seg:not(.who)").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;b.parentElement.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));$("#trj").className="trj"+(b.dataset.v?" "+b.dataset.v:"")});
 
 /* ficha limpa */
 const on=new Set(Object.keys(STL));
 $("#stFil").innerHTML=Object.entries(STL).map(([k,v])=>`<button class="st ${k}" data-k="${k}" aria-pressed="true">${v[0]}</button>`).join("");
 function fcase(c){const s=STL[c.st];return `<article class="case-f" style="--sc:${s[1]}"><div class="ch"><h4>${c.t}</h4><span class="stb">${s[0]}</span></div><dl><dt>Acusação</dt><dd>${c.o}</dd><dt>Andamento</dt><dd>${c.d}</dd><dt>Situação</dt><dd>${c.s}</dd><dt>Fonte</dt><dd style="color:var(--mute);font-size:13px">${c.f}</dd></dl></article>`}
-function renderFL(){$("#flGrid").innerHTML=["lu","fl"].map(k=>{const l=FL[k].filter(c=>on.has(c.st));return `<div class="col" style="--c:var(--${k})"><h3>${k==="lu"?"Lula":"Flávio Bolsonaro"}</h3><p class="meta">${k==="lu"?"11 ações penais, agrupadas em 5 blocos":"1 denúncia e 1 inquérito"}${l.length<FL[k].length?` · ${l.length} visíveis`:""}</p>${l.map(fcase).join("")||'<p class="meta">Nenhum caso com esta situação.</p>'}</div>`}).join("")}
+function renderFL(){$("#elig").innerHTML=["lu","fl"].map(k=>`<div><b>${ELIG[k+flW][0]}</b>${ELIG[k+flW][1]}</div>`).join("");$("#flGrid").innerHTML=["lu","fl"].map(c0=>{const k=c0+flW,d=TRJ[k],l=FL[k].filter(c=>on.has(c.st));return `<div class="col" style="--c:var(--${c0})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${FLMETA[k]}${l.length<FL[k].length?` · ${l.length} visíveis`:""}</p>${l.map(fcase).join("")||'<p class="meta">Nenhum caso com esta situação.</p>'}</div>`}).join("")}
 $("#stFil").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;on.has(k)?on.delete(k):on.add(k);b.setAttribute("aria-pressed",on.has(k));renderFL()});
 renderFL();
+$("#flWho").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;flW=b.dataset.w;$("#flWho").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFL()});
 
 /* contagem regressiva */
 (()=>{const t=Date.UTC(2026,9,25,11),d=Math.ceil((t-Date.now())/864e5);const el=$("#days"),lb=$("#daysLbl");
