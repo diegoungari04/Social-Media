@@ -255,6 +255,39 @@ h4.sub::after{content:"";flex:1;height:1px;background:var(--line)}
 @media (max-width:700px){.win{grid-template-columns:1fr}}
 .win div{background:var(--panel2);border-radius:6px;padding:12px 14px;font-size:14px}
 .win b{display:block;font-family:var(--mono);font-size:12px;color:var(--acc);margin-bottom:2px}
+/* enquete */
+.enq{margin:28px 0 0;border:2px solid var(--ink);border-radius:8px;background:var(--panel);overflow:hidden}
+.enq-h{background:var(--hero);color:var(--hero-ink);padding:16px 18px}
+.enq-h .k,#enqDlg .k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--hl);margin-bottom:6px}
+.enq-h h3{font-size:clamp(22px,3.6vw,30px);font-weight:800;font-stretch:72%}
+.enq-body{padding:16px 18px 6px}
+.enq-row{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr) 92px;gap:10px;align-items:center;margin:0 0 10px;font-size:14.5px}
+@media (max-width:600px){.enq-row{grid-template-columns:minmax(0,1fr) 84px}.enq-row .bar{grid-column:1/-1;grid-row:2}}
+.enq-row .bar{height:14px;background:var(--panel2);border-radius:3px;overflow:hidden}
+.enq-row .bar i{display:block;height:100%;background:var(--ink);transition:width .6s ease}
+.enq-row.mine .bar i,.enq-row.top .bar i{background:var(--hl)}
+.enq-row.mine span:first-child::after{content:" · sua resposta";font-family:var(--mono);font-size:11px;color:var(--acc)}
+.enq-row em{font-style:normal;font-family:var(--mono);font-size:12.5px;text-align:right;font-variant-numeric:tabular-nums}
+.enq-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--mute);padding:6px 0 10px;border-top:1px dashed var(--line);margin-top:6px}
+.enq-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:4px 0 12px}
+.enq-disc{margin:0;padding:12px 18px;background:var(--panel2);font-size:13px;color:var(--mute)}
+.enq .pri,#enqDlg .pri{font:inherit;font-weight:700;font-size:15px;background:var(--ink);color:var(--bg);border:0;border-radius:6px;padding:10px 16px;cursor:pointer;text-decoration:none;display:inline-block}
+.pri:disabled{opacity:.4;cursor:not-allowed}
+#enqDlg{border:0;border-radius:10px;padding:0;width:min(520px,calc(100% - 32px));max-height:calc(100% - 32px);background:var(--panel);color:var(--ink);box-shadow:0 24px 70px rgba(0,0,0,.35)}
+#enqDlg::backdrop{background:rgba(6,10,18,.62);backdrop-filter:blur(3px)}
+#enqDlg form,#enqThanks{padding:22px 22px 18px}
+#enqDlg h2{font-size:clamp(24px,5vw,30px);font-weight:850;font-stretch:72%;margin:0 0 14px}
+#enqOpts{border:0;margin:0;padding:0;display:grid;gap:6px}
+#enqOpts label{display:flex;gap:10px;align-items:center;padding:9px 12px;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:15px}
+#enqOpts label:has(input:checked){border-color:var(--ink);background:var(--acc-s)}
+#enqOpts input{accent-color:var(--ink);width:17px;height:17px;flex:0 0 auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#enqDlg .anon{font-size:13.5px;color:var(--mute);background:var(--panel2);border-radius:6px;padding:10px 12px;margin:14px 0 0}
+#enqDlg .anon b{color:var(--ink)}
+.enq-err{color:var(--risk);font-size:14px;margin:10px 0 0}
+#enqDlg .acts{display:flex;justify-content:flex-end;gap:8px;margin-top:16px;flex-wrap:wrap}
+#enqDlg .ghost{font:inherit;font-weight:600;font-size:15px;background:none;color:var(--mute);border:1px solid var(--line);border-radius:6px;padding:10px 14px;cursor:pointer}
+#enqMini .enq-row{grid-template-columns:minmax(0,1fr) 70px}#enqMini .enq-row .bar{grid-column:1/-1;grid-row:2}
 /* fake news */
 .fk-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:14px;margin:0 0 18px}
 @media (max-width:760px){.fk-top{grid-template-columns:1fr}}
@@ -390,6 +423,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <p style="max-width:72ch;margin:0 0 16px;font-size:15px">Urgência e impacto definem o topo da lista. A factibilidade decide empates e a ordem de execução. A demanda popular pesa, mas não decide sozinha: o ajuste fiscal fica em 1º mesmo sem liderar as pesquisas, porque juros e falta de orçamento limitam tudo o que vem depois, inclusive segurança e saúde.</p>
  <div class="sortbar" role="group" aria-label="Ordenar prioridades"><span>Ordenar por</span><div class="seg" style="margin:0" id="prSort"><button data-k="n" aria-pressed="true">Recomendada</button><button data-k="u" aria-pressed="false">Urgência</button><button data-k="p" aria-pressed="false">Demanda popular</button><button data-k="f" aria-pressed="false">Factibilidade</button></div></div>
  <ol class="prio" id="prio"></ol>
+<div class="enq" id="enquete" aria-labelledby="h-enq">
+  <div class="enq-h"><span class="k">Enquete anônima · parcial ao vivo</span><h3 id="h-enq">E para você, qual é o maior problema do Brasil hoje?</h3></div>
+  <div class="enq-body" id="enqBody"><p class="meta">Carregando enquete…</p></div>
+  <p class="enq-disc">Enquete de participação espontânea, sem valor científico: mostra a opinião de quem respondeu, não da população. Não pedimos nome, e-mail nem login, e cada aparelho responde uma vez. Por lei eleitoral, a enquete não pergunta sobre candidatos nem voto.</p>
+ </div>
  <div class="win">
   <div><b>2016 · Temer, 1º ano</b>Teto de gastos aprovado em 7 meses.</div>
   <div><b>2019 · Bolsonaro, 1º ano</b>Reforma da Previdência promulgada em novembro.</div>
@@ -490,6 +528,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <details><summary>Limitações</summary><p>Planos de governo são documentos de intenção e vários pontos não têm detalhes de execução. A literatura sobre muitas políticas tem resultados mistos e foi resumida. Investigações em andamento podem mudar de situação a qualquer momento. Confira sempre a fonte original antes de compartilhar.</p></details>
 </section>
 </main>
+<dialog id="enqDlg" aria-labelledby="enqDlgT">
+ <form method="dialog" id="enqForm">
+  <span class="k">Enquete anônima · 1 pergunta</span>
+  <h2 id="enqDlgT">Qual é o maior problema do Brasil hoje?</h2>
+  <fieldset id="enqOpts"><legend class="sr">Escolha uma opção</legend></fieldset>
+  <p class="anon">🔒 Sua resposta é <b>anônima</b>: não pedimos nome, e-mail nem login, e não guardamos seu IP. Cada aparelho pode responder uma vez.</p>
+  <p class="enq-err" id="enqErr" role="alert" hidden></p>
+  <div class="acts"><button type="button" class="ghost" id="enqLater">Agora não</button><button type="submit" class="pri" id="enqSend" disabled>Enviar resposta</button></div>
+ </form>
+ <div id="enqThanks" hidden>
+  <span class="k">Resposta registrada</span>
+  <h2>Obrigado por participar!</h2>
+  <div id="enqMini"></div>
+  <div class="acts"><button type="button" class="ghost" id="enqClose">Fechar</button><a class="pri" href="#enquete" id="enqSee">Ver parcial completa</a></div>
+ </div>
+</dialog>
 <footer class="wrap">Atualizado em 5 de outubro de 2026. Conteúdo informativo e apartidário.</footer>
 
 <script>
@@ -925,6 +979,55 @@ fetch("checagens.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.js
  const u=new Date(d.atualizado);$("#fkUpd").textContent=isNaN(u)?d.atualizado:u.toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"});
  renderFK();
 }).catch(()=>{$("#fkUpd").textContent="indisponível";$("#fkGrid").innerHTML='<p class="meta">Não foi possível carregar as checagens agora. Recarregue a página em instantes.</p>'});
+
+/* enquete */
+const ENQ={url:"",key:"",site:"https://diegoungari04.github.io/Social-Media/brasil-2026/"};
+const ENQ_OP=[["seguranca","Violência e segurança"],["saude","Saúde"],["economia","Economia, inflação e custo de vida"],["emprego","Desemprego e renda"],["corrupcao","Corrupção"],["educacao","Educação"],["fome","Fome e pobreza"],["ambiente","Meio ambiente e clima"],["outro","Outro"]];
+const ENQ_L=Object.fromEntries(ENQ_OP);
+const ls={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+const ss={get:k=>{try{return sessionStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{sessionStorage.setItem(k,v)}catch(e){}}};
+const enqOn=!!(ENQ.url&&ENQ.key);
+const enqHere=/github\.io$/.test(location.hostname)||location.hostname==="localhost";
+let enqData=null,enqTimer=null;
+function devId(){let d=ls.get("br26_dev");if(!d){d=(crypto.randomUUID?crypto.randomUUID():"10000000-1000-4000-8000-100000000000".replace(/[018]/g,c=>(c^crypto.getRandomValues(new Uint8Array(1))[0]&15>>c/4).toString(16)));ls.set("br26_dev",d)}return d}
+async function rpc(fn,body){const r=await fetch(ENQ.url.replace(/\/$/,"")+"/rest/v1/rpc/"+fn,{method:"POST",headers:Object.assign({apikey:ENQ.key,"Content-Type":"application/json"},/^eyJ/.test(ENQ.key)?{Authorization:"Bearer "+ENQ.key}:{}),body:JSON.stringify(body||{})});if(!r.ok)throw new Error("http "+r.status);return r.json()}
+function enqRows(rows,mine,max){const tot=rows.reduce((a,x)=>a+x.n,0);const top=rows[0]&&rows[0].n;return rows.slice(0,max||rows.length).map(x=>{const pc=tot?100*x.n/tot:0;return `<div class="enq-row${x.k===mine?" mine":""}${x.n&&x.n===top?" top":""}"><span>${ENQ_L[x.k]}</span><span class="bar"><i style="width:${pc.toFixed(1)}%"></i></span><em>${pc.toFixed(1).replace(".",",")}% · ${x.n.toLocaleString("pt-BR")}</em></div>`}).join("")}
+function enqSorted(){const m=Object.fromEntries((enqData||[]).map(x=>[x.opcao,Number(x.total)]));return ENQ_OP.map(([k])=>({k,n:m[k]||0})).sort((a,b)=>b.n-a.n)}
+function renderEnq(){
+ const el=$("#enqBody");
+ if(!enqOn){el.innerHTML='<p class="meta">A enquete abre em breve.</p>';return}
+ if(!enqHere){el.innerHTML=`<div class="enq-cta"><a class="pri" href="${ENQ.site}#enquete" target="_blank" rel="noopener">Responder no site público ↗</a><span class="meta" style="margin:0">A enquete e a parcial ao vivo funcionam no site público do guia.</span></div>`;return}
+ const mine=ls.get("br26_voto");
+ if(!enqData){el.innerHTML='<p class="meta">Carregando parcial…</p>';return}
+ const rows=enqSorted(),tot=rows.reduce((a,x)=>a+x.n,0);
+ el.innerHTML=(mine?"":`<div class="enq-cta"><button class="pri" type="button" id="enqOpen">Responder a enquete</button></div>`)+(tot?enqRows(rows,mine):'<p class="meta">Ainda não há respostas. Seja o primeiro a responder.</p>')+`<div class="enq-meta"><span>${tot.toLocaleString("pt-BR")} resposta${tot===1?"":"s"}</span><span>Atualiza sozinha a cada 20 s · última às ${new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit",second:"2-digit"})}</span></div>`;
+ const b=$("#enqOpen");if(b)b.addEventListener("click",openEnq);
+}
+async function loadEnq(){try{enqData=await rpc("parcial");renderEnq();if($("#enqThanks")&&!$("#enqThanks").hidden)$("#enqMini").innerHTML=enqRows(enqSorted(),ls.get("br26_voto"),4)}catch(e){if(!enqData)$("#enqBody").innerHTML='<p class="meta">Não foi possível carregar a parcial agora. Tentaremos de novo em instantes.</p>'}}
+function startEnqPoll(){if(enqTimer)return;loadEnq();enqTimer=setInterval(()=>{if(!document.hidden)loadEnq()},20000)}
+function openEnq(){const d=$("#enqDlg");if(!d||d.open)return;$("#enqForm").hidden=false;$("#enqThanks").hidden=true;try{d.showModal()}catch(e){d.setAttribute("open","")}}
+function closeEnq(){const d=$("#enqDlg");if(d.close)d.close();else d.removeAttribute("open")}
+(function initEnq(){
+ const ops=ENQ_OP.slice(0,-1);for(let i=ops.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[ops[i],ops[j]]=[ops[j],ops[i]]}ops.push(ENQ_OP[ENQ_OP.length-1]);
+ $("#enqOpts").insertAdjacentHTML("beforeend",ops.map(([k,l])=>`<label><input type="radio" name="enqOp" value="${k}" id="enq-${k}"> ${l}</label>`).join(""));
+ $("#enqOpts").addEventListener("change",()=>{$("#enqSend").disabled=false});
+ $("#enqLater").addEventListener("click",()=>{ss.set("br26_later","1");closeEnq()});
+ $("#enqClose").addEventListener("click",closeEnq);
+ $("#enqSee").addEventListener("click",closeEnq);
+ $("#enqDlg").addEventListener("cancel",()=>ss.set("br26_later","1"));
+ $("#enqForm").addEventListener("submit",async e=>{
+  e.preventDefault();const sel=document.querySelector('input[name="enqOp"]:checked');if(!sel)return;
+  const btn=$("#enqSend"),err=$("#enqErr");btn.disabled=true;btn.textContent="Enviando…";err.hidden=true;
+  try{
+   const r=await rpc("votar",{p_dispositivo:devId(),p_opcao:sel.value});
+   if(r==="ok"||r==="ja_votou"){ls.set("br26_voto",r==="ok"?sel.value:(ls.get("br26_voto")||"registrado"));$("#enqForm").hidden=true;$("#enqThanks").hidden=false;if(r==="ja_votou")$("#enqThanks h2").textContent="Este aparelho já respondeu";await loadEnq();$("#enqMini").innerHTML=enqRows(enqSorted(),ls.get("br26_voto"),4)}
+   else{err.textContent=r==="limite"?"Muitas respostas vindas da sua rede na última hora. Tente de novo mais tarde.":"Não foi possível registrar. Escolha uma opção e tente de novo.";err.hidden=false}
+  }catch(x){err.textContent="Sem conexão com o servidor da enquete. Tente de novo em instantes.";err.hidden=false}
+  btn.disabled=false;btn.textContent="Enviar resposta";
+ });
+ renderEnq();
+ if(enqOn&&enqHere){startEnqPoll();if(!ls.get("br26_voto")&&!ss.get("br26_later"))setTimeout(openEnq,1500)}
+})();
 
 /* navegação */
 const chips=$("#chips");
