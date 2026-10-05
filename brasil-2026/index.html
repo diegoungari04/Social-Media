@@ -255,6 +255,33 @@ h4.sub::after{content:"";flex:1;height:1px;background:var(--line)}
 @media (max-width:700px){.win{grid-template-columns:1fr}}
 .win div{background:var(--panel2);border-radius:6px;padding:12px 14px;font-size:14px}
 .win b{display:block;font-family:var(--mono);font-size:12px;color:var(--acc);margin-bottom:2px}
+/* fake news */
+.fk-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:14px;margin:0 0 18px}
+@media (max-width:760px){.fk-top{grid-template-columns:1fr}}
+.fk-upd{background:var(--hero);color:var(--hero-ink);border-radius:6px;padding:14px 16px}
+.fk-upd .k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--hl)}
+.fk-upd b{display:block;font-family:var(--disp);font-stretch:72%;font-size:28px;font-weight:800;margin:4px 0}
+.fk-upd small{font-size:12.5px;color:var(--hero-mute)}
+.fk-sum{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}
+.fk-sum div{padding:10px 12px 10px 0;border-bottom:1px solid var(--line)}
+.fk-sum b{display:block;font-family:var(--disp);font-stretch:62%;font-weight:900;font-size:46px;line-height:.9;font-variant-numeric:tabular-nums}
+.fk-sum span{font-size:13px;color:var(--mute)}
+.fk-fil{display:flex;flex-direction:column;gap:6px;margin:0 0 14px}
+.fk-fil .seg{display:flex;flex-wrap:wrap;width:fit-content;max-width:100%;margin:0}
+.fk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.fk{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0;position:relative}
+.fk .stamp{align-self:flex-start;font-family:var(--disp);font-stretch:70%;font-weight:900;font-size:20px;letter-spacing:.06em;text-transform:uppercase;padding:2px 10px;border:2.5px solid var(--sc);color:var(--sc);border-radius:4px;transform:rotate(-2deg)}
+.fk q{font-family:var(--disp);font-stretch:85%;font-weight:700;font-size:19px;line-height:1.25;quotes:none}
+.fk p{margin:0;font-size:14.5px;color:var(--mute)}
+.fk .tags{display:flex;flex-wrap:wrap;gap:5px;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em}
+.fk .tags span{padding:2px 6px;border-radius:3px;background:var(--panel2);color:var(--mute)}
+.fk .tags .t-lula{background:var(--lu-s);color:var(--lu)}.fk .tags .t-flavio{background:var(--fl-s);color:var(--fl)}
+.fk .tags .t-ia{background:var(--acc-s);color:var(--acc)}
+.fk .src{margin:auto 0 0;font-family:var(--mono);font-size:11.5px}
+.fk-tips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 0}
+@media (max-width:760px){.fk-tips{grid-template-columns:1fr}}
+.fk-tips div{background:var(--panel2);border-radius:6px;padding:12px 14px;font-size:14px}
+.fk-tips b{display:block;margin-bottom:3px}
 /* seletor de cargo */
 .who{display:inline-flex;gap:0;margin:0 12px 14px 0;border:2px solid var(--ink);border-radius:6px;overflow:hidden;vertical-align:top}
 .who button{font:inherit;font-family:var(--disp);font-stretch:78%;font-weight:750;font-size:16px;letter-spacing:.02em;text-transform:uppercase;color:var(--ink);background:var(--panel);border:0;padding:7px 16px;cursor:pointer}
@@ -300,9 +327,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
   <div class="hero-grid">
    <div class="bu" aria-label="Resultado do primeiro turno">
     <div class="bu-h"><span>1º turno · 04.10.2026</span><span>100% apurado · votos válidos</span></div>
-    <div class="bu-r"><span class="n">Flávio Bolsonaro<small>PL · 22</small></span><span class="p" style="color:var(--fl)">47,50%</span><span class="bar"><i style="width:47.5%;background:var(--fl)"></i></span></div>
-    <div class="bu-r"><span class="n">Lula<small>PT · 13</small></span><span class="p" style="color:var(--lu)">44,61%</span><span class="bar"><i style="width:44.61%;background:var(--lu)"></i></span></div>
-    <p class="bu-f">Diferença ≈ 2,6 milhões de votos · demais candidatos: 7,9% · Fonte: TSE</p>
+    <div class="bu-r"><span class="n">Flávio Bolsonaro<small>PL · 22</small></span><span class="p" style="color:var(--fl)">47,03%</span><span class="bar"><i style="width:47.03%;background:var(--fl)"></i></span></div>
+    <div class="bu-r"><span class="n">Lula<small>PT · 13</small></span><span class="p" style="color:var(--lu)">45,16%</span><span class="bar"><i style="width:45.16%;background:var(--lu)"></i></span></div>
+    <p class="bu-f">56.104.503 × 53.879.538 votos · diferença de 2,22 milhões · demais candidatos: 7,81% · Fonte: TSE</p>
    </div>
    <div class="count">
     <div><span class="big" id="days">20</span></div>
@@ -320,7 +347,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <a href="#propostas" data-id="propostas" data-n="04">Propostas e eficácia</a>
  <a href="#trajetoria" data-id="trajetoria" data-n="05">Trajetória e conquistas</a>
  <a href="#ficha" data-id="ficha" data-n="06">Ficha limpa</a>
- <a href="#metodo" data-id="metodo" data-n="07">Fontes e método</a>
+ <a href="#fakes" data-id="fakes" data-n="07">Fake news</a>
+ <a href="#metodo" data-id="metodo" data-n="08">Fontes e método</a>
 </div><div class="prog" id="prog"></div></nav>
 
 <main class="wrap">
@@ -401,8 +429,29 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <p class="note">Pela Lei da Ficha Limpa (LC 135/2010), fica inelegível quem é condenado por órgão colegiado em certos crimes. Investigação e denúncia não tornam ninguém culpado: vale a presunção de inocência. Anulação de processo também não equivale a absolvição de mérito; significa que não existe condenação válida. Circulam conteúdos falsos sobre os dois candidatos; em 2026 a Justiça mandou remover publicação falsa que ligava Flávio ao caso Master. Os itens abaixo se baseiam em decisões judiciais e documentos oficiais.</p>
 </section>
 
+<section class="blk" id="fakes" aria-labelledby="h-fak">
+ <div class="sh"><span class="num">07</span><h2 id="h-fak">Fake news: <span class="hl">mito ou verdade?</span></h2></div>
+ <p class="intro">O que circula na internet sobre os candidatos e o que eles mesmos afirmam, conferido por agências de checagem com certificação internacional (IFCN). Reproduzimos o veredito de cada agência e o link para a checagem completa. A lista é atualizada automaticamente todos os dias até o 2º turno.</p>
+ <div class="fk-top">
+  <div class="fk-upd"><span class="k">Última atualização</span><b id="fkUpd">carregando…</b><small>Busca diária em Lupa, Aos Fatos, Estadão Verifica, UOL Confere, g1 Fato ou Fake, AFP Checamos, Comprova e TSE</small></div>
+  <div class="fk-sum" id="fkSum"></div>
+ </div>
+ <div class="fk-fil">
+  <div class="tabs" role="group" aria-label="Sobre quem" id="fkWho"></div>
+  <div class="seg" role="group" aria-label="Tipo" id="fkTipo"><button data-t="" aria-pressed="true">Tudo</button><button data-t="boato" aria-pressed="false">Boatos na internet</button><button data-t="fala" aria-pressed="false">Falas dos candidatos</button></div>
+  <div class="seg" role="group" aria-label="Veredito" id="fkVer"><button data-v="" aria-pressed="true">Todos</button><button data-v="falso" aria-pressed="false">Mito</button><button data-v="verdadeiro" aria-pressed="false">Verdade</button><button data-v="parcial" aria-pressed="false">Exagerado ou sem contexto</button></div>
+ </div>
+ <div class="fk-grid" id="fkGrid"><p class="meta">Carregando checagens…</p></div>
+ <div class="fk-tips">
+  <div><b>Antes de compartilhar</b>Desconfie de vídeo com voz “robótica”, boca fora de sincronia ou marca d'água de aplicativo de IA. Procure a mesma notícia em mais de um veículo.</div>
+  <div><b>Pesquisa sem registro é falsa</b>Toda pesquisa eleitoral divulgada precisa de registro no TSE. Confira no site PesqEle do tribunal.</div>
+  <div><b>Onde checar</b>Justiça Eleitoral: <a href="https://www.justicaeleitoral.jus.br/fato-ou-boato/" rel="noopener">Fato ou Boato</a>. Agências: <a href="https://www.agencialupa.org/" rel="noopener">Lupa</a>, <a href="https://www.aosfatos.org/" rel="noopener">Aos Fatos</a>, <a href="https://g1.globo.com/fato-ou-fake/" rel="noopener">g1 Fato ou Fake</a>.</div>
+ </div>
+ <p class="note">Como escolhemos: entram checagens publicadas por agências signatárias da IFCN sobre os quatro integrantes das chapas ou sobre o processo eleitoral, tanto boatos que atacam quanto boatos que favorecem cada lado, e falas dos dois candidatos. O veredito é o da agência, não deste guia. O número de itens por candidato reflete o que as agências checaram, não um equilíbrio forçado.</p>
+</section>
+
 <section class="blk met" id="metodo" aria-labelledby="h-met">
- <div class="sh"><span class="num">07</span><h2 id="h-met">Fontes e método</h2></div>
+ <div class="sh"><span class="num">08</span><h2 id="h-met">Fontes e método</h2></div>
  <p class="intro">Como as informações foram reunidas e onde conferir.</p>
  <details open><summary>Dados do cenário</summary><ul>
   <li>Desemprego e ocupação: IBGE, PNAD Contínua, trimestre até agosto de 2026 (divulgada em 29/09/2026).</li>
@@ -455,7 +504,7 @@ pts:["O mercado de trabalho vive o melhor momento da série histórica: 103,5 mi
 "Começou a transição da reforma tributária do consumo (2026–2033) e passou a valer a isenção de IR para quem ganha até R$ 5 mil."],
 src:"IBGE; Banco Central; Copom; Boletim Focus."},
 {id:"pol",t:"Político",
-stats:[["47,5% × 44,6%","Flávio × Lula no 1º turno; o país segue dividido quase ao meio","TSE, 04/10/2026",""],["27 anos","de pena de Jair Bolsonaro, condenado pelo STF por tentativa de golpe de Estado; está inelegível e preso","STF, set/2025",""],["R$ 50,4 bi","em emendas parlamentares na LOA 2025, patamar historicamente alto controlado pelo Congresso","LOA 2025; CNM",""]],
+stats:[["47,0% × 45,2%","Flávio × Lula no 1º turno; o país segue dividido quase ao meio","TSE, 04/10/2026",""],["27 anos","de pena de Jair Bolsonaro, condenado pelo STF por tentativa de golpe de Estado; está inelegível e preso","STF, set/2025",""],["R$ 50,4 bi","em emendas parlamentares na LOA 2025, patamar historicamente alto controlado pelo Congresso","LOA 2025; CNM",""]],
 pts:["Flávio herdou a base eleitoral do pai, que está inelegível, e unificou a direita em torno da candidatura.",
 "Lula, que busca o 4º mandato, terminou o 1º turno em segundo lugar.",
 "Em 2025 a Operação Sem Desconto revelou descontos indevidos em aposentadorias do INSS, estimados pela CGU em R$ 6,3 bilhões entre 2019 e 2024; o ministro da Previdência deixou o cargo.",
@@ -855,6 +904,27 @@ $("#prSort").addEventListener("click",e=>{const b=e.target.closest("button");if(
 $("#prio").addEventListener("click",e=>{const b=e.target.closest("[data-theme]");if(b){e.preventDefault();goTheme(b.dataset.theme)}});
 
 renderPri();
+
+/* fake news */
+const VER={falso:["Mito","var(--risk)"],verdadeiro:["Verdade","var(--ok)"],exagerado:["Exagerado","var(--warn)"],sem_contexto:["Falta contexto","var(--warn)"],sem_evidencias:["Sem provas","var(--warn)"]};
+const SOB={lula:"Lula",flavio:"Flávio",alckmin:"Alckmin",gaspar:"Gaspar",eleicao:"Eleição e urnas"};
+const EFE={ataca:"ataca",favorece:"favorece",atribui:"atribui fala falsa",neutro:""};
+let FK=[],fkW="",fkT="",fkV="";
+const fmtD=d=>!d?"":d.length===4?d:d.split("-").reverse().join("/");
+function renderFK(){
+ const L=FK.filter(x=>(!fkW||(fkW==="vices"?["alckmin","gaspar"].includes(x.sobre):x.sobre===fkW))&&(!fkT||x.tipo===fkT)&&(!fkV||(fkV==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===fkV)));
+ const c=k=>L.filter(x=>k==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===k).length;
+ $("#fkSum").innerHTML=`<div><b style="color:var(--risk)">${c("falso")}</b><span>mitos</span></div><div><b style="color:var(--ok)">${c("verdadeiro")}</b><span>verdades</span></div><div><b style="color:var(--warn)">${c("parcial")}</b><span>exagerados ou sem contexto</span></div>`;
+ $("#fkGrid").innerHTML=L.map(x=>{const v=VER[x.veredito]||VER.sem_evidencias;const ef=x.tipo==="boato"&&EFE[x.efeito]?`${EFE[x.efeito]} ${SOB[x.sobre]}`:"";
+  return `<article class="fk" style="--sc:${v[1]}"><span class="stamp">${v[0]}</span><q>${x.afirmacao}</q><p>${x.explicacao}</p><div class="tags"><span class="t-${x.sobre}">${x.tipo==="fala"?"Fala de "+(x.quem||SOB[x.sobre]):"Boato"+(ef?" · "+ef:"")}</span>${x.ia?'<span class="t-ia">Feito com IA</span>':""}<span>${fmtD(x.data)}</span></div><a class="src" href="${x.fonte.url}" rel="noopener" target="_blank">${x.fonte.nome} ↗</a></article>`}).join("")||'<p class="meta">Nenhuma checagem com esses filtros.</p>';
+}
+$("#fkWho").innerHTML=[["","Todos"],["lula","Lula"],["flavio","Flávio"],["vices","Vices"],["eleicao","Eleição e urnas"]].map(([k,l],i)=>`<button data-w="${k}" aria-pressed="${!i}">${l}</button>`).join("");
+[["#fkWho","w",v=>fkW=v],["#fkTipo","t",v=>fkT=v],["#fkVer","v",v=>fkV=v]].forEach(([id,a,set])=>$(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;set(b.dataset[a]);$(id).querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFK()}));
+fetch("checagens.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
+ FK=(d.itens||[]).sort((a,b)=>String(b.data).localeCompare(String(a.data)));
+ const u=new Date(d.atualizado);$("#fkUpd").textContent=isNaN(u)?d.atualizado:u.toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"});
+ renderFK();
+}).catch(()=>{$("#fkUpd").textContent="indisponível";$("#fkGrid").innerHTML='<p class="meta">Não foi possível carregar as checagens agora. Recarregue a página em instantes.</p>'});
 
 /* navegação */
 const chips=$("#chips");
