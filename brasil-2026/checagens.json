@@ -1,0 +1,455 @@
+{
+ "atualizado": "2026-10-05T13:00:00-03:00",
+ "itens": [
+  {
+   "id": "b-bandeira",
+   "data": "2026-10-04",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Lula jogou a bandeira do Brasil no chão depois de votar.",
+   "veredito": "falso",
+   "explicacao": "A bandeira foi entregue a um fotógrafo; o vídeo foi recortado para sugerir desrespeito.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/eleicoes/2026/10/04/lula-nao-jogou-bandeira-do-brasil-no-chao-apos-votar-simbolo-foi-entregue-a-fotografo/"
+   }
+  },
+  {
+   "id": "b-pedofilia",
+   "data": "2026-10-01",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Vídeo mostra Lula fazendo piada sobre abuso infantil e defendendo a pedofilia.",
+   "veredito": "falso",
+   "explicacao": "O trecho foi editado. No discurso original, Lula falava sobre exames de prevenção ao câncer de próstata.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/lula-discursa-cancer-de-prostata-nao-sobre-defesa-pedofilia/"
+   }
+  },
+  {
+   "id": "b-celular",
+   "data": "2026-10-01",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Vídeo mostra Lula defendendo o roubo de celulares.",
+   "veredito": "falso",
+   "explicacao": "Vídeo editado de forma enganosa: no original, Lula falava sobre exames preventivos de saúde. O trecho foi repetido em live da campanha adversária.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
+   }
+  },
+  {
+   "id": "b-waack",
+   "data": "2026",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": true,
+   "afirmacao": "O jornalista William Waack disse que Lula planeja um golpe se perder a eleição.",
+   "veredito": "falso",
+   "explicacao": "O vídeo foi criado com inteligência artificial; voz e movimento da boca não batem.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://aosfatos.org/noticias/william-waack-lula-golpe-eleicoes"
+   }
+  },
+  {
+   "id": "b-bets",
+   "data": "2026-10-01",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Lula é quem liberou as apostas on-line (bets) no Brasil.",
+   "veredito": "falso",
+   "explicacao": "As apostas de quota fixa foram legalizadas em 2018, no governo Temer. O governo Lula regulamentou o mercado em 2023.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/temer-lula-bets/"
+   }
+  },
+  {
+   "id": "b-36",
+   "data": "2026-06-02",
+   "tipo": "boato",
+   "sobre": "eleicao",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "A PF abriu o código-fonte das urnas e revelou que Lula teve só 36% dos votos em 2022.",
+   "veredito": "falso",
+   "explicacao": "A Polícia Federal informou que a informação não procede. Não houve essa perícia nem esse resultado.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/06/02/e-falso-que-pf-abriu-codigo-fonte-e-revelou-que-lula-teve-36-dos-votos-em-2022/"
+   }
+  },
+  {
+   "id": "b-jn78",
+   "data": "2026-06-26",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "favorece",
+   "ia": true,
+   "afirmacao": "Jornal Nacional divulgou pesquisa com 78% para Flávio Bolsonaro.",
+   "veredito": "falso",
+   "explicacao": "Deepfake: a imagem do jornalista César Tralli foi manipulada com IA. Não existe essa pesquisa.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/06/26/e-deepfake-video-do-jornal-nacional-sobre-pesquisa-com-78-para-flavio-bolsonaro/"
+   }
+  },
+  {
+   "id": "b-zeca",
+   "data": "2026-08-13",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "favorece",
+   "ia": true,
+   "afirmacao": "Zeca Pagodinho declarou apoio a Flávio Bolsonaro.",
+   "veredito": "falso",
+   "explicacao": "Deepfake feito a partir de uma entrevista do cantor à Veja em 2015.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/08/13/e-falso-que-zeca-pagodinho-declarou-apoio-a-flavio-bolsonaro-video-e-deepfake/"
+   }
+  },
+  {
+   "id": "b-milei",
+   "data": "2026-08-28",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "favorece",
+   "ia": true,
+   "afirmacao": "Vídeo mostra Javier Milei atacando Lula e declarando apoio a Flávio.",
+   "veredito": "falso",
+   "explicacao": "Deepfake criado a partir de uma foto de Milei publicada pela Forbes Argentina em 2024.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/08/28/deepfake-usa-imagem-de-milei-para-atacar-lula-e-declarar-apoio-a-flavio-bolsonaro/"
+   }
+  },
+  {
+   "id": "b-55",
+   "data": "2026-09-08",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "favorece",
+   "ia": true,
+   "afirmacao": "Pesquisa mostra Flávio com 55% dos votos.",
+   "veredito": "falso",
+   "explicacao": "Vídeo feito com inteligência artificial para simular uma pesquisa que não existe.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/09/08/video-usa-ia-para-criar-falsa-pesquisa-que-da-55-dos-votos-a-flavio-bolsonaro/"
+   }
+  },
+  {
+   "id": "b-bocadeurna",
+   "data": "2026-10-04",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "favorece",
+   "ia": false,
+   "afirmacao": "Pesquisa de boca de urna mostra Flávio eleito no 1º turno com 54,98%.",
+   "veredito": "falso",
+   "explicacao": "A pesquisa não existe. No resultado oficial, Flávio teve 47,03% dos votos válidos e houve 2º turno.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/04/e-falsa-pesquisa-de-boca-de-urna-que-mostra-flavio-eleito-em-1o-turno/"
+   }
+  },
+  {
+   "id": "b-salario",
+   "data": "2026-09-04",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "atribui",
+   "ia": true,
+   "afirmacao": "Vídeo mostra Flávio prometendo salário mínimo de R$ 3 mil.",
+   "veredito": "falso",
+   "explicacao": "Deepfake: o vídeo tem marca d'água de uma plataforma de criação de vídeos com IA. A promessa não consta do plano de governo.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/09/04/e-deepfake-video-de-flavio-bolsonaro-prometendo-salario-minimo-de-r-3-mil/"
+   }
+  },
+  {
+   "id": "b-elefante",
+   "data": "2026-10-04",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "ataca",
+   "ia": true,
+   "afirmacao": "Foto mostra Flávio Bolsonaro ao lado de um elefante abatido.",
+   "veredito": "falso",
+   "explicacao": "A imagem foi gerada por inteligência artificial.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/04/foto-de-flavio-bolsonaro-com-elefante-abatido-foi-gerada-por-ia/"
+   }
+  },
+  {
+   "id": "b-desiste",
+   "data": "2026-09-18",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Flávio Bolsonaro não vai disputar a eleição.",
+   "veredito": "falso",
+   "explicacao": "Flávio teve a candidatura registrada, disputou o 1º turno e está no 2º turno.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/09/18/e-falso-que-flavio-bolsonaro-nao-disputara-as-eleicoes/"
+   }
+  },
+  {
+   "id": "b-mandado",
+   "data": "2026-01-20",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "O STF expediu mandado de prisão contra Flávio por lavagem de dinheiro no caso Banco Master.",
+   "veredito": "falso",
+   "explicacao": "Não houve mandado de prisão. A Justiça do DF mandou o Facebook remover a publicação em janeiro de 2026. Atenção: em julho de 2026 o STF abriu um inquérito real sobre a relação de Flávio com o dono do Master, ainda sem denúncia (veja Ficha limpa).",
+   "fonte": {
+    "nome": "Decisão da 16ª Vara Cível de Brasília, noticiada pela imprensa",
+    "url": "https://tagteam.harvard.edu/hub_feeds/3884/feed_items/17269532"
+   }
+  },
+  {
+   "id": "b-provadevida",
+   "data": "2026-10-03",
+   "tipo": "boato",
+   "sobre": "eleicao",
+   "efeito": "neutro",
+   "ia": false,
+   "afirmacao": "Votar na eleição não serve como prova de vida do INSS.",
+   "veredito": "falso",
+   "explicacao": "Segundo a checagem, o comparecimento à votação pode, sim, ser usado na comprovação de vida.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/falso-voto-eleicoes-prova-vida-inss/"
+   }
+  },
+  {
+   "id": "f-lula-3pct",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“O Brasil só cresceu acima de 3% quando eu voltei.”",
+   "veredito": "falso",
+   "explicacao": "O PIB cresceu mais de 3% em outros governos, como 3,9% em 2011 e 4,8% em 2021. Lula já tinha repetido a frase e sido corrigido.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
+   }
+  },
+  {
+   "id": "f-lula-pena",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“90% dos brasileiros apoiam a pena de morte.”",
+   "veredito": "falso",
+   "explicacao": "Pesquisa Ipsos-Ipec de 2025 mostrou 43% a favor.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
+   }
+  },
+  {
+   "id": "f-lula-nobrega",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“Flávio empregou a mãe e a mulher de Adriano da Nóbrega no Senado.”",
+   "veredito": "falso",
+   "explicacao": "As contratações ocorreram na Assembleia Legislativa do Rio (Alerj), não no Senado, onde Flávio está desde 2019.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
+   }
+  },
+  {
+   "id": "f-lula-vereador",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“Flávio foi vereador aos 21 anos.”",
+   "veredito": "falso",
+   "explicacao": "O primeiro cargo de Flávio foi o de deputado estadual. Ele nunca foi vereador.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
+   }
+  },
+  {
+   "id": "f-lula-fome0",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“Nós criamos o Fome Zero.”",
+   "veredito": "verdadeiro",
+   "explicacao": "O programa foi lançado em 30 de janeiro de 2003, no primeiro mandato de Lula.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
+   }
+  },
+  {
+   "id": "f-lula-export",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“Com o tarifaço, as exportações para os EUA caíram 9,7%.”",
+   "veredito": "verdadeiro",
+   "explicacao": "As exportações brasileiras aos EUA caíram 9,7% entre janeiro e agosto de 2026.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
+   }
+  },
+  {
+   "id": "f-fl-censura",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Fomos impedidos de ir ao debate por censura.”",
+   "veredito": "falso",
+   "explicacao": "Não houve ordem judicial proibindo o debate; a emissora cancelou a transmissão.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
+   }
+  },
+  {
+   "id": "f-fl-fome",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Lula deixou os brasileiros passando fome.”",
+   "veredito": "falso",
+   "explicacao": "O Brasil saiu do Mapa da Fome da ONU em julho de 2025, no governo Lula.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
+   }
+  },
+  {
+   "id": "f-fl-bets",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Lula é o pai das bets.”",
+   "veredito": "falso",
+   "explicacao": "As apostas foram legalizadas em 2018, no governo Temer; o governo Lula regulamentou o setor em 2023.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
+   }
+  },
+  {
+   "id": "f-fl-pix",
+   "data": "2026-08-28",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“O Pix foi criado no governo Bolsonaro.”",
+   "veredito": "falso",
+   "explicacao": "O Pix foi concebido pelo Banco Central em 2018, no governo Temer, e lançado em dezembro de 2020, no governo Bolsonaro.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/"
+   }
+  },
+  {
+   "id": "f-fl-urnas",
+   "data": "2026-08-28",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Nunca questionei o processo eleitoral.”",
+   "veredito": "falso",
+   "explicacao": "Há declarações dele, entre 2014 e 2022, pondo em dúvida a segurança das urnas.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/"
+   }
+  },
+  {
+   "id": "f-fl-cpi",
+   "data": "2026-08-28",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Eu pedi a CPI do Banco Master.”",
+   "veredito": "exagerado",
+   "explicacao": "Ele assinou 2 dos 5 pedidos de CPI, todos depois da divulgação dos áudios em maio de 2026.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/"
+   }
+  },
+  {
+   "id": "f-fl-juro",
+   "data": "2026-08-28",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“O Brasil tem o maior juro real do mundo.”",
+   "veredito": "verdadeiro",
+   "explicacao": "Na data da checagem, o Brasil liderava o ranking global de juros reais.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/"
+   }
+  },
+  {
+   "id": "f-fl-abst",
+   "data": "2026-10-01",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“32 milhões de eleitores não votaram em 2022.”",
+   "veredito": "verdadeiro",
+   "explicacao": "Dados do TSE: 32,7 milhões de abstenções no 1º turno e 32,2 milhões no 2º turno de 2022.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
+   }
+  }
+ ]
+}
