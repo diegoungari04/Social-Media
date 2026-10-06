@@ -375,6 +375,7 @@ h4.sub::after{content:"";flex:1;height:1px;background:var(--line)}
 .elig{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 24px}
 @media (max-width:560px){.elig{grid-template-columns:1fr}}
 .elig div{background:var(--ok-s);border-radius:6px;padding:14px 16px;font-size:14.5px}
+.elig .el-l{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:8px 0 2px}
 .elig b{color:var(--ok);display:block;font-family:var(--disp);font-stretch:75%;font-size:20px;margin-bottom:2px}
 .note{font-size:14px;color:var(--mute);background:var(--panel2);border-radius:6px;padding:14px 16px;margin:22px 0 0;max-width:80ch}
 details{border-top:1px solid var(--line);padding:14px 0}
@@ -862,10 +863,10 @@ flv:[
 {st:"pre",t:"Emendas Pix para São José da Laje (AL)",o:"Auditoria do TCU apontou falta de rastreabilidade e de prestação de contas em três transferências, de cerca de R$ 6,2 milhões, indicadas pelo deputado.",d:"Uma representação anterior foi arquivada pela PGR, que não viu participação do deputado. Em agosto de 2026 o ministro Flávio Dino, do STF, mandou a PF investigar.",s:"Apuração inicial. Gaspar diz que as emendas seguiram as regras e que a execução cabe ao município.",f:"TCU; STF; GC Mais"}]
 };
 const ELIG={
-lu:["Lula: elegível.","Foi réu em 11 ações penais. Não tem condenação válida. A prisão de 580 dias decorreu de uma condenação anulada depois que o STF declarou o juiz Sergio Moro parcial. Duas condenações foram anuladas pelo STF em 2021, três ações terminaram em absolvição e as demais foram arquivadas ou trancadas, a maioria sem julgamento de mérito."],
-fl:["Flávio Bolsonaro: elegível.","Nunca foi condenado. Teve uma denúncia arquivada sem julgamento de mérito e responde a inquérito no STF, aberto em julho de 2026, sobre sua relação com o dono do Banco Master, documentada em mensagens tornadas públicas."],
-luv:["Geraldo Alckmin: elegível.","Nunca foi condenado. Uma ação penal eleitoral e uma ação de improbidade foram encerradas sem julgamento de mérito, por uso de provas anuladas; outra investigação foi arquivada."],
-flv:["Alfredo Gaspar: elegível.","Nunca foi denunciado. É alvo de duas apurações preliminares no STF, sem inquérito aberto."]};
+lu:["Lula","Nenhum processo em andamento.","A prisão de 580 dias (2018–2019) decorreu de uma condenação anulada depois que o STF declarou o juiz Sergio Moro parcial. Das ações penais que respondeu, três terminaram em absolvição e as demais foram anuladas, arquivadas ou trancadas."],
+fl:["Flávio Bolsonaro","Responde a inquérito no STF, aberto em julho de 2026, sobre sua relação com o dono do Banco Master, documentada em mensagens tornadas públicas.","Uma denúncia (caso da “rachadinha”) foi arquivada sem julgamento de mérito, por anulação das provas."],
+luv:["Geraldo Alckmin","Nenhum processo em andamento.","Uma ação penal eleitoral e uma ação de improbidade foram encerradas sem julgamento de mérito, por uso de provas anuladas; outra investigação foi arquivada."],
+flv:["Alfredo Gaspar","É alvo de duas apurações preliminares no STF, sem inquérito aberto.","Nunca foi denunciado."]};
 const FLMETA={lu:"11 ações penais, agrupadas em 5 blocos",fl:"1 denúncia e 1 inquérito",luv:"1 ação penal, 1 ação de improbidade e 1 investigação",flv:"2 apurações preliminares"};
 
 /* ================= RENDER ================= */
@@ -943,7 +944,7 @@ document.querySelector("#trajetoria .seg:not(.who)").addEventListener("click",e=
 const on=new Set(Object.keys(STL));
 $("#stFil").innerHTML=Object.entries(STL).map(([k,v])=>`<button class="st ${k}" data-k="${k}" aria-pressed="true">${v[0]}</button>`).join("");
 function fcase(c){const s=STL[c.st];return `<article class="case-f" style="--sc:${s[1]}"><div class="ch"><h4>${c.t}</h4><span class="stb">${s[0]}</span></div><dl><dt>Acusação</dt><dd>${c.o}</dd><dt>Andamento</dt><dd>${c.d}</dd><dt>Situação</dt><dd>${c.s}</dd><dt>Fonte</dt><dd style="color:var(--mute);font-size:13px">${c.f}</dd></dl></article>`}
-function renderFL(){$("#elig").innerHTML=["lu","fl"].map(k=>`<div><b>${ELIG[k+flW][0]}</b>${ELIG[k+flW][1]}</div>`).join("");$("#flGrid").innerHTML=["lu","fl"].map(c0=>{const k=c0+flW,d=TRJ[k],l=FL[k].filter(c=>on.has(c.st));return `<div class="col" style="--c:var(--${c0})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${FLMETA[k]}${l.length<FL[k].length?` · ${l.length} visíveis`:""}</p>${l.map(fcase).join("")||'<p class="meta">Nenhum caso com esta situação.</p>'}</div>`}).join("")}
+function renderFL(){$("#elig").innerHTML=["lu","fl"].map(k=>{const e=ELIG[k+flW];return `<div><b>${e[0]}: elegível, sem condenação em vigor.</b><span class="el-l">Hoje</span>${e[1]}<span class="el-l">Histórico</span>${e[2]}</div>`}).join("");$("#flGrid").innerHTML=["lu","fl"].map(c0=>{const k=c0+flW,d=TRJ[k],l=FL[k].filter(c=>on.has(c.st));return `<div class="col" style="--c:var(--${c0})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${FLMETA[k]}${l.length<FL[k].length?` · ${l.length} visíveis`:""}</p>${l.map(fcase).join("")||'<p class="meta">Nenhum caso com esta situação.</p>'}</div>`}).join("")}
 $("#stFil").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;on.has(k)?on.delete(k):on.add(k);b.setAttribute("aria-pressed",on.has(k));renderFL()});
 renderFL();
 $("#flWho").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;flW=b.dataset.w;$("#flWho").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFL()});
