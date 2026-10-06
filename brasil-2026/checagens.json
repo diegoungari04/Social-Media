@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-06T20:28:04-03:00",
+ "atualizado": "2026-10-06T20:33:19-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -614,6 +614,51 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/05/27/e-falso-que-pf-concluiu-falta-de-crime-em-mensagens-entre-flavio-bolsonaro-e-vorcaro/"
+   }
+  },
+  {
+   "id": "b-lula-indicou-moraes",
+   "data": "2026-09-17",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Lula indicou Alexandre de Moraes para o STF.",
+   "veredito": "falso",
+   "explicacao": "Moraes foi indicado por Michel Temer em 3 de fevereiro de 2017 e aprovado pelo Senado no mesmo mês. Lula não era presidente na época.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/lula-flavio-crise-stf/"
+   }
+  },
+  {
+   "id": "f-lula-flavio-votou-moraes",
+   "data": "2026-09-17",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“Quando Alexandre de Moraes foi indicado ao Supremo, o Flávio era senador. Deve ter votado nele.”",
+   "veredito": "falso",
+   "explicacao": "Em fevereiro de 2017, quando o Senado aprovou Moraes, Flávio era deputado estadual no Rio. Ele só virou senador em fevereiro de 2019.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/lula-flavio-crise-stf/"
+   }
+  },
+  {
+   "id": "f-fl-centavo-publico",
+   "data": "2026-09-17",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Não tem absolutamente nada de errado nesse filme, nem um centavo de dinheiro público.”",
+   "veredito": "falso",
+   "explicacao": "A Polícia Federal investiga justamente se emendas parlamentares ajudaram a financiar o filme “Dark Horse”.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/lula-flavio-crise-stf/"
    }
   }
  ]
