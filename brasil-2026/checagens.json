@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-05T13:00:00-03:00",
+ "atualizado": "2026-10-06T08:59:34-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -449,6 +449,126 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
+   }
+  },
+  {
+   "id": "b-dias-diferentes",
+   "data": "2026-10-04",
+   "tipo": "boato",
+   "sobre": "eleicao",
+   "efeito": "neutro",
+   "ia": false,
+   "afirmacao": "O TSE mandou eleitores de Lula e de Bolsonaro votarem em dias e horários diferentes.",
+   "veredito": "falso",
+   "explicacao": "Todos votam no mesmo dia e horário. O TSE desmentiu, e o TRE-RJ classificou o áudio que circulou como manifestamente falso. O 2º turno é em 25 de outubro para todos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/eleicoes/2026/10/04/e-falso-que-lulistas-e-bolsonaristas-devem-votar-em-dias-e-horarios-diferentes/"
+   }
+  },
+  {
+   "id": "f-lula-g20",
+   "data": "2026-10-04",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“O Brasil foi o único país do G20 a ter superávit primário entre 2003 e 2010.”",
+   "veredito": "falso",
+   "explicacao": "A Argentina, também do G20, teve o mesmo resultado no período.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
+   }
+  },
+  {
+   "id": "f-lula-superavit8",
+   "data": "2026-10-04",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“O Brasil fez superávit primário durante oito anos.”",
+   "veredito": "verdadeiro",
+   "explicacao": "Houve superávit primário em todos os anos de 2003 a 2010, entre R$ 60,9 bilhões e R$ 118 bilhões por ano.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
+   }
+  },
+  {
+   "id": "f-lula-fome2",
+   "data": "2026-10-04",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“Vencemos a fome uma vez e vamos vencer outra vez.”",
+   "veredito": "sem_contexto",
+   "explicacao": "O Brasil saiu do Mapa da Fome, mas 1,2 milhão de pessoas ainda vivem insegurança alimentar grave e 44,8 milhões não conseguem pagar uma dieta saudável.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
+   }
+  },
+  {
+   "id": "f-fl-reeleicao",
+   "data": "2026-10-04",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Sou o único candidato comprometido com o fim da reeleição.”",
+   "veredito": "falso",
+   "explicacao": "Outros candidatos do 1º turno, como Cury, Caiado, Zema e Renan Santos, também defenderam publicamente o fim da reeleição.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
+   }
+  },
+  {
+   "id": "f-fl-endividados",
+   "data": "2026-10-04",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Temos recorde de brasileiros endividados.”",
+   "veredito": "sem_contexto",
+   "explicacao": "O endividamento das famílias subiu de 43,13% (jan/2023) para 51,06% (ago/2026), mas a alta começou no governo Bolsonaro, acelerada pela pandemia.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
+   }
+  },
+  {
+   "id": "f-fl-350bi",
+   "data": "2026-10-04",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“O governo gastou R$ 350 bilhões para vencer a eleição.”",
+   "veredito": "exagerado",
+   "explicacao": "As medidas somam R$ 328 bilhões, dos quais R$ 55 bilhões são renúncias de impostos, não gastos diretos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
+   }
+  },
+  {
+   "id": "f-fl-stf4",
+   "data": "2026-10-04",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“O próximo presidente vai indicar quatro ministros do STF.”",
+   "veredito": "verdadeiro",
+   "explicacao": "Quatro vagas abrem no Supremo até 2030 por aposentadoria compulsória.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
    }
   }
  ]
