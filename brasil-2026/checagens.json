@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-06T08:59:34-03:00",
+ "atualizado": "2026-10-06T20:28:04-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -569,6 +569,51 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
+   }
+  },
+  {
+   "id": "f-fl-conhece-vorcaro",
+   "data": "2026-09-24",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "Flávio negou conhecer Daniel Vorcaro, dono do Banco Master (março de 2026).",
+   "veredito": "falso",
+   "explicacao": "Em maio, Flávio admitiu as mensagens em que chamava o banqueiro de “irmão” e “irmãozão”. A PF encontrou 110 registros de contato entre os dois. Depois, à CNN, ele negou ter intimidade e disse que “irmão” é o jeito carioca de falar. O Aos Fatos inclui a negativa entre 43 declarações falsas ou enganosas de Flávio sobre o caso.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/flavio-mentiu-ao-menos-43-vezes-sobre-envolvimento-com-vorcaro/"
+   }
+  },
+  {
+   "id": "f-fl-e-mentira",
+   "data": "2026-05-13",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“É mentira, pelo amor de Deus, de onde você tirou isso?” (sobre as mensagens com Vorcaro)",
+   "veredito": "falso",
+   "explicacao": "As mensagens eram autênticas, e o próprio Flávio depois admitiu a troca de mensagens e o recebimento dos recursos por intermediários.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/flavio-mentiu-ao-menos-43-vezes-sobre-envolvimento-com-vorcaro/"
+   }
+  },
+  {
+   "id": "b-pf-sem-crime",
+   "data": "2026-05-27",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "favorece",
+   "ia": false,
+   "afirmacao": "A PF concluiu que não há crime nas mensagens entre Flávio Bolsonaro e Vorcaro.",
+   "veredito": "falso",
+   "explicacao": "A Polícia Federal não fez essa conclusão. Em julho de 2026 o STF abriu inquérito, a pedido da própria PF, para investigar a relação.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/05/27/e-falso-que-pf-concluiu-falta-de-crime-em-mensagens-entre-flavio-bolsonaro-e-vorcaro/"
    }
   }
  ]
