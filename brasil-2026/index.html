@@ -288,6 +288,41 @@ h4.sub::after{content:"";flex:1;height:1px;background:var(--line)}
 #enqDlg .acts{display:flex;justify-content:flex-end;gap:8px;margin-top:16px;flex-wrap:wrap}
 #enqDlg .ghost{font:inherit;font-weight:600;font-size:15px;background:none;color:var(--mute);border:1px solid var(--line);border-radius:6px;padding:10px 14px;cursor:pointer}
 #enqMini .enq-row{grid-template-columns:minmax(0,1fr) 70px}#enqMini .enq-row .bar{grid-column:1/-1;grid-row:2}
+/* fakeômetro */
+.fm{border:2px solid var(--ink);border-radius:8px;background:var(--panel);margin:0 0 22px;overflow:hidden}
+.fm-h{padding:16px 18px 6px}
+.fm-h .k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
+.fm-h h3{font-size:clamp(24px,4vw,34px);font-weight:850;font-stretch:70%}
+.fm-h p{margin:6px 0 0;font-size:14px;color:var(--mute)}
+.fm-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:0}
+@media (max-width:820px){.fm-grid{grid-template-columns:1fr}}
+.fm-card{padding:14px 18px 16px;min-width:0;border-top:1px solid var(--line)}
+.fm-card+.fm-card{border-left:1px solid var(--line)}
+@media (max-width:820px){.fm-card+.fm-card{border-left:0}}
+.fm-card h4{font-family:var(--disp);font-stretch:78%;font-size:19px;font-weight:750;margin:0}
+.fm-sub{font-size:13px;color:var(--mute);margin:4px 0 12px}
+.fm-gauges{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:420px){.fm-gauges{grid-template-columns:1fr}}
+.fm-g{min-width:0;text-align:center}
+.fm-g svg{width:100%;max-width:220px;height:auto;display:block;margin:0 auto}
+.fm-g .nm{font-weight:700;font-size:15px;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:6px}
+.fm-g .nm i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.fm-g .n{font-family:var(--mono);font-size:11.5px;color:var(--mute);margin:2px 0 8px}
+.fm-stack{display:flex;height:12px;gap:2px;border-radius:3px;overflow:hidden;background:var(--panel2)}
+.fm-stack span{display:block;height:100%}
+.fm-stack span:first-child{border-radius:3px 0 0 3px}.fm-stack span:last-child{border-radius:0 3px 3px 0}
+.fm-nums{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--mute);margin-top:4px;font-variant-numeric:tabular-nums}
+.fm-leg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;font-size:12.5px;color:var(--mute)}
+.fm-leg span{display:inline-flex;align-items:center;gap:6px}
+.fm-leg i{width:12px;height:12px;border-radius:2px;display:inline-block}
+.hatch{background:repeating-linear-gradient(45deg,var(--ink) 0 2px,transparent 2px 5px);border:1px solid var(--ink);box-sizing:border-box}
+.fm-row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:4px 10px;align-items:center;margin:0 0 12px}
+.fm-row .nm{font-weight:700;font-size:14px;grid-row:span 2;display:flex;align-items:center;gap:6px}
+.fm-row .nm i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.fm-bar{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--ink);font-variant-numeric:tabular-nums}
+.fm-bar b{display:block;height:12px;border-radius:0 4px 4px 0;min-width:2px;background:var(--ink)}
+.fm-bar b.fav{background:repeating-linear-gradient(45deg,var(--ink) 0 2px,transparent 2px 5px);border:1px solid var(--ink);box-sizing:border-box}
+.fm-note{margin:0;padding:12px 18px;background:var(--panel2);font-size:13px;color:var(--mute)}
 /* fake news */
 .fk-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:14px;margin:0 0 18px}
 @media (max-width:760px){.fk-top{grid-template-columns:1fr}}
@@ -340,6 +375,13 @@ h4.sub::after{content:"";flex:1;height:1px;background:var(--line)}
 .elig{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 24px}
 @media (max-width:560px){.elig{grid-template-columns:1fr}}
 .elig div{background:var(--ok-s);border-radius:6px;padding:14px 16px;font-size:14.5px}
+.gloss{margin:0 0 18px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 16px}
+.gloss summary{font-weight:700;font-size:15px}
+.gloss dl{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:8px 16px;margin:12px 0 4px;font-size:14px}
+.gloss dt{font-weight:700;color:var(--ink)}
+.gloss dd{margin:0;color:var(--mute)}
+@media (max-width:600px){.gloss dl{grid-template-columns:1fr;gap:2px}.gloss dd{margin-bottom:8px}}
+.elig .el-l{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:8px 0 2px}
 .elig b{color:var(--ok);display:block;font-family:var(--disp);font-stretch:75%;font-size:20px;margin-bottom:2px}
 .note{font-size:14px;color:var(--mute);background:var(--panel2);border-radius:6px;padding:14px 16px;margin:22px 0 0;max-width:80ch}
 details{border-top:1px solid var(--line);padding:14px 0}
@@ -461,10 +503,26 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <p class="intro">Casos criminais e de corrupção com envolvimento direto de cada candidato: investigações, denúncias, condenações e como terminaram. Entram só casos em que o próprio candidato foi investigado, denunciado ou julgado. Escândalos que atingiram governos, partidos ou aliados dos dois (mensalão e Petrobras; fraude no INSS; Banco Master, que cita aliados de ambos) ficam de fora porque não há acusação formal contra o candidato. A mesma régua vale para os candidatos a vice.</p>
  <div class="who" role="group" aria-label="Escolher cargo" id="flWho"><button data-w="" aria-pressed="true">Presidente</button><button data-w="v" aria-pressed="false">Vice</button></div>
  <div class="elig" id="elig"></div>
+ <details class="gloss"><summary>Entenda os termos jurídicos</summary>
+  <dl>
+   <dt>Investigação (inquérito)</dt><dd>A polícia apura se houve crime. Ninguém é acusado ainda.</dd>
+   <dt>Checagem inicial</dt><dd>Etapa anterior à investigação: o tribunal manda verificar se há base mínima para investigar.</dd>
+   <dt>Acusação formal (denúncia)</dt><dd>O Ministério Público leva o caso à Justiça e pede a condenação. Se o juiz aceita, a pessoa vira ré e começa o processo.</dd>
+   <dt>Condenação</dt><dd>O juiz decide que a pessoa é culpada. Pela Lei da Ficha Limpa, só a condenação por um tribunal (colegiado) torna alguém inelegível.</dd>
+   <dt>Absolvição</dt><dd>A Justiça analisa as provas e decide que a pessoa não é culpada.</dd>
+   <dt>Condenação cancelada (anulada)</dt><dd>A condenação deixa de valer porque o processo teve um erro grave, como um juiz parcial ou que não podia julgar o caso. A pessoa volta a ser considerada inocente.</dd>
+   <dt>Encerrado sem decisão sobre culpa</dt><dd>Quando o juiz diz que o caso foi encerrado “sem julgamento de mérito”: o processo acabou sem a Justiça dizer se a pessoa é culpada ou inocente. Acontece quando as provas são invalidadas, quando passa o prazo legal ou quando o caso estava no tribunal errado. Vale a presunção de inocência.</dd>
+   <dt>Provas invalidadas (nulas)</dt><dd>Provas obtidas de forma ilegal, como dados bancários quebrados por um juiz que não podia cuidar do caso. Não podem ser usadas.</dd>
+   <dt>Prescrição</dt><dd>Passou o prazo que a lei dá para julgar o caso. O prazo cai pela metade para quem tem mais de 70 anos.</dd>
+   <dt>Juiz parcial (suspeição)</dt><dd>O juiz não agiu com isenção, favorecendo um dos lados. Isso anula as decisões dele no caso.</dd>
+   <dt>Improbidade</dt><dd>Processo na área cível, não criminal, por mau uso de dinheiro ou cargo público. Pode levar a multa e perda de direitos políticos, não a prisão.</dd>
+   <dt>Caixa 2</dt><dd>Dinheiro de campanha que não é declarado à Justiça Eleitoral.</dd>
+  </dl>
+ </details>
  <p style="margin:0 0 8px;font-size:14px;color:var(--mute)">Filtrar por situação:</p>
  <div class="legend" id="stFil"></div>
  <div class="fl-grid" id="flGrid"></div>
- <p class="note">Pela Lei da Ficha Limpa (LC 135/2010), fica inelegível quem é condenado por órgão colegiado em certos crimes. Investigação e denúncia não tornam ninguém culpado: vale a presunção de inocência. Anulação de processo também não equivale a absolvição de mérito; significa que não existe condenação válida. Circulam conteúdos falsos sobre os dois candidatos; em 2026 a Justiça mandou remover publicação falsa que ligava Flávio ao caso Master. Os itens abaixo se baseiam em decisões judiciais e documentos oficiais.</p>
+ <p class="note">Pela Lei da Ficha Limpa (LC 135/2010), fica inelegível quem é condenado por órgão colegiado em certos crimes. Investigação e denúncia não tornam ninguém culpado: vale a presunção de inocência. Quando um processo é cancelado ou encerrado sem decisão sobre culpa, a Justiça não disse que a pessoa é culpada nem inocente; vale a presunção de inocência. Circulam conteúdos falsos sobre os dois candidatos; em 2026 a Justiça mandou remover publicação falsa que ligava Flávio ao caso Master. Os itens abaixo se baseiam em decisões judiciais e documentos oficiais.</p>
 </section>
 
 <section class="blk" id="fakes" aria-labelledby="h-fak">
@@ -473,6 +531,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <div class="fk-top">
   <div class="fk-upd"><span class="k">Última atualização</span><b id="fkUpd">carregando…</b><small>Busca diária em Lupa, Aos Fatos, Estadão Verifica, UOL Confere, g1 Fato ou Fake, AFP Checamos, Comprova e TSE</small></div>
   <div class="fk-sum" id="fkSum"></div>
+ </div>
+<div class="fm" id="fakeometro" aria-labelledby="h-fm">
+  <div class="fm-h"><span class="k">Fakeômetro</span><h3 id="h-fm">Quem mais erra e quem mais é alvo</h3><p>Calculado automaticamente a partir das checagens desta seção. Atualiza junto com elas, todos os dias.</p></div>
+  <div class="fm-grid">
+   <div class="fm-card"><h4>Falas dos candidatos checadas</h4><p class="fm-sub">Percentual de falas que as agências classificaram como falsas. O ponteiro mostra só os falsos; a barra abaixo mostra também exageradas, sem contexto e verdadeiras.</p><div class="fm-gauges" id="fmGauges"></div><div class="fm-leg"><span><i style="background:var(--risk)"></i>Falso</span><span><i style="background:var(--warn)"></i>Exagerado ou sem contexto</span><span><i style="background:var(--ok)"></i>Verdadeiro</span></div></div>
+   <div class="fm-card"><h4>Boatos na internet</h4><p class="fm-sub">Quantos boatos checados atacam cada candidato e quantos tentam favorecê-lo.</p><div id="fmVit"></div><div class="fm-leg"><span><i style="background:var(--ink)"></i>Atacam</span><span><i class="hatch"></i>Favorecem</span></div></div>
+  </div>
+  <p class="fm-note" id="fmNote"></p>
  </div>
  <div class="fk-fil">
   <div class="tabs" role="group" aria-label="Sobre quem" id="fkWho"></div>
@@ -799,31 +865,31 @@ notes:[["Ressalva","Não teve cargo no Executivo além de secretarias estaduais.
 };
 
 /* ================= 5. FICHA LIMPA ================= */
-const STL={anul:["Condenação anulada","var(--warn)"],arq:["Arquivado ou trancado","var(--neu)"],abs:["Absolvido","var(--ok)"],inv:["Investigação em andamento","var(--risk)"],pre:["Apuração preliminar","var(--acc)"]};
+const STL={anul:["Condenação cancelada","var(--warn)"],arq:["Encerrado sem decisão sobre culpa","var(--neu)"],abs:["Absolvido","var(--ok)"],inv:["Investigação em andamento","var(--risk)"],pre:["Checagem inicial","var(--acc)"]};
 const FL={
 lu:[
-{st:"anul",t:"Lava Jato: tríplex do Guarujá",o:"Acusado de receber um apartamento da OAS como propina em troca de contratos na Petrobras (corrupção passiva e lavagem).",d:"Condenado por Sergio Moro (2017) e pelo TRF-4 (2018); pena fixada pelo STJ em 8 anos e 10 meses. Ficou preso 580 dias (abr/2018 a nov/2019). Em 2021 o STF anulou a condenação: a vara de Curitiba não era competente e Moro foi declarado parcial. Em 2022, o Comitê de Direitos Humanos da ONU concluiu que o processo violou direitos de Lula.",s:"Em janeiro de 2022 a Justiça Federal do DF declarou a prescrição (prazo cai pela metade para maiores de 70 anos) e arquivou o caso. Não houve rejulgamento nem absolvição de mérito.",f:"STF (HC 193.726 e HC 164.493); 12ª Vara Federal do DF; ConJur"},
-{st:"anul",t:"Lava Jato: sítio de Atibaia",o:"Acusado de receber reformas no sítio pagas por OAS e Odebrecht.",d:"Condenado em 1ª instância (2019) e pelo TRF-4 (17 anos). Anulado pelo STF em 2021 e enviado à Justiça Federal do DF.",s:"Encerrado sem nova condenação. A Justiça Federal do DF não deu seguimento a nova denúncia em 2022.",f:"STF; Justiça Federal do DF"},
-{st:"arq",t:"Instituto Lula e doações de empreiteiras",o:"Duas ações sobre terreno para o Instituto Lula e doações da Odebrecht.",d:"Em 2023 o ministro Ricardo Lewandowski, do STF, encerrou as ações por considerar ilícitas as provas do acordo de leniência da Odebrecht.",s:"Encerradas sem julgamento de mérito.",f:"STF"},
-{st:"arq",t:"Outras ações da Lava Jato e Zelotes",o:"Operação Janus (contratos da Odebrecht em Angola), Guiné Equatorial, propina da Odebrecht e a ação da Zelotes sobre a compra dos caças Gripen.",d:"Janus foi arquivada (2020); as ações da Guiné Equatorial e da propina da Odebrecht foram trancadas em 2021 por usarem provas anuladas; a ação da Zelotes foi encerrada em 2022–2023.",s:"Encerradas sem julgamento de mérito.",f:"STF; Justiça Federal do DF; Diário do Pará (levantamento)"},
-{st:"abs",t:"Absolvições: obstrução, “quadrilhão” e Zelotes",o:"Tentativa de comprar o silêncio de Nestor Cerveró; organização criminosa com dirigentes do PT; propina na edição de medida provisória para montadoras (2ª ação da Zelotes).",d:"Absolvido por falta de provas no caso Cerveró (2018) e na Zelotes (2021), e absolvido sumariamente no “quadrilhão” (2019). Nos três, pela Justiça Federal do DF.",s:"Absolvido.",f:"Justiça Federal do DF; Poder360"}],
+{st:"anul",t:"Lava Jato: tríplex do Guarujá",o:"Ser recompensado pela construtora OAS com um apartamento na praia, em troca de favorecê-la em contratos da Petrobras (corrupção e lavagem de dinheiro).",d:"O juiz Sergio Moro condenou Lula em 2017, e o tribunal de 2ª instância (TRF-4) confirmou em 2018. Lula ficou preso 580 dias, de abril de 2018 a novembro de 2019. Em 2021 o STF anulou a condenação por dois motivos. Primeiro, o caso nunca deveria ter sido julgado em Curitiba. Segundo, Moro não foi imparcial, ou seja, não julgou com isenção. Para chegar a essa conclusão, os ministros citaram: Lula foi levado à força para depor sem ter sido intimado antes; Moro mandou grampear os telefones de Lula, da família e dos advogados de defesa; e Moro aceitou ser ministro da Justiça de Jair Bolsonaro, adversário de Lula eleito em 2018. Moro deixou o governo em 2020 e se elegeu senador em 2022. Também em 2022, o Comitê de Direitos Humanos da ONU concluiu que Lula não teve um julgamento justo.",s:"A condenação que levou Lula à prisão foi cancelada porque o juiz não foi imparcial. O caso nunca foi julgado de novo: em 2022 a Justiça encerrou o processo porque passou o prazo legal para julgá-lo (prescrição).",f:"STF (HC 164.493 e HC 193.726); ConJur; Comitê de Direitos Humanos da ONU"},
+{st:"anul",t:"Lava Jato: sítio de Atibaia",o:"Receber reformas num sítio em Atibaia (SP), pagas pelas construtoras OAS e Odebrecht, em troca de favores.",d:"Condenado em 2019 na 1ª instância e pelo TRF-4 (17 anos). Em 2021 o STF cancelou a condenação, pelo mesmo motivo do tríplex, e mandou o caso para a Justiça Federal de Brasília.",s:"Encerrado sem nova condenação. Em 2022, a Justiça Federal de Brasília não aceitou reabrir a acusação.",f:"STF; Justiça Federal do DF"},
+{st:"arq",t:"Instituto Lula e doações de empreiteiras",o:"Duas acusações sobre um terreno para o Instituto Lula e doações da Odebrecht.",d:"Em 2023 o STF encerrou as duas ações porque as provas vinham do acordo da Odebrecht com a Lava Jato, que o tribunal considerou ilegais.",s:"Encerradas sem que a Justiça decidisse se Lula era culpado ou inocente, porque as provas foram invalidadas.",f:"STF"},
+{st:"arq",t:"Outras ações da Lava Jato e Zelotes",o:"Contratos da Odebrecht em Angola (Operação Janus), negócios na Guiné Equatorial, propinas da Odebrecht e a compra dos caças suecos Gripen (Operação Zelotes).",d:"A Operação Janus foi arquivada em 2020. Os casos da Guiné Equatorial e das propinas da Odebrecht foram interrompidos pelo STF em 2021 porque usavam provas já invalidadas. O caso dos caças foi encerrado entre 2022 e 2023.",s:"Encerradas sem que a Justiça decidisse se Lula era culpado ou inocente.",f:"STF; Justiça Federal do DF; Diário do Pará (levantamento)"},
+{st:"abs",t:"Absolvições: Cerveró, “quadrilhão” e Zelotes",o:"Tentar comprar o silêncio do ex-diretor da Petrobras Nestor Cerveró; formar uma organização criminosa com outros dirigentes do PT; receber propina para editar uma medida provisória que beneficiava montadoras.",d:"A Justiça Federal de Brasília julgou os três casos e absolveu Lula: no caso Cerveró (2018) e no das montadoras (2021), por falta de provas; no “quadrilhão” (2019), o juiz concluiu que a acusação nem tinha base para seguir.",s:"Absolvido, isto é, a Justiça analisou o caso e decidiu que ele não era culpado.",f:"Justiça Federal do DF; Poder360"}],
 fl:[
-{st:"inv",t:"Banco Master e o filme “Dark Horse”",o:"Suspeita de lavagem de dinheiro, corrupção e evasão de divisas. Segundo documentos revelados pela imprensa, Flávio negociou com Daniel Vorcaro, dono do Banco Master, financiamento de R$ 134 milhões para um filme sobre o pai, dos quais ao menos R$ 61 milhões foram pagos (2024–2025). Flávio admitiu ter recebido recursos por intermediários. A PF também apura se emendas ou projetos do senador favoreceram o banco.",d:"Inquérito aberto no STF em julho de 2026 pelo ministro André Mendonça, a pedido da PF e com aval da PGR. Não há denúncia.",s:"Em andamento. Flávio diz que foi “patrocínio privado para um filme privado” e nega contrapartidas.",f:"STF; Bloomberg Línea; reportagem original de The Intercept Brasil"},
-{st:"arq",t:"“Rachadinha” na Alerj",o:"Acusado de recolher parte dos salários de assessores do gabinete de deputado estadual, em esquema operado por Fabrício Queiroz (peculato, lavagem, organização criminosa e apropriação indébita).",d:"Denunciado pelo MP-RJ em 2020. O STJ anulou quebras de sigilo (2021) e as decisões do juiz de 1ª instância por causa do foro; o STF invalidou relatórios do Coaf. O TJ-RJ arquivou a denúncia em maio de 2022. Em 2025, o ministro Gilmar Mendes negou recursos do MP-RJ.",s:"Arquivado por nulidade das provas, sem julgamento de mérito. O MP pode apresentar nova denúncia com outras provas.",f:"STJ; STF (2ª Turma); TJ-RJ; Agência Brasil"}],
+{st:"inv",t:"Banco Master e o filme “Dark Horse”",o:"Suspeita de lavagem de dinheiro, corrupção e envio irregular de dinheiro ao exterior. Flávio negociou com Daniel Vorcaro, dono do Banco Master, R$ 134 milhões para um filme sobre o pai; ao menos R$ 61 milhões foram pagos entre 2024 e 2025. A Polícia Federal também apura se emendas ou projetos de lei do senador beneficiaram o banco.",d:"Em julho de 2026 o STF autorizou a Polícia Federal a investigar, com aval do procurador-geral da República. Mensagens já públicas mostram uma relação próxima: no celular de Vorcaro, a PF achou 110 registros de contato com Flávio entre agosto e novembro de 2025. Neles, Flávio chama o banqueiro de “irmão”, “irmãozão” e “mermão” e, na véspera da prisão de Vorcaro, escreveu: “Irmão, estou e estarei contigo sempre”. Em outra mensagem: “Tudo isso só está sendo possível por causa de vc!”. Flávio primeiro escondeu o contato, dizendo que havia um acordo de sigilo, e depois admitiu ter recebido o dinheiro por meio de intermediários.",s:"Investigação em andamento. Ainda não há acusação formal (denúncia). Em entrevista, Flávio negou ter intimidade com Vorcaro e disse que chamar alguém de “irmão” é o jeito carioca de falar. Ele afirma que foi “patrocínio privado para um filme privado” e que não deu nada em troca.",f:"STF; PF; CNN Brasil; Metrópoles; Bloomberg Línea; reportagem original de The Intercept Brasil"},
+{st:"arq",t:"“Rachadinha” na Assembleia do Rio",o:"Ficar com parte dos salários dos funcionários do seu gabinete quando era deputado estadual, num esquema operado pelo ex-assessor Fabrício Queiroz (desvio de dinheiro público, lavagem e organização criminosa).",d:"O Ministério Público do Rio apresentou a acusação formal em 2020. As principais provas foram invalidadas. Em 2021 o STJ anulou a quebra do sigilo bancário porque foi decidida por um juiz que não podia cuidar do caso: como deputado, Flávio só podia ser julgado pelo tribunal estadual. O STF também invalidou relatórios financeiros do Coaf compartilhados sem autorização. Sem essas provas, o Tribunal de Justiça do Rio arquivou a acusação em 2022. Em 2025, o STF negou os recursos do Ministério Público.",s:"Arquivado sem que a Justiça decidisse se Flávio era culpado ou inocente, porque as provas foram invalidadas. O Ministério Público pode apresentar nova acusação se tiver outras provas.",f:"STJ; STF (2ª Turma); TJ-RJ; Agência Brasil"}],
 luv:[
-{st:"arq",t:"Odebrecht: caixa 2 nas campanhas de 2010 e 2014",o:"Acusado pelo Ministério Público Eleitoral de receber cerca de R$ 11,9 milhões da Odebrecht por caixa 2 (corrupção passiva, lavagem e falsidade ideológica eleitoral).",d:"Denunciado em 2020; a Justiça Eleitoral de SP manteve a ação em 2022. Em abril de 2023 o ministro Ricardo Lewandowski, do STF, encerrou o processo porque se baseava em provas do acordo da Odebrecht consideradas inválidas.",s:"Encerrado sem julgamento de mérito.",f:"STF; Correio Braziliense; Poder360"},
-{st:"arq",t:"Odebrecht: ação de improbidade (campanha de 2014)",o:"Ação civil pelo suposto repasse de R$ 8,3 milhões não declarados à campanha ao governo de SP, por meio do tesoureiro Marcos Monteiro.",d:"Arquivada pelo ministro Dias Toffoli em outubro de 2024 por usar as mesmas provas anuladas; decisão confirmada pelo STF após recurso da PGR.",s:"Arquivada sem julgamento de mérito. A defesa diz que a decisão confirma a inexistência dos fatos.",f:"STF; Poder360"},
-{st:"arq",t:"Ecovias: caixa 2 em campanhas (2002–2014)",o:"Investigação sobre suposto recebimento de R$ 3 milhões em caixa 2, a partir da delação de um ex-presidente da concessionária Ecovias.",d:"Arquivada pela Justiça em 2022.",s:"Arquivada.",f:"Migalhas"}],
+{st:"arq",t:"Odebrecht: caixa 2 nas campanhas de 2010 e 2014",o:"Receber cerca de R$ 11,9 milhões da Odebrecht para campanhas sem declarar à Justiça Eleitoral, o chamado caixa 2 (corrupção, lavagem e falsidade em documento eleitoral).",d:"Acusado formalmente em 2020; a Justiça Eleitoral de SP manteve o processo em 2022. Em abril de 2023 o STF encerrou o caso porque ele se baseava em provas do acordo da Odebrecht que o tribunal considerou ilegais.",s:"Encerrado sem que a Justiça decidisse se Alckmin era culpado ou inocente, porque as provas foram invalidadas.",f:"STF; Correio Braziliense; Poder360"},
+{st:"arq",t:"Odebrecht: ação de improbidade (campanha de 2014)",o:"Ação na área cível (que pode levar a multa e perda de direitos políticos, mas não a prisão) sobre R$ 8,3 milhões não declarados à campanha ao governo de SP, que teriam passado pelo tesoureiro Marcos Monteiro.",d:"Arquivada pelo ministro Dias Toffoli em outubro de 2024 porque usava as mesmas provas já invalidadas; o STF confirmou a decisão depois de recurso da Procuradoria-Geral da República.",s:"Arquivada sem que a Justiça decidisse se Alckmin era culpado ou inocente. A defesa diz que a decisão confirma que os fatos não existiram.",f:"STF; Poder360"},
+{st:"arq",t:"Ecovias: caixa 2 em campanhas (2002–2014)",o:"Investigação sobre suposto recebimento de R$ 3 milhões não declarados, a partir da delação de um ex-presidente da concessionária de rodovias Ecovias.",d:"A Justiça arquivou a investigação em 2022, antes de qualquer acusação formal.",s:"Arquivada: a investigação foi encerrada sem virar processo.",f:"Migalhas"}],
 flv:[
-{st:"pre",t:"Pedido de investigação por estupro de vulnerável",o:"Notícia-crime apresentada em março de 2026 por adversários políticos, o deputado Lindbergh Farias (PT) e a senadora Soraya Thronicke (PSB), afirma que Gaspar teria mantido relação com uma adolescente de 13 anos, anos atrás, da qual teria nascido uma filha.",d:"Em abril de 2026 a PF pediu autorização para abrir inquérito. O ministro Gilmar Mendes, do STF, autorizou apenas diligências preliminares. Não há inquérito aberto nem denúncia.",s:"Apuração preliminar. Gaspar nega, diz ser alvo de perseguição política, ofereceu material genético para exame de DNA e afirma que o pai biológico seria um primo.",f:"STF; Metrópoles; GC Mais"},
-{st:"pre",t:"Emendas Pix para São José da Laje (AL)",o:"Auditoria do TCU apontou falta de rastreabilidade e de prestação de contas em três transferências, de cerca de R$ 6,2 milhões, indicadas pelo deputado.",d:"Uma representação anterior foi arquivada pela PGR, que não viu participação do deputado. Em agosto de 2026 o ministro Flávio Dino, do STF, mandou a PF investigar.",s:"Apuração inicial. Gaspar diz que as emendas seguiram as regras e que a execução cabe ao município.",f:"TCU; STF; GC Mais"}]
+{st:"pre",t:"Pedido de investigação por estupro de vulnerável",o:"Em março de 2026, dois adversários políticos, o deputado Lindbergh Farias (PT) e a senadora Soraya Thronicke (PSB), levaram ao STF a suspeita de que Gaspar teria mantido relação com uma adolescente de 13 anos, anos atrás, e que dessa relação teria nascido uma filha.",d:"Em abril de 2026 a Polícia Federal pediu para abrir uma investigação formal. O ministro Gilmar Mendes autorizou só uma checagem inicial, para avaliar se há base para investigar. Até agora não há investigação formal nem acusação.",s:"Checagem inicial em andamento. Gaspar nega, diz ser alvo de perseguição política, ofereceu material para exame de DNA e afirma que o pai biológico seria um primo.",f:"STF; Metrópoles; GC Mais"},
+{st:"pre",t:"Emendas Pix para São José da Laje (AL)",o:"O Tribunal de Contas da União (TCU) não conseguiu rastrear como foram gastos cerca de R$ 6,2 milhões enviados ao município em três emendas indicadas pelo deputado.",d:"Um pedido anterior de investigação foi arquivado pela Procuradoria-Geral da República, que não viu participação do deputado. Em agosto de 2026 o ministro Flávio Dino, do STF, mandou a Polícia Federal apurar.",s:"Apuração inicial em andamento. Gaspar diz que as emendas seguiram as regras e que gastar o dinheiro é responsabilidade da prefeitura.",f:"TCU; STF; GC Mais"}]
 };
 const ELIG={
-lu:["Lula: elegível.","Foi réu em 11 ações penais. Não tem condenação válida: duas condenações foram anuladas pelo STF em 2021, três ações terminaram em absolvição e as demais foram arquivadas ou trancadas, a maioria sem julgamento de mérito."],
-fl:["Flávio Bolsonaro: elegível.","Nunca foi condenado. Teve uma denúncia arquivada sem julgamento de mérito e responde a inquérito no STF aberto em julho de 2026."],
-luv:["Geraldo Alckmin: elegível.","Nunca foi condenado. Uma ação penal eleitoral e uma ação de improbidade foram encerradas sem julgamento de mérito, por uso de provas anuladas; outra investigação foi arquivada."],
-flv:["Alfredo Gaspar: elegível.","Nunca foi denunciado. É alvo de duas apurações preliminares no STF, sem inquérito aberto."]};
-const FLMETA={lu:"11 ações penais, agrupadas em 5 blocos",fl:"1 denúncia e 1 inquérito",luv:"1 ação penal, 1 ação de improbidade e 1 investigação",flv:"2 apurações preliminares"};
+lu:["Lula","Nenhum processo em andamento.","A prisão de 580 dias (2018–2019) veio de uma condenação cancelada depois que o STF concluiu que o juiz Sergio Moro não foi imparcial. Das outras acusações, três terminaram com absolvição (a Justiça decidiu que ele não era culpado) e as demais foram encerradas sem decisão sobre culpa."],
+fl:["Flávio Bolsonaro","É investigado no STF, desde julho de 2026, pela relação com o dono do Banco Master, registrada em mensagens que já se tornaram públicas. Ainda não há acusação formal.","Uma acusação (caso da “rachadinha”) foi arquivada sem decisão sobre culpa, porque as provas foram invalidadas."],
+luv:["Geraldo Alckmin","Nenhum processo em andamento.","Dois processos foram encerrados sem decisão sobre culpa, porque as provas foram invalidadas, e uma investigação foi arquivada antes de virar processo."],
+flv:["Alfredo Gaspar","É alvo de duas checagens iniciais no STF, que ainda não viraram investigação formal.","Nunca foi acusado formalmente."]};
+const FLMETA={lu:"11 processos criminais, agrupados em 5 blocos",fl:"1 acusação formal e 1 investigação",luv:"1 processo criminal, 1 ação cível e 1 investigação",flv:"2 checagens iniciais no STF"};
 
 /* ================= RENDER ================= */
 const $=s=>document.querySelector(s);
@@ -899,8 +965,8 @@ document.querySelector("#trajetoria .seg:not(.who)").addEventListener("click",e=
 /* ficha limpa */
 const on=new Set(Object.keys(STL));
 $("#stFil").innerHTML=Object.entries(STL).map(([k,v])=>`<button class="st ${k}" data-k="${k}" aria-pressed="true">${v[0]}</button>`).join("");
-function fcase(c){const s=STL[c.st];return `<article class="case-f" style="--sc:${s[1]}"><div class="ch"><h4>${c.t}</h4><span class="stb">${s[0]}</span></div><dl><dt>Acusação</dt><dd>${c.o}</dd><dt>Andamento</dt><dd>${c.d}</dd><dt>Situação</dt><dd>${c.s}</dd><dt>Fonte</dt><dd style="color:var(--mute);font-size:13px">${c.f}</dd></dl></article>`}
-function renderFL(){$("#elig").innerHTML=["lu","fl"].map(k=>`<div><b>${ELIG[k+flW][0]}</b>${ELIG[k+flW][1]}</div>`).join("");$("#flGrid").innerHTML=["lu","fl"].map(c0=>{const k=c0+flW,d=TRJ[k],l=FL[k].filter(c=>on.has(c.st));return `<div class="col" style="--c:var(--${c0})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${FLMETA[k]}${l.length<FL[k].length?` · ${l.length} visíveis`:""}</p>${l.map(fcase).join("")||'<p class="meta">Nenhum caso com esta situação.</p>'}</div>`}).join("")}
+function fcase(c){const s=STL[c.st];return `<article class="case-f" style="--sc:${s[1]}"><div class="ch"><h4>${c.t}</h4><span class="stb">${s[0]}</span></div><dl><dt>Do que acusam</dt><dd>${c.o}</dd><dt>O que aconteceu</dt><dd>${c.d}</dd><dt>Situação hoje</dt><dd>${c.s}</dd><dt>Fonte</dt><dd style="color:var(--mute);font-size:13px">${c.f}</dd></dl></article>`}
+function renderFL(){$("#elig").innerHTML=["lu","fl"].map(k=>{const e=ELIG[k+flW];return `<div><b>${e[0]}: elegível, sem condenação em vigor.</b><span class="el-l">Hoje</span>${e[1]}<span class="el-l">Histórico</span>${e[2]}</div>`}).join("");$("#flGrid").innerHTML=["lu","fl"].map(c0=>{const k=c0+flW,d=TRJ[k],l=FL[k].filter(c=>on.has(c.st));return `<div class="col" style="--c:var(--${c0})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${FLMETA[k]}${l.length<FL[k].length?` · ${l.length} visíveis`:""}</p>${l.map(fcase).join("")||'<p class="meta">Nenhum caso com esta situação.</p>'}</div>`}).join("")}
 $("#stFil").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;on.has(k)?on.delete(k):on.add(k);b.setAttribute("aria-pressed",on.has(k));renderFL()});
 renderFL();
 $("#flWho").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;flW=b.dataset.w;$("#flWho").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFL()});
@@ -967,6 +1033,24 @@ const SOB={lula:"Lula",flavio:"Flávio",alckmin:"Alckmin",gaspar:"Gaspar",eleica
 const EFE={ataca:"ataca",favorece:"favorece",atribui:"atribui fala falsa",neutro:""};
 let FK=[],fkW="",fkT="",fkV="";
 const fmtD=d=>!d?"":d.length===4?d:d.split("-").reverse().join("/");
+/* fakeômetro: calculado a partir das checagens carregadas */
+const FM_C={lula:["Lula","var(--lu)"],flavio:["Flávio","var(--fl)"],alckmin:["Alckmin","var(--lu)"],gaspar:["Gaspar","var(--fl)"]};
+function gaugeSVG(pct,col,label){
+ const r=80,cx=100,cy=96,a=Math.PI*(1-pct/100),x=cx+r*Math.cos(a),y=cy-r*Math.sin(a);
+ const nx=cx+(r-20)*Math.cos(a),ny=cy-(r-20)*Math.sin(a);
+ return `<svg viewBox="0 0 200 142" role="img" aria-label="${label}"><path d="M20 96 A80 80 0 0 1 180 96" fill="none" stroke="var(--line)" stroke-width="14" stroke-linecap="round"/>${pct>0?`<path d="M20 96 A80 80 0 0 1 ${x.toFixed(1)} ${y.toFixed(1)}" fill="none" stroke="${col}" stroke-width="14" stroke-linecap="round"/>`:""}<line x1="${cx}" y1="${cy}" x2="${nx.toFixed(1)}" y2="${ny.toFixed(1)}" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/><circle cx="${cx}" cy="${cy}" r="5" fill="var(--ink)"/><text x="${cx}" y="${cy+40}" text-anchor="middle" font-family="Archivo,Arial Narrow,sans-serif" font-weight="900" font-size="30" fill="var(--ink)">${Math.round(pct)}%</text><text x="20" y="112" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="var(--mute)">0</text><text x="180" y="112" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="var(--mute)">100</text></svg>`}
+function renderFM(){
+ const quem=["lula","flavio","alckmin","gaspar"];
+ const fal=quem.map(k=>{const L=FK.filter(x=>x.tipo==="fala"&&x.sobre===k);const f=L.filter(x=>x.veredito==="falso").length,v=L.filter(x=>x.veredito==="verdadeiro").length;return{k,n:L.length,f,v,p:L.length-f-v}}).filter(x=>x.n>0);
+ $("#fmGauges").innerHTML=fal.map(x=>{const pf=100*x.f/x.n;const tip=`${FM_C[x.k][0]}: ${x.f} falsas, ${x.p} exageradas ou sem contexto, ${x.v} verdadeiras, de ${x.n} falas checadas`;
+  return `<div class="fm-g" title="${tip}"><div class="nm"><i style="background:${FM_C[x.k][1]}"></i>${FM_C[x.k][0]}</div><div class="n">${x.n} falas checadas${x.n<15?" · amostra pequena":""}</div>${gaugeSVG(pf,"var(--risk)",tip)}<div class="fm-stack" aria-hidden="true">${x.f?`<span style="width:${100*x.f/x.n}%;background:var(--risk)"></span>`:""}${x.p?`<span style="width:${100*x.p/x.n}%;background:var(--warn)"></span>`:""}${x.v?`<span style="width:${100*x.v/x.n}%;background:var(--ok)"></span>`:""}</div><div class="fm-nums"><span>${x.f} falsas</span><span>${x.p} imprecisas</span><span>${x.v} verdadeiras</span></div></div>`}).join("")||'<p class="meta">Ainda não há falas checadas.</p>';
+ const bo=FK.filter(x=>x.tipo==="boato");
+ const vit=quem.map(k=>({k,a:bo.filter(x=>x.sobre===k&&x.efeito==="ataca").length,fv:bo.filter(x=>x.sobre===k&&x.efeito==="favorece").length,at:bo.filter(x=>x.sobre===k&&x.efeito==="atribui").length})).filter(x=>x.a+x.fv+x.at>0);
+ const mx=Math.max(1,...vit.map(x=>Math.max(x.a,x.fv)));
+ $("#fmVit").innerHTML=vit.map(x=>`<div class="fm-row" title="${FM_C[x.k][0]}: ${x.a} boatos atacam, ${x.fv} favorecem${x.at?`, ${x.at} atribuem fala falsa`:""}"><span class="nm"><i style="background:${FM_C[x.k][1]}"></i>${FM_C[x.k][0]}</span><span class="fm-bar"><b style="width:${(70*x.a/mx).toFixed(1)}%"></b>${x.a} atacam</span><span class="fm-bar"><b class="fav" style="width:${(70*x.fv/mx).toFixed(1)}%"></b>${x.fv} favorecem</span></div>`).join("")||'<p class="meta">Ainda não há boatos checados.</p>';
+ const urn=bo.filter(x=>x.sobre==="eleicao").length;
+ $("#fmNote").textContent=`Como ler: o Fakeômetro conta só as checagens reunidas neste guia (${FK.length} no total), não todas as falas e boatos da campanha. Agências checam mais quem aparece mais, por isso usamos percentuais nas falas. Um boato que “favorece” um candidato não foi necessariamente feito pela campanha dele. Outros ${urn} boatos atacam o processo eleitoral e as urnas, sem alvo em um candidato.`;
+}
 function renderFK(){
  const L=FK.filter(x=>(!fkW||(fkW==="vices"?["alckmin","gaspar"].includes(x.sobre):x.sobre===fkW))&&(!fkT||x.tipo===fkT)&&(!fkV||(fkV==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===fkV)));
  const c=k=>L.filter(x=>k==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===k).length;
@@ -979,7 +1063,7 @@ $("#fkWho").innerHTML=[["","Todos"],["lula","Lula"],["flavio","Flávio"],["vices
 fetch("checagens.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
  FK=(d.itens||[]).sort((a,b)=>String(b.data).localeCompare(String(a.data)));
  const u=new Date(d.atualizado);$("#fkUpd").textContent=isNaN(u)?d.atualizado:u.toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"});
- renderFK();
+ renderFK();renderFM();
 }).catch(()=>{$("#fkUpd").textContent="indisponível";$("#fkGrid").innerHTML='<p class="meta">Não foi possível carregar as checagens agora. Recarregue a página em instantes.</p>'});
 
 /* enquete */
