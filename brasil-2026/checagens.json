@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-06T20:33:19-03:00",
+ "atualizado": "2026-10-07T08:59:09-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -659,6 +659,21 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/lula-flavio-crise-stf/"
+   }
+  },
+  {
+   "id": "b-pl-senado-fraude",
+   "data": "2026-10-06",
+   "tipo": "boato",
+   "sobre": "eleicao",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Candidatos do PL ao Senado tiveram 58,1 milhões de votos e Flávio só 56,1 milhões: “a conta não fecha”, houve fraude.",
+   "veredito": "falso",
+   "explicacao": "A comparação não faz sentido: cada eleitor votou em dois senadores e em um só presidente, e os votos são contados separadamente. Quem votou em Flávio também pôde escolher senadores de outros partidos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/eleicoes/2026/10/06/comparacao-entre-votos-para-senado-e-presidencia-do-pl-nao-e-indicio-de-fraude/"
    }
   }
  ]
