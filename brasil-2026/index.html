@@ -288,6 +288,32 @@ h4.sub::after{content:"";flex:1;height:1px;background:var(--line)}
 #enqDlg .acts{display:flex;justify-content:flex-end;gap:8px;margin-top:16px;flex-wrap:wrap}
 #enqDlg .ghost{font:inherit;font-weight:600;font-size:15px;background:none;color:var(--mute);border:1px solid var(--line);border-radius:6px;padding:10px 14px;cursor:pointer}
 #enqMini .enq-row{grid-template-columns:minmax(0,1fr) 70px}#enqMini .enq-row .bar{grid-column:1/-1;grid-row:2}
+/* busca */
+.srch-btn{flex:0 0 auto;font:inherit;font-size:14px;font-weight:700;color:var(--ink);background:var(--acc-s);border:0;border-radius:6px;padding:7px 12px;margin:7px 6px 7px 0;cursor:pointer;white-space:nowrap}
+.hero-srch{display:flex;align-items:center;gap:10px;width:100%;max-width:640px;margin:18px 0 0;font:inherit;font-size:15px;text-align:left;color:var(--hero-mute);background:color-mix(in srgb,var(--hero) 70%,#fff 8%);border:1px solid var(--hero-line);border-radius:8px;padding:12px 14px;cursor:text}
+.hero-srch:hover{border-color:var(--hl)}
+.hero-srch kbd{margin-left:auto;font-family:var(--mono);font-size:11px;border:1px solid var(--hero-line);border-radius:4px;padding:1px 6px;color:var(--hero-mute)}
+@media (max-width:600px){.hero-srch kbd{display:none}}
+.srch{position:fixed;inset:0;z-index:50;background:rgba(6,10,18,.55);backdrop-filter:blur(3px);display:flex;justify-content:center;align-items:flex-start;padding:calc(env(safe-area-inset-top,0px) + 6vh) 16px 16px}
+.srch[hidden]{display:none}
+.srch-box{width:min(720px,100%);max-height:calc(100% - 4vh);display:flex;flex-direction:column;background:var(--panel);color:var(--ink);border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.35);overflow:hidden}
+.srch-in{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.srch-in input{flex:1;min-width:0;font:inherit;font-size:17px;border:0;outline:0;background:none;color:var(--ink)}
+.srch-in button{font-family:var(--mono);font-size:11px;color:var(--mute);background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:3px 7px;cursor:pointer}
+.srch-sug[hidden],.srch-hint[hidden]{display:none}
+.srch-hint{margin:0;padding:8px 14px 0;font-size:13px;color:var(--mute)}
+.srch-sug{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 12px}
+.srch-sug button{font:inherit;font-size:13px;color:var(--ink);background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:4px 10px;cursor:pointer}
+.srch-res{list-style:none;margin:0;padding:0 0 8px;overflow:auto}
+.srch-res li{padding:10px 14px;border-top:1px solid var(--line);cursor:pointer;display:grid;gap:2px}
+.srch-res li[aria-selected="true"],.srch-res li:hover{background:var(--acc-s)}
+.srch-res .sec{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.srch-res .lb{font-weight:700;font-size:15px}
+.srch-res .sn{font-size:13.5px;color:var(--mute)}
+.srch-res mark{background:var(--hlbg);color:inherit;padding:0 1px;border-radius:2px}
+.srch-empty{padding:14px;color:var(--mute);font-size:14px}
+.hit{animation:hit 2.4s ease}
+@keyframes hit{0%,60%{box-shadow:0 0 0 3px var(--hl);background-color:var(--acc-s)}100%{box-shadow:0 0 0 0 transparent}}
 /* fakeômetro */
 .fm{border:2px solid var(--ink);border-radius:8px;background:var(--panel);margin:0 0 22px;overflow:hidden}
 .fm-h{padding:16px 18px 6px}
@@ -411,11 +437,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
     <p><b id="daysLbl">dias para o 2º turno</b><br>Domingo, 25 de outubro de 2026</p>
    </div>
   </div>
+  <button type="button" class="hero-srch" id="heroSrch"><span aria-hidden="true">🔍</span> Buscar no guia: 6x1, Moraes, Bolsa Família, Master…<kbd>/</kbd></button>
   <div class="vices"><span><i class="dot" style="background:var(--lu)"></i>Lula · vice Geraldo Alckmin (PSB)</span><span><i class="dot" style="background:var(--fl)"></i>Flávio Bolsonaro · vice Alfredo Gaspar</span></div>
  </div>
 </header>
 
 <nav class="bar" aria-label="Seções"><div class="chips" id="chips">
+ <button type="button" class="srch-btn" id="srchBtn" aria-label="Buscar no guia">🔍 Buscar</button>
  <a href="#cenario" data-id="cenario" data-n="01">Cenário atual</a>
  <a href="#desafios" data-id="desafios" data-n="02">Desafios da gestão</a>
  <a href="#prioridades" data-id="prioridades" data-n="03">Prioridades</a>
@@ -594,6 +622,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <details><summary>Limitações</summary><p>Planos de governo são documentos de intenção e vários pontos não têm detalhes de execução. A literatura sobre muitas políticas tem resultados mistos e foi resumida. Investigações em andamento podem mudar de situação a qualquer momento. Confira sempre a fonte original antes de compartilhar.</p></details>
 </section>
 </main>
+<div class="srch" id="srch" hidden role="dialog" aria-modal="true" aria-label="Buscar no guia">
+ <div class="srch-box">
+  <div class="srch-in"><span aria-hidden="true">🔍</span><input type="search" id="srchQ" placeholder="O que você procura? Ex.: escala 6x1, Vorcaro, desmatamento" autocomplete="off" aria-controls="srchRes" aria-describedby="srchHint"><button type="button" id="srchX" aria-label="Fechar busca">Esc</button></div>
+  <p class="srch-hint" id="srchHint">Busca em todo o guia: cenário, desafios, prioridades, propostas, trajetória, ficha limpa e checagens.</p>
+  <div class="srch-sug" id="srchSug"></div>
+  <ol class="srch-res" id="srchRes" role="listbox"></ol>
+ </div>
+</div>
 <dialog id="enqDlg" aria-labelledby="enqDlgT">
  <form method="dialog" id="enqForm">
   <span class="k">Enquete anônima · 1 pergunta</span>
@@ -913,7 +949,7 @@ renderCen("eco");
 /* desafios */
 const AREAS=["Todos","Econômico","Social","Ambiental","Político"];
 $("#desFil").innerHTML=AREAS.map((a,i)=>`<button data-a="${i?a:""}" aria-pressed="${!i}">${a}</button>`).join("");
-function renderDes(f){$("#desGrid").innerHTML=DES.filter(d=>!f||d.a===f).map(d=>`<article class="dc"><div class="top"><span class="area">${d.a}</span><span class="lvl ${d.lvl}"><i aria-hidden="true"><s></s><s></s><s></s></i>${d.lvl==="c"?"Urgência muito alta":"Urgência alta"}</span></div><h3>${d.t}</h3><p>${d.p}</p><p class="exp">${d.exp}</p><span class="who">${d.who}</span></article>`).join("")}
+function renderDes(f){$("#desGrid").innerHTML=DES.filter(d=>!f||d.a===f).map(d=>`<article class="dc" data-des="${DES.indexOf(d)}"><div class="top"><span class="area">${d.a}</span><span class="lvl ${d.lvl}"><i aria-hidden="true"><s></s><s></s><s></s></i>${d.lvl==="c"?"Urgência muito alta":"Urgência alta"}</span></div><h3>${d.t}</h3><p>${d.p}</p><p class="exp">${d.exp}</p><span class="who">${d.who}</span></article>`).join("")}
 $("#desFil").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;$("#desFil").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderDes(b.dataset.a)});
 renderDes("");
 
@@ -956,7 +992,7 @@ renderTheme(T[0].id);
 
 /* trajetória */
 let trjW="",flW="";
-function col(k){const d=TRJ[k+trjW];return `<div class="col ${k}" style="--c:var(--${k})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${d.meta}</p><ol class="tl">${d.it.map(x=>`<li><span class="yr">${x[0]}</span><b>${x[1]}</b><p>${x[2]}</p><small>Fonte: ${x[3]}</small></li>`).join("")}${d.notes.map(n=>`<li class="note"><span class="yr" style="color:var(--neu)">${n[0]}</span><p>${n[1]}</p></li>`).join("")}</ol></div>`}
+function col(k){const d=TRJ[k+trjW],kk=k+trjW;return `<div class="col ${k}" style="--c:var(--${k})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${d.meta}</p><ol class="tl">${d.it.map((x,n)=>`<li data-trj="${kk}-${n}"><span class="yr">${x[0]}</span><b>${x[1]}</b><p>${x[2]}</p><small>Fonte: ${x[3]}</small></li>`).join("")}${d.notes.map(n=>`<li class="note"><span class="yr" style="color:var(--neu)">${n[0]}</span><p>${n[1]}</p></li>`).join("")}</ol></div>`}
 function renderTrj(){$("#trj").innerHTML=col("lu")+col("fl")}
 renderTrj();
 $("#trjWho").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;trjW=b.dataset.w;$("#trjWho").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderTrj()});
@@ -965,8 +1001,8 @@ document.querySelector("#trajetoria .seg:not(.who)").addEventListener("click",e=
 /* ficha limpa */
 const on=new Set(Object.keys(STL));
 $("#stFil").innerHTML=Object.entries(STL).map(([k,v])=>`<button class="st ${k}" data-k="${k}" aria-pressed="true">${v[0]}</button>`).join("");
-function fcase(c){const s=STL[c.st];return `<article class="case-f" style="--sc:${s[1]}"><div class="ch"><h4>${c.t}</h4><span class="stb">${s[0]}</span></div><dl><dt>Do que acusam</dt><dd>${c.o}</dd><dt>O que aconteceu</dt><dd>${c.d}</dd><dt>Situação hoje</dt><dd>${c.s}</dd><dt>Fonte</dt><dd style="color:var(--mute);font-size:13px">${c.f}</dd></dl></article>`}
-function renderFL(){$("#elig").innerHTML=["lu","fl"].map(k=>{const e=ELIG[k+flW];return `<div><b>${e[0]}: elegível, sem condenação em vigor.</b><span class="el-l">Hoje</span>${e[1]}<span class="el-l">Histórico</span>${e[2]}</div>`}).join("");$("#flGrid").innerHTML=["lu","fl"].map(c0=>{const k=c0+flW,d=TRJ[k],l=FL[k].filter(c=>on.has(c.st));return `<div class="col" style="--c:var(--${c0})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${FLMETA[k]}${l.length<FL[k].length?` · ${l.length} visíveis`:""}</p>${l.map(fcase).join("")||'<p class="meta">Nenhum caso com esta situação.</p>'}</div>`}).join("")}
+function fcase(c,k,n){const s=STL[c.st];return `<article class="case-f" data-flc="${k}-${n}" style="--sc:${s[1]}"><div class="ch"><h4>${c.t}</h4><span class="stb">${s[0]}</span></div><dl><dt>Do que acusam</dt><dd>${c.o}</dd><dt>O que aconteceu</dt><dd>${c.d}</dd><dt>Situação hoje</dt><dd>${c.s}</dd><dt>Fonte</dt><dd style="color:var(--mute);font-size:13px">${c.f}</dd></dl></article>`}
+function renderFL(){$("#elig").innerHTML=["lu","fl"].map(k=>{const e=ELIG[k+flW];return `<div><b>${e[0]}: elegível, sem condenação em vigor.</b><span class="el-l">Hoje</span>${e[1]}<span class="el-l">Histórico</span>${e[2]}</div>`}).join("");$("#flGrid").innerHTML=["lu","fl"].map(c0=>{const k=c0+flW,d=TRJ[k],l=FL[k].filter(c=>on.has(c.st));return `<div class="col" style="--c:var(--${c0})">${d.vice?`<span class="tag-v">${d.vice}</span>`:""}<h3>${d.nm}</h3><p class="meta">${FLMETA[k]}${l.length<FL[k].length?` · ${l.length} visíveis`:""}</p>${l.map(c=>fcase(c,k,FL[k].indexOf(c))).join("")||'<p class="meta">Nenhum caso com esta situação.</p>'}</div>`}).join("")}
 $("#stFil").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const k=b.dataset.k;on.has(k)?on.delete(k):on.add(k);b.setAttribute("aria-pressed",on.has(k));renderFL()});
 renderFL();
 $("#flWho").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;flW=b.dataset.w;$("#flWho").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFL()});
@@ -1056,14 +1092,14 @@ function renderFK(){
  const c=k=>L.filter(x=>k==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===k).length;
  $("#fkSum").innerHTML=`<div><b style="color:var(--risk)">${c("falso")}</b><span>mitos</span></div><div><b style="color:var(--ok)">${c("verdadeiro")}</b><span>verdades</span></div><div><b style="color:var(--warn)">${c("parcial")}</b><span>exagerados ou sem contexto</span></div>`;
  $("#fkGrid").innerHTML=L.map(x=>{const v=VER[x.veredito]||VER.sem_evidencias;const ef=x.tipo==="boato"&&EFE[x.efeito]?`${EFE[x.efeito]} ${SOB[x.sobre]}`:"";
-  return `<article class="fk" style="--sc:${v[1]}"><span class="stamp">${v[0]}</span><q>${x.afirmacao}</q><p>${x.explicacao}</p><div class="tags"><span class="t-${x.sobre}">${x.tipo==="fala"?"Fala de "+(x.quem||SOB[x.sobre]):"Boato"+(ef?" · "+ef:"")}</span>${x.ia?'<span class="t-ia">Feito com IA</span>':""}<span>${fmtD(x.data)}</span></div><a class="src" href="${x.fonte.url}" rel="noopener" target="_blank">${x.fonte.nome} ↗</a></article>`}).join("")||'<p class="meta">Nenhuma checagem com esses filtros.</p>';
+  return `<article class="fk" data-fk="${x.id}" style="--sc:${v[1]}"><span class="stamp">${v[0]}</span><q>${x.afirmacao}</q><p>${x.explicacao}</p><div class="tags"><span class="t-${x.sobre}">${x.tipo==="fala"?"Fala de "+(x.quem||SOB[x.sobre]):"Boato"+(ef?" · "+ef:"")}</span>${x.ia?'<span class="t-ia">Feito com IA</span>':""}<span>${fmtD(x.data)}</span></div><a class="src" href="${x.fonte.url}" rel="noopener" target="_blank">${x.fonte.nome} ↗</a></article>`}).join("")||'<p class="meta">Nenhuma checagem com esses filtros.</p>';
 }
 $("#fkWho").innerHTML=[["","Todos"],["lula","Lula"],["flavio","Flávio"],["vices","Vices"],["eleicao","Eleição e urnas"]].map(([k,l],i)=>`<button data-w="${k}" aria-pressed="${!i}">${l}</button>`).join("");
 [["#fkWho","w",v=>fkW=v],["#fkTipo","t",v=>fkT=v],["#fkVer","v",v=>fkV=v]].forEach(([id,a,set])=>$(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;set(b.dataset[a]);$(id).querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFK()}));
 fetch("checagens.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
  FK=(d.itens||[]).sort((a,b)=>String(b.data).localeCompare(String(a.data)));
  const u=new Date(d.atualizado);$("#fkUpd").textContent=isNaN(u)?d.atualizado:u.toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"});
- renderFK();renderFM();
+ renderFK();renderFM();IDX=[];
 }).catch(()=>{$("#fkUpd").textContent="indisponível";$("#fkGrid").innerHTML='<p class="meta">Não foi possível carregar as checagens agora. Recarregue a página em instantes.</p>'});
 
 /* enquete */
@@ -1114,6 +1150,60 @@ function closeEnq(){const d=$("#enqDlg");if(d.close)d.close();else d.removeAttri
  renderEnq();
  if(enqOn&&enqHere){startEnqPoll();if(!ls.get("br26_voto")&&!ss.get("br26_later"))setTimeout(openEnq,1500)}
 })();
+
+/* busca no guia */
+const norm=t=>String(t||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const strip=t=>String(t||"").replace(/<[^>]*>/g,"");
+let IDX=[];
+function buildIdx(){
+ const I=[];const add=(sec,lb,txt,go,extra)=>I.push({sec,lb:strip(lb),txt:strip(txt),n:norm(sec+" "+strip(lb)+" "+strip(txt)+" "+(extra||"")),go});
+ CEN.forEach(c=>{add("Cenário · "+c.t,c.t,c.stats.map(x=>x.slice(0,3).join(" ")).join(" · ")+" "+c.pts.join(" "),()=>{renderCen(c.id);return $("#cenBody")})});
+ DES.forEach((d,n)=>add("Desafios",d.t,d.p+" "+d.exp+" "+d.who,()=>{$("#desFil button").click();return document.querySelector(`[data-des="${n}"]`)}));
+ PRI.forEach(x=>add("Prioridades · "+String(x.n).padStart(2,"0"),x.t,x.one+" "+x.dados.join(" ")+" "+x.fact+" "+x.cedo.join(" "),()=>{prKey="n";$("#prSort button").click();const li=[...document.querySelectorAll("#prio > li")][x.n-1];if(li)li.querySelector("details").open=true;return li}));
+ T.forEach(t=>add("Propostas",t.t,t.why+" Lula: "+t.lula.join("; ")+" Flávio: "+t.flavio.join("; ")+" "+t.ana.join(" ")+" "+t.casos.map(c=>c.w+" "+c.p).join(" ")+" "+t.vt,()=>{renderTheme(t.id);return $("#pbody")}));
+ Object.entries(TRJ).forEach(([k,d])=>d.it.forEach((x,n)=>add("Trajetória · "+d.nm,x[1],x[0]+" · "+x[2],()=>{trjW=k.endsWith("v")?"v":"";$("#trjWho").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.w===trjW));renderTrj();return document.querySelector(`[data-trj="${k}-${n}"]`)})));
+ Object.entries(FL).forEach(([k,l])=>l.forEach((c,n)=>add("Ficha limpa · "+TRJ[k].nm,c.t,c.o+" "+c.d+" "+c.s,()=>{flW=k.endsWith("v")?"v":"";$("#flWho").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.w===flW));Object.keys(STL).forEach(x=>on.add(x));$("#stFil").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed","true"));renderFL();return document.querySelector(`[data-flc="${k}-${n}"]`)})));
+ document.querySelectorAll(".gloss dt").forEach(dt=>add("Termos jurídicos",dt.textContent,dt.nextElementSibling.textContent,()=>{const g=$(".gloss");g.open=true;return dt}));
+ FK.forEach(x=>add("Fake news · "+(VER[x.veredito]||VER.sem_evidencias)[0]+" · "+x.fonte.nome,x.afirmacao,x.explicacao,()=>{fkW=fkT=fkV="";["#fkWho","#fkTipo","#fkVer"].forEach(id=>$(id).querySelectorAll("button").forEach((b,i)=>b.setAttribute("aria-pressed",i===0)));renderFK();return document.querySelector(`[data-fk="${x.id}"]`)},(x.quem||"")+" "+(SOB[x.sobre]||"")+" "+(x.tipo==="boato"?"boato":"fala")));
+ IDX=I;
+}
+const escH=t=>t.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+function hiLite(text,words){
+ let out="",nt=norm(text),i=0;const spans=[];
+ words.forEach(w=>{let p=0,k;while(w&&(k=nt.indexOf(w,p))>-1){spans.push([k,k+w.length]);p=k+w.length}});
+ spans.sort((a,b)=>a[0]-b[0]);
+ spans.forEach(([a,b])=>{if(a<i)return;out+=escH(text.slice(i,a))+"<mark>"+escH(text.slice(a,b))+"</mark>";i=b});
+ return out+escH(text.slice(i));
+}
+function snippet(txt,words){
+ const nt=norm(txt);let k=-1;for(const w of words){k=nt.indexOf(w);if(k>-1)break}
+ const a=Math.max(0,k-60),b=Math.min(txt.length,(k<0?0:k)+120);
+ return (a>0?"…":"")+txt.slice(a,b)+(b<txt.length?"…":"");
+}
+let sRes=[],sSel=0;
+function doSearch(){
+ const q=$("#srchQ").value,words=norm(q).split(/\s+/).filter(w=>w.length>1);
+ $("#srchSug").hidden=!!words.length;$("#srchHint").hidden=!!words.length;
+ if(!words.length){$("#srchRes").innerHTML="";sRes=[];return}
+ sRes=IDX.map(e=>{if(!words.every(w=>e.n.includes(w)))return null;const nl=norm(e.lb);let sc=0;words.forEach(w=>{if(nl.includes(w))sc+=3;sc+=Math.min(3,e.n.split(w).length-1)});return{e,sc}}).filter(Boolean).sort((a,b)=>b.sc-a.sc).slice(0,25);
+ sSel=0;
+ $("#srchRes").innerHTML=sRes.length?sRes.map((r,i)=>`<li role="option" id="sr${i}" data-i="${i}" aria-selected="${i===0}"><span class="sec">${escH(r.e.sec)}</span><span class="lb">${hiLite(r.e.lb,words)}</span><span class="sn">${hiLite(snippet(r.e.txt,words),words)}</span></li>`).join(""):`<li class="srch-empty" aria-disabled="true">Nada encontrado para “${escH(q)}”. Tente outra palavra, como o nome de um programa, de uma operação ou de um tema.</li>`;
+}
+function selRes(i){const L=$("#srchRes").querySelectorAll("li[data-i]");if(!L.length)return;sSel=(i+L.length)%L.length;L.forEach((li,n)=>li.setAttribute("aria-selected",n===sSel));L[sSel].scrollIntoView({block:"nearest"});$("#srchQ").setAttribute("aria-activedescendant","sr"+sSel)}
+function goRes(i){const r=sRes[i];if(!r)return;const words=norm($("#srchQ").value).split(/\s+/).filter(w=>w.length>1);closeSrch();let el=r.e.go();if(el){const cand=[...el.querySelectorAll(".case,li,dd,.stat,q,.ana p,.verd,.cand,p")];const pick=f=>cand.filter(f).sort((x,y)=>x.textContent.length-y.textContent.length)[0];const sub=pick(x=>{const t=norm(x.textContent);return words.every(w=>t.includes(w))})||pick(x=>norm(x.textContent).includes(words[0]));if(sub&&sub.offsetHeight<innerHeight*.7)el=sub;document.querySelectorAll(".hit").forEach(x=>x.classList.remove("hit"));requestAnimationFrame(()=>{el.scrollIntoView({block:el.offsetHeight>innerHeight*.7?"start":"center"});el.classList.remove("hit");void el.offsetWidth;el.classList.add("hit")})}}
+let srchPrev=null;
+function openSrch(pre){srchPrev=document.activeElement;if(!IDX.length)buildIdx();$("#srch").hidden=false;document.documentElement.style.overflow="hidden";const q=$("#srchQ");if(typeof pre==="string"){q.value=pre}q.focus();q.select();doSearch()}
+function closeSrch(){$("#srchQ").blur();$("#srch").hidden=true;document.documentElement.style.overflow="";if(srchPrev&&srchPrev.focus)srchPrev.focus()}
+$("#srchSug").innerHTML=["escala 6x1","Moraes","Vorcaro","Bolsa Família","desmatamento","segurança","Lava Jato","dívida pública","maioridade penal","deepfake"].map(t=>`<button type="button">${t}</button>`).join("");
+$("#srchSug").addEventListener("click",e=>{const b=e.target.closest("button");if(b){$("#srchQ").value=b.textContent;doSearch();$("#srchQ").focus()}});
+$("#srchBtn").addEventListener("click",()=>openSrch());
+$("#heroSrch").addEventListener("click",()=>openSrch());
+$("#srchX").addEventListener("click",closeSrch);
+$("#srch").addEventListener("click",e=>{if(e.target.id==="srch")closeSrch()});
+let sT;$("#srchQ").addEventListener("input",()=>{clearTimeout(sT);sT=setTimeout(doSearch,90)});
+$("#srchQ").addEventListener("keydown",e=>{if(e.key==="ArrowDown"){e.preventDefault();selRes(sSel+1)}else if(e.key==="ArrowUp"){e.preventDefault();selRes(sSel-1)}else if(e.key==="Enter"){e.preventDefault();goRes(sSel)}else if(e.key==="Escape"){e.preventDefault();closeSrch()}});
+$("#srchRes").addEventListener("click",e=>{const li=e.target.closest("li[data-i]");if(li)goRes(+li.dataset.i)});
+addEventListener("keydown",e=>{const t=e.target;if(e.key==="/"&&!e.ctrlKey&&!e.metaKey&&!/input|textarea|select/i.test(t.tagName)&&!t.isContentEditable&&$("#srch").hidden&&!($("#enqDlg")&&$("#enqDlg").open)){e.preventDefault();openSrch()}});
 
 /* navegação */
 const chips=$("#chips");
