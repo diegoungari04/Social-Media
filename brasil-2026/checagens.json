@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-07T08:59:09-03:00",
+ "atualizado": "2026-10-08T09:00:36-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -674,6 +674,51 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/06/comparacao-entre-votos-para-senado-e-presidencia-do-pl-nao-e-indicio-de-fraude/"
+   }
+  },
+  {
+   "id": "b-lula-preso-ia",
+   "data": "2026-10-07",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": true,
+   "afirmacao": "Imagem mostra Lula sendo preso pela Polícia Federal.",
+   "veredito": "falso",
+   "explicacao": "A imagem foi gerada por inteligência artificial. A Lupa a identificou entre 64 conteúdos com IA publicados de 1º a 5 de outubro, período em que a lei eleitoral proíbe esse tipo de material.",
+   "fonte": {
+    "nome": "Agência Lupa (monitor VigIA)",
+    "url": "https://www.agencialupa.org/jornalismo/2026/10/07/conteudos-com-ia-circulam-em-periodo-proibido-pela-lei-eleitoral/"
+   }
+  },
+  {
+   "id": "b-telejornal-flavio-passa",
+   "data": "2026-10-07",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "favorece",
+   "ia": true,
+   "afirmacao": "Telejornal anuncia que Flávio passou Lula nas pesquisas.",
+   "veredito": "falso",
+   "explicacao": "Deepfake: a imagem de um jornalista foi manipulada com IA para simular uma reportagem que não existiu.",
+   "fonte": {
+    "nome": "Agência Lupa (monitor VigIA)",
+    "url": "https://www.agencialupa.org/jornalismo/2026/10/07/conteudos-com-ia-circulam-em-periodo-proibido-pela-lei-eleitoral/"
+   }
+  },
+  {
+   "id": "b-flavio-debate-deepfake",
+   "data": "2026-10-07",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "atribui",
+   "ia": true,
+   "afirmacao": "Vídeo mostra Flávio comentando o debate da TV Globo.",
+   "veredito": "falso",
+   "explicacao": "Deepfake: o debate foi cancelado e a fala atribuída a Flávio foi criada com IA.",
+   "fonte": {
+    "nome": "Agência Lupa (monitor VigIA)",
+    "url": "https://www.agencialupa.org/jornalismo/2026/10/07/conteudos-com-ia-circulam-em-periodo-proibido-pela-lei-eleitoral/"
    }
   }
  ]
