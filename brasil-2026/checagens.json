@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-08T09:00:36-03:00",
+ "atualizado": "2026-10-09T08:59:32-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -719,6 +719,36 @@
    "fonte": {
     "nome": "Agência Lupa (monitor VigIA)",
     "url": "https://www.agencialupa.org/jornalismo/2026/10/07/conteudos-com-ia-circulam-em-periodo-proibido-pela-lei-eleitoral/"
+   }
+  },
+  {
+   "id": "b-lula-pobres",
+   "data": "2026-10-08",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Vídeo mostra Lula dizendo: “Acabou as eleições, acabou o interesse pelo pobre.”",
+   "veredito": "falso",
+   "explicacao": "O trecho foi cortado de uma entrevista ao Podpah em dezembro de 2021, antes da campanha. Lula criticava políticos que, segundo ele, só lembram dos pobres na eleição; o vídeo editado inverte o sentido.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/eleicoes/2026/10/08/video-antigo-de-lula-e-editado-para-sugerir-que-petista-criticou-pobres/"
+   }
+  },
+  {
+   "id": "b-lula-nordestinos",
+   "data": "2026-10-07",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Lula disse que “com R$ 10 eu compro um baiano” e que só ganhou eleições “porque o povo nordestino é analfabeto”.",
+   "veredito": "falso",
+   "explicacao": "As frases foram distorcidas ou inventadas. A do analfabetismo era uma citação de Lula a uma fala de Jair Bolsonaro, em 2022; a dos R$ 10 foi tirada de contexto de uma entrevista de 2017; e a do “grão de arroz” não tem registro público.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/falas-lula-nordestinos/"
    }
   }
  ]
