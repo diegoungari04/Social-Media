@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-09T08:59:32-03:00",
+ "atualizado": "2026-10-10T09:02:16-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -749,6 +749,51 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/falas-lula-nordestinos/"
+   }
+  },
+  {
+   "id": "b-lula-milho",
+   "data": "2026-10-09",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Manchete do g1 mostra Lula dizendo: “Mulher é que nem milho, nasceu pelinho já pode comer.”",
+   "veredito": "falso",
+   "explicacao": "É uma montagem: o g1 não publicou essa manchete e Lula não disse a frase. Ela distorce um discurso de setembro no Pará em que ele falava sobre homens que evitam o exame de próstata.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/eleicoes/2026/10/09/e-falso-que-lula-comparou-mulheres-a-milho-em-declaracao-que-faz-alusao-a-pedofilia/"
+   }
+  },
+  {
+   "id": "b-colinhas-bahia",
+   "data": "2026-10-08",
+   "tipo": "boato",
+   "sobre": "eleicao",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Mesários em Camaçari (BA) distribuíram “colinhas” do PT na fila de votação do 1º turno.",
+   "veredito": "falso",
+   "explicacao": "As colinhas eram do TRE da Bahia, em branco, sem nome, número ou partido, só com espaço para o eleitor anotar seus candidatos. A Justiça Eleitoral diz que não houve boca de urna nem irregularidade.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/08/e-falso-que-mesarios-na-bahia-distribuiram-colinhas-do-pt-na-fila-de-votacao/"
+   }
+  },
+  {
+   "id": "b-flavio-cortes-deepfake",
+   "data": "2026-10-08",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "ataca",
+   "ia": true,
+   "afirmacao": "Vídeo mostra Flávio anunciando cortes nas aposentadorias, no 13º salário e no Pé-de-Meia se for eleito.",
+   "veredito": "falso",
+   "explicacao": "Deepfake: o áudio foi criado com IA sobre o pronunciamento de Flávio após o 1º turno, em que ele não fala em cortes. Não há declaração pública dele com essas promessas.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/flavio-cortes-pensoes-deepfake/"
    }
   }
  ]
