@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-12T08:59:36-03:00",
+ "atualizado": "2026-10-13T08:43:43-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -794,6 +794,21 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/flavio-cortes-pensoes-deepfake/"
+   }
+  },
+  {
+   "id": "b-paulista-droga",
+   "data": "2026-10-12",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Vídeo mostra mulher usando droga no ato pró-Lula na Avenida Paulista (11/10).",
+   "veredito": "falso",
+   "explicacao": "O vídeo já circulava em perfis da Argentina e do Chile em 10/10, um dia antes do ato. Foi repostado por Flávio Bolsonaro, entre outros políticos; o TSE mandou remover as publicações por descontextualização.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/eleicoes/2026/10/12/video-de-mulher-com-suposta-droga-nao-e-de-ato-pro-lula-em-sp/"
    }
   }
  ]
