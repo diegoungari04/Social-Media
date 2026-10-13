@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-13T08:43:43-03:00",
+ "atualizado": "2026-10-13T08:59:53-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -809,6 +809,81 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/12/video-de-mulher-com-suposta-droga-nao-e-de-ato-pro-lula-em-sp/"
+   }
+  },
+  {
+   "id": "b-paulista-pichacao-ia",
+   "data": "2026-10-12",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": true,
+   "afirmacao": "Foto mostra trabalhadora limpando pichações deixadas no metrô Trianon-Masp após o ato pró-Lula.",
+   "veredito": "falso",
+   "explicacao": "A imagem foi gerada por IA a partir de uma foto real das pichações, sem a mulher. O canal oficial da campanha de Flávio no WhatsApp a compartilhou sem o aviso de IA exigido pelo TSE.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/eleicoes/2026/10/12/imagem-de-trabalhadora-limpando-pichacoes-na-paulista-foi-gerada-por-ia/"
+   }
+  },
+  {
+   "id": "b-paulista-umbanda",
+   "data": "2026-10-12",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Vídeo mostra “ritual de invocação de Satanás” no ato de Lula na Avenida Paulista.",
+   "veredito": "falso",
+   "explicacao": "O vídeo, de um homem cantando um ponto de umbanda, foi gravado na 4ª Marcha para Exu, em 16 de agosto, também na Paulista. Não tem relação com o ato de 11/10.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/jornalismo/2026/10/12/video-de-homem-cantando-ponto-de-umbanda-nao-foi-gravado-em-ato-de-lula-em-sp/"
+   }
+  },
+  {
+   "id": "b-presos-90",
+   "data": "2026-10-12",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Mais de 90% dos presos votaram em Lula.",
+   "veredito": "falso",
+   "explicacao": "Nas seções de presídios e unidades socioeducativas, Lula teve 72,6% e Flávio 23,3% dos votos válidos. Só presos provisórios podem votar: foram cerca de 11 mil votos, perto de 1% da população carcerária, e as seções também recebem votos de agentes.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/eleicoes/2026/10/12/e-falso-que-mais-de-90-dos-presos-votaram-em-lula/"
+   }
+  },
+  {
+   "id": "b-quadrilha-petista",
+   "data": "2026-10-12",
+   "tipo": "boato",
+   "sobre": "eleicao",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Vídeo mostra a polícia apreendendo R$ 2 milhões de uma “quadrilha petista” que ia comprar votos.",
+   "veredito": "falso",
+   "explicacao": "O vídeo é de uma operação da PF de setembro, em Alagoas, contra empresa contratada pela Prefeitura de Maceió. Não há ligação com o PT nem com compra de votos na eleição presidencial.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/eleicoes/2026/10/12/video-mostra-operacao-contra-empresa-contratada-pela-prefeitura-de-maceio-nao-contra-quadrilha-petista/"
+   }
+  },
+  {
+   "id": "b-flavio-5498-media",
+   "data": "2026-10-12",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "favorece",
+   "ia": false,
+   "afirmacao": "O resultado real do 1º turno é 54,98% para Flávio, não os 47,03% do TSE.",
+   "veredito": "falso",
+   "explicacao": "A conta faz a média simples dos percentuais das cinco regiões, como se todas tivessem o mesmo número de eleitores, e ignora os outros candidatos. O resultado oficial é 47,03%.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/12/e-falso-que-flavio-bolsonaro-teve-5498-no-1o-turno/"
    }
   }
  ]
