@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-14T08:59:28-03:00",
+ "atualizado": "2026-10-15T08:59:45-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -884,6 +884,21 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/12/e-falso-que-flavio-bolsonaro-teve-5498-no-1o-turno/"
+   }
+  },
+  {
+   "id": "b-russia-eua",
+   "data": "2026-10-14",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "favorece",
+   "ia": false,
+   "afirmacao": "Putin declarou apoio total a Lula e a Rússia ameaçou os EUA caso interfiram na eleição brasileira.",
+   "veredito": "falso",
+   "explicacao": "Não há registro dessa declaração na imprensa em português, inglês ou russo. A Embaixada da Rússia disse que não comenta informação comprovadamente falsa.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/14/e-falso-que-russia-ameacou-os-eua-em-defesa-do-brasil/"
    }
   }
  ]
