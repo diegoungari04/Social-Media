@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-15T08:59:45-03:00",
+ "atualizado": "2026-10-16T09:00:15-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -899,6 +899,96 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/14/e-falso-que-russia-ameacou-os-eua-em-defesa-do-brasil/"
+   }
+  },
+  {
+   "id": "b-marcola-lula",
+   "data": "2026-10-15",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Marcola, apontado como chefe do PCC, declarou voto em Lula em gravação.",
+   "veredito": "falso",
+   "explicacao": "O boato é de 2022 e foi derrubado pelo TSE: a conversa interceptada não tinha declaração de voto, e Marcola, preso desde 1999, está com os direitos políticos suspensos e não pode votar.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/15/e-falso-que-marcola-tenha-declarado-voto-em-lula/"
+   }
+  },
+  {
+   "id": "b-zico-fora-lula",
+   "data": "2026-10-15",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": true,
+   "afirmacao": "Foto mostra Zico segurando faixa de “Fora Lula”.",
+   "veredito": "falso",
+   "explicacao": "A imagem foi criada com IA a partir de um post de Zico de novembro de 2025 em que ele aparece com uma camisa do Flamengo, sem faixa.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/jornalismo/2026/10/15/e-falsa-imagem-de-zico-com-faixa-de-fora-lula/"
+   }
+  },
+  {
+   "id": "f-lula-22mi",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“Tínhamos criado 22 milhões de empregos em 8 anos.” (TV Globo)",
+   "veredito": "exagerado",
+   "explicacao": "Pela Rais, foram cerca de 15,3 milhões de empregos formais de 2003 a 2010. O número de 22 milhões só aparece somando os governos Dilma.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-indonesia",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“[Crescemos] 15% com a Indonésia.” (TV Globo, sobre exportações em 2026)",
+   "veredito": "falso",
+   "explicacao": "As exportações para a Indonésia subiram cerca de 2,2% de janeiro a setembro de 2026, na comparação com o mesmo período de 2025.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-33mi",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“Quando eu voltei, tinha 33 milhões de pessoas passando fome outra vez.” (TV Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Pesquisa da Rede Penssan de 2022 apontou 33,1 milhões de pessoas em insegurança alimentar grave, a situação associada à fome.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-2010",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“[Em 2010 o Brasil] era a sétima economia do mundo. Crescia 7,5% ao ano.” (TV Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "O PIB cresceu 7,5% em 2010, segundo o IBGE, e o Brasil era a 7ª maior economia do mundo naquele ano.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
    }
   }
  ]
