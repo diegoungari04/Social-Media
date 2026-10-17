@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-16T09:00:15-03:00",
+ "atualizado": "2026-10-17T09:00:03-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -989,6 +989,141 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-fmi",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "afirmacao": "“Emprestei R$ 15 bilhões depois da crise subprime ao FMI.” (TV Globo)",
+   "veredito": "exagerado",
+   "explicacao": "Depois da crise de 2008, o Brasil se comprometeu a emprestar até US$ 10 bilhões ao FMI.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-fl-pf-doc",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Tá confirmado pela Polícia Federal” que Vorcaro pagou R$ 30 milhões “por fora” para um filme sobre Lula. (TV Globo)",
+   "veredito": "falso",
+   "explicacao": "A PF afirmou que Vorcaro não deu depoimento com esse conteúdo, e nenhum veículo noticiou confirmação da PF. A história se apoia em supostas falas não comprovadas.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-darkhorse",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“A produtora do filme [Dark Horse] aqui no Brasil prestou contas de tudo.” (TV Globo)",
+   "veredito": "falso",
+   "explicacao": "A auditoria privada citada não anexou comprovantes nem rastreou a origem do dinheiro, e as investigações continuam.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-bf600",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Foi o Bolsonaro que triplicou o valor [do Bolsa Família], que era R$ 190 em média, passou para R$ 600.” (TV Globo)",
+   "veredito": "exagerado",
+   "explicacao": "A média antes era cerca de R$ 192, mas a proposta inicial do governo Bolsonaro foi de R$ 400; o valor de R$ 600 só foi adotado em junho de 2022.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-pf27",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“Ele [Lula] trocou os 27 superintendentes da [PF], todos, de toda a federação.” (TV Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Ao menos 26 dos 27 superintendentes regionais da PF foram trocados no governo Lula.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-dino-demonio",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "“[Flávio Dino] já disse que [Jair] Bolsonaro era o demônio na terra.” (TV Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Em abril de 2022, Dino disse ao UOL que Bolsonaro “era o próprio demônio”.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "b-renan-l-ia",
+   "data": "2026-10-16",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "favorece",
+   "ia": true,
+   "afirmacao": "Foto mostra Renan Santos, ex-candidato do Missão, fazendo o “L” de Lula e aderindo à campanha.",
+   "veredito": "falso",
+   "explicacao": "A imagem foi gerada por IA. Renan Santos disse que não vai votar no 2º turno nem apoiar Lula ou Flávio.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/16/e-falsa-imagem-que-mostra-renan-santos-fazendo-o-l-de-lula/"
+   }
+  },
+  {
+   "id": "b-cirio-ato-flavio",
+   "data": "2026-10-16",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "favorece",
+   "ia": false,
+   "afirmacao": "Vídeo mostra multidão em ato de Flávio Bolsonaro em Minas Gerais (15/10).",
+   "veredito": "falso",
+   "explicacao": "O vídeo é da Trasladação do Círio de Nazaré, em Belém, em 10/10. Foi compartilhado por Flávio e apoiadores.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/video-cirio-nazare-ato-flavio/"
+   }
+  },
+  {
+   "id": "b-ossos-fortaleza",
+   "data": "2026-10-16",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Vídeos de distribuição de ossos em Fortaleza mostram a “fila do osso” do governo Lula.",
+   "veredito": "sem_contexto",
+   "explicacao": "Os vídeos são de um projeto social que distribui alimentos em Fortaleza há cerca de 16 anos, um deles de dezembro de 2024, sem relação com o governo. Foram compartilhados por Flávio e pelo PL.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/16/videos-de-doacao-de-ossos-em-fortaleza-circulam-fora-de-contexto-e-nao-tem-relacao-com-o-governo-lula/"
    }
   }
  ]
