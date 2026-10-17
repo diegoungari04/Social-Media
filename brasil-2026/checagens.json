@@ -938,6 +938,7 @@
    "sobre": "lula",
    "quem": "Lula",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“Tínhamos criado 22 milhões de empregos em 8 anos.” (TV Globo)",
    "veredito": "exagerado",
    "explicacao": "Pela Rais, foram cerca de 15,3 milhões de empregos formais de 2003 a 2010. O número de 22 milhões só aparece somando os governos Dilma.",
@@ -953,6 +954,7 @@
    "sobre": "lula",
    "quem": "Lula",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“[Crescemos] 15% com a Indonésia.” (TV Globo, sobre exportações em 2026)",
    "veredito": "falso",
    "explicacao": "As exportações para a Indonésia subiram cerca de 2,2% de janeiro a setembro de 2026, na comparação com o mesmo período de 2025.",
@@ -968,6 +970,7 @@
    "sobre": "lula",
    "quem": "Lula",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“Quando eu voltei, tinha 33 milhões de pessoas passando fome outra vez.” (TV Globo)",
    "veredito": "verdadeiro",
    "explicacao": "Pesquisa da Rede Penssan de 2022 apontou 33,1 milhões de pessoas em insegurança alimentar grave, a situação associada à fome.",
@@ -983,6 +986,7 @@
    "sobre": "lula",
    "quem": "Lula",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“[Em 2010 o Brasil] era a sétima economia do mundo. Crescia 7,5% ao ano.” (TV Globo)",
    "veredito": "verdadeiro",
    "explicacao": "O PIB cresceu 7,5% em 2010, segundo o IBGE, e o Brasil era a 7ª maior economia do mundo naquele ano.",
@@ -998,6 +1002,7 @@
    "sobre": "lula",
    "quem": "Lula",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“Emprestei R$ 15 bilhões depois da crise subprime ao FMI.” (TV Globo)",
    "veredito": "exagerado",
    "explicacao": "Depois da crise de 2008, o Brasil se comprometeu a emprestar até US$ 10 bilhões ao FMI.",
@@ -1013,6 +1018,7 @@
    "sobre": "flavio",
    "quem": "Flávio Bolsonaro",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“Tá confirmado pela Polícia Federal” que Vorcaro pagou R$ 30 milhões “por fora” para um filme sobre Lula. (TV Globo)",
    "veredito": "falso",
    "explicacao": "A PF afirmou que Vorcaro não deu depoimento com esse conteúdo, e nenhum veículo noticiou confirmação da PF. A história se apoia em supostas falas não comprovadas.",
@@ -1028,6 +1034,7 @@
    "sobre": "flavio",
    "quem": "Flávio Bolsonaro",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“A produtora do filme [Dark Horse] aqui no Brasil prestou contas de tudo.” (TV Globo)",
    "veredito": "falso",
    "explicacao": "A auditoria privada citada não anexou comprovantes nem rastreou a origem do dinheiro, e as investigações continuam.",
@@ -1043,6 +1050,7 @@
    "sobre": "flavio",
    "quem": "Flávio Bolsonaro",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“Foi o Bolsonaro que triplicou o valor [do Bolsa Família], que era R$ 190 em média, passou para R$ 600.” (TV Globo)",
    "veredito": "exagerado",
    "explicacao": "A média antes era cerca de R$ 192, mas a proposta inicial do governo Bolsonaro foi de R$ 400; o valor de R$ 600 só foi adotado em junho de 2022.",
@@ -1058,6 +1066,7 @@
    "sobre": "flavio",
    "quem": "Flávio Bolsonaro",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“Ele [Lula] trocou os 27 superintendentes da [PF], todos, de toda a federação.” (TV Globo)",
    "veredito": "verdadeiro",
    "explicacao": "Ao menos 26 dos 27 superintendentes regionais da PF foram trocados no governo Lula.",
@@ -1073,6 +1082,7 @@
    "sobre": "flavio",
    "quem": "Flávio Bolsonaro",
    "ia": false,
+   "evento": "globo",
    "afirmacao": "“[Flávio Dino] já disse que [Jair] Bolsonaro era o demônio na terra.” (TV Globo)",
    "veredito": "verdadeiro",
    "explicacao": "Em abril de 2022, Dino disse ao UOL que Bolsonaro “era o próprio demônio”.",
@@ -1124,6 +1134,342 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/16/videos-de-doacao-de-ossos-em-fortaleza-circulam-fora-de-contexto-e-nao-tem-relacao-com-o-governo-lula/"
+   }
+  },
+  {
+   "id": "f-lula-ministerios",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Foram 10 ministérios desmontados [no governo Bolsonaro].” (TV Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Bolsonaro extinguiu dez ministérios em 2019, embora a maior parte das funções tenha sido absorvida por outras pastas.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-78endiv",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Quando eu tomei posse, nós tínhamos 78% da população endividada.” (TV Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "Os 78% são da pesquisa da CNC sobre famílias com alguma dívida a pagar; inadimplência, que é outra coisa, era de cerca de 42,8% (Serasa, dez/2022). O Aos Fatos classificou a fala como verdadeira.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-fome2014",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Eu tinha acabado com a fome em 2014.” (TV Globo)",
+   "veredito": "exagerado",
+   "explicacao": "Em 2014 o Brasil saiu do Mapa da Fome da FAO, mas a fome não foi zerada: a subnutrição crônica seguia acima de zero.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-6milobras",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Nós encontramos 6 mil obras paralisadas, entre creches, hospitais, postos e escolas.” (TV Globo)",
+   "veredito": "subestimado",
+   "explicacao": "O TCU contou 8.674 obras federais paralisadas em agosto de 2022, mais do que Lula citou.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-judiciario",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Nós fizemos a primeira reforma [do Judiciário].” (TV Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "A Emenda Constitucional 45/2004, do primeiro governo Lula, criou o CNJ e as súmulas vinculantes.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-china20",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Nós crescemos [na relação comercial] 20% com a China.” (TV Globo)",
+   "veredito": "exagerado",
+   "explicacao": "As exportações para a China cresceram 12% de janeiro a setembro de 2026 em relação ao mesmo período de 2025.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-alemanha",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“[Crescemos] 16% com a Alemanha, 13% com o Vietnã.” (TV Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "As exportações para a Alemanha subiram cerca de 15,8% e para o Vietnã, 14,1%.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-lula-deficit28",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Peguei [o governo] com déficit de 2,8%.” (TV Globo)",
+   "veredito": "falso",
+   "explicacao": "O governo central fechou 2022 com superávit primário de R$ 54,1 bilhões (cerca de 0,5% do PIB). O Aos Fatos avaliou a fala de outro modo e considerou o número correto.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
+   "id": "f-fl-11tri",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Hoje a dívida do Brasil tá em 11 trilhões de reais.” (TV Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "A dívida bruta chegou a cerca de R$ 11,1 trilhões (82,9% do PIB) em agosto de 2026. O Estadão Verifica apontou falta de contexto: o número inclui estados e municípios.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-350bi-globo",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“O atual presidente já gastou quase 350 bilhões de reais para tentar se reeleger.” (TV Globo)",
+   "veredito": "exagerado",
+   "explicacao": "As medidas do ano eleitoral somam cerca de R$ 354 bilhões, mas incluem renúncias de impostos, nem tudo foi gasto e não há prova de finalidade eleitoral.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-filme30mi",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“O filme do Lula, onde ele [Vorcaro] botou 30 milhões de reais por fora.” (TV Globo)",
+   "veredito": "sem_evidencias",
+   "explicacao": "A acusação se apoia em supostas falas relatadas pela Veja, sem prova de pagamento nem de que a suposta delação exista.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-margem-plano",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“A margem equatorial, os royalties do petróleo, já estavam na proposta de governo [de Bolsonaro].” (TV Globo)",
+   "veredito": "falso",
+   "explicacao": "Os planos de governo de Bolsonaro de 2018 e 2022 não citam a exploração na margem equatorial, licitada desde 2013.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-margem-lula",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“O presidente Lula não conseguiu iniciar a exploração do petróleo na margem equatorial.” (TV Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "A exploração depende de estudos e licenças ambientais, não só do presidente, e o Ibama autorizou um poço exploratório em outubro de 2025.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-juros7",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“A estimativa de taxa de juros era para estar neste momento em torno de 7%.” (TV Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "Uma projeção de mercado de 2022 previa cerca de 7,5% em 2025, mas não era meta de governo; a Selic estava em 13,75% em outubro de 2022, no governo Bolsonaro.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-patrocinio",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Eu tô falando de um pedido de um patrocínio privado para um filme privado.” (TV Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "Investigações da PF apontam um esquema de lavagem de dinheiro de Vorcaro, com possível ligação a fraudes e uso indevido de recursos públicos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-moro",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Ele [Sergio Moro] pediu para sair [do Ministério da Justiça] e hoje somos aliados.” (TV Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "Moro pediu demissão em abril de 2020 acusando Bolsonaro de interferência política na PF, após a troca do diretor-geral que ele havia indicado.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-legitima",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“É o que tá na Constituição, o direito à legítima defesa.” (TV Globo)",
+   "veredito": "falso",
+   "explicacao": "A legítima defesa está no artigo 25 do Código Penal; a Constituição garante a “ampla defesa”, que é outro conceito.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-dino-injustica",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“O Flávio Dino, até ontem, era ministro da Justiça ou da injustiça de Lula.” (TV Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "Omite que André Mendonça, hoje no STF, também foi ministro da Justiça de Bolsonaro antes de ir para o tribunal.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-dino-mare",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“O ex-ministro da Justiça de Lula [Flávio Dino] entrou [na Maré] sem nenhum policial, sem nenhum segurança.” (TV Globo)",
+   "veredito": "falso",
+   "explicacao": "Na visita ao Complexo da Maré, em março de 2023, Dino teve apoio de várias forças policiais, e a PRF tinha agentes à paisana.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-pf-bolsonaro",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“[Jair] Bolsonaro troca um [comando da PF], tem esse questionamento. Ele [Lula] troca 27.” (TV Globo)",
+   "veredito": "falso",
+   "explicacao": "O governo Bolsonaro trocou ao menos 20 delegados em cargos de chefia da PF nos três primeiros anos e mudou o diretor-geral cinco vezes.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "f-fl-armas",
+   "data": "2026-10-16",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“O que botou por água abaixo essas teses malucas de que mais armas nas mãos de cidadãos causam mais violência.” (TV Globo)",
+   "veredito": "falso",
+   "explicacao": "Diversos estudos, brasileiros e internacionais, associam mais armas em circulação a mais violência, homicídios e suicídios.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
    }
   }
  ]
