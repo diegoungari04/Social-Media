@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-17T09:00:03-03:00",
+ "atualizado": "2026-10-18T08:59:15-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -1470,6 +1470,21 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
+   }
+  },
+  {
+   "id": "b-flavio-farmacia",
+   "data": "2026-10-08",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "atribui",
+   "ia": false,
+   "afirmacao": "Flávio disse “Não existe remédio gratuito. Todo mundo precisa pagar” e vai acabar com o Farmácia Popular.",
+   "veredito": "falso",
+   "explicacao": "Não há registro dessa fala na imprensa, nas redes do candidato nem nas notas do Senado; a campanha negou. O plano de governo não cita o programa, e o PL diz que vai mantê-lo. O boato lembra a proposta de corte de 59% no programa feita pelo governo Bolsonaro em 2022, depois revertida.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/flavio-bolsonaro-farmacia-popular/"
    }
   }
  ]
