@@ -639,7 +639,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  </div>
  <div class="fk-fil">
   <div class="tabs" role="group" aria-label="Sobre quem" id="fkWho"></div>
-  <div class="seg" role="group" aria-label="Tipo" id="fkTipo"><button data-t="" aria-pressed="true">Tudo</button><button data-t="boato" aria-pressed="false">Boatos na internet</button><button data-t="fala" aria-pressed="false">Falas dos candidatos</button><button data-t="globo" aria-pressed="false">Entrevistas na Globo</button></div>
+  <div class="seg" role="group" aria-label="Tipo" id="fkTipo"><button data-t="" aria-pressed="true">Tudo</button><button data-t="boato" aria-pressed="false">Boatos na internet</button><button data-t="fala" aria-pressed="false">Falas dos candidatos</button><button data-t="globo" aria-pressed="false">Entrevistas na Globo</button><button data-t="band" aria-pressed="false">Debate na Band</button></div>
   <div class="seg" role="group" aria-label="Veredito" id="fkVer"><button data-v="" aria-pressed="true">Todos</button><button data-v="falso" aria-pressed="false">Mito</button><button data-v="verdadeiro" aria-pressed="false">Verdade</button><button data-v="parcial" aria-pressed="false">Exagerado ou sem contexto</button></div>
  </div>
  <div class="fk-grid" id="fkGrid"><p class="meta">Carregando checagens…</p></div>
@@ -1261,18 +1261,19 @@ function fkCard(x){const v=VER[x.veredito]||VER.sem_evidencias;const ef=x.tipo==
   return `<article class="fk" data-fk="${x.id}" style="--sc:${v[1]}"><span class="stamp">${v[0]}</span><q>${x.afirmacao}</q><p>${x.explicacao}</p><div class="tags"><span class="t-${x.sobre}">${x.tipo==="fala"?"Fala de "+(x.quem||SOB[x.sobre]):"Boato"+(ef?" · "+ef:"")}</span>${x.ia?'<span class="t-ia">Feito com IA</span>':""}<span>${fmtD(x.data)}</span></div><a class="src" href="${x.fonte.url}" rel="noopener" target="_blank">${x.fonte.nome} ↗</a></article>`}
 const vOk=x=>!fkV||(fkV==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===fkV);
 const VORD={falso:0,exagerado:1,subestimado:1,sem_contexto:1,sem_evidencias:1,verdadeiro:2};
-function renderGlobo(){
- const G=FK.filter(x=>x.evento==="globo");
+const EVT={globo:{t:"nas sabatinas dos dois candidatos à TV Globo",d:{lula:"Sabatina de 15/10",flavio:"Sabatina de 16/10"},dif:"o que a agência checou em cada entrevista"},band:{t:"no debate entre os dois candidatos na Band, em 18/10",d:{lula:"Debate de 18/10",flavio:"Debate de 18/10"},dif:"o que cada um disse e o que a agência checou no debate"}};
+function renderGlobo(ev){
+ const E=EVT[ev],G=FK.filter(x=>x.evento===ev);
  const c=k=>G.filter(x=>vOk(x)&&(k==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===k)).length;
  $("#fkSum").innerHTML=`<div><b style="color:var(--risk)">${c("falso")}</b><span>mitos</span></div><div><b style="color:var(--ok)">${c("verdadeiro")}</b><span>verdades</span></div><div><b style="color:var(--warn)">${c("parcial")}</b><span>exagerados ou sem contexto</span></div>`;
  const col=(k,nm,dt)=>{const A=G.filter(x=>x.sobre===k),n=A.length,f=A.filter(x=>x.veredito==="falso").length,v=A.filter(x=>x.veredito==="verdadeiro").length,p=n-f-v,L=A.filter(vOk).sort((a,b)=>VORD[a.veredito]-VORD[b.veredito]);
   const pc=x=>n?Math.round(100*x/n):0;
-  return `<div class="gl-col" style="--c:var(--${k==="lula"?"lu":"fl"})"><div class="gl-h"><h4><i></i>${nm}</h4><small>Sabatina de ${dt} · ${n} falas checadas</small><div class="fm-stack" aria-hidden="true">${f?`<span style="width:${100*f/n}%;background:var(--risk)"></span>`:""}${p?`<span style="width:${100*p/n}%;background:var(--warn)"></span>`:""}${v?`<span style="width:${100*v/n}%;background:var(--ok)"></span>`:""}</div><div class="gl-n"><span><b>${f}</b> falsas (${pc(f)}%)</span><span><b>${p}</b> imprecisas (${pc(p)}%)</span><span><b>${v}</b> verdadeiras (${pc(v)}%)</span></div></div>${L.map(fkCard).join("")||'<p class="meta">Nenhuma fala com esse veredito.</p>'}</div>`};
- $("#fkGrid").innerHTML=G.length?`<div class="gl-intro"><p>Todas as falas checadas pela Agência Lupa nas sabatinas dos dois candidatos à TV Globo, com a mesma régua. O número diferente de falas reflete o que a agência checou em cada entrevista. Quando outra agência chegou a conclusão diferente, isso aparece na explicação.</p></div><div class="gl-grid">${col("lula","Lula","15/10")}${col("flavio","Flávio Bolsonaro","16/10")}</div>`:'<p class="meta">As checagens das entrevistas ainda não foram carregadas.</p>';
+  return `<div class="gl-col" style="--c:var(--${k==="lula"?"lu":"fl"})"><div class="gl-h"><h4><i></i>${nm}</h4><small>${dt} · ${n} falas checadas</small><div class="fm-stack" aria-hidden="true">${f?`<span style="width:${100*f/n}%;background:var(--risk)"></span>`:""}${p?`<span style="width:${100*p/n}%;background:var(--warn)"></span>`:""}${v?`<span style="width:${100*v/n}%;background:var(--ok)"></span>`:""}</div><div class="gl-n"><span><b>${f}</b> falsas (${pc(f)}%)</span><span><b>${p}</b> imprecisas (${pc(p)}%)</span><span><b>${v}</b> verdadeiras (${pc(v)}%)</span></div></div>${L.map(fkCard).join("")||'<p class="meta">Nenhuma fala com esse veredito.</p>'}</div>`};
+ $("#fkGrid").innerHTML=G.length?`<div class="gl-intro"><p>Todas as falas checadas pela Agência Lupa ${E.t}, com a mesma régua. O número diferente de falas reflete ${E.dif}. Quando outra agência chegou a conclusão diferente, isso aparece na explicação.</p></div><div class="gl-grid">${col("lula","Lula",E.d.lula)}${col("flavio","Flávio Bolsonaro",E.d.flavio)}</div>`:'<p class="meta">As checagens deste evento ainda não foram carregadas.</p>';
 }
 function renderFK(){
- $("#fkWho").hidden=fkT==="globo";$("#fkGrid").classList.toggle("is-globo",fkT==="globo");
- if(fkT==="globo")return renderGlobo();
+ const ev=EVT[fkT]?fkT:"";$("#fkWho").hidden=!!ev;$("#fkGrid").classList.toggle("is-globo",!!ev);
+ if(ev)return renderGlobo(ev);
  const L=FK.filter(x=>(!fkW||(fkW==="vices"?["alckmin","gaspar"].includes(x.sobre):x.sobre===fkW))&&(!fkT||x.tipo===fkT)&&(!fkV||(fkV==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===fkV)));
  const c=k=>L.filter(x=>k==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===k).length;
  $("#fkSum").innerHTML=`<div><b style="color:var(--risk)">${c("falso")}</b><span>mitos</span></div><div><b style="color:var(--ok)">${c("verdadeiro")}</b><span>verdades</span></div><div><b style="color:var(--warn)">${c("parcial")}</b><span>exagerados ou sem contexto</span></div>`;
