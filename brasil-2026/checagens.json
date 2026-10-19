@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-18T08:59:15-03:00",
+ "atualizado": "2026-10-19T09:01:15-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -1485,6 +1485,662 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/flavio-bolsonaro-farmacia-popular/"
+   }
+  },
+  {
+   "id": "band-01",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“É importante lembrar que este país cresceu 7,5% em 2010.” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "O IBGE registra crescimento de 7,5% em 2010, último ano do segundo mandato de Lula.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-02",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“O atual governo tá deixando de 11 trilhões de reais, mais um recorde negativo.” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "A dívida bruta chegou a cerca de R$ 11,1 trilhões (82,9% do PIB) em agosto de 2026.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-03",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“A Lei Antifacção que nós aprovamos, os líderes dessas organizações vão ficar até 80 anos presos.” (debate na Band)",
+   "veredito": "sem_contexto",
+   "explicacao": "A lei prevê de 20 a 40 anos por crime, e o Código Penal limita o cumprimento da pena a 40 anos, salvo nova condenação.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-04",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Eu já fiz a Lei Antifacção, ela foi aprovada. Já aumentamos o tempo de cadeia para quem participa das facções.” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "A lei veio de projeto do Executivo, foi aprovada pelo Congresso e sancionada em março de 2026.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-05",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“O áudio do Vorcaro falou que é dinheiro por fora. R$ 30 milhões para o Instituto Lula por fora, dinheiro ilegal.” (debate na Band)",
+   "veredito": "sem_evidencias",
+   "explicacao": "A suposta delação citada pela Veja não tem comprovação de pagamento, e PGR e PF negaram que o depoimento exista.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-06",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“O ex-presidente Bolsonaro, que passou para no mínimo R$ 600 o Bolsa Família.” (debate na Band)",
+   "veredito": "exagerado",
+   "explicacao": "A proposta de 2021 foi de R$ 400; os R$ 600 vieram depois e valiam até o fim de 2022.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-07",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“[O atual governo] coloca nas ruas marginais perigosos, alegando que não tem vagas no sistema penitenciário.” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "Não existe norma que solte presos por falta de vagas; saídas dependem de decisão judicial caso a caso.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-08",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“[O Bolsa Família] era em média 190. O presidente Bolsonaro triplicou esse valor.” (debate na Band)",
+   "veredito": "exagerado",
+   "explicacao": "A média era de cerca de R$ 188 em 2019, mas o salto para R$ 600 veio de medidas da pandemia e da reestruturação de 2022.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-09",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Anistiei 12,6 bilhões de dívida dos MEI.” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "O Congresso aprovou projeto do Executivo que perdoa cerca de R$ 12,6 bilhões em dívidas de MEIs; o texto segue para sanção.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-10",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“R$ 7 bilhões que você gastou em viagens com a Janja.” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "O valor se refere às viagens de todo o governo federal de 2023 a 2025, não só de Lula e da primeira-dama. O Aos Fatos também classificou como falso.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-11",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Em 2009, você, como deputado estadual… De 49 deputados, você foi o único que votou contra [a ampliação da licença-maternidade].” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "Flávio foi o único deputado estadual do Rio a votar contra a ampliação da licença-maternidade.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-12",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“O salário mínimo comprava 1,8 cesta básica [no governo Bolsonaro]. No meu governo, já tá comprando 2,2.” (debate na Band)",
+   "veredito": "exagerado",
+   "explicacao": "Os dados mostram 1,62 cesta em agosto de 2022 e 1,8 em agosto de 2026; não há base para o número de 2,2.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-13",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Lula, Roberta Luchsinger fez acusações muito graves contra você ontem.” (debate na Band)",
+   "veredito": "sem_contexto",
+   "explicacao": "A lobista disse que Lula sabia de reuniões do filho com ministros, mas não há acusação formal contra Lula; o filho é investigado em três inquéritos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-14",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Quando eles governaram o país, ficou um déficit de 2,8%.” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "O governo central fechou 2022 com superávit primário de R$ 54,1 bilhões; o déficit de 2023 veio depois, com o pagamento de precatórios.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-15",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“O filho do Lula bateu na própria mulher.” (debate na Band)",
+   "veredito": "sem_evidencias",
+   "explicacao": "A polícia concluiu o inquérito de 2024 sem indiciar o filho de Lula, e o vídeo viral de agressão foi falsamente atribuído a ele.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-16",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Mais de 40 milhões de brasileiros moram em áreas dominadas por narcoterroristas.” (debate na Band)",
+   "veredito": "subestimado",
+   "explicacao": "Estudos estimam entre 50 e 61 milhões de pessoas sob governança criminal, e pesquisa Datafolha indicou 68,7 milhões.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-17",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Você pode explicar por que 73% dos presidiários votaram em você?” (debate na Band)",
+   "veredito": "sem_contexto",
+   "explicacao": "Lula teve 72,57% dos votos válidos nas seções de presídios, mas essas seções também recebem votos de agentes e outros eleitores; só presos provisórios votam.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-18",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Nós fizemos 270 bilhões de reserva [internacional].” (debate na Band)",
+   "veredito": "subestimado",
+   "explicacao": "As reservas fecharam 2010 em US$ 288,6 bilhões, acima do valor citado.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-19",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“O governo de esquerda [da Argentina] deixou tanta gente na miséria que o governo de direita tem que ir lá consertar.” (debate na Band)",
+   "veredito": "sem_contexto",
+   "explicacao": "A pobreza argentina subiu no início do governo Milei, caiu em 2025 e voltou a subir em 2026.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-20",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“No governo deles, liberaram mais de 1 milhão de armas.” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "Levantamento do Sou da Paz e do Igarapé, com dados da PF e do Exército, contou mais de 1 milhão de armas particulares novas de 2019 a 2022.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-21",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“[O governo Bolsonaro liberou] 1 bilhão e 100 milhões de balas.” (debate na Band)",
+   "veredito": "sem_evidencias",
+   "explicacao": "Não há dados públicos que comprovem esse número; um decreto de 2019 que permitia comprar 2,1 bilhões de munições foi revogado. O Aos Fatos considerou a fala correta.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-22",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Com o atual governo, você vai pra praia com medo de ser assaltado dentro do ônibus, de roubarem seu celular.” (debate na Band)",
+   "veredito": "sem_contexto",
+   "explicacao": "A segurança do dia a dia e a investigação de roubos e furtos cabem principalmente aos governos estaduais.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-23",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“[O país] só voltou a crescer acima de 3% depois que eu voltei [à Presidência].” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "O PIB cresceu 3,9% em 2011, 3,0% em 2013, 4,8% em 2021 e 3,0% em 2022, em outros governos. O Aos Fatos também classificou como falso.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-24",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Porque ele vetou a saidinha, a gente teve que derrubar no Congresso.” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "Em maio de 2024, o Congresso derrubou o veto de Lula à proibição das saídas temporárias de presos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-25",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Ele fez de tudo, até acionou a Justiça para tentar fazer com que a saidinha voltasse a valer.” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "A ação contra a lei foi apresentada pela Anacrim, uma associação de advogados criminalistas, não pelo governo.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-26",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Agora apresentamos um orçamento com superávit de 0,1%.” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "A proposta de Orçamento de 2027 prevê superávit de 0,13% do PIB.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-27",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“É a primeira vez [que apresentamos resultado positivo].” (debate na Band)",
+   "veredito": "sem_contexto",
+   "explicacao": "Propostas com superávit ou equilíbrio já tinham sido apresentadas antes, como em 2024 e 2025, e terminaram em déficit.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-28",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Aquele que cometeu crime hediondo, esse não sai [na saidinha].” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "A Lei 14.843/2024, sancionada por Lula, proíbe saídas temporárias para condenados por crimes hediondos ou violentos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-29",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Nós criamos o [regime tributário] Simples.” (debate na Band)",
+   "veredito": "sem_contexto",
+   "explicacao": "O primeiro Simples é de 1996, do governo FHC; o governo Lula criou o Simples Nacional em 2006.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-30",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Você deu emprego para a irmã e para a mulher do cara do Escritório do Crime.” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "Reportagem de 2019 mostrou que Flávio empregou a mãe e a mulher de um miliciano do Escritório do Crime (a mãe, não a irmã).",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-31",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“A economia voltou a crescer, o PIB industrial é de 3,4%.” (debate na Band)",
+   "veredito": "exagerado",
+   "explicacao": "O PIB da indústria cresceu 1,4% em 2025; 3,4% foi o crescimento do PIB total em 2024.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-32",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Não mandou ninguém para ir lá te defender [nos EUA].” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "Diplomatas acompanharam audiência do USTR em Washington, e ministros se reuniram com autoridades americanas.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-33",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“[Lula] gastou mais 350 bilhões já para tentar se reeleger.” (debate na Band)",
+   "veredito": "exagerado",
+   "explicacao": "As medidas somam cerca de R$ 354 bilhões, mas parte são renúncias de impostos e o total não prova intenção eleitoral.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-34",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Ele [Eduardo Bolsonaro] tá exilado, perseguido.” (debate na Band)",
+   "veredito": "exagerado",
+   "explicacao": "Eduardo deixou o país em 2025 sem ser investigado naquele momento; só depois foi investigado e condenado pelo STF.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-35",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Lula, com você, a criminalidade explodiu no Brasil.” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "O Anuário 2026 mostra queda de 8,2% nas mortes violentas em 2025, a menor taxa da série, embora mortes por intervenção policial e feminicídios tenham subido. O Aos Fatos também classificou como falso.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-36",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Você liberou as armas para os traficantes.” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "Lula não editou norma que facilitasse armas para criminosos e, em 2023, revogou regras do governo Bolsonaro que ampliavam o acesso a armas.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-37",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“O problema é a arma ilegal que você tá deixando entrar pelo país.” (debate na Band)",
+   "veredito": "sem_evidencias",
+   "explicacao": "A PF faz apreensões contra o tráfico de armas, e estudo aponta que o arsenal das facções é majoritariamente de origem nacional.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-38",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Vocês estão vendo a redução aí de roubo de celular?” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "Os roubos de celular caíram 37,4% de 2022 a 2025, segundo o Anuário.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-39",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Estão vendo algum combate a quem revende um celular [roubado]?” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "O governo sancionou lei que aumenta penas para furto, roubo e receptação e fez operação contra o comércio irregular de celulares.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-40",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“A inflação de alimentos [no governo Bolsonaro] estava em 56%. Agora, nos meus quatro anos, está 13%.” (debate na Band)",
+   "veredito": "verdadeiro",
+   "explicacao": "Pelo IPCA, os alimentos subiram 54,2% com Bolsonaro e 13,6% nos primeiros 43 meses do governo Lula.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-41",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Você foi condenado no STJ, no STF, em todas as instâncias. E foi descondenado pelos seus amigos.” (debate na Band)",
+   "veredito": "falso",
+   "explicacao": "O STJ manteve a condenação do triplex, mas o STF nunca confirmou as condenações, que foram anuladas por incompetência do juízo, sem julgamento do mérito.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
    }
   }
  ]
