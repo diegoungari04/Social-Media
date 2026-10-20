@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-19T09:01:15-03:00",
+ "atualizado": "2026-10-20T09:00:43-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -2141,6 +2141,21 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "b-cnn-compra-votos",
+   "data": "2026-10-19",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Reportagem da CNN Brasil mostra que a PF descobriu compra de votos para Flávio Bolsonaro e apreendeu R$ 27 milhões.",
+   "veredito": "falso",
+   "explicacao": "A reportagem da CNN, de 3/10, fala de R$ 27 milhões apreendidos pela PF em vários casos de suspeita de compra de votos no Norte, sem citar Flávio. Aos Fatos e UOL Confere também desmentiram a ligação.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/19/reportagem-da-cnn-brasil-sobre-compra-de-votos-nao-cita-flavio-bolsonaro/"
    }
   }
  ]
