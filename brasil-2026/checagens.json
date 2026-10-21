@@ -1185,6 +1185,22 @@
    }
   },
   {
+   "id": "f-lula-6milobras",
+   "data": "2026-10-15",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo",
+   "afirmacao": "“Nós encontramos 6 mil obras paralisadas, entre creches, hospitais, postos e escolas.” (TV Globo)",
+   "veredito": "subestimado",
+   "explicacao": "O TCU contou 8.674 obras federais paralisadas em agosto de 2022, mais do que Lula citou.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
+   }
+  },
+  {
    "id": "f-lula-judiciario",
    "data": "2026-10-15",
    "tipo": "fala",
@@ -1712,6 +1728,22 @@
    }
   },
   {
+   "id": "band-16",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Mais de 40 milhões de brasileiros moram em áreas dominadas por narcoterroristas.” (debate na Band)",
+   "veredito": "subestimado",
+   "explicacao": "Estudos estimam entre 50 e 61 milhões de pessoas sob governança criminal, e pesquisa Datafolha indicou 68,7 milhões.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
    "id": "band-17",
    "data": "2026-10-18",
    "tipo": "fala",
@@ -1722,6 +1754,22 @@
    "afirmacao": "“Você pode explicar por que 73% dos presidiários votaram em você?” (debate na Band)",
    "veredito": "sem_contexto",
    "explicacao": "Lula teve 72,57% dos votos válidos nas seções de presídios, mas essas seções também recebem votos de agentes e outros eleitores; só presos provisórios votam.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
+   }
+  },
+  {
+   "id": "band-18",
+   "data": "2026-10-18",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "band",
+   "afirmacao": "“Nós fizemos 270 bilhões de reserva [internacional].” (debate na Band)",
+   "veredito": "subestimado",
+   "explicacao": "As reservas fecharam 2010 em US$ 288,6 bilhões, acima do valor citado.",
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"

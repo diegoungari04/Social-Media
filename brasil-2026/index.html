@@ -418,6 +418,90 @@ details ul{margin:10px 0 0;padding-left:20px}
 .met li{margin:5px 0}
 footer{padding-block:40px 48px;color:var(--mute);font-family:var(--mono);font-size:12px}
 a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outline:2px solid var(--hl);outline-offset:2px}
+/* série histórica por governo */
+.his{margin-top:44px;border-top:1px solid var(--line);padding-top:28px}
+.his-h{font-size:clamp(24px,4vw,34px);font-weight:850;font-stretch:70%;max-width:26ch}
+.his-k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+.his .tabs{gap:4px 14px}
+.his-fig{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 16px 12px}
+.his-fig figcaption b{display:block;font-size:17px}
+.his-fig figcaption span{font-size:13.5px;color:var(--mute)}
+.his-chart{position:relative;margin-top:10px;touch-action:pan-y}
+.his-chart svg{display:block;width:100%;height:auto;overflow:visible}
+.his-chart text{font-family:var(--mono);font-size:10.5px;fill:var(--mute)}
+.his-chart .gl{stroke:var(--line);stroke-width:1}
+.his-chart .gl0{stroke:var(--mute);stroke-width:1}
+.his-chart .band{fill:var(--panel2)}
+.his-chart .bsep{stroke:var(--line);stroke-width:1;stroke-dasharray:2 3}
+.his-chart .bl{font-family:var(--sans);font-size:10.5px;font-weight:600;fill:var(--mute)}
+.his-chart .ln{fill:none;stroke:var(--acc);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.his-chart .ln.old{stroke-dasharray:5 4;stroke-width:1.6}
+.his-chart .pt{fill:var(--acc);stroke:var(--panel);stroke-width:2}
+.his-chart .bar{fill:var(--acc)}
+.his-chart .cmp{fill:var(--panel);stroke:var(--ink);stroke-width:2}
+.his-chart .cmp.now{fill:var(--hl);stroke:var(--ink)}
+.his-chart .xh{stroke:var(--ink);stroke-width:1;stroke-dasharray:3 3}
+.his-tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12.5px;line-height:1.35;padding:7px 9px;border-radius:6px;white-space:nowrap;transform:translate(-50%,calc(-100% - 10px));z-index:2}
+.his-tip b{font-size:14px}
+.his-leg{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 0;font-size:12.5px;color:var(--mute)}
+.his-leg i{display:inline-block;vertical-align:middle;margin-right:6px}
+.his-leg .l1{width:18px;border-top:2px solid var(--acc)}
+.his-leg .l2{width:18px;border-top:2px dashed var(--acc)}
+.his-leg .l3{width:10px;height:10px;border-radius:50%;border:2px solid var(--ink);background:var(--hl)}
+.his-note{font-size:13.5px;color:var(--mute);margin:10px 0 0;max-width:80ch}
+.his-cmp{margin-top:22px}
+.his-cmp h4{font-size:15px;margin:0 0 4px}
+.his-cmp>p{font-size:13.5px;color:var(--mute);margin:0 0 10px;max-width:72ch}
+.his-tbl{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.his-tbl div{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:9px 11px}
+.his-tbl div.now{border-color:var(--ink);box-shadow:inset 0 -3px 0 var(--hl)}
+.his-tbl small{display:block;font-family:var(--mono);font-size:11px;color:var(--mute)}
+.his-tbl span{display:block;font-size:13px;font-weight:600}
+.his-tbl b{display:block;font-family:var(--disp);font-size:22px;font-stretch:80%;font-weight:800;margin-top:2px}
+.his-tbl b.na{font-size:14px;font-weight:600;color:var(--mute);font-family:var(--sans)}
+.his-warn{font-size:12.5px;color:var(--mute);margin:10px 0 0;max-width:80ch}
+.fk-grid.is-globo{display:block}
+#fkWho[hidden]{display:none}
+.gl-intro p{font-size:14px;color:var(--mute);max-width:80ch;margin:0 0 14px}
+.gl-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+.gl-col{display:flex;flex-direction:column;gap:12px}
+.gl-h{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:8px;padding:14px 16px}
+.gl-h h4{font-size:20px;font-weight:800;margin:0;display:flex;align-items:center;gap:8px}
+.gl-h h4 i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.gl-h small{display:block;color:var(--mute);font-size:13px;margin:2px 0 10px}
+.gl-n{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--mute);margin-top:8px}
+.gl-n b{color:var(--ink)}
+@media (max-width:720px){.gl-grid{grid-template-columns:1fr}}
+/* pesquisas do 2º turno */
+.pq{margin:22px 0 0;border:1px solid var(--hero-line);border-radius:8px;padding:16px 18px 14px;background:rgba(255,255,255,.02)}
+.pq-h{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--hero-mute);border-bottom:1px dashed var(--hero-line);padding-bottom:10px;margin-bottom:14px}
+.pq-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:22px;align-items:start}
+.pq-avg .r{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;align-items:end;margin:0 0 12px}
+.pq-avg .n{font-weight:600;font-size:15px}
+.pq-avg .p{font-family:var(--disp);font-stretch:70%;font-weight:800;font-size:40px;line-height:1;font-variant-numeric:tabular-nums}
+.pq-avg .bar{grid-column:1/-1;height:8px;background:var(--hero-line);border-radius:2px;overflow:hidden;margin-top:6px}
+.pq-avg .bar i{display:block;height:100%}
+.pq-avg p{font-size:13px;color:var(--hero-mute);margin:6px 0 0;line-height:1.45}
+.pq-avg p b{color:var(--hero-ink)}
+.pq-k{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--hero-mute);margin:0 0 6px}
+.pq svg{display:block;width:100%;height:auto}
+.pq svg text{font-family:var(--mono);font-size:10.5px;fill:var(--hero-mute)}
+.pq svg .nm{font-family:var(--sans);font-size:12px;fill:var(--hero-ink)}
+.pq svg .gl{stroke:var(--hero-line);stroke-width:1}
+.pq svg .mid{stroke:var(--hero-mute);stroke-width:1;stroke-dasharray:3 3}
+.pq-leg{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;color:var(--hero-mute);margin:6px 0 0}
+.pq-leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.pq details{margin-top:12px;font-size:13px;color:var(--hero-mute)}
+.pq summary{cursor:pointer;color:var(--hero-ink);font-weight:600}
+.pq-tbl{overflow-x:auto;margin-top:8px}
+.pq table{border-collapse:collapse;width:100%;min-width:620px;font-size:12.5px}
+.pq th,.pq td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--hero-line);white-space:nowrap}
+.pq th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--hero-mute);font-weight:500}
+.pq td.num{text-align:right;font-variant-numeric:tabular-nums}
+.pq tr.out td{opacity:.6}
+.pq-note{font-size:12.5px;color:var(--hero-mute);margin:10px 0 0;line-height:1.5}
+.pq-note a{color:var(--hero-ink)}
+@media (max-width:820px){.pq-top{grid-template-columns:1fr}}
 </style></head><body>
 
 <header class="hero">
@@ -437,6 +521,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
     <p><b id="daysLbl">dias para o 2º turno</b><br>Domingo, 25 de outubro de 2026</p>
    </div>
   </div>
+  <section class="pq" id="pesquisas" aria-labelledby="h-pq" hidden>
+   <div class="pq-h"><span id="h-pq">2º turno · média das pesquisas registradas</span><span id="pqUpd"></span></div>
+   <div class="pq-top">
+    <div class="pq-avg" id="pqAvg"></div>
+    <div><p class="pq-k">Cada instituto, em votos válidos para Flávio · linha = margem de erro</p><div id="pqDots"></div></div>
+   </div>
+   <p class="pq-k" style="margin-top:14px">Evolução da média (votos válidos, média móvel de 7 dias pela data final do campo)</p>
+   <div id="pqTrend"></div>
+   <details><summary>Ver todas as pesquisas e os dados de registro</summary><div class="pq-tbl" id="pqTbl"></div></details>
+   <p class="pq-note" id="pqNote"></p>
+  </section>
   <button type="button" class="hero-srch" id="heroSrch"><span aria-hidden="true">🔍</span> Buscar no guia: 6x1, Moraes, Bolsa Família, Master…<kbd>/</kbd></button>
   <div class="vices"><span><i class="dot" style="background:var(--lu)"></i>Lula · vice Geraldo Alckmin (PSB)</span><span><i class="dot" style="background:var(--fl)"></i>Flávio Bolsonaro · vice Alfredo Gaspar</span></div>
  </div>
@@ -461,6 +556,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <p class="intro">Indicadores oficiais mais recentes disponíveis em outubro de 2026. Escolha a dimensão.</p>
  <div class="tabs" role="tablist" id="cenTabs"></div>
  <div id="cenBody" role="tabpanel"></div>
+ <div class="his" id="historico">
+  <span class="his-k">Série histórica desde 1985</span>
+  <h3 class="his-h">Em perspectiva: como estava cada governo <span class="hl">no mesmo ponto do mandato</span></h3>
+  <p class="intro">Escolha o indicador. O gráfico mostra toda a série desde a redemocratização, com a faixa de cada presidente. Os círculos marcam o mesmo momento de cada mandato (o 4º ano, no mesmo mês do dado mais recente de hoje), comparado com o quadro abaixo.</p>
+  <div class="tabs" role="tablist" aria-label="Indicador da série histórica" id="hisTabs"></div>
+  <figure class="his-fig">
+   <figcaption id="hisCap"></figcaption>
+   <div class="his-chart" id="hisChart"></div>
+   <div class="his-leg" id="hisLeg"></div>
+   <p class="his-note" id="hisNote"></p>
+   <p class="src" id="hisSrc"></p>
+  </figure>
+  <div class="his-cmp"><h4 id="hisCmpH"></h4><p id="hisCmpP"></p><div class="his-tbl" id="hisTbl"></div>
+  <p class="his-warn">Leia com cuidado: nenhum indicador depende só do presidente. Crises externas, preço das commodities, a pandemia, decisões do Congresso e do Banco Central e a herança do governo anterior pesam muito. Os números ajudam a comparar épocas, não a dar nota a governos.</p></div>
+ </div>
 </section>
 
 <section class="blk" id="desafios" aria-labelledby="h-des">
@@ -570,7 +680,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  </div>
  <div class="fk-fil">
   <div class="tabs" role="group" aria-label="Sobre quem" id="fkWho"></div>
-  <div class="seg" role="group" aria-label="Tipo" id="fkTipo"><button data-t="" aria-pressed="true">Tudo</button><button data-t="boato" aria-pressed="false">Boatos na internet</button><button data-t="fala" aria-pressed="false">Falas dos candidatos</button></div>
+  <div class="seg" role="group" aria-label="Tipo" id="fkTipo"><button data-t="" aria-pressed="true">Tudo</button><button data-t="boato" aria-pressed="false">Boatos na internet</button><button data-t="fala" aria-pressed="false">Falas dos candidatos</button><button data-t="globo" aria-pressed="false">Entrevistas na Globo</button><button data-t="band" aria-pressed="false">Debate na Band</button></div>
   <div class="seg" role="group" aria-label="Veredito" id="fkVer"><button data-v="" aria-pressed="true">Todos</button><button data-v="falso" aria-pressed="false">Mito</button><button data-v="verdadeiro" aria-pressed="false">Verdade</button><button data-v="parcial" aria-pressed="false">Exagerado ou sem contexto</button></div>
  </div>
  <div class="fk-grid" id="fkGrid"><p class="meta">Carregando checagens…</p></div>
@@ -587,10 +697,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <p class="intro">Como as informações foram reunidas e onde conferir.</p>
  <details open><summary>Dados do cenário</summary><ul>
   <li>Desemprego e ocupação: IBGE, PNAD Contínua, trimestre até agosto de 2026 (divulgada em 29/09/2026).</li>
-  <li>Inflação: IBGE, IPCA de agosto de 2026. Juros: Copom/Banco Central, reunião de 15 e 16/09/2026. Dívida: Banco Central, estatísticas fiscais de agosto de 2026.</li>
+  <li>Inflação: IBGE, IPCA de setembro de 2026. Juros: Copom/Banco Central, reunião de 15 e 16/09/2026. Dívida: Banco Central, estatísticas fiscais de agosto de 2026.</li>
   <li>Pobreza: IBGE, Síntese de Indicadores Sociais (dados de 2024). Fome: FAO, relatórios SOFI 2025 e 2026.</li>
   <li>Violência: Atlas da Violência 2026 (Ipea/FBSP), dados de 2024.</li>
   <li>Desmatamento: Inpe, Prodes 2025 e Deter. Fogo: MapBiomas Fogo 2024.</li>
+  <li>Série histórica (1985–2026): Banco Central (SGS 1620, 10777, 24369, 13522, 4189, 13762 e 7326, com dados do IBGE), Banco Mundial (extrema pobreza e homicídios) e Inpe (Prodes Amazônia e Cerrado). O “mesmo ponto do mandato” é o mesmo mês do 4º ano de cada governo, para dados mensais, ou o mesmo ano do mandato, para dados anuais.</li>
   <li>Eleição: TSE, resultado do 1º turno de 04/10/2026.</li></ul></details>
  <details><summary>Ordem de prioridades</summary><ul>
   <li>Opinião pública: Quaest (setembro de 2026) e Datafolha (março de 2026), pergunta sobre o principal problema do país.</li>
@@ -652,7 +763,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
 /* ================= 1. CENÁRIO ================= */
 const CEN=[
 {id:"eco",t:"Econômico",
-stats:[["5,3%","desemprego no trimestre até agosto, o menor da série para o período","IBGE, PNAD 2026","o"],["13,75%","ao ano é a Selic, entre os juros reais mais altos do mundo","Copom, set/2026","r"],["82,9%","do PIB é a dívida bruta, maior nível em 65 meses","Banco Central, ago/2026","r"],["4,22%","de inflação em 12 meses, ainda acima da meta de 3%","IBGE, IPCA ago/2026",""]],
+stats:[["5,3%","desemprego no trimestre até agosto, o menor da série para o período","IBGE, PNAD 2026","o"],["13,75%","ao ano é a Selic, entre os juros reais mais altos do mundo","Copom, set/2026","r"],["82,9%","do PIB é a dívida bruta, maior nível em 65 meses","Banco Central, ago/2026","r"],["4,58%","de inflação em 12 meses, acima do teto da meta (4,5%)","IBGE, IPCA set/2026",""]],
 pts:["O mercado de trabalho vive o melhor momento da série histórica: 103,5 milhões de pessoas ocupadas, recorde de carteira assinada e de massa salarial.",
 "Os juros altos travam crédito e investimento. O Banco Central começou a cortar a Selic, mas devagar, porque a inflação segue acima da meta e as contas públicas preocupam.",
 "A dívida bruta subiu 5,5 pontos do PIB em 12 meses. O governo cumpre a regra fiscal em boa parte, mas com receitas extras e despesas fora da meta.",
@@ -946,6 +1057,144 @@ $("#cenTabs").innerHTML=CEN.map(c=>`<button role="tab" data-id="${c.id}" aria-se
 $("#cenTabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b)renderCen(b.dataset.id)});
 renderCen("eco");
 
+/* pesquisas do 2º turno */
+const pqF=(v,d=1)=>v.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const pqD=s=>s.slice(8,10)+"/"+s.slice(5,7);
+function renderPQ(d){
+ const all=d.itens.map(x=>Object.assign({},x,{vf:100*x.flavio/(x.lula+x.flavio)}));
+ const last={};all.filter(x=>x.fim>=d.janela_inicio).forEach(x=>{if(!last[x.inst]||x.fim>last[x.inst].fim)last[x.inst]=x});
+ const U=Object.values(last).sort((a,b)=>b.vf-a.vf);
+ const mF=U.reduce((s,x)=>s+x.vf,0)/U.length,mL=100-mF,ahead=U.filter(x=>x.vf>50).length;
+ const ini=U.reduce((m,x)=>x.ini<m?x.ini:m,"9"),fim=U.reduce((m,x)=>x.fim>m?x.fim:m,"0");
+ $("#pqUpd").textContent=`${U.length} institutos · campo de ${pqD(ini)} a ${pqD(fim)}`;
+ const row=(nm,p,c)=>`<div class="r"><span class="n">${nm}</span><span class="p" style="color:${c}">${pqF(p)}%</span><span class="bar"><i style="width:${p.toFixed(1)}%;background:${c}"></i></span></div>`;
+ $("#pqAvg").innerHTML=row("Flávio Bolsonaro",mF,"var(--fl)")+row("Lula",mL,"var(--lu)")+`<p>Média simples da pesquisa mais recente de cada instituto, em <b>votos válidos</b> (sem brancos, nulos e indecisos). Flávio aparece numericamente à frente em <b>${ahead} de ${U.length}</b> pesquisas; a diferença média, de <b>${pqF(mF-mL)} pontos</b>, está dentro da margem de erro da maioria delas.</p><p><b>Não é previsão.</b> Em 2022, Datafolha e Quaest davam 52% a Lula nos válidos na véspera do 2º turno; ele teve 50,9%.</p>`;
+ /* dot plot */
+ const W=Math.max(280,$("#pqDots").clientWidth||520),rh=22,top=18,H=top+U.length*rh+22,x0=W<420?112:150,x1=W-12,lo=46,hi=56,sx=v=>x0+(v-lo)/(hi-lo)*(x1-x0);
+ let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Percentual de votos válidos de Flávio em cada pesquisa">`;
+ for(let v=lo;v<=hi;v+=2)s+=`<line class="${v===50?"mid":"gl"}" x1="${sx(v)}" x2="${sx(v)}" y1="${top-6}" y2="${H-18}"/><text x="${sx(v)}" y="${H-4}" text-anchor="middle">${v}%</text>`;
+ s+=`<text x="${sx(50)-6}" y="${top-8}" text-anchor="end" style="fill:var(--lu)">◀ Lula à frente</text><text x="${sx(50)+6}" y="${top-8}" style="fill:var(--fl)">Flávio à frente ▶</text>`;
+ U.forEach((x,i)=>{const y=top+i*rh+rh/2,me=x.me*100/(x.lula+x.flavio),c=x.vf>=50?"var(--fl)":"var(--lu)";
+  s+=`<text class="nm" x="0" y="${y+4}">${x.inst}</text><line x1="${sx(Math.max(lo,x.vf-me))}" x2="${sx(Math.min(hi,x.vf+me))}" y1="${y}" y2="${y}" stroke="${c}" stroke-width="2" stroke-linecap="round" opacity=".55"/><circle cx="${sx(x.vf)}" cy="${y}" r="5" fill="${c}" stroke="var(--hero)" stroke-width="2"><title>${x.inst} (${pqD(x.ini)}–${pqD(x.fim)}): Flávio ${pqF(x.vf)}% × Lula ${pqF(100-x.vf)}% dos válidos · ${x.reg}</title></circle>`});
+ s+=`<line x1="${sx(mF)}" x2="${sx(mF)}" y1="${top-4}" y2="${H-18}" stroke="var(--hl)" stroke-width="2"/></svg>`;
+ $("#pqDots").innerHTML=s+`<div class="pq-leg"><span><i style="background:var(--hl);border-radius:1px;width:14px;height:3px;vertical-align:3px"></i>Média: ${pqF(mF)}%</span></div>`;
+ /* tendência */
+ const days=[...new Set(all.map(x=>x.fim))].sort(),pts=days.map(dd=>{const t0=new Date(dd)-6*864e5,w=all.filter(x=>x.fim<=dd&&new Date(x.fim)>=t0);const lt={};w.forEach(x=>{if(!lt[x.inst]||x.fim>lt[x.inst].fim)lt[x.inst]=x});const v=Object.values(lt);return{d:dd,f:v.reduce((a,x)=>a+x.vf,0)/v.length,n:v.length}});
+ const TW=Math.max(280,$("#pqTrend").clientWidth||520),TH=TW<480?170:190,pl=30,pr=96,pt=10,pb=22,d0=new Date(days[0]),d1=new Date(days.at(-1)),tx=dd=>pl+(new Date(dd)-d0)/Math.max(1,d1-d0)*(TW-pl-pr),ty=v=>pt+(54-v)/(54-46)*(TH-pt-pb);
+ let g=`<svg viewBox="0 0 ${TW} ${TH}" role="img" aria-label="Evolução da média das pesquisas">`;
+ [46,48,50,52,54].forEach(v=>g+=`<line class="${v===50?"mid":"gl"}" x1="${pl}" x2="${TW-pr}" y1="${ty(v)}" y2="${ty(v)}"/><text x="${pl-6}" y="${ty(v)+3.5}" text-anchor="end">${v}</text>`);
+ days.forEach((dd,i)=>{if((TW<480?i%3===0:i%2===0)&&i<days.length-1||i===days.length-1)g+=`<text x="${tx(dd)}" y="${TH-6}" text-anchor="middle">${pqD(dd)}</text>`});
+ [["f","var(--fl)","Flávio"],["l","var(--lu)","Lula"]].forEach(([k,c,nm])=>{const val=p=>k==="f"?p.f:100-p.f;g+=`<path d="${pts.map((p,i)=>(i?"L":"M")+tx(p.d).toFixed(1)+","+ty(val(p)).toFixed(1)).join("")}" fill="none" stroke="${c}" stroke-width="2.2" stroke-linejoin="round"/>`;pts.forEach(p=>g+=`<circle cx="${tx(p.d)}" cy="${ty(val(p))}" r="3" fill="${c}"><title>${pqD(p.d)}: ${nm} ${pqF(val(p))}% (média de ${p.n} pesquisas)</title></circle>`);const e=pts.at(-1);g+=`<text x="${tx(e.d)+8}" y="${ty(val(e))+4}" style="fill:${c};font-family:var(--sans);font-weight:600;font-size:12px">${nm} ${pqF(val(e))}%</text>`});
+ $("#pqTrend").innerHTML=g+"</svg>";
+ /* tabela */
+ const inW=x=>last[x.inst]===x;
+ $("#pqTbl").innerHTML=`<table><thead><tr><th>Instituto</th><th>Campo</th><th>Entrevistas</th><th>Margem</th><th>Lula</th><th>Flávio</th><th>Válidos (F × L)</th><th>Registro TSE</th></tr></thead><tbody>${[...all].sort((a,b)=>b.fim.localeCompare(a.fim)||a.inst.localeCompare(b.inst)).map(x=>`<tr class="${inW(x)?"":"out"}"><td>${x.inst}</td><td>${pqD(x.ini)}–${pqD(x.fim)}</td><td class="num">${x.n.toLocaleString("pt-BR")}</td><td class="num">±${pqF(x.me)}</td><td class="num">${pqF(x.lula)}%</td><td class="num">${pqF(x.flavio)}%</td><td class="num">${pqF(x.vf)} × ${pqF(100-x.vf)}</td><td>${x.reg}</td></tr>`).join("")}</tbody></table><p class="pq-note">Linhas esmaecidas: rodadas anteriores, que entram só na evolução. Lula e Flávio: votos totais, como divulgados pelos institutos. Margem em pontos percentuais, com nível de confiança informado por cada instituto no registro.</p>`;
+ $("#pqNote").innerHTML=`Entram só pesquisas nacionais com registro conferido nos <a href="https://dadosabertos.tse.jus.br/" target="_blank" rel="noopener">dados abertos do TSE</a>; o contratante, o nível de confiança e o questionário de cada uma estão no <a href="https://pesqele-divulgacao.tse.jus.br/" target="_blank" rel="noopener">PesqEle</a>. Esta média não é uma pesquisa nova: ela só resume as pesquisas registradas, com o mesmo peso para cada instituto. Atualizado em ${new Date(d.atualizado).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"})}.`;
+ $("#pesquisas").hidden=false;
+}
+let PQD=null,pqRz;fetch("pesquisas.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{PQD=d;$("#pesquisas").hidden=false;renderPQ(d)}).catch(()=>{});
+addEventListener("resize",()=>{clearTimeout(pqRz);pqRz=setTimeout(()=>PQD&&renderPQ(PQD),150)});
+
+/* série histórica por governo */
+const HD={"ipca":[[23820,221.27],[23821,225.28],[23822,228.93],[23823,224.88],[23824,219.36],[23825,214.76],[23826,216.44],[23827,224.26],[23828,222.43],[23829,222.95],[23830,233.02],[23831,242.23],[23832,250.23],[23833,256.08],[23834,238.65],[23835,215.44],[23836,198.38],[23837,178.52],[23838,156.8],[23839,137.33],[23840,117.25],[23841,100.13],[23842,85.17],[23843,79.66],[23844,77.84],[23845,77.71],[23846,97.39],[23847,133.27],[23848,179.4],[23849,230.27],[23850,254.63],[23851,259.14],[23852,280.55],[23853,315.35],[23854,353.27],[23855,363.41],[23856,386.67],[23857,399.9],[23858,405.18],[23859,405.99],[23860,389.19],[23861,398.54],[23862,456.52],[23863,545.24],[23864,662.99],[23865,761.78],[23866,858.09],[23867,980.21],[23868,1149.22],[23869,1160.88],[23870,1045.29],[23871,940.07],[23872,944.5],[23873,1001.44],[23874,1054.11],[23875,1169.15],[23876,1269.82],[23877,1424.12],[23878,1660.95],[23879,1972.91],[23880,2426.12],[23881,3701.29],[23882,6390.53],[23883,6821.31],[23884,6214.99],[23885,5385.43],[23886,4749.03],[23887,3993.62],[23888,3304.71],[23889,2685.74],[23890,2101.34],[23891,1620.97],[23892,1140.27],[23893,752.02],[23894,422.84],[23895,375.18],[23896,374.48],[23897,372.1],[23898,369.96],[23899,381.41],[23900,386.55],[23901,411.52],[23902,448.31],[23903,472.7],[23904,497.32],[23905,515.13],[23906,567.21],[23907,662.16],[23908,785.81],[23909,857.68],[23910,937.94],[23911,996.37],[23912,1081.7],[23913,1130.94],[23914,1104.2],[23915,1119.1],[23916,1161.79],[23917,1168.49],[23918,1229.71],[23919,1316.42],[23920,1348.52],[23921,1467.33],[23922,1581.7],[23923,1730.67],[23924,1893.13],[23925,2031.27],[23926,2258.68],[23927,2477.15],[23928,2693.84],[23929,3035.71],[23930,3417.39],[23931,3828.49],[23932,4331.19],[23933,4922.6],[23934,4005.08],[23935,3044.89],[23936,2253.15],[23937,1703.17],[23938,1267.54],[23939,916.46],[23940,631.54],[23941,426.83],[23942,274.78],[23943,169.05],[23944,91.79],[23945,33.03],[23946,27.45],[23947,26.36],[23948,25.69],[23949,24.21],[23950,22.59],[23951,22.41],[23952,21.97],[23953,21.99],[23954,20.55],[23955,19.17],[23956,17.49],[23957,16.26],[23958,14.84],[23959,14.21],[23960,13.26],[23961,12.02],[23962,10.75],[23963,9.56],[23964,9.39],[23965,8.82],[23966,8.99],[23967,8.58],[23968,7.71],[23969,7.02],[23970,6.08],[23971,5.59],[23972,5.5],[23973,5.42],[23974,5.27],[23975,5.22],[23976,4.73],[23977,4.69],[23978,4.52],[23979,3.85],[23980,3.95],[23981,3.41],[23982,3.06],[23983,2.55],[23984,2.27],[23985,2.05],[23986,1.76],[23987,1.65],[23988,1.65],[23989,2.24],[23990,3.02],[23991,3.35],[23992,3.14],[23993,3.32],[23994,4.57],[23995,5.69],[23996,6.25],[23997,7.5],[23998,8.65],[23999,8.94],[24000,8.85],[24001,7.86],[24002,6.92],[24003,6.77],[24004,6.47],[24005,6.51],[24006,7.06],[24007,7.86],[24008,7.77],[24009,6.65],[24010,5.99],[24011,5.97],[24012,5.92],[24013,6.27],[24014,6.44],[24015,6.61],[24016,7.04],[24017,7.35],[24018,7.05],[24019,6.41],[24020,6.46],[24021,7.19],[24022,7.61],[24023,7.67],[24024,7.62],[24025,7.51],[24026,7.75],[24027,7.98],[24028,7.77],[24029,7.66],[24030,7.51],[24031,7.46],[24032,7.93],[24033,8.45],[24034,10.93],[24035,12.53],[24036,14.47],[24037,15.85],[24038,16.57],[24039,16.77],[24040,17.24],[24041,16.57],[24042,15.43],[24043,15.07],[24044,15.14],[24045,13.98],[24046,11.02],[24047,9.3],[24048,7.71],[24049,6.69],[24050,5.89],[24051,5.26],[24052,5.15],[24053,6.06],[24054,6.81],[24055,7.18],[24056,6.7],[24057,6.86],[24058,7.24],[24059,7.6],[24060,7.41],[24061,7.39],[24062,7.54],[24063,8.07],[24064,8.05],[24065,7.27],[24066,6.57],[24067,6.02],[24068,6.04],[24069,6.36],[24070,6.22],[24071,5.69],[24072,5.7],[24073,5.51],[24074,5.32],[24075,4.63],[24076,4.23],[24077,4.03],[24078,3.97],[24079,3.84],[24080,3.7],[24081,3.26],[24082,3.02],[24083,3.14],[24084,2.99],[24085,3.02],[24086,2.96],[24087,3.0],[24088,3.18],[24089,3.69],[24090,3.74],[24091,4.18],[24092,4.15],[24093,4.12],[24094,4.19],[24095,4.46],[24096,4.56],[24097,4.61],[24098,4.73],[24099,5.04],[24100,5.58],[24101,6.06],[24102,6.37],[24103,6.17],[24104,6.25],[24105,6.41],[24106,6.39],[24107,5.9],[24108,5.84],[24109,5.9],[24110,5.61],[24111,5.53],[24112,5.2],[24113,4.8],[24114,4.5],[24115,4.36],[24116,4.34],[24117,4.17],[24118,4.22],[24119,4.31],[24120,4.59],[24121,4.83],[24122,5.17],[24123,5.26],[24124,5.22],[24125,4.84],[24126,4.6],[24127,4.49],[24128,4.7],[24129,5.2],[24130,5.63],[24131,5.91],[24132,5.99],[24133,6.01],[24134,6.3],[24135,6.51],[24136,6.55],[24137,6.71],[24138,6.87],[24139,7.23],[24140,7.31],[24141,6.97],[24142,6.64],[24143,6.5],[24144,6.22],[24145,5.84],[24146,5.24],[24147,5.1],[24148,4.99],[24149,4.92],[24150,5.2],[24151,5.24],[24152,5.28],[24153,5.45],[24154,5.53],[24155,5.84],[24156,6.15],[24157,6.31],[24158,6.59],[24159,6.49],[24160,6.5],[24161,6.7],[24162,6.27],[24163,6.09],[24164,5.86],[24165,5.84],[24166,5.77],[24167,5.91],[24168,5.59],[24169,5.68],[24170,6.15],[24171,6.28],[24172,6.37],[24173,6.52],[24174,6.5],[24175,6.51],[24176,6.75],[24177,6.59],[24178,6.56],[24179,6.41],[24180,7.14],[24181,7.7],[24182,8.13],[24183,8.17],[24184,8.47],[24185,8.89],[24186,9.56],[24187,9.53],[24188,9.49],[24189,9.93],[24190,10.48],[24191,10.67],[24192,10.71],[24193,10.36],[24194,9.39],[24195,9.28],[24196,9.32],[24197,8.84],[24198,8.74],[24199,8.97],[24200,8.48],[24201,7.87],[24202,6.99],[24203,6.29],[24204,5.35],[24205,4.76],[24206,4.57],[24207,4.08],[24208,3.6],[24209,3.0],[24210,2.71],[24211,2.46],[24212,2.54],[24213,2.7],[24214,2.8],[24215,2.95],[24216,2.86],[24217,2.84],[24218,2.68],[24219,2.76],[24220,2.86],[24221,4.39],[24222,4.48],[24223,4.19],[24224,4.53],[24225,4.56],[24226,4.05],[24227,3.75],[24228,3.78],[24229,3.89],[24230,4.58],[24231,4.94],[24232,4.66],[24233,3.37],[24234,3.22],[24235,3.43],[24236,2.89],[24237,2.54],[24238,3.27],[24239,4.31],[24240,4.19],[24241,4.01],[24242,3.3],[24243,2.4],[24244,1.88],[24245,2.13],[24246,2.31],[24247,2.44],[24248,3.14],[24249,3.92],[24250,4.31],[24251,4.52],[24252,4.56],[24253,5.2],[24254,6.1],[24255,6.76],[24256,8.06],[24257,8.35],[24258,8.99],[24259,9.68],[24260,10.25],[24261,10.67],[24262,10.74],[24263,10.06],[24264,10.38],[24265,10.54],[24266,11.3],[24267,12.13],[24268,11.73],[24269,11.89],[24270,10.07],[24271,8.73],[24272,7.17],[24273,6.47],[24274,5.9],[24275,5.79],[24276,5.77],[24277,5.6],[24278,4.65],[24279,4.18],[24280,3.94],[24281,3.16],[24282,3.99],[24283,4.61],[24284,5.19],[24285,4.82],[24286,4.68],[24287,4.62],[24288,4.51],[24289,4.5],[24290,3.93],[24291,3.69],[24292,3.93],[24293,4.23],[24294,4.5],[24295,4.24],[24296,4.42],[24297,4.76],[24298,4.87],[24299,4.83],[24300,4.56],[24301,5.06],[24302,5.48],[24303,5.53],[24304,5.32],[24305,5.35],[24306,5.23],[24307,5.13],[24308,5.17],[24309,4.68],[24310,4.46],[24311,4.26],[24312,4.44],[24313,3.81],[24314,4.14],[24315,4.39],[24316,4.72],[24317,4.64],[24318,4.44],[24319,4.22],[24320,4.58]],"selic":[[23839,35.55],[23840,39.39],[23841,23.65],[23842,34.32],[23843,83.98],[23844,250.03],[23845,854.45],[23846,314.71],[23847,560.69],[23848,1502.24],[23849,630.28],[23850,154.67],[23851,154.24],[23852,151.44],[23853,195.52],[23854,362.14],[23855,366.05],[23856,606.33],[23857,833.98],[23858,480.08],[23859,1054.31],[23860,762.51],[23861,720.75],[23862,1312.8],[23863,835.07],[23864,1539.21],[23865,3076.43],[23866,1909.3],[23867,1962.12],[23868,1253.74],[23869,1034.67],[23870,829.22],[23871,324.54],[23872,266.37],[23873,1486.02],[23874,3005.24],[23875,2687.61],[23876,6002.01],[23877,10676.54],[23878,14365.32],[23879,51659.46],[23880,36957.2],[23881,438898.83],[23882,3507.42],[23883,73.21],[23884,88.57],[23885,187.11],[23886,339.35],[23887,230.48],[23888,554.26],[23889,524.39],[23890,877.02],[23891,1237.94],[23892,789.54],[23893,166.94],[23894,213.32],[23895,187.77],[23896,198.99],[23897,244.79],[23898,259.48],[23899,434.02],[23900,772.46],[23901,1152.41],[23902,3343.48],[23903,2495.22],[23904,1757.41],[23905,2316.07],[23906,1903.48],[23907,1619.83],[23908,1257.14],[23909,1257.75],[23910,1181.45],[23911,1447.92],[23912,1773.24],[23913,1866.66],[23914,1815.18],[23915,1300.85],[23916,2259.56],[23917,3397.11],[23918,1441.34],[23919,3326.22],[23920,2430.28],[23921,2676.49],[23922,2461.37],[23923,2916.19],[23924,4359.96],[23925,5902.32],[23926,5892.16],[23927,4010.32],[23928,7065.02],[23929,13442.03],[23930,7784.35],[23931,15710.86],[23932,8784.03],[23933,13532.65],[23934,131.03],[23935,56.46],[23936,57.06],[23937,60.3],[23938,65.36],[23939,53.25],[23940,46.25],[23941,56.54],[23942,57.98],[23943,85.47],[23944,61.05],[23945,60.84],[23946,60.53],[23947,51.11],[23948,51.0],[23949,44.11],[23950,42.93],[23951,41.22],[23952,33.83],[23953,36.11],[23954,30.16],[23955,29.42],[23956,25.64],[23957,29.65],[23958,23.28],[23959,25.01],[23960,25.4],[23961,23.48],[23962,25.27],[23963,23.94],[23964,21.73],[23965,26.14],[23966,24.11],[23967,21.84],[23968,21.91],[23969,21.08],[23970,19.04],[23971,20.78],[23972,19.81],[23973,19.93],[23974,45.9],[23975,39.87],[23976,37.19],[23977,34.32],[23978,28.32],[23979,25.16],[23980,22.6],[23981,21.02],[23982,20.33],[23983,19.23],[23984,34.29],[23985,41.6],[23986,38.73],[23987,31.24],[23988,31.19],[23989,38.97],[23990,43.25],[23991,36.12],[23992,27.11],[23993,22.01],[23994,20.74],[23995,19.51],[23996,19.38],[23997,18.91],[23998,18.95],[23999,18.99],[24000,18.94],[24001,18.87],[24002,18.85],[24003,18.62],[24004,18.51],[24005,18.04],[24006,16.85],[24007,16.52],[24008,16.56],[24009,16.6],[24010,16.51],[24011,16.19],[24012,15.49],[24013,15.2],[24014,15.39],[24015,16.02],[24016,16.43],[24017,17.28],[24018,18.57],[24019,19.0],[24020,19.06],[24021,19.06],[24022,19.05],[24023,19.05],[24024,19.05],[24025,18.97],[24026,18.72],[24027,18.38],[24028,18.37],[24029,18.1],[24030,18.17],[24031,17.84],[24032,17.89],[24033,19.59],[24034,21.25],[24035,23.03],[24036,25.06],[24037,25.68],[24038,26.32],[24039,26.32],[24040,26.31],[24041,26.09],[24042,25.36],[24043,23.5],[24044,21.02],[24045,19.54],[24046,18.31],[24047,16.91],[24048,16.32],[24049,16.3],[24050,16.19],[24051,15.96],[24052,15.77],[24053,15.8],[24054,15.77],[24055,15.86],[24056,16.09],[24057,16.41],[24058,16.96],[24059,17.5],[24060,17.93],[24061,18.47],[24062,18.97],[24063,19.32],[24064,19.61],[24065,19.75],[24066,19.72],[24067,19.75],[24068,19.61],[24069,19.25],[24070,18.87],[24071,18.24],[24072,17.65],[24073,17.28],[24074,16.74],[24075,16.19],[24076,15.7],[24077,15.18],[24078,14.98],[24079,14.66],[24080,14.17],[24081,13.95],[24082,13.65],[24083,13.19],[24084,13.13],[24085,12.93],[24086,12.74],[24087,12.58],[24088,12.43],[24089,12.03],[24090,11.73],[24091,11.43],[24092,11.22],[24093,11.18],[24094,11.18],[24095,11.18],[24096,11.18],[24097,11.18],[24098,11.18],[24099,11.37],[24100,11.63],[24101,12.09],[24102,12.36],[24103,12.92],[24104,13.39],[24105,13.66],[24106,13.64],[24107,13.66],[24108,13.32],[24109,12.66],[24110,11.7],[24111,11.11],[24112,10.16],[24113,9.54],[24114,9.01],[24115,8.65],[24116,8.65],[24117,8.65],[24118,8.65],[24119,8.65],[24120,8.65],[24121,8.65],[24122,8.65],[24123,8.72],[24124,9.4],[24125,9.94],[24126,10.32],[24127,10.66],[24128,10.66],[24129,10.66],[24130,10.66],[24131,10.66],[24132,10.85],[24133,11.17],[24134,11.62],[24135,11.74],[24136,11.92],[24137,12.1],[24138,12.25],[24139,12.42],[24140,11.91],[24141,11.7],[24142,11.4],[24143,10.9],[24144,10.7],[24145,10.4],[24146,9.82],[24147,9.35],[24148,8.87],[24149,8.39],[24150,8.07],[24151,7.85],[24152,7.39],[24153,7.23],[24154,7.14],[24155,7.16],[24156,7.11],[24157,7.12],[24158,7.15],[24159,7.26],[24160,7.42],[24161,7.9],[24162,8.23],[24163,8.45],[24164,8.9],[24165,9.25],[24166,9.45],[24167,9.9],[24168,10.17],[24169,10.43],[24170,10.65],[24171,10.87],[24172,10.9],[24173,10.9],[24174,10.9],[24175,10.9],[24176,10.9],[24177,10.92],[24178,11.15],[24179,11.58],[24180,11.82],[24181,12.15],[24182,12.58],[24183,12.68],[24184,13.15],[24185,13.58],[24186,13.69],[24187,14.15],[24188,14.15],[24189,14.15],[24190,14.15],[24191,14.15],[24192,14.15],[24193,14.15],[24194,14.15],[24195,14.15],[24196,14.15],[24197,14.15],[24198,14.15],[24199,14.15],[24200,14.15],[24201,14.05],[24202,13.9],[24203,13.65],[24204,13.17],[24205,12.82],[24206,12.15],[24207,11.59],[24208,11.15],[24209,10.15],[24210,10.01],[24211,9.15],[24212,8.35],[24213,8.01],[24214,7.4],[24215,7.0],[24216,6.9],[24217,6.72],[24218,6.58],[24219,6.4],[24220,6.4],[24221,6.4],[24222,6.4],[24223,6.4],[24224,6.4],[24225,6.4],[24226,6.4],[24227,6.4],[24228,6.4],[24229,6.4],[24230,6.4],[24231,6.4],[24232,6.4],[24233,6.4],[24234,6.4],[24235,5.9],[24236,5.71],[24237,5.38],[24238,4.9],[24239,4.59],[24240,4.4],[24241,4.19],[24242,3.95],[24243,3.65],[24244,3.01],[24245,2.58],[24246,2.15],[24247,1.94],[24248,1.9],[24249,1.9],[24250,1.9],[24251,1.9],[24252,1.9],[24253,1.9],[24254,2.23],[24255,2.65],[24256,3.29],[24257,3.76],[24258,4.15],[24259,5.01],[24260,5.43],[24261,6.3],[24262,7.65],[24263,8.76],[24264,9.15],[24265,10.49],[24266,11.15],[24267,11.65],[24268,12.51],[24269,12.89],[24270,13.15],[24271,13.58],[24272,13.65],[24273,13.65],[24274,13.65],[24275,13.65],[24276,13.65],[24277,13.65],[24278,13.65],[24279,13.65],[24280,13.65],[24281,13.65],[24282,13.65],[24283,13.19],[24284,12.97],[24285,12.65],[24286,12.17],[24287,11.87],[24288,11.65],[24289,11.15],[24290,11.0],[24291,10.65],[24292,10.46],[24293,10.4],[24294,10.4],[24295,10.4],[24296,10.5],[24297,10.65],[24298,11.04],[24299,11.77],[24300,12.24],[24301,13.15],[24302,13.57],[24303,14.15],[24304,14.55],[24305,14.74],[24306,14.9],[24307,14.9],[24308,14.9],[24309,14.9],[24310,14.9],[24311,14.9],[24312,14.9],[24313,14.9],[24314,14.8],[24315,14.64],[24316,14.4],[24317,14.29],[24318,14.15],[24319,13.94],[24320,13.78],[24321,13.65]],"div":[[24083,55.48],[24084,56.17],[24085,56.9],[24086,57.24],[24087,57.17],[24088,57.91],[24089,58.23],[24090,58.32],[24091,58.46],[24092,57.88],[24093,57.49],[24094,57.26],[24095,56.72],[24096,57.51],[24097,57.04],[24098,57.09],[24099,56.52],[24100,55.82],[24101,55.6],[24102,55.53],[24103,54.95],[24104,54.83],[24105,55.05],[24106,54.64],[24107,55.98],[24108,56.87],[24109,57.18],[24110,57.47],[24111,56.8],[24112,57.07],[24113,58.34],[24114,59.68],[24115,60.77],[24116,60.8],[24117,61.0],[24118,60.22],[24119,59.21],[24120,59.76],[24121,59.03],[24122,56.24],[24123,56.05],[24124,55.96],[24125,55.78],[24126,55.53],[24127,54.98],[24128,54.89],[24129,55.07],[24130,54.65],[24131,51.77],[24132,52.4],[24133,52.37],[24134,52.61],[24135,52.61],[24136,52.22],[24137,52.35],[24138,52.52],[24139,52.29],[24140,52.11],[24141,51.7],[24142,51.76],[24143,51.27],[24144,51.83],[24145,52.22],[24146,52.72],[24147,53.22],[24148,53.27],[24149,53.42],[24150,53.6],[24151,53.33],[24152,54.05],[24153,54.52],[24154,54.65],[24155,53.67],[24156,53.98],[24157,54.03],[24158,54.05],[24159,53.78],[24160,53.92],[24161,53.61],[24162,53.7],[24163,53.44],[24164,52.95],[24165,53.1],[24166,52.73],[24167,51.54],[24168,52.63],[24169,51.84],[24170,51.79],[24171,52.0],[24172,52.18],[24173,52.75],[24174,53.17],[24175,53.81],[24176,55.11],[24177,55.43],[24178,56.01],[24179,56.28],[24180,57.16],[24181,58.28],[24182,59.49],[24183,59.11],[24184,60.21],[24185,60.75],[24186,62.17],[24187,62.97],[24188,63.65],[24189,63.94],[24190,64.29],[24191,65.5],[24192,66.5],[24193,66.66],[24194,66.33],[24195,66.62],[24196,67.58],[24197,67.51],[24198,68.7],[24199,69.34],[24200,69.98],[24201,69.78],[24202,70.84],[24203,69.84],[24204,69.82],[24205,70.39],[24206,71.24],[24207,71.37],[24208,72.34],[24209,72.74],[24210,73.18],[24211,73.61],[24212,73.71],[24213,74.11],[24214,74.02],[24215,73.72],[24216,74.04],[24217,74.5],[24218,74.6],[24219,74.96],[24220,76.12],[24221,76.13],[24222,75.95],[24223,76.02],[24224,75.99],[24225,75.29],[24226,75.69],[24227,75.27],[24228,75.44],[24229,75.52],[24230,76.71],[24231,77.12],[24232,76.55],[24233,76.67],[24234,76.83],[24235,77.55],[24236,76.6],[24237,75.79],[24238,76.2],[24239,74.44],[24240,74.75],[24241,75.15],[24242,76.78],[24243,78.03],[24244,79.95],[24245,82.87],[24246,83.5],[24247,85.83],[24248,87.42],[24249,87.66],[24250,86.96],[24251,86.94],[24252,86.91],[24253,86.87],[24254,85.1],[24255,82.62],[24256,81.44],[24257,80.6],[24258,80.25],[24259,79.64],[24260,79.62],[24261,79.52],[24262,78.22],[24263,77.31],[24264,77.0],[24265,76.92],[24266,76.4],[24267,76.33],[24268,75.68],[24269,75.61],[24270,75.24],[24271,74.57],[24272,74.15],[24273,73.7],[24274,72.95],[24275,71.68],[24276,71.38],[24277,71.77],[24278,71.54],[24279,71.57],[24280,72.11],[24281,71.97],[24282,72.48],[24283,72.89],[24284,73.01],[24285,73.32],[24286,73.32],[24287,73.83],[24288,74.47],[24289,74.81],[24290,75.02],[24291,75.15],[24292,75.67],[24293,76.68],[24294,77.21],[24295,77.36],[24296,77.09],[24297,77.38],[24298,77.5],[24299,76.27],[24300,75.48],[24301,75.78],[24302,75.55],[24303,75.62],[24304,75.75],[24305,76.3],[24306,77.18],[24307,77.31],[24308,77.84],[24309,78.29],[24310,78.95],[24311,78.64],[24312,78.7],[24313,79.13],[24314,79.88],[24315,80.09],[24316,81.04],[24317,81.95],[24318,82.55],[24319,82.87]],"des":[[[23820,6.31],[23821,6.12],[23822,6.48],[23823,6.08],[23824,5.9],[23825,5.6],[23826,5.4],[23827,5.03],[23828,4.8],[23829,4.3],[23830,3.9],[23831,3.15],[23832,4.18],[23833,4.4],[23834,4.39],[23835,4.17],[23836,4.08],[23837,3.76],[23838,3.6],[23839,3.5],[23840,3.23],[23841,2.98],[23842,2.64],[23843,2.16],[23844,3.19],[23845,3.38],[23846,3.28],[23847,3.39],[23848,3.97],[23849,4.43],[23850,4.47],[23851,4.22],[23852,4.03],[23853,3.96],[23854,3.63],[23855,2.86],[23856,3.8],[23857,4.33],[23858,4.3],[23859,4.08],[23860,4.04],[23861,3.9],[23862,3.84],[23863,4.16],[23864,3.84],[23865,3.65],[23866,3.32],[23867,2.92],[23868,3.87],[23869,3.99],[23870,4.18],[23871,3.94],[23872,3.37],[23873,3.37],[23874,3.17],[23875,3.22],[23876,3.22],[23877,2.98],[23878,2.49],[23879,2.36],[23880,3.3],[23881,3.43],[23882,4.04],[23883,4.78],[23884,5.27],[23885,4.9],[23886,4.53],[23887,4.5],[23888,4.25],[23889,4.21],[23890,4.25],[23891,3.93],[23892,5.23],[23893,5.41],[23894,5.89],[23895,5.76],[23896,5.7],[23897,4.86],[23898,3.82],[23899,4.03],[23900,4.35],[23901,4.26],[23902,4.45],[23903,4.15],[23904,4.86],[23905,6.36],[23906,6.14],[23907,5.86],[23908,6.53],[23909,5.17],[23910,5.18],[23911,5.9],[23912,5.74],[23913,5.77],[23914,5.82],[23915,4.5],[23916,5.99],[23917,5.77],[23918,5.88],[23919,6.12],[23920,5.39],[23921,4.95],[23922,5.23],[23923,5.33],[23924,5.05],[23925,4.89],[23926,4.74],[23927,4.39],[23928,5.54],[23929,5.37],[23930,5.9],[23931,5.37],[23932,5.18],[23933,5.42],[23934,5.46],[23935,5.49],[23936,5.05],[23937,4.53],[23938,4.0],[23939,3.42],[23940,4.42],[23941,4.25],[23942,4.42],[23943,4.35],[23944,4.49],[23945,4.59],[23946,4.83],[23947,4.9],[23948,5.19],[23949,5.09],[23950,4.72],[23951,4.44],[23952,5.26],[23953,5.7],[23954,6.38],[23955,6.03],[23956,5.91],[23957,5.92],[23958,5.58],[23959,5.56],[23960,5.23],[23961,5.14],[23962,4.56],[23963,3.82],[23964,5.14],[23965,5.55],[23966,5.97],[23967,5.75],[23968,6.0],[23969,6.09],[23970,5.97],[23971,5.95],[23972,5.63],[23973,5.71],[23974,5.35],[23975,4.84],[23976,7.25],[23977,7.42],[23978,8.18],[23979,7.94],[23980,8.2],[23981,7.9],[23982,8.02],[23983,7.8],[23984,7.65],[23985,7.45],[23986,7.04],[23987,6.32],[23988,7.73],[23989,7.51],[23990,8.16],[23991,8.02],[23992,7.7],[23993,7.84],[23994,7.54],[23995,7.68],[23996,7.37],[23997,7.53],[23998,7.32],[23999,6.28],[24000,7.63],[24001,8.16],[24002,8.05],[24003,7.84],[24004,7.79],[24005,7.41],[24006,7.17],[24007,7.14],[24008,6.68],[24009,6.75],[24010,6.19],[24011,4.83],[24012,5.7],[24013,5.72],[24014,6.46],[24015,6.51],[24016,6.86],[24017,6.38],[24018,6.19],[24019,6.18],[24020,6.15],[24021,6.55],[24022,6.4],[24023,5.6],[24024,6.83],[24025,6.98]],[[24026,12.3],[24027,11.9],[24028,11.5],[24029,11.4],[24030,11.8],[24031,11.5],[24032,11.4],[24033,11.3],[24034,11.3],[24035,11.9],[24036,11.7],[24037,11.5],[24038,11.5],[24039,11.7],[24040,12.4],[24041,12.8],[24042,12.7],[24043,12.7],[24044,12.9],[24045,13.1],[24046,12.6],[24047,12.4],[24048,12.2],[24049,11.9],[24050,12.2],[24051,12.4],[24052,11.7],[24053,11.5],[24054,11.1],[24055,11.2],[24056,10.9],[24057,10.7],[24058,11.0],[24059,11.0],[24060,10.7],[24061,10.5],[24062,10.2],[24063,10.2],[24064,9.7],[24065,9.3],[24066,9.4],[24067,9.2],[24068,9.6],[24069,9.8],[24070,9.9],[24071,9.7],[24072,9.7],[24073,9.9],[24074,9.8],[24075,9.8],[24076,9.7],[24077,10.3],[24078,10.7],[24079,10.4],[24080,10.1],[24081,10.0],[24082,9.8],[24083,9.7],[24084,9.7],[24085,9.6],[24086,9.6],[24087,9.6],[24088,9.6],[24089,9.6],[24090,9.4],[24091,9.3],[24092,9.1],[24093,9.0],[24094,8.6],[24095,8.6],[24096,8.3],[24097,8.4],[24098,8.1],[24099,8.0],[24100,7.4],[24101,7.7],[24102,8.0],[24103,7.4],[24104,7.8],[24105,7.7],[24106,8.0],[24107,7.9],[24108,8.5],[24109,8.2],[24110,8.4],[24111,8.4],[24112,8.3],[24113,7.9],[24114,7.9],[24115,8.0],[24116,7.8],[24117,7.8],[24118,7.8],[24119,8.0],[24120,7.4],[24121,7.2],[24122,7.1],[24123,6.8],[24124,7.0],[24125,6.8],[24126,6.8],[24127,6.6],[24128,6.2],[24129,6.2],[24130,6.2],[24131,6.2],[24132,6.1],[24133,6.1],[24134,6.0],[24135,6.0],[24136,5.9],[24137,6.0],[24138,5.9],[24139,6.0],[24140,6.0],[24141,5.8],[24142,5.7],[24143,5.5],[24144,5.6],[24145,5.5]],[[24146,8.0],[24147,7.8],[24148,7.7],[24149,7.6],[24150,7.5],[24151,7.3],[24152,7.1],[24153,6.9],[24154,6.8],[24155,6.9],[24156,7.2],[24157,7.8],[24158,8.0],[24159,7.9],[24160,7.6],[24161,7.5],[24162,7.4],[24163,7.2],[24164,7.0],[24165,6.8],[24166,6.5],[24167,6.2],[24168,6.5],[24169,6.8],[24170,7.2],[24171,7.2],[24172,7.0],[24173,6.9],[24174,7.0],[24175,7.0],[24176,6.8],[24177,6.7],[24178,6.6],[24179,6.6],[24180,6.9],[24181,7.5],[24182,8.0],[24183,8.1],[24184,8.2],[24185,8.4],[24186,8.6],[24187,8.8],[24188,9.0],[24189,9.1],[24190,9.1],[24191,9.1],[24192,9.6],[24193,10.3],[24194,11.0],[24195,11.3],[24196,11.3],[24197,11.4],[24198,11.7],[24199,11.9],[24200,11.9],[24201,11.9],[24202,12.0],[24203,12.1],[24204,12.7],[24205,13.3],[24206,13.9],[24207,13.7],[24208,13.4],[24209,13.1],[24210,12.9],[24211,12.7],[24212,12.5],[24213,12.3],[24214,12.1],[24215,11.9],[24216,12.3],[24217,12.7],[24218,13.2],[24219,13.0],[24220,12.8],[24221,12.6],[24222,12.4],[24223,12.2],[24224,12.0],[24225,11.8],[24226,11.7],[24227,11.7],[24228,12.2],[24229,12.5],[24230,12.8],[24231,12.6],[24232,12.4],[24233,12.1],[24234,11.9],[24235,11.9],[24236,11.9],[24237,11.7],[24238,11.3],[24239,11.1],[24240,11.3],[24241,11.7],[24242,12.4],[24243,12.7],[24244,13.1],[24245,13.6],[24246,14.1],[24247,14.8],[24248,14.9],[24249,14.6],[24250,14.3],[24251,14.2],[24252,14.4],[24253,14.6],[24254,14.9],[24255,14.8],[24256,14.7],[24257,14.2],[24258,13.7],[24259,13.2],[24260,12.7],[24261,12.1],[24262,11.6],[24263,11.1],[24264,11.2],[24265,11.2],[24266,11.1],[24267,10.5],[24268,9.8],[24269,9.3],[24270,9.1],[24271,8.9],[24272,8.7],[24273,8.3],[24274,8.1],[24275,7.9],[24276,8.4],[24277,8.6],[24278,8.8],[24279,8.5],[24280,8.3],[24281,8.0],[24282,7.9],[24283,7.8],[24284,7.7],[24285,7.6],[24286,7.5],[24287,7.4],[24288,7.6],[24289,7.8],[24290,7.9],[24291,7.5],[24292,7.1],[24293,6.9],[24294,6.8],[24295,6.6],[24296,6.4],[24297,6.2],[24298,6.1],[24299,6.2],[24300,6.5],[24301,6.8],[24302,7.0],[24303,6.6],[24304,6.2],[24305,5.8],[24306,5.6],[24307,5.6],[24308,5.6],[24309,5.4],[24310,5.2],[24311,5.1],[24312,5.4],[24313,5.8],[24314,6.1],[24315,5.8],[24316,5.6],[24317,5.4],[24318,5.3],[24319,5.3]]],"pib":[[1985,7.85],[1986,7.49],[1987,3.53],[1988,-0.06],[1989,3.16],[1990,-4.35],[1991,1.03],[1992,-0.54],[1993,4.92],[1994,5.85],[1995,4.22],[1996,2.21],[1997,3.39],[1998,0.34],[1999,0.47],[2000,4.39],[2001,1.39],[2002,3.05],[2003,1.14],[2004,5.76],[2005,3.2],[2006,3.96],[2007,6.07],[2008,5.09],[2009,-0.13],[2010,7.53],[2011,3.97],[2012,1.92],[2013,3.0],[2014,0.5],[2015,-3.55],[2016,-3.28],[2017,1.32],[2018,1.78],[2019,1.22],[2020,-3.28],[2021,4.76],[2022,3.02],[2023,3.24],[2024,3.42],[2025,2.29]],"pov":[[1985,32.4],[1986,16.7],[1987,25.5],[1988,28.1],[1989,25.7],[1990,30.3],[1992,29.4],[1993,28.2],[1995,19.5],[1996,20.7],[1997,20.4],[1998,19.1],[1999,20],[2001,17.5],[2002,16.2],[2003,17.1],[2004,15.3],[2005,13.7],[2006,11.4],[2007,10.8],[2008,9.1],[2009,8.4],[2011,7.1],[2012,6.4],[2013,5.4],[2014,4.8],[2015,5.4],[2016,6.5],[2017,7],[2018,6.9],[2019,7],[2020,2.8],[2021,7.5],[2022,4.9],[2023,3.8],[2024,3]],"hom":[[1990,19.6],[1991,18.6],[1992,16.8],[1993,17.9],[1994,18.7],[1995,21.0],[1996,23.7],[1997,24.3],[1998,24.8],[1999,25.0],[2000,26.1],[2001,27.2],[2002,27.8],[2003,28.3],[2004,26.5],[2005,25.8],[2006,26.3],[2007,25.3],[2008,26.3],[2009,26.8],[2010,27.0],[2011,26.7],[2012,28.6],[2013,28.6],[2014,29.9],[2015,28.9],[2016,30.1],[2017,31.2],[2018,27.2],[2019,21.2],[2020,21.8],[2021,20.5],[2022,20.1],[2023,19.3]],"amz":[[1988,21050],[1989,17770],[1990,13730],[1991,11030],[1992,13786],[1993,14896],[1994,14896],[1995,29059],[1996,18161],[1997,13227],[1998,17383],[1999,17259],[2000,18226],[2001,18165],[2002,21651],[2003,25396],[2004,27772],[2005,19014],[2006,14286],[2007,11651],[2008,12911],[2009,7464],[2010,7000],[2011,6418],[2012,4571],[2013,5891],[2014,5012],[2015,6207],[2016,7893],[2017,6947],[2018,7536],[2019,10129],[2020,10851],[2021,13038],[2022,11594],[2023,9064],[2024,6518],[2025,5796]],"cer":[[2019,6319],[2020,7905],[2021,8531],[2022,10689],[2023,11002],[2024,8174],[2025,7235]]};
+const PRES=[["Sarney",1985*12+2],["Collor",1990*12+2],["Itamar",1992*12+9],["FHC",1995*12],["Lula",2003*12],["Dilma",2011*12],["Temer",2016*12+4],["Bolsonaro",2019*12],["Lula",2023*12]];
+const TERMS=[["Sarney",1985],["Collor/Itamar",1990],["FHC 1",1995],["FHC 2",1999],["Lula 1",2003],["Lula 2",2007],["Dilma 1",2011],["Dilma 2/Temer",2015],["Bolsonaro",2019],["Lula 3",2023]];
+const MES=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+const HI=[
+{id:"des",t:"Desemprego",n:"Taxa de desemprego",u:"%",d:1,m:1,old:2,
+ note:"Três pesquisas diferentes do IBGE: a PME antiga (até 2002) e a nova (2002–2012) cobriam só 6 regiões metropolitanas; a PNAD Contínua (desde 2012) cobre o país inteiro. As linhas tracejadas são as séries antigas: os valores não são diretamente comparáveis com os de hoje.",
+ src:"IBGE (PME e PNAD Contínua), via Banco Central, séries SGS 1620, 10777 e 24369."},
+{id:"ipca",t:"Inflação",n:"Inflação acumulada em 12 meses (IPCA)",u:"%",d:1,m:1,log:1,
+ note:"Escala logarítmica: cada linha de grade vale 10 vezes a anterior. Sem ela, a hiperinflação, que chegou a 6.821% em 12 meses em abril de 1990, esconderia todo o resto. O Plano Real, de 1994, derrubou a inflação para um dígito.",
+ src:"IBGE, IPCA, via Banco Central, série SGS 13522."},
+{id:"selic",t:"Juros (Selic)",n:"Selic efetiva, anualizada (média do mês)",u:"%",d:1,m:1,log:1,
+ note:"Escala logarítmica. Antes do Plano Real os juros acompanhavam a hiperinflação e, anualizados, passaram de 400.000% em 1990. Para comparar juros entre épocas, o mais justo é descontar a inflação (juro real).",
+ src:"Banco Central, série SGS 4189."},
+{id:"div",t:"Dívida bruta",n:"Dívida bruta do governo geral",u:"% do PIB",d:1,m:1,
+ note:"A série do Banco Central com a metodologia atual começa em dezembro de 2006. Por isso o gráfico começa em 2006 e os governos anteriores ficam de fora.",
+ src:"Banco Central, série SGS 13762."},
+{id:"pib",t:"PIB",n:"Crescimento real do PIB no ano",u:"%",d:1,bar:1,
+ note:"Cada barra é um ano. 2026 ainda não fechou; o mercado projeta perto de 2%.",
+ src:"IBGE, Contas Nacionais, via Banco Central, série SGS 7326."},
+{id:"pov",t:"Extrema pobreza",n:"População abaixo de US$ 3 por dia (linha internacional)",u:"% da pop.",d:1,
+ note:"É a linha internacional do Banco Mundial, diferente da linha do IBGE citada no cenário. Não há dado em 1991, 1994, 2000 e 2010 (anos de censo ou sem pesquisa). A queda de 2020 veio do auxílio emergencial na pandemia e se reverteu em 2021.",
+ src:"Banco Mundial, Poverty and Inequality Platform (a partir das PNADs do IBGE), indicador SI.POV.DDAY."},
+{id:"hom",t:"Homicídios",n:"Homicídios por 100 mil habitantes",u:"",d:1,
+ note:"Série do Banco Mundial/UNODC com base no SIM/DataSUS, disponível de 1990 a 2023. O Atlas da Violência, citado no cenário, usa outra estimativa (20,1 em 2024).",
+ src:"Banco Mundial/UNODC, indicador VC.IHR.PSRC.P5."},
+{id:"amz",t:"Desmatamento Amazônia",n:"Desmatamento na Amazônia Legal por ano",u:"km²",d:0,
+ note:"O “ano Prodes” vai de agosto a julho: 2025 é de agosto de 2024 a julho de 2025. O valor de 2025 ainda é a estimativa preliminar.",
+ src:"Inpe, Prodes Amazônia (taxas consolidadas; 2025 preliminar)."},
+{id:"cer",t:"Desmatamento Cerrado",n:"Desmatamento no Cerrado por ano",u:"km²",d:0,
+ note:"O Inpe só tem taxa anual comparável do Cerrado inteiro a partir de 2019; antes, a medição era feita a cada dois anos e com outra base. Por isso só aparecem os dois últimos governos.",
+ src:"Inpe, Prodes Cerrado (2025 preliminar)."}
+];
+const nf=(v,d)=>v.toLocaleString("pt-BR",{minimumFractionDigits:d,maximumFractionDigits:d});
+const fmtV=(h,v)=>{const s=nf(v,v>=100&&h.u==="%"?0:h.d);return h.u==="%"||h.u==="% da pop."?s+"%":h.u==="% do PIB"?s+"% do PIB":h.u?s+" "+h.u:s};
+function hSeries(h){/* -> {segs:[[ [x,v],... ],...], m:bool} x = mês absoluto (ano*12+mês) ou ano */
+ const r=HD[h.id];return h.id==="des"?r:[r]}
+function hRef(h){const segs=hSeries(h),last=segs[segs.length-1].at(-1);
+ if(h.m){const mo=last[0]%12;return{lab:MES[mo],get:y=>{const x=y*12+mo;for(const s of segs){const p=s.find(q=>q[0]===x);if(p)return[p[1],s!==segs.at(-1)]}return null},x:y=>y*12+mo,yr:t=>t+3}}
+ const k=last[0]-2023;return{lab:"",k,get:y=>{const p=segs[0].find(q=>q[0]===y);return p?[p[1],false]:null},x:y=>y,yr:t=>t+k}}
+let hisId="des";
+function renderHis(id){hisId=id;const h=HI.find(x=>x.id===id);
+ $("#hisTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",b.dataset.id===id));
+ const segs=hSeries(h),ref=hRef(h),M=!!h.m,last=segs.at(-1).at(-1);
+ const lastLab=M?`${MES[last[0]%12]}/${Math.floor(last[0]/12)}`:(h.id==="amz"||h.id==="cer"?`${last[0]} (ago/${last[0]-1}–jul/${last[0]})`:String(last[0]));
+ $("#hisCap").innerHTML=`<b>${h.n}${h.u?` <span style="font-weight:400">(${h.u})</span>`:""}</b><span>Dado mais recente: ${fmtV(h,last[1])}, ${lastLab}.</span>`;
+ $("#hisNote").textContent=h.note;$("#hisSrc").textContent="Fonte: "+h.src;
+ $("#hisLeg").innerHTML=`${h.bar?"":`<span><i class="l1"></i>${h.old?"PNAD Contínua":"Série"}</span>`}${h.old?`<span><i class="l2"></i>PME (metodologia antiga)</span>`:""}<span><i class="l3"></i>Mesmo ponto de cada mandato</span>`;
+ /* quadro de comparação */
+ const t0=TERMS.map(([nm,s])=>{const y=ref.yr(s),g=ref.get(y);return{nm,y,g}});
+ $("#hisCmpH").textContent=M?`No 4º ano de cada mandato, em ${ref.lab}`:(ref.k===2?"No 3º ano de cada mandato":ref.k===1?"No 2º ano de cada mandato":ref.k===0?"No 1º ano de cada mandato":`No ${ref.k+1}º ano de cada mandato`);
+ $("#hisCmpP").textContent=M?`Valor em ${ref.lab} do 4º ano de cada governo, o mesmo mês do dado mais recente de 2026. Para Sarney e Collor/Itamar, que tomaram posse em março, é o 4º ano civil do mandato.`:`O dado mais recente é de ${last[0]}, ${ref.k+1}º ano do atual governo. O quadro mostra o mesmo ano de cada mandato.${h.id==="amz"||h.id==="cer"?" Como o ano Prodes começa em agosto, ele inclui 5 meses do ano anterior.":""}`;
+ const late=(M?Math.floor(hSeries(h)[0][0][0]/12):hSeries(h)[0][0][0])>2000,tv=t0.map((r,i)=>[r,i]).filter(([r])=>!late||r.g);
+ $("#hisTbl").innerHTML=tv.map(([r,i])=>`<div class="${i===t0.length-1?"now":""}"><small>${M?ref.lab+"/":""}${r.y}</small><span>${r.nm}</span>${r.g?`<b>${fmtV(h,r.g[0])}${r.g[1]?"*":""}</b>`:`<b class="na">sem dado</b>`}</div>`).join("")+(late?`<p class="his-warn" style="grid-column:1/-1;margin:2px 0 0">Governos anteriores não aparecem porque a série não cobre esse período.</p>`:"")+(h.old?`<p class="his-warn" style="grid-column:1/-1;margin:2px 0 0">* PME, pesquisa antiga que cobria só 6 regiões metropolitanas: não dá para comparar diretamente com a PNAD Contínua.</p>`:"");
+ drawHis(h,segs,ref,t0);
+}
+function drawHis(h,segs,ref,t0){
+ const box=$("#hisChart"),W=Math.max(300,box.clientWidth),H=W<560?250:300,M=!!h.m;
+ const pl=W<560?40:48,pr=10,pt=26,pb=22;
+ const f0=segs[0][0][0],y0=M?Math.floor(f0/12):f0,late=y0>2000;
+ const X0=late?(M?(y0-1)*12:y0-1):(M?1985*12:1985),X1=M?2027*12:2026.5;
+ const sx=x=>pl+(x-X0)/(X1-X0)*(W-pl-pr);
+ const all=segs.flat().map(p=>p[1]);let lo=Math.min(...all),hi=Math.max(...all),ticks;
+ let sy;
+ if(h.log){const a=Math.floor(Math.log10(Math.max(1,lo))),b=Math.ceil(Math.log10(hi));ticks=[];for(let e=a;e<=b;e++)ticks.push(10**e);sy=v=>pt+(b-Math.log10(Math.max(v,10**a)))/(b-a)*(H-pt-pb)}
+ else{lo=Math.min(0,lo);const span=hi-lo,st0=span/5,mg=10**Math.floor(Math.log10(st0)),st=[1,2,2.5,5,10].map(m=>m*mg).find(s=>s>=st0);lo=Math.floor(lo/st)*st;hi=Math.ceil(hi/st)*st;ticks=[];for(let v=lo;v<=hi+1e-9;v+=st)ticks.push(+v.toFixed(6));sy=v=>pt+(hi-v)/(hi-lo)*(H-pt-pb)}
+ const P=(x)=>M?x:x+.5;/* anos: centro do ano */
+ let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${h.n}, de 1985 a 2026, com a faixa de cada presidente">`;
+ /* faixas por presidente */
+ PRES.forEach((p,i)=>{const a=M?p[1]:p[1]/12,b=i<PRES.length-1?(M?PRES[i+1][1]:PRES[i+1][1]/12):X1;if(b<=X0)return;const xa=sx(Math.max(a,X0)),xb=sx(b);
+  if(i%2===0)s+=`<rect class="band" x="${xa}" y="${pt-18}" width="${xb-xa}" height="${H-pb-pt+18}"/>`;
+  const lab=xb-xa>=p[0].length*6.2+6?p[0]:(xb-xa>=22?p[0].slice(0,3)+".":"");
+  if(lab)s+=`<text class="bl" x="${(xa+xb)/2}" y="${pt-6}" text-anchor="middle">${lab}</text>`});
+ /* grade */
+ ticks.forEach(v=>{const y=sy(v);s+=`<line class="${v===0&&!h.log?"gl0":"gl"}" x1="${pl}" x2="${W-pr}" y1="${y}" y2="${y}"/><text x="${pl-6}" y="${y+3.5}" text-anchor="end">${nf(v,v<10&&v%1?1:0)}</text>`});
+ (late?[2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026]:[1985,1990,1995,2000,2005,2010,2015,2020,2025]).forEach(y=>{const x=sx(M?y*12:y+.5);if((M?y*12:y)<X0)return;if(W<560&&(late?y%4!==2:y%10))return;s+=`<text x="${x}" y="${H-6}" text-anchor="middle">${y}</text>`});
+ /* dados */
+ if(h.bar){const bw=Math.max(2,(sx(1)-sx(0))*.62);segs[0].forEach(([x,v])=>{const y0=sy(0),y1=sy(v),cx=sx(x+.5);s+=`<rect class="bar" x="${cx-bw/2}" y="${Math.min(y0,y1)}" width="${bw}" height="${Math.max(1,Math.abs(y1-y0))}" rx="1.5"/>`})}
+ else segs.forEach((sg,i)=>{const old=h.old&&i<segs.length-1;s+=`<path class="ln${old?" old":""}" d="${sg.map((p,j)=>(j?"L":"M")+sx(P(p[0])).toFixed(1)+","+sy(p[1]).toFixed(1)).join("")}"/>`;if(!M)sg.forEach(p=>{s+=`<circle class="pt" cx="${sx(P(p[0]))}" cy="${sy(p[1])}" r="${W<560?2.6:3.2}"/>`})});
+ /* pontos de comparação */
+ t0.forEach((r,i)=>{if(!r.g)return;const x=ref.x(r.y);s+=`<circle class="cmp${i===t0.length-1?" now":""}" cx="${sx(P(x))}" cy="${sy(r.g[0])}" r="${i===t0.length-1?6:4.5}"/>`});
+ s+=`<line class="xh" id="hisXh" y1="${pt-18}" y2="${H-pb}" x1="-9" x2="-9" style="display:none"/></svg><div class="his-tip" id="hisTip" style="display:none"></div>`;
+ box.innerHTML=s;
+ /* hover / toque */
+ const pts=segs.flat().map(p=>({x:p[0],v:p[1]})),svg=box.querySelector("svg"),tip=$("#hisTip"),xh=$("#hisXh");
+ const who=x=>{const mm=M?x:x*12+6;let n=PRES[0][0];PRES.forEach(p=>{if(mm>=p[1])n=p[0]});return n};
+ const mv=e=>{const r=svg.getBoundingClientRect(),px=(e.clientX-r.left)*W/r.width;let best=null,bd=1e9;pts.forEach(p=>{const d=Math.abs(sx(P(p.x))-px);if(d<bd){bd=d;best=p}});
+  if(!best||bd>40){tip.style.display="none";xh.style.display="none";return}
+  const cx=sx(P(best.x)),cy=sy(best.v);xh.setAttribute("x1",cx);xh.setAttribute("x2",cx);xh.style.display="";
+  const lab=M?`${MES[best.x%12]}/${Math.floor(best.x/12)}`:best.x;
+  tip.innerHTML=`<b>${fmtV(h,best.v)}</b><br>${lab} · ${who(best.x)}`;tip.style.display="";
+  const left=Math.min(Math.max(cx*r.width/W,70),r.width-70);tip.style.left=left+"px";tip.style.top=Math.max(cy*r.height/H,40)+"px"};
+ svg.addEventListener("pointermove",mv);svg.addEventListener("pointerdown",mv);svg.addEventListener("pointerleave",()=>{tip.style.display="none";xh.style.display="none"});
+}
+$("#hisTabs").innerHTML=HI.map(h=>`<button role="tab" data-id="${h.id}" aria-selected="false">${h.t}</button>`).join("");
+$("#hisTabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b)renderHis(b.dataset.id)});
+renderHis("des");
+let hisRz;addEventListener("resize",()=>{clearTimeout(hisRz);hisRz=setTimeout(()=>renderHis(hisId),150)});
+
 /* desafios */
 const AREAS=["Todos","Econômico","Social","Ambiental","Político"];
 $("#desFil").innerHTML=AREAS.map((a,i)=>`<button data-a="${i?a:""}" aria-pressed="${!i}">${a}</button>`).join("");
@@ -1064,7 +1313,7 @@ $("#prio").addEventListener("click",e=>{const b=e.target.closest("[data-theme]")
 renderPri();
 
 /* fake news */
-const VER={falso:["Mito","var(--risk)"],verdadeiro:["Verdade","var(--ok)"],exagerado:["Exagerado","var(--warn)"],sem_contexto:["Falta contexto","var(--warn)"],sem_evidencias:["Sem provas","var(--warn)"]};
+const VER={falso:["Mito","var(--risk)"],verdadeiro:["Verdade","var(--ok)"],exagerado:["Exagerado","var(--warn)"],sem_contexto:["Falta contexto","var(--warn)"],sem_evidencias:["Sem provas","var(--warn)"],subestimado:["Subestimado","var(--warn)"]};
 const SOB={lula:"Lula",flavio:"Flávio",alckmin:"Alckmin",gaspar:"Gaspar",eleicao:"Eleição e urnas"};
 const EFE={ataca:"ataca",favorece:"favorece",atribui:"atribui fala falsa",neutro:""};
 let FK=[],fkW="",fkT="",fkV="";
@@ -1087,12 +1336,27 @@ function renderFM(){
  const urn=bo.filter(x=>x.sobre==="eleicao").length;
  $("#fmNote").textContent=`Como ler: o Fakeômetro conta só as checagens reunidas neste guia (${FK.length} no total), não todas as falas e boatos da campanha. Agências checam mais quem aparece mais, por isso usamos percentuais nas falas. Um boato que “favorece” um candidato não foi necessariamente feito pela campanha dele. Outros ${urn} boatos atacam o processo eleitoral e as urnas, sem alvo em um candidato.`;
 }
+function fkCard(x){const v=VER[x.veredito]||VER.sem_evidencias;const ef=x.tipo==="boato"&&EFE[x.efeito]?`${EFE[x.efeito]} ${SOB[x.sobre]}`:"";
+  return `<article class="fk" data-fk="${x.id}" style="--sc:${v[1]}"><span class="stamp">${v[0]}</span><q>${x.afirmacao}</q><p>${x.explicacao}</p><div class="tags"><span class="t-${x.sobre}">${x.tipo==="fala"?"Fala de "+(x.quem||SOB[x.sobre]):"Boato"+(ef?" · "+ef:"")}</span>${x.ia?'<span class="t-ia">Feito com IA</span>':""}<span>${fmtD(x.data)}</span></div><a class="src" href="${x.fonte.url}" rel="noopener" target="_blank">${x.fonte.nome} ↗</a></article>`}
+const vOk=x=>!fkV||(fkV==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===fkV);
+const VORD={falso:0,exagerado:1,subestimado:1,sem_contexto:1,sem_evidencias:1,verdadeiro:2};
+const EVT={globo:{t:"nas sabatinas dos dois candidatos à TV Globo",d:{lula:"Sabatina de 15/10",flavio:"Sabatina de 16/10"},dif:"o que a agência checou em cada entrevista"},band:{t:"no debate entre os dois candidatos na Band, em 18/10",d:{lula:"Debate de 18/10",flavio:"Debate de 18/10"},dif:"o que cada um disse e o que a agência checou no debate"}};
+function renderGlobo(ev){
+ const E=EVT[ev],G=FK.filter(x=>x.evento===ev);
+ const c=k=>G.filter(x=>vOk(x)&&(k==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===k)).length;
+ $("#fkSum").innerHTML=`<div><b style="color:var(--risk)">${c("falso")}</b><span>mitos</span></div><div><b style="color:var(--ok)">${c("verdadeiro")}</b><span>verdades</span></div><div><b style="color:var(--warn)">${c("parcial")}</b><span>exagerados ou sem contexto</span></div>`;
+ const col=(k,nm,dt)=>{const A=G.filter(x=>x.sobre===k),n=A.length,f=A.filter(x=>x.veredito==="falso").length,v=A.filter(x=>x.veredito==="verdadeiro").length,p=n-f-v,L=A.filter(vOk).sort((a,b)=>VORD[a.veredito]-VORD[b.veredito]);
+  const pc=x=>n?Math.round(100*x/n):0;
+  return `<div class="gl-col" style="--c:var(--${k==="lula"?"lu":"fl"})"><div class="gl-h"><h4><i></i>${nm}</h4><small>${dt} · ${n} falas checadas</small><div class="fm-stack" aria-hidden="true">${f?`<span style="width:${100*f/n}%;background:var(--risk)"></span>`:""}${p?`<span style="width:${100*p/n}%;background:var(--warn)"></span>`:""}${v?`<span style="width:${100*v/n}%;background:var(--ok)"></span>`:""}</div><div class="gl-n"><span><b>${f}</b> falsas (${pc(f)}%)</span><span><b>${p}</b> imprecisas (${pc(p)}%)</span><span><b>${v}</b> verdadeiras (${pc(v)}%)</span></div></div>${L.map(fkCard).join("")||'<p class="meta">Nenhuma fala com esse veredito.</p>'}</div>`};
+ $("#fkGrid").innerHTML=G.length?`<div class="gl-intro"><p>Todas as falas checadas pela Agência Lupa ${E.t}, com a mesma régua. O número diferente de falas reflete ${E.dif}. Quando outra agência chegou a conclusão diferente, isso aparece na explicação.</p></div><div class="gl-grid">${col("lula","Lula",E.d.lula)}${col("flavio","Flávio Bolsonaro",E.d.flavio)}</div>`:'<p class="meta">As checagens deste evento ainda não foram carregadas.</p>';
+}
 function renderFK(){
+ const ev=EVT[fkT]?fkT:"";$("#fkWho").hidden=!!ev;$("#fkGrid").classList.toggle("is-globo",!!ev);
+ if(ev)return renderGlobo(ev);
  const L=FK.filter(x=>(!fkW||(fkW==="vices"?["alckmin","gaspar"].includes(x.sobre):x.sobre===fkW))&&(!fkT||x.tipo===fkT)&&(!fkV||(fkV==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===fkV)));
  const c=k=>L.filter(x=>k==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===k).length;
  $("#fkSum").innerHTML=`<div><b style="color:var(--risk)">${c("falso")}</b><span>mitos</span></div><div><b style="color:var(--ok)">${c("verdadeiro")}</b><span>verdades</span></div><div><b style="color:var(--warn)">${c("parcial")}</b><span>exagerados ou sem contexto</span></div>`;
- $("#fkGrid").innerHTML=L.map(x=>{const v=VER[x.veredito]||VER.sem_evidencias;const ef=x.tipo==="boato"&&EFE[x.efeito]?`${EFE[x.efeito]} ${SOB[x.sobre]}`:"";
-  return `<article class="fk" data-fk="${x.id}" style="--sc:${v[1]}"><span class="stamp">${v[0]}</span><q>${x.afirmacao}</q><p>${x.explicacao}</p><div class="tags"><span class="t-${x.sobre}">${x.tipo==="fala"?"Fala de "+(x.quem||SOB[x.sobre]):"Boato"+(ef?" · "+ef:"")}</span>${x.ia?'<span class="t-ia">Feito com IA</span>':""}<span>${fmtD(x.data)}</span></div><a class="src" href="${x.fonte.url}" rel="noopener" target="_blank">${x.fonte.nome} ↗</a></article>`}).join("")||'<p class="meta">Nenhuma checagem com esses filtros.</p>';
+ $("#fkGrid").innerHTML=L.map(fkCard).join("")||'<p class="meta">Nenhuma checagem com esses filtros.</p>';
 }
 $("#fkWho").innerHTML=[["","Todos"],["lula","Lula"],["flavio","Flávio"],["vices","Vices"],["eleicao","Eleição e urnas"]].map(([k,l],i)=>`<button data-w="${k}" aria-pressed="${!i}">${l}</button>`).join("");
 [["#fkWho","w",v=>fkW=v],["#fkTipo","t",v=>fkT=v],["#fkVer","v",v=>fkV=v]].forEach(([id,a,set])=>$(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;set(b.dataset[a]);$(id).querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFK()}));
