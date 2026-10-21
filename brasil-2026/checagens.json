@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-20T09:00:43-03:00",
+ "atualizado": "2026-10-21T08:59:52-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -2156,6 +2156,51 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/19/reportagem-da-cnn-brasil-sobre-compra-de-votos-nao-cita-flavio-bolsonaro/"
+   }
+  },
+  {
+   "id": "b-flavio-aposent70",
+   "data": "2026-10-20",
+   "tipo": "boato",
+   "sobre": "flavio",
+   "efeito": "ataca",
+   "ia": true,
+   "afirmacao": "Manchete do O Globo diz que Flávio vai elevar a idade mínima de aposentadoria de 65 para 70 anos se eleito.",
+   "veredito": "falso",
+   "explicacao": "O Globo não publicou essa reportagem, e a imagem tem fortes sinais de ter sido criada com IA. O plano de governo registrado no TSE não fala em mudar as regras da aposentadoria.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/20/e-falso-que-flavio-bolsonaro-propos-elevar-idade-minima-da-aposentadoria-para-70-anos/"
+   }
+  },
+  {
+   "id": "b-urnas-eua-2019",
+   "data": "2026-10-20",
+   "tipo": "boato",
+   "sobre": "eleicao",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "Reportagem mostra que as urnas podem ser fraudadas e que só o comprovante impresso impede fraude.",
+   "veredito": "sem_contexto",
+   "explicacao": "O vídeo é de 2019 e trata de máquinas de uma empresa dos EUA que nunca forneceu urnas ao Brasil. O sistema brasileiro tem zerésima e teste público de integridade; o TSE já tinha alertado sobre o uso fora de contexto desse vídeo em 2021.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/verificacao/2026/10/20/post-distorce-video-de-2019-sobre-urnas-dos-eua/"
+   }
+  },
+  {
+   "id": "f-fl-falencias",
+   "data": "2026-10-20",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "afirmacao": "O legado de Lula é um “recorde de empresas fechadas”. (debate na Band e outras falas)",
+   "veredito": "falso",
+   "explicacao": "Pela Serasa, as falências caíram de 2024 para 2025 e em nenhum ano do governo Lula superaram o período de 2012 a 2019; houve alta no início de 2026. O recorde foi de pedidos de recuperação judicial, que tenta evitar a falência. Flávio repetiu a frase ao menos 25 vezes no ano.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://www.aosfatos.org/noticias/flavio-bolsonaro-mente-recorde-falencias-empresas/"
    }
   }
  ]
