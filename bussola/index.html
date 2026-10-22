@@ -205,7 +205,22 @@ svg text{font-family:var(--sans)}
 .person span{font-size:14px;color:var(--mute)}
 .near{margin-top:14px;font-size:14.5px}
 .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.toast{font-size:14px;color:var(--ok);font-weight:600}
+.toast{font-size:14px;color:var(--ok);font-weight:600;min-height:1em}
+.rhead-top{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:16px;align-items:center}
+.rhead-top .ill{width:100%;height:auto}
+@media (max-width:520px){.rhead-top{grid-template-columns:minmax(0,1fr) 92px}}
+.nine{margin-top:20px;display:flex;flex-direction:column;gap:8px}
+.nine-row{display:flex;flex-wrap:wrap;gap:6px}
+.ill-s{width:44px;height:44px}
+.share{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px;align-items:start}
+@media (max-width:640px){.share{grid-template-columns:1fr}}
+.cardprev{display:flex;flex-direction:column;gap:8px;min-width:0}
+.cardprev img{width:100%;height:auto;aspect-ratio:1080/1350;border-radius:14px;border:1px solid var(--line);background:var(--surface2)}
+.sharebox{display:flex;flex-direction:column;gap:12px;min-width:0}
+.social{display:flex;flex-wrap:wrap;gap:8px}
+.net{text-decoration:none;color:var(--ink);font-weight:700;padding:8px 14px}
+.net:hover{border-color:var(--ink)}
+#copytext{width:100%;min-height:130px;font:inherit;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px}
 .refs{font-size:13.5px;color:var(--mute);padding-left:18px;margin:10px 0 0;display:flex;flex-direction:column;gap:5px}
 .refs i{color:var(--ink)}
 details summary{cursor:pointer;font-family:var(--disp);font-weight:700;font-size:18px}
@@ -357,6 +372,7 @@ function renderIntro(){
         <h1 style="margin-top:8px">Esquerda, direita… ou <em>bem mais nuances</em> do que isso?</h1>
         <p class="lead">Quatro rodadas rápidas. Em cada uma, você coloca afirmações em ordem de prioridade e separa o que aceita do que rejeita. No fim, vê onde está, o que valoriza e como convive com quem pensa diferente.</p>
         <div class="facts"><span class="chip">4 rodadas</span><span class="chip">26 afirmações</span><span class="chip">≈ 4 minutos</span><span class="chip">respostas ficam só com você</span></div>
+        <div class="nine"><p class="label">9 perfis possíveis. Qual é o seu?</p><div class="nine-row">${Object.keys(ILL).map(k=>illSvg(k,"ill-s",ARCH[k].n)).join("")}</div></div>
       </div>
       <svg class="mini" viewBox="0 0 200 200" aria-hidden="true">
         <defs><linearGradient id="gx" x1="0" x2="1"><stop offset="0" stop-color="var(--left)"/><stop offset="1" stop-color="var(--right)"/></linearGradient>
@@ -522,6 +538,112 @@ function radarSvg(m){
 }
 const initials=n=>n.replace(/[“”"]/g,"").split(" ").filter(w=>w.length>2&&w[0]===w[0].toUpperCase()).map(w=>w[0]).slice(0,2).join("");
 
+// ---------- ilustrações dos perfis (viewBox 200x200; p = paleta: L esq, R dir, P prog, C cons, K tinta, M neutro, W branco, S fundo) ----------
+const pers=(x,c,s)=>`<circle cx="${x}" cy="${172-s*2.6}" r="${s}" fill="${c}"/><path d="M${x-s*1.7} 172 a${s*1.7} ${s*1.7} 0 0 1 ${s*3.4} 0Z" fill="${c}"/>`;
+const ILL={
+ "0-0":p=>`<g stroke="${p.C}" stroke-width="6" stroke-linecap="round">${[...Array(8)].map((_,i)=>{const a=Math.PI+i*Math.PI/7;return`<line x1="${(100+Math.cos(a)*46).toFixed(1)}" y1="${(92+Math.sin(a)*46).toFixed(1)}" x2="${(100+Math.cos(a)*62).toFixed(1)}" y2="${(92+Math.sin(a)*62).toFixed(1)}"/>`}).join("")}</g><circle cx="100" cy="92" r="36" fill="${p.C}"/>${pers(62,p.L,12)}${pers(138,p.L,12)}${pers(100,p.P,15)}`,
+ "1-0":p=>`<path d="M34 104 Q100 22 166 104 Q155 94 144 104 Q133 94 122 104 Q111 94 100 104 Q89 94 78 104 Q67 94 56 104 Q45 94 34 104Z" fill="${p.L}"/><path d="M100 46 V36" stroke="${p.K}" stroke-width="6" stroke-linecap="round"/><path d="M100 104 V156 q0 10 -10 10" stroke="${p.K}" stroke-width="6" fill="none" stroke-linecap="round"/>${pers(66,p.M,11)}${pers(134,p.M,11)}`,
+ "2-0":p=>`<g fill="${p.L}">${[...Array(8)].map((_,i)=>`<rect x="89" y="28" width="22" height="26" rx="4" transform="rotate(${i*45} 100 100)"/>`).join("")}</g><circle cx="100" cy="100" r="58" fill="${p.L}"/><circle cx="100" cy="100" r="40" fill="${p.W}"/><path d="M100 72 L128 96 V126 H72 V96 Z" fill="${p.C}"/><rect x="93" y="106" width="14" height="20" fill="${p.W}"/>`,
+ "0-1":p=>`<circle cx="100" cy="100" r="52" fill="${p.P}"/><g stroke="${p.W}" stroke-width="4" fill="none"><ellipse cx="100" cy="100" rx="22" ry="52"/><line x1="48" y1="100" x2="152" y2="100"/><line x1="57" y1="74" x2="143" y2="74"/><line x1="57" y1="126" x2="143" y2="126"/></g><ellipse cx="100" cy="100" rx="84" ry="28" fill="none" stroke="${p.R}" stroke-width="5" transform="rotate(-20 100 100)"/><circle cx="179" cy="71" r="9" fill="${p.L}"/>`,
+ "1-1":p=>`<rect x="96" y="52" width="8" height="100" fill="${p.K}"/><rect x="66" y="148" width="68" height="12" rx="6" fill="${p.K}"/><rect x="36" y="58" width="128" height="8" rx="4" fill="${p.K}"/><circle cx="100" cy="52" r="9" fill="${p.K}"/><g stroke="${p.K}" stroke-width="3"><line x1="44" y1="64" x2="28" y2="112"/><line x1="44" y1="64" x2="60" y2="112"/><line x1="156" y1="64" x2="140" y2="112"/><line x1="156" y1="64" x2="172" y2="112"/></g><path d="M22 112 H66 A22 22 0 0 1 22 112Z" fill="${p.L}"/><path d="M134 112 H178 A22 22 0 0 1 134 112Z" fill="${p.R}"/>`,
+ "2-1":p=>`<path d="M90 170 L94 112 H106 L110 170 Z" fill="${p.K}"/><g stroke="${p.K}" stroke-width="5" fill="none" stroke-linecap="round"><path d="M92 166 q-14 4 -28 12"/><path d="M108 166 q14 4 28 12"/></g><g fill="${p.C}"><circle cx="100" cy="84" r="38"/><circle cx="66" cy="102" r="26"/><circle cx="134" cy="102" r="26"/><circle cx="80" cy="62" r="24"/><circle cx="120" cy="62" r="24"/></g><g fill="${p.W}" opacity=".55"><circle cx="86" cy="70" r="5"/><circle cx="118" cy="92" r="5"/><circle cx="72" cy="104" r="4"/></g>`,
+ "0-2":p=>`<path d="M46 160 V96 A34 34 0 0 1 114 96 V112" stroke="${p.K}" stroke-width="5" fill="none"/><g stroke="${p.K}" stroke-width="4"><line x1="63" y1="74" x2="63" y2="160"/><line x1="80" y1="64" x2="80" y2="160"/><line x1="97" y1="74" x2="97" y2="160"/></g><path d="M114 112 L142 98 V140 L114 154" stroke="${p.K}" stroke-width="4" fill="none"/><rect x="38" y="156" width="84" height="9" rx="3" fill="${p.K}"/><path d="M131 70 L118 62 L121 76Z" fill="${p.R}"/><ellipse cx="150" cy="68" rx="21" ry="12" fill="${p.R}"/><circle cx="169" cy="59" r="9" fill="${p.R}"/><path d="M176 57 L186 60 L176 63Z" fill="${p.C}"/><path d="M148 64 L132 38 L162 58Z" fill="${p.P}"/>`,
+ "1-2":p=>`<g fill="${p.R}"><rect x="40" y="128" width="26" height="42" rx="4"/><rect x="74" y="106" width="26" height="64" rx="4"/><rect x="108" y="84" width="26" height="86" rx="4"/><rect x="142" y="60" width="26" height="110" rx="4"/></g><path d="M38 112 L82 88 L114 96 L154 52" stroke="${p.K}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M164 40 L142 46 L158 62Z" fill="${p.K}"/>`,
+ "2-2":p=>`<rect x="52" y="38" width="96" height="11" rx="3" fill="${p.K}"/><rect x="58" y="49" width="84" height="14" rx="3" fill="${p.C}"/><circle cx="60" cy="58" r="9" fill="${p.C}"/><circle cx="140" cy="58" r="9" fill="${p.C}"/><rect x="70" y="63" width="60" height="87" fill="${p.R}"/><g stroke="${p.W}" stroke-width="3" opacity=".7"><line x1="82" y1="68" x2="82" y2="146"/><line x1="94" y1="68" x2="94" y2="146"/><line x1="106" y1="68" x2="106" y2="146"/><line x1="118" y1="68" x2="118" y2="146"/></g><rect x="60" y="150" width="80" height="10" fill="${p.C}"/><rect x="50" y="160" width="100" height="12" rx="3" fill="${p.K}"/>`
+};
+const PAL_CSS={L:"var(--left)",R:"var(--right)",P:"var(--prog)",C:"var(--cons)",K:"var(--ink)",M:"var(--mute)",W:"var(--surface)",S:"var(--surface2)"};
+function illSvg(key,cls,label){return `<svg class="${cls}" viewBox="0 0 200 200" ${label?`role="img" aria-label="${esc(label)}"`:'aria-hidden="true"'}><circle cx="100" cy="100" r="96" fill="${PAL_CSS.S}"/>${ILL[key](PAL_CSS)}</svg>`;}
+function illImage(key,pal){
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="420" height="420"><circle cx="100" cy="100" r="96" fill="${pal.S}"/>${ILL[key](pal)}</svg>`;
+  return new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>res(null);im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);});
+}
+
+// ---------- cartão para compartilhar (PNG 1080x1350, paleta clara fixa) ----------
+const SITE="https://diegoungari04.github.io/Social-Media/bussola/";
+const shareUrl=()=>/^https?:$/.test(location.protocol)&&location.hostname.endsWith("github.io")?location.href.split("#")[0]:SITE;
+const CC={bg:"#f1f0f5",card:"#ffffff",ink:"#1a1a2c",mute:"#5c5a72",line:"#d8d6e2",soft:"#e8e7ef",left:"#c8384f",right:"#2c66c4",prog:"#7a4fc4",cons:"#a86c06",
+  ok:"#23864f",warn:"#a87a00",hot:"#c75b12",crit:"#c42a36"};
+const DISP='"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif',SANS='"Figtree","Segoe UI",sans-serif',MONO='"JetBrains Mono",Menlo,monospace';
+function rr(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function wrapText(ctx,text,x,y,maxW,lh,maxLines){
+  const words=text.split(" ");let line="",n=0;
+  for(let i=0;i<words.length;i++){
+    const test=line?line+" "+words[i]:words[i];
+    if(ctx.measureText(test).width>maxW&&line){
+      if(n===maxLines-1){while(ctx.measureText(line+"…").width>maxW)line=line.slice(0,-1);ctx.fillText(line+"…",x,y);return y+lh;}
+      ctx.fillText(line,x,y);y+=lh;n++;line=words[i];
+    } else line=test;
+  }
+  ctx.fillText(line,x,y);return y+lh;
+}
+async function makeCard(r,A,lv,sorted,key){
+  try{await Promise.all([`800 90px ${DISP}`,`600 30px ${SANS}`,`700 24px ${MONO}`].map(f=>document.fonts.load(f)));}catch(e){}
+  const W=1080,H=1350,c=document.createElement("canvas");c.width=W;c.height=H;const ctx=c.getContext("2d");
+  ctx.fillStyle=CC.bg;ctx.fillRect(0,0,W,H);
+  // topo
+  ctx.save();ctx.translate(92,92);ctx.beginPath();ctx.arc(0,0,30,0,7);ctx.fillStyle=CC.card;ctx.fill();ctx.lineWidth=5;ctx.strokeStyle=CC.ink;ctx.stroke();
+  ctx.fillStyle=CC.left;ctx.beginPath();ctx.moveTo(0,-22);ctx.lineTo(7,0);ctx.lineTo(0,22);ctx.lineTo(-7,0);ctx.fill();
+  ctx.fillStyle=CC.right;ctx.beginPath();ctx.moveTo(0,-22);ctx.lineTo(7,0);ctx.lineTo(-7,0);ctx.fill();ctx.restore();
+  ctx.fillStyle=CC.ink;ctx.font=`800 40px ${DISP}`;ctx.textBaseline="middle";ctx.fillText("Bússola Política",140,94);
+  ctx.textAlign="right";ctx.font=`700 22px ${MONO}`;ctx.fillStyle=CC.mute;ctx.fillText("MEU RESULTADO",1000,94);ctx.textAlign="left";
+  // perfil
+  ctx.textBaseline="alphabetic";ctx.font=`700 24px ${MONO}`;ctx.fillStyle=CC.mute;ctx.fillText("MEU PERFIL",80,205);
+  const im=await illImage(key,{L:CC.left,R:CC.right,P:CC.prog,C:CC.cons,K:CC.ink,M:CC.mute,W:CC.card,S:CC.soft});
+  if(im) ctx.drawImage(im,790,150,220,220);
+  ctx.font=`800 84px ${DISP}`;ctx.fillStyle=CC.ink;let y=wrapText(ctx,A.n,78,290,690,88,2);
+  ctx.font=`500 30px ${SANS}`;ctx.fillStyle=CC.mute;y=wrapText(ctx,A.d,80,y+2,y<380?690:920,40,3)+14;y=Math.max(y,392);
+  // mapa
+  const mx=80,my=y,ms=440,S=ms/2/10*0.9,cx=mx+ms/2,cy=my+ms/2;
+  rr(ctx,mx,my,ms,ms,24);ctx.fillStyle=CC.card;ctx.fill();
+  ctx.save();rr(ctx,mx,my,ms,ms,24);ctx.clip();
+  let g=ctx.createLinearGradient(mx,0,mx+ms,0);g.addColorStop(0,CC.left);g.addColorStop(.5,CC.card);g.addColorStop(1,CC.right);
+  ctx.globalAlpha=.2;ctx.fillStyle=g;ctx.fillRect(mx,my,ms,ms);
+  g=ctx.createLinearGradient(0,my,0,my+ms);g.addColorStop(0,CC.cons);g.addColorStop(.5,CC.card);g.addColorStop(1,CC.prog);ctx.fillStyle=g;ctx.fillRect(mx,my,ms,ms);
+  ctx.restore();
+  ctx.strokeStyle=CC.line;ctx.lineWidth=2;
+  for(let i=-10;i<=10;i+=5){ctx.beginPath();ctx.moveTo(cx+i*S,my+18);ctx.lineTo(cx+i*S,my+ms-18);ctx.moveTo(mx+18,cy-i*S);ctx.lineTo(mx+ms-18,cy-i*S);ctx.stroke();}
+  ctx.setLineDash([8,8]);ctx.strokeStyle=CC.mute;ctx.strokeRect(cx-3*S,cy-3*S,6*S,6*S);ctx.setLineDash([]);
+  ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(mx+18,cy);ctx.lineTo(mx+ms-18,cy);ctx.moveTo(cx,my+18);ctx.lineTo(cx,my+ms-18);ctx.stroke();
+  ctx.font=`700 19px ${MONO}`;ctx.textAlign="center";ctx.textBaseline="middle";
+  const tag=(t,col,x,y0,rot)=>{ctx.save();ctx.translate(x,y0);ctx.rotate(rot);const w=ctx.measureText(t).width+16;rr(ctx,-w/2,-15,w,30,8);ctx.fillStyle=CC.card;ctx.fill();ctx.fillStyle=col;ctx.fillText(t,0,1);ctx.restore();};
+  tag("CONSERVADOR",CC.cons,cx,my+34,0);tag("PROGRESSISTA",CC.prog,cx,my+ms-34,0);
+  tag("ESQUERDA",CC.left,mx+30,cy,-Math.PI/2);tag("DIREITA",CC.right,mx+ms-30,cy,Math.PI/2);
+  ctx.textBaseline="alphabetic";
+  const px=cx+r.eco*S,py=cy-r.soc*S;
+  ctx.globalAlpha=.3;ctx.fillStyle=CC[lv.c];ctx.beginPath();ctx.arc(px,py,36,0,7);ctx.fill();ctx.globalAlpha=1;
+  ctx.beginPath();ctx.arc(px,py,18,0,7);ctx.fillStyle=CC.card;ctx.fill();ctx.lineWidth=8;ctx.strokeStyle=CC.ink;ctx.stroke();
+  ctx.textAlign="left";
+  // réguas
+  const rx=570,rw=430;let ry=my+8;
+  const bar=(label,val,txt,stops,pct)=>{
+    ctx.font=`800 30px ${DISP}`;ctx.fillStyle=CC.ink;ctx.fillText(label,rx,ry+26);
+    ctx.font=`600 22px ${SANS}`;ctx.fillStyle=CC.mute;ctx.textAlign="right";ctx.fillText(txt,rx+rw,ry+26);ctx.textAlign="left";
+    const by=ry+48,gg=ctx.createLinearGradient(rx,0,rx+rw,0);stops.forEach(([o,col])=>gg.addColorStop(o,col));
+    rr(ctx,rx,by,rw,20,10);ctx.fillStyle=gg;ctx.fill();
+    const kx=rx+rw*pct/100;ctx.beginPath();ctx.arc(kx,by+10,17,0,7);ctx.fillStyle=CC.card;ctx.fill();ctx.lineWidth=6;ctx.strokeStyle=CC.ink;ctx.stroke();
+    ry+=112;
+  };
+  bar("Economia",r.eco,`${ecoLabel(r.eco)} ${fmt(r.eco)}`,[[0,CC.left],[.5,CC.soft],[1,CC.right]],(r.eco+10)*5);
+  bar("Costumes",r.soc,`${socLabel(r.soc)} ${fmt(r.soc)}`,[[0,CC.prog],[.5,CC.soft],[1,CC.cons]],(r.soc+10)*5);
+  bar("Democracia",r.rad,`${Math.round(r.rad)}/100`,[[0,CC.ok],[.25,CC.ok],[.25,CC.warn],[.45,CC.warn],[.45,CC.hot],[.65,CC.hot],[.65,CC.crit],[1,CC.crit]],r.rad);
+  ctx.font=`700 24px ${SANS}`;ctx.fillStyle=CC[lv.c];ctx.fillText(lv.n,rx,ry-8);
+  // valores
+  ry+=44;ctx.font=`700 20px ${MONO}`;ctx.fillStyle=CC.mute;ctx.fillText("VALORES MAIS FORTES",rx,ry);
+  ctx.font=`700 28px ${SANS}`;ctx.fillStyle=CC.ink;
+  sorted.slice(0,3).forEach((f,i)=>{ctx.fillText(`${i+1}º  ${f.n}`,rx,ry+44+i*40);});
+  // líderes
+  let ly=Math.max(my+ms,ry+130)+60;
+  ctx.font=`700 22px ${MONO}`;ctx.fillStyle=CC.mute;ctx.fillText("PENSA PARECIDO COM",80,ly);
+  ctx.font=`600 32px ${SANS}`;ctx.fillStyle=CC.ink;
+  const names=[A.br[0][0],A.br[1]?A.br[1][0]:null,A.w[0][0],A.w[1]?A.w[1][0]:null].filter(Boolean);
+  wrapText(ctx,names.join(" · "),80,ly+48,920,42,2);
+  // rodapé
+  ctx.fillStyle=CC.ink;ctx.fillRect(0,H-120,W,120);
+  ctx.fillStyle="#ffffff";ctx.font=`800 34px ${DISP}`;ctx.fillText("Descubra o seu:",80,H-50);
+  ctx.font=`600 22px ${MONO}`;ctx.textAlign="right";ctx.fillText(SITE.replace("https://","").replace(/\/$/,""),1000,H-52);ctx.textAlign="left";
+  return c;
+}
+
 function renderResult(){
   const r=compute(),key=r.row+"-"+r.col,A=ARCH[key],lv=radLevel(r.rad);
   const sorted=[...F].sort((a,b)=>r.mor[b.id]-r.mor[a.id]);const top3=sorted.slice(0,3).map(f=>f.id);
@@ -533,10 +655,12 @@ function renderResult(){
   const people=(list)=>list.map(p=>`<div class="person"><span class="avatar" aria-hidden="true">${initials(p[0])}</span><div><b>${esc(p[0])}</b><span>${esc(p[1])}</span></div></div>`).join("");
   const sim=(a,b)=>{const d=F.reduce((s,f)=>s+Math.abs(r.mor[f.id]-TYP[b][f.id]),0)/F.length;return Math.round(100-d);};
 
-  app.innerHTML=top('<button class="key key-branco" id="redo2" style="padding:9px 14px;font-size:12px">REFAZER</button>')+`
+  app.innerHTML=top('<span class="keys"><button class="key key-confirma" id="goshare" style="padding:9px 14px;font-size:12px">COMPARTILHAR</button><button class="key key-branco" id="redo2" style="padding:9px 14px;font-size:12px">REFAZER</button></span>')+`
   <section class="card rhead fade">
-    <p class="label">Seu perfil</p>
-    <h1>${esc(A.n)}</h1>
+    <div class="rhead-top">
+      <div><p class="label">Seu perfil</p><h1>${esc(A.n)}</h1></div>
+      ${illSvg(key,"ill","Ilustração do perfil "+A.n)}
+    </div>
     <p class="desc">${esc(A.d)}</p>
     <div class="pills">
       <span class="pill">Economia: ${ecoLabel(r.eco)} <b>${fmt(r.eco)}</b></span>
@@ -597,19 +721,33 @@ function renderResult(){
   </section>
 
   <section class="card">
-    <div class="sechead"><p class="label">Você sabia?</p><h2>O que a pesquisa diz</h2></div>
-    <div class="facts-list">${SECS.map(x=>`<div class="didyou"><p>${esc(x.fact)}</p><cite>${esc(x.cite)}</cite></div>`).join("")}</div>
-  </section>
-
-  <section class="card">
     <div class="sechead"><p class="label">Quem pensou parecido</p><h2>Líderes com postura próxima à sua</h2><p>Posições aproximadas, estimadas pela postura pública predominante de cada um. Ninguém é um ponto fixo, e semelhança de ideias não significa endosso.</p></div>
     <div class="leaders"><div><h3>Brasil</h3>${people(A.br)}</div><div><h3>Mundo</h3>${people(A.w)}</div></div>
     ${near?`<p class="near">Você está perto da fronteira com o perfil <b>${esc(near.n)}</b>, de nomes como ${esc(near.br[0][0])} e ${esc(near.w[0][0])}.</p>`:""}
   </section>
 
   <section class="card">
-    <div class="actions"><button class="key key-confirma" id="copy">COPIAR RESULTADO</button><button class="key key-corrige" id="redo">REFAZER TESTE</button><span class="toast" id="toast" role="status"></span></div>
-    <textarea id="copytext" readonly hidden style="width:100%;margin-top:12px;min-height:110px;font:inherit;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px"></textarea>
+    <div class="sechead"><p class="label">Você sabia?</p><h2>O que a pesquisa diz</h2></div>
+    <div class="facts-list">${SECS.map(x=>`<div class="didyou"><p>${esc(x.fact)}</p><cite>${esc(x.cite)}</cite></div>`).join("")}</div>
+  </section>
+
+  <section class="card" id="share">
+    <div class="sechead"><p class="label">Compartilhe</p><h2>Leve seu resultado</h2><p>Baixe o cartão para postar no feed ou nos stories, ou envie direto para as suas redes. O teste não guarda nada: este cartão é o seu registro.</p></div>
+    <div class="share">
+      <div class="cardprev"><img id="cardimg" alt="Cartão com o seu resultado na Bússola Política" width="1080" height="1350"><p class="note">No celular, você também pode tocar e segurar a imagem para salvá-la.</p></div>
+      <div class="sharebox">
+        <div class="actions">
+          <button class="key key-confirma" id="dl">BAIXAR IMAGEM</button>
+          <button class="key key-confirma" id="native" hidden>COMPARTILHAR</button>
+        </div>
+        <p class="label" style="margin-top:6px">Enviar o link</p>
+        <div class="social" id="social"></div>
+        <p class="note">No Instagram e no TikTok, baixe a imagem e publique pelo app.</p>
+        <div class="actions"><button class="key key-branco" id="copy">COPIAR TEXTO</button><button class="key key-corrige" id="redo">REFAZER TESTE</button></div>
+        <span class="toast" id="toast" role="status"></span>
+        <textarea id="copytext" readonly hidden></textarea>
+      </div>
+    </div>
   </section>
 
   <section class="card">
@@ -640,17 +778,42 @@ function renderResult(){
     </details>
   </section>`;
 
-  const txt=`Meu resultado na Bússola Política: ${A.n}.
+  const url=shareUrl();
+  const txt=`Fiz a Bússola Política e meu perfil é ${A.n}.
 Economia: ${ecoLabel(r.eco)} (${fmt(r.eco)}) · Costumes: ${socLabel(r.soc)} (${fmt(r.soc)})
 Termômetro democrático: ${Math.round(r.rad)}/100 (${lv.n})
 Valores mais fortes: ${sorted.slice(0,3).map(f=>f.n).join(", ")}
-Líderes com postura parecida: ${A.br[0][0]}, ${A.w[0][0]}`;
+Descubra o seu: ${url}`;
+  const short=`Fiz a Bússola Política e meu perfil é ${A.n}. Descubra o seu:`;
+  const E=encodeURIComponent;
+  const nets=[["WhatsApp",`https://wa.me/?text=${E(short+" "+url)}`],["X",`https://twitter.com/intent/tweet?text=${E(short)}&url=${E(url)}`],
+    ["Facebook",`https://www.facebook.com/sharer/sharer.php?u=${E(url)}`],["LinkedIn",`https://www.linkedin.com/sharing/share-offsite/?url=${E(url)}`],
+    ["Telegram",`https://t.me/share/url?url=${E(url)}&text=${E(short)}`]];
+  document.getElementById("social").innerHTML=nets.map(([n,h])=>`<a class="chip net" href="${h}" target="_blank" rel="noopener">${n}</a>`).join("");
+  const toast=m=>{document.getElementById("toast").textContent=m;};
   const redo=()=>{state={step:-1,orders:{},done:{}};render();window.scrollTo({top:0});};
   document.getElementById("redo").onclick=redo;document.getElementById("redo2").onclick=redo;
+  document.getElementById("goshare").onclick=()=>document.getElementById("share").scrollIntoView({behavior:"smooth"});
   document.getElementById("copy").onclick=()=>{
-    const t=document.getElementById("toast"),ta=document.getElementById("copytext");
-    const fallback=()=>{ta.value=txt;ta.hidden=false;ta.select();t.textContent="Selecione e copie o texto abaixo.";};
-    try{navigator.clipboard.writeText(txt).then(()=>{t.textContent="Resultado copiado."},fallback);}catch(e){fallback();}
+    const ta=document.getElementById("copytext");
+    const fallback=()=>{ta.value=txt;ta.hidden=false;ta.select();toast("Selecione e copie o texto acima.");};
+    try{navigator.clipboard.writeText(txt).then(()=>toast("Texto copiado. Cole onde quiser."),fallback);}catch(e){fallback();}
+  };
+  let blob=null;
+  makeCard(r,A,lv,sorted,key).then(c=>c.toBlob(b=>{
+    blob=b;if(!b) return;
+    const img=document.getElementById("cardimg");if(img) img.src=URL.createObjectURL(b);
+    const file=new File([b],"bussola-politica.png",{type:"image/png"});
+    const nb=document.getElementById("native");
+    if(nb&&navigator.canShare&&navigator.canShare({files:[file]})){
+      nb.hidden=false;
+      nb.onclick=()=>navigator.share({files:[file],text:txt}).catch(()=>{});
+    }
+  },"image/png"));
+  document.getElementById("dl").onclick=()=>{
+    if(!blob){toast("A imagem ainda está sendo gerada. Tente de novo em um instante.");return;}
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="bussola-politica.png";
+    document.body.appendChild(a);a.click();a.remove();toast("Imagem baixada.");
   };
 }
 
