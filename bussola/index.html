@@ -212,6 +212,22 @@ svg text{font-family:var(--sans)}
 .nine{margin-top:20px;display:flex;flex-direction:column;gap:8px}
 .nine-row{display:flex;flex-wrap:wrap;gap:6px}
 .ill-s{width:44px;height:44px}
+.regchart{width:100%;max-width:520px;height:auto;display:block;margin:0 auto}
+.dotk{width:10px!important;height:10px!important;border:0!important;border-radius:50%}
+.horseshoe{margin-top:18px;background:var(--surface2);border-radius:14px;padding:14px 16px}
+.horseshoe p{font-size:15px;margin-top:4px}
+.regimes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin-top:16px}
+.regime{border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.regime.main{border-width:2px;border-color:var(--ink)}
+.rgh{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.rgh b{display:block;font-family:var(--disp);font-size:20px;line-height:1.15}
+.rgh span{font-size:13px;color:var(--mute)}
+.near-chip{font-family:var(--mono);font-size:11.5px;font-weight:700;background:var(--surface2);color:var(--ink)!important;border-radius:999px;padding:4px 9px;white-space:nowrap}
+.regime dl{margin:0;display:grid;grid-template-columns:78px minmax(0,1fr);gap:4px 10px;font-size:14px}
+.regime dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-top:2px}
+.regime dd{margin:0}
+.mythline{font-size:14px;color:var(--mute);border-left:3px solid var(--line);padding-left:10px}
+.you{font-size:14.5px;background:var(--surface2);border-radius:10px;padding:10px 12px}
 .share{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px;align-items:start}
 @media (max-width:640px){.share{grid-template-columns:1fr}}
 .cardprev{display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -558,6 +574,68 @@ function illImage(key,pal){
   return new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>res(null);im.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);});
 }
 
+// ---------- regimes: economia (-10 a +10), costumes (null quando variou) e grau de autoritarismo (0 a 100) ----------
+const REG=[
+ {id:"com",n:"Comunismo",ex:"modelo soviético · URSS, China de Mao, Cuba, Coreia do Norte",eco:-9.5,soc:null,auth:95,main:true,lx:10,la:"start",
+  e:"Fim da propriedade privada dos meios de produção; economia planejada pelo Estado.",s:"Ateísmo de Estado e controle da vida privada; costumes muitas vezes rígidos.",p:"Partido único, polícia política, censura e campos de trabalho forçado.",
+  myth:"“Quem é de esquerda é comunista.” A maior parte da esquerda democrática no mundo é social-democrata: aceita a economia de mercado, com proteção social, eleições e imprensa livre."},
+ {id:"fas",n:"Fascismo",ex:"Itália de Mussolini, 1922–1943",eco:1,soc:8,auth:92,main:true,lx:-10,la:"end",
+  e:"Corporativismo: o Estado arbitra patrões e sindicatos controlados, mantendo a propriedade privada.",s:"Nacionalismo extremo, culto à força, à guerra e à tradição.",p:"Partido único, culto ao líder, milícias violentas e fim da imprensa livre.",
+  myth:"“Quem é conservador é fascista.” O conservadorismo democrático defende tradição e ordem dentro das regras do jogo. O fascismo destruiu essas regras."},
+ {id:"naz",n:"Nazismo",ex:"Alemanha de Hitler, 1933–1945",eco:3.5,soc:10,auth:100,main:true,lx:-10,la:"end",
+  e:"Economia dirigida para a guerra, com propriedade privada mantida, grandes empresas aliadas e sindicatos extintos.",s:"Racismo de Estado e antissemitismo; perseguição de judeus, ciganos, homossexuais e pessoas com deficiência.",p:"Ditadura totalitária, culto ao líder e campos de extermínio: o Holocausto.",
+  myth:"Dois mitos opostos: que o nazismo era de esquerda por ter “socialista” no nome, e que qualquer pessoa de direita é nazista. Historiadores o classificam na extrema direita: perseguiu comunistas e sindicatos e se aliou ao grande capital. E a direita democrática nada tem a ver com ele."},
+ {id:"est",n:"Estado Novo",ex:"Brasil de Getúlio Vargas, 1937–1945",eco:-3,soc:5,auth:78,lx:-10,la:"end",
+  e:"Estado indutor: leis trabalhistas, siderurgia e empresas estatais.",s:"Nacionalismo, ordem e moral tradicional.",p:"Congresso fechado, censura, polícia política e prisão de opositores.",
+  myth:"“Ditadura é coisa de um lado só.” O Estado Novo misturou proteção ao trabalhador com censura e repressão."},
+ {id:"dit",n:"Ditadura militar",ex:"Brasil, 1964–1985",eco:2.5,soc:6,auth:80,lx:10,la:"start",
+  e:"Desenvolvimentismo com muitas estatais, aliado ao capital privado; “milagre” seguido de crise e inflação.",s:"Anticomunismo, moral tradicional e censura cultural.",p:"AI-5, cassações, censura e tortura de presos políticos, segundo a Comissão Nacional da Verdade.",
+  myth:"“Ser de direita é defender a ditadura.” Muitos apoiadores iniciais, como Carlos Lacerda, romperam com o regime quando as eleições foram suspensas."},
+ {id:"nor",n:"Social-democracia nórdica",ex:"Suécia, Noruega, Dinamarca",eco:-4,soc:-5,auth:6,lx:0,la:"middle",
+  e:"Economia de mercado aberta, impostos altos e Estado de bem-estar.",s:"Sociedades laicas e liberais nos costumes.",p:"Democracias plenas, entre as mais livres do mundo.",
+  myth:"“A Suécia é socialista.” Os países nórdicos têm economia de mercado, empresas privadas fortes e alto grau de liberdade econômica."},
+ {id:"lib",n:"Democracia liberal de mercado",ex:"EUA, Reino Unido, Austrália",eco:5,soc:null,auth:8,lx:0,la:"middle",
+  e:"Mercado com Estado menor e impostos mais baixos.",s:"Variam conforme o governo de turno.",p:"Eleições livres, imprensa livre e alternância no poder.",
+  myth:"“Capitalismo e democracia são a mesma coisa.” O Chile de Pinochet teve economia de mercado e ditadura. Economia e regime político são eixos diferentes."}
+];
+function regimeChart(r){
+  const X=v=>190+v*14,Y=v=>250-v*2.2,ux=X(r.eco),uy=Y(r.rad);
+  let g="";for(let i=-10;i<=10;i+=5)g+=`<line x1="${X(i)}" y1="${Y(100)}" x2="${X(i)}" y2="${Y(0)}" stroke="var(--line)"/>`;
+  [0,25,50,75,100].forEach(v=>g+=`<line x1="${X(-10)}" y1="${Y(v)}" x2="${X(10)}" y2="${Y(v)}" stroke="var(--line)"/>`);
+  const pts=REG.map(x=>{const px=X(x.eco),py=Y(x.auth),ly=x.la==="middle"?py-12:py+4;
+    return `<circle cx="${px}" cy="${py}" r="${x.main?7:5.5}" fill="${x.auth>=50?"var(--crit)":"var(--ok)"}"/><text x="${px+x.lx}" y="${ly}" text-anchor="${x.la}" font-size="11.5" font-weight="${x.main?700:500}" fill="var(--ink)">${x.n.replace("Democracia liberal de mercado","Democracia liberal").replace("Social-democracia nórdica","Social-democracia")}</text>`;}).join("");
+  return `<svg class="regchart" viewBox="0 0 360 290" role="img" aria-label="Regimes e você: economia no eixo horizontal, autoritarismo no vertical">
+  <defs><linearGradient id="rg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--crit)" stop-opacity=".16"/><stop offset=".55" stop-color="var(--warn)" stop-opacity=".06"/><stop offset="1" stop-color="var(--ok)" stop-opacity=".16"/></linearGradient></defs>
+  <rect x="${X(-10)}" y="${Y(100)}" width="${X(10)-X(-10)}" height="${Y(0)-Y(100)}" fill="url(#rg)"/>${g}
+  <line x1="${X(0)}" y1="${Y(100)}" x2="${X(0)}" y2="${Y(0)}" stroke="var(--mute)" stroke-width="1.5"/>
+  <text x="${X(-10)}" y="270" font-size="12" font-weight="700" fill="var(--left)">ESQUERDA</text><text x="${X(10)}" y="270" text-anchor="end" font-size="12" font-weight="700" fill="var(--right)">DIREITA</text>
+  <text x="${X(0)}" y="270" text-anchor="middle" font-size="11" fill="var(--mute)">economia</text>
+  <text x="18" y="${Y(100)}" font-size="11" font-weight="700" fill="var(--crit)" transform="rotate(-90 18 ${Y(100)})" text-anchor="end">AUTORITÁRIO</text>
+  <text x="18" y="${Y(0)}" font-size="11" font-weight="700" fill="var(--ok)" transform="rotate(-90 18 ${Y(0)})" text-anchor="start">DEMOCRÁTICO</text>
+  ${pts}
+  <circle cx="${ux}" cy="${uy}" r="11" fill="var(--surface)" stroke="var(--me)" stroke-width="4"/>
+  <text x="${ux}" y="${uy>200?uy-18:uy+26}" text-anchor="middle" font-size="12" font-weight="800" fill="var(--ink)">você</text></svg>`;
+}
+function regimeNote(r,x){
+  const out=[];
+  out.push(Math.abs(r.eco-x.eco)<=4?"Na economia, você está relativamente perto.":"Na economia, vocês estão longe.");
+  if(x.soc!==null) out.push(Math.abs(r.soc-x.soc)<=4?"Nos costumes, há proximidade.":"Nos costumes, vocês divergem.");
+  const dem=r.rad<45;
+  if(x.auth>=50) out.push(dem?"No que define esse regime, o autoritarismo, vocês estão em lados opostos.":"No que define esse regime, a disposição de suspender regras democráticas, suas respostas se aproximam dele. Vale refletir.");
+  else out.push(dem?"Vocês compartilham o compromisso com eleições e liberdades civis.":"Suas respostas no termômetro democrático se afastam das regras que sustentam esse modelo.");
+  // média ponderada das distâncias normalizadas (0 a 1); autoritarismo pesa 3x
+  const ws=x.soc===null?0:1,d2=((r.eco-x.eco)/20)**2+ws*((r.soc-x.soc)/20)**2+3*((r.rad-x.auth)/100)**2;
+  return {txt:out.join(" "),near:Math.max(0,Math.round(100*(1-Math.sqrt(d2/(4+ws)))))};
+}
+function regimeCard(r,x){
+  const n=regimeNote(r,x);
+  return `<div class="regime${x.main?" main":""}">
+    <div class="rgh"><div><b>${esc(x.n)}</b><span>${esc(x.ex)}</span></div><span class="near-chip">${n.near}% de proximidade</span></div>
+    <dl><dt>Economia</dt><dd>${esc(x.e)}</dd><dt>Costumes</dt><dd>${esc(x.s)}</dd><dt>Poder</dt><dd>${esc(x.p)}</dd></dl>
+    <p class="mythline">${esc(x.myth)}</p>
+    <p class="you"><b>Com o seu perfil:</b> ${esc(n.txt)}</p></div>`;
+}
+
 // ---------- cartão para compartilhar (PNG 1080x1350, paleta clara fixa) ----------
 const SITE="https://diegoungari04.github.io/Social-Media/bussola/";
 const shareUrl=()=>/^https?:$/.test(location.protocol)&&location.hostname.endsWith("github.io")?location.href.split("#")[0]:SITE;
@@ -697,6 +775,17 @@ function renderResult(){
   </section>
 
   <section class="card">
+    <div class="sechead"><p class="label">Regimes</p><h2>Comunismo, fascismo, nazismo: onde você fica?</h2><p>Chamar alguém de esquerda de “comunista” ou alguém de direita de “fascista” é um dos atalhos mais comuns do debate. Mas esses regimes não se definem só pela economia. O que os une é o autoritarismo: partido único, fim de eleições livres, censura e perseguição de opositores. Por isso o gráfico cruza a economia com o seu termômetro democrático.</p></div>
+    ${regimeChart(r)}
+    <div class="legend"><span><i class="dotk" style="background:var(--crit)"></i>regime autoritário</span><span><i class="dotk" style="background:var(--ok)"></i>democracia</span></div>
+    <div class="horseshoe"><span class="label">Os extremos se parecem?</span><p>Em parte. Pesquisas mostram que extremistas de esquerda e de direita compartilham traços psicológicos: certeza absoluta, visão de mundo em preto e branco e intolerância a quem discorda (van Prooijen & Krouwel, 2019). A semelhança está no método, não nas ideias.</p></div>
+    <div class="regimes">${REG.filter(x=>x.main).map(x=>regimeCard(r,x)).join("")}</div>
+    <p class="label" style="margin-top:22px;margin-bottom:12px">Outros regimes e modelos</p>
+    <div class="regimes">${REG.filter(x=>!x.main).map(x=>regimeCard(r,x)).join("")}</div>
+    <p class="note" style="margin-top:14px">A proximidade combina distância na economia, nos costumes (quando o regime teve uma linha clara) e no grau de autoritarismo, que pesa três vezes mais. Posições dos regimes são aproximações didáticas baseadas na historiografia.</p>
+  </section>
+
+  <section class="card">
     <div class="sechead"><p class="label">Fundamentos morais</p><h2>Seu paladar moral</h2><p>A forma mostra a ordem de prioridade que você deu aos sete valores. As linhas tracejadas mostram a ordem típica de progressistas e conservadores, segundo Graham, Haidt & Nosek (2009). São referências ilustrativas, não pessoas reais.</p></div>
     <div class="grid2">
       <div>${radarSvg(r.mor)}
@@ -762,6 +851,11 @@ function renderResult(){
         <li>Jost, J. T., Glaser, J., Kruglanski, A. W., & Sulloway, F. J. (2003). Political conservatism as motivated social cognition. <i>Psychological Bulletin</i>.</li>
         <li>Brown, A., & Maydeu-Olivares, A. (2011). Item response modeling of forced-choice questionnaires. <i>Educational and Psychological Measurement</i>.</li>
         <li>Graham, J., Haidt, J., & Nosek, B. A. (2009). Liberals and conservatives rely on different sets of moral foundations. <i>JPSP</i>.</li>
+        <li>Arendt, H. (1951). <i>Origens do Totalitarismo</i>.</li>
+        <li>Linz, J. J. (2000). <i>Totalitarian and Authoritarian Regimes</i>.</li>
+        <li>Evans, R. J. (2003). <i>A Chegada do Terceiro Reich</i>.</li>
+        <li>Paxton, R. O. (2004). <i>A Anatomia do Fascismo</i>.</li>
+        <li>Comissão Nacional da Verdade (2014). <i>Relatório Final</i>.</li>
         <li>Treier, S., & Hillygus, D. S. (2009). The nature of political ideology in the contemporary electorate. <i>Public Opinion Quarterly</i>.</li>
         <li>Haidt, J. (2012). <i>A Mente Moralista</i>.</li>
         <li>Toner, K., Leary, M. R., Asher, M. W., & Jongman-Sereno, K. P. (2013). Feeling superior is a bipartisan issue. <i>Psychological Science</i>.</li>
