@@ -12,7 +12,12 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Bússola Política">
 <meta property="og:description" content="Teste rápido, baseado em estudos científicos, para entender seu posicionamento político: economia, costumes, valores morais e convivência democrática.">
-<meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://diegoungari04.github.io/Social-Media/bussola/">
+<meta property="og:image" content="https://diegoungari04.github.io/Social-Media/bussola/og/bussola.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://diegoungari04.github.io/Social-Media/bussola/og/bussola.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23fff' stroke='%231a1a2c' stroke-width='2.5'/%3E%3Cpath d='M16 5 L19.5 16 L16 27 L12.5 16 Z' fill='%23c8384f'/%3E%3Cpath d='M16 5 L19.5 16 L12.5 16 Z' fill='%232c66c4'/%3E%3C/svg%3E">
 <style>
 :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -228,6 +233,14 @@ svg text{font-family:var(--sans)}
 .regime dd{margin:0}
 .mythline{font-size:14px;color:var(--mute);border-left:3px solid var(--line);padding-left:10px}
 .you{font-size:14.5px;background:var(--surface2);border-radius:10px;padding:10px 12px}
+.seg{display:flex;gap:4px;background:var(--surface2);border-radius:10px;padding:4px}
+.seg button{flex:1;border:0;background:none;border-radius:7px;padding:8px;font-weight:700;font-size:14px;color:var(--mute)}
+.seg button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.key-insta{background:linear-gradient(45deg,#f9a13a,#e1306c 50%,#8a3ab9);color:#fff}
+.withimg{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.howig{background:var(--surface2);border-radius:12px;padding:12px 14px}
+.howig ol{margin:6px 0 0;padding-left:20px;font-size:14.5px;display:flex;flex-direction:column;gap:4px}
+.cardprev img{max-height:70vh;object-fit:contain}
 .share{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px;align-items:start}
 @media (max-width:640px){.share{grid-template-columns:1fr}}
 .cardprev{display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -236,7 +249,7 @@ svg text{font-family:var(--sans)}
 .social{display:flex;flex-wrap:wrap;gap:8px}
 .net{text-decoration:none;color:var(--ink);font-weight:700;padding:8px 14px}
 .net:hover{border-color:var(--ink)}
-#copytext{width:100%;min-height:130px;font:inherit;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px}
+#copytext{width:100%;min-height:120px;resize:vertical;font:inherit;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px}
 .refs{font-size:13.5px;color:var(--mute);padding-left:18px;margin:10px 0 0;display:flex;flex-direction:column;gap:5px}
 .refs i{color:var(--ink)}
 details summary{cursor:pointer;font-family:var(--disp);font-weight:700;font-size:18px}
@@ -638,7 +651,9 @@ function regimeCard(r,x){
 
 // ---------- cartão para compartilhar (PNG 1080x1350, paleta clara fixa) ----------
 const SITE="https://diegoungari04.github.io/Social-Media/bussola/";
-const shareUrl=()=>/^https?:$/.test(location.protocol)&&location.hostname.endsWith("github.io")?location.href.split("#")[0]:SITE;
+const shareUrl=()=>/^https?:$/.test(location.protocol)&&location.hostname.endsWith("github.io")?location.href.split(/[?#]/)[0].replace(/index\.html$/,""):SITE;
+// páginas de cada perfil (bussola/p/<slug>/) existem só para dar ao link uma prévia com a imagem do perfil
+const SLUG={"0-0":"utopista-solidario","1-0":"social-democrata-raiz","2-0":"trabalhista-tradicional","0-1":"liberal-cosmopolita","1-1":"equilibrista-pragmatico","2-1":"conservador-moderado","0-2":"libertario-de-mercado","1-2":"reformista-de-mercado","2-2":"conservador-classico"};
 const CC={bg:"#f1f0f5",card:"#ffffff",ink:"#1a1a2c",mute:"#5c5a72",line:"#d8d6e2",soft:"#e8e7ef",left:"#c8384f",right:"#2c66c4",prog:"#7a4fc4",cons:"#a86c06",
   ok:"#23864f",warn:"#a87a00",hot:"#c75b12",crit:"#c42a36"};
 const DISP='"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif',SANS='"Figtree","Segoe UI",sans-serif',MONO='"JetBrains Mono",Menlo,monospace';
@@ -654,10 +669,12 @@ function wrapText(ctx,text,x,y,maxW,lh,maxLines){
   }
   ctx.fillText(line,x,y);return y+lh;
 }
-async function makeCard(r,A,lv,sorted,key){
+async function makeCard(r,A,lv,sorted,key,format){
   try{await Promise.all([`800 90px ${DISP}`,`600 30px ${SANS}`,`700 24px ${MONO}`].map(f=>document.fonts.load(f)));}catch(e){}
-  const W=1080,H=1350,c=document.createElement("canvas");c.width=W;c.height=H;const ctx=c.getContext("2d");
+  const story=format==="story",W=1080,FH=1350,H=story?1920:FH,c=document.createElement("canvas");c.width=W;c.height=H;const ctx=c.getContext("2d");
   ctx.fillStyle=CC.bg;ctx.fillRect(0,0,W,H);
+  // nos stories, o conteúdo desce para fugir da barra do topo e do campo de resposta
+  if(story) ctx.translate(0,240);
   // topo
   ctx.save();ctx.translate(92,92);ctx.beginPath();ctx.arc(0,0,30,0,7);ctx.fillStyle=CC.card;ctx.fill();ctx.lineWidth=5;ctx.strokeStyle=CC.ink;ctx.stroke();
   ctx.fillStyle=CC.left;ctx.beginPath();ctx.moveTo(0,-22);ctx.lineTo(7,0);ctx.lineTo(0,22);ctx.lineTo(-7,0);ctx.fill();
@@ -710,15 +727,16 @@ async function makeCard(r,A,lv,sorted,key){
   ctx.font=`700 28px ${SANS}`;ctx.fillStyle=CC.ink;
   sorted.slice(0,3).forEach((f,i)=>{ctx.fillText(`${i+1}º  ${f.n}`,rx,ry+44+i*40);});
   // líderes
-  let ly=Math.max(my+ms,ry+130)+60;
+  let ly=Math.min(Math.max(my+ms,ry+130)+60,FH-120-112);
   ctx.font=`700 22px ${MONO}`;ctx.fillStyle=CC.mute;ctx.fillText("PENSA PARECIDO COM",80,ly);
-  ctx.font=`600 32px ${SANS}`;ctx.fillStyle=CC.ink;
-  const names=[A.br[0][0],A.br[1]?A.br[1][0]:null,A.w[0][0],A.w[1]?A.w[1][0]:null].filter(Boolean);
+  ctx.font=`600 30px ${SANS}`;ctx.fillStyle=CC.ink;
+  const names=[A.br[0][0],A.br[1]?A.br[1][0]:null,A.w[0][0]].filter(Boolean);
   wrapText(ctx,names.join(" · "),80,ly+48,920,42,2);
   // rodapé
-  ctx.fillStyle=CC.ink;ctx.fillRect(0,H-120,W,120);
-  ctx.fillStyle="#ffffff";ctx.font=`800 34px ${DISP}`;ctx.fillText("Descubra o seu:",80,H-50);
-  ctx.font=`600 22px ${MONO}`;ctx.textAlign="right";ctx.fillText(SITE.replace("https://","").replace(/\/$/,""),1000,H-52);ctx.textAlign="left";
+  ctx.fillStyle=CC.ink;ctx.fillRect(0,FH-120,W,120);
+  ctx.fillStyle="#ffffff";ctx.font=`800 34px ${DISP}`;ctx.fillText("Descubra o seu:",80,FH-50);
+  ctx.font=`600 22px ${MONO}`;ctx.textAlign="right";ctx.fillText(SITE.replace("https://","").replace(/\/$/,""),1000,FH-52);ctx.textAlign="left";
+  if(story){ctx.fillStyle=CC.mute;ctx.font=`600 30px ${SANS}`;ctx.textAlign="center";ctx.fillText("Esquerda, direita… ou bem mais nuances?",W/2,FH+90);ctx.textAlign="left";}
   return c;
 }
 
@@ -821,20 +839,36 @@ function renderResult(){
   </section>
 
   <section class="card" id="share">
-    <div class="sechead"><p class="label">Compartilhe</p><h2>Leve seu resultado</h2><p>Baixe o cartão para postar no feed ou nos stories, ou envie direto para as suas redes. O teste não guarda nada: este cartão é o seu registro.</p></div>
+    <div class="sechead"><p class="label">Compartilhe</p><h2>Leve seu resultado</h2><p>Poste no Instagram, baixe o cartão ou envie o link. O teste não guarda nada: este cartão é o seu registro.</p></div>
     <div class="share">
-      <div class="cardprev"><img id="cardimg" alt="Cartão com o seu resultado na Bússola Política" width="1080" height="1350"><p class="note">No celular, você também pode tocar e segurar a imagem para salvá-la.</p></div>
+      <div class="cardprev">
+        <div class="seg" role="tablist" aria-label="Formato do cartão">
+          <button role="tab" id="fmt-feed" data-fmt="feed" aria-selected="true">Feed · 4:5</button>
+          <button role="tab" id="fmt-story" data-fmt="story" aria-selected="false">Stories · 9:16</button>
+        </div>
+        <img id="cardimg" alt="Cartão com o seu resultado na Bússola Política" width="1080" height="1350">
+        <p class="note">No celular, você também pode tocar e segurar a imagem para salvá-la.</p>
+      </div>
       <div class="sharebox">
         <div class="actions">
+          <button class="key key-insta" id="insta">INSTAGRAM · <span id="instafmt">FEED</span></button>
           <button class="key key-confirma" id="dl">BAIXAR IMAGEM</button>
-          <button class="key key-confirma" id="native" hidden>COMPARTILHAR</button>
+        </div>
+        <div class="withimg" id="withimg" hidden>
+          <button class="key key-confirma" id="native">ENVIAR COM IMAGEM</button>
+          <p class="note">Abre o menu do celular para mandar a imagem e o texto pelo WhatsApp, Telegram, X ou qualquer outro app.</p>
+        </div>
+        <div class="howig" id="howig">
+          <p class="label">Como postar no Instagram</p>
+          <ol id="howsteps"></ol>
         </div>
         <p class="label" style="margin-top:6px">Enviar o link</p>
+        <p class="note">O link chega com a imagem do seu perfil como prévia.</p>
         <div class="social" id="social"></div>
-        <p class="note">No Instagram e no TikTok, baixe a imagem e publique pelo app.</p>
+        <p class="label" style="margin-top:6px">Texto para a legenda</p>
+        <textarea id="copytext" readonly aria-label="Texto para a legenda"></textarea>
         <div class="actions"><button class="key key-branco" id="copy">COPIAR TEXTO</button><button class="key key-corrige" id="redo">REFAZER TESTE</button></div>
         <span class="toast" id="toast" role="status"></span>
-        <textarea id="copytext" readonly hidden></textarea>
       </div>
     </div>
   </section>
@@ -873,41 +907,63 @@ function renderResult(){
   </section>`;
 
   const url=shareUrl();
-  const txt=`Fiz a Bússola Política e meu perfil é ${A.n}.
-Economia: ${ecoLabel(r.eco)} (${fmt(r.eco)}) · Costumes: ${socLabel(r.soc)} (${fmt(r.soc)})
-Termômetro democrático: ${Math.round(r.rad)}/100 (${lv.n})
-Valores mais fortes: ${sorted.slice(0,3).map(f=>f.n).join(", ")}
-Descubra o seu: ${url}`;
-  const short=`Fiz a Bússola Política e meu perfil é ${A.n}. Descubra o seu:`;
+  const short=`Você sabia que existe muito mais do que direita e esquerda? Meu posicionamento é ${A.n}: ${ecoLabel(r.eco).toLowerCase()} na economia e ${socLabel(r.soc).toLowerCase()} nos costumes. Faça o teste e descubra o seu:`;
+  const purl=url+"p/"+SLUG[key]+"/";
+  const txt=`${short} ${purl}`;
+  const caption=`${short.replace(/:$/,".")} Link do teste: ${url.replace("https://","")}\n\n#BússolaPolítica`;
   const E=encodeURIComponent;
-  const nets=[["WhatsApp",`https://wa.me/?text=${E(short+" "+url)}`],["X",`https://twitter.com/intent/tweet?text=${E(short)}&url=${E(url)}`],
-    ["Facebook",`https://www.facebook.com/sharer/sharer.php?u=${E(url)}`],["LinkedIn",`https://www.linkedin.com/sharing/share-offsite/?url=${E(url)}`],
-    ["Telegram",`https://t.me/share/url?url=${E(url)}&text=${E(short)}`]];
+  const nets=[["WhatsApp",`https://wa.me/?text=${E(txt)}`],["X",`https://twitter.com/intent/tweet?text=${E(short)}&url=${E(purl)}`],
+    ["Facebook",`https://www.facebook.com/sharer/sharer.php?u=${E(purl)}`],["LinkedIn",`https://www.linkedin.com/sharing/share-offsite/?url=${E(purl)}`],
+    ["Telegram",`https://t.me/share/url?url=${E(purl)}&text=${E(short)}`]];
   document.getElementById("social").innerHTML=nets.map(([n,h])=>`<a class="chip net" href="${h}" target="_blank" rel="noopener">${n}</a>`).join("");
   const toast=m=>{document.getElementById("toast").textContent=m;};
   const redo=()=>{state={step:-1,orders:{},done:{}};render();window.scrollTo({top:0});};
   document.getElementById("redo").onclick=redo;document.getElementById("redo2").onclick=redo;
   document.getElementById("goshare").onclick=()=>document.getElementById("share").scrollIntoView({behavior:"smooth"});
-  document.getElementById("copy").onclick=()=>{
-    const ta=document.getElementById("copytext");
-    const fallback=()=>{ta.value=txt;ta.hidden=false;ta.select();toast("Selecione e copie o texto acima.");};
-    try{navigator.clipboard.writeText(txt).then(()=>toast("Texto copiado. Cole onde quiser."),fallback);}catch(e){fallback();}
+  const ta=document.getElementById("copytext");ta.value=caption;
+  const copyCaption=()=>{try{return navigator.clipboard.writeText(caption).then(()=>true,()=>false);}catch(e){return Promise.resolve(false);}};
+  document.getElementById("copy").onclick=()=>copyCaption().then(ok=>{if(ok)toast("Texto copiado. Cole onde quiser.");else{ta.select();toast("Selecione e copie o texto acima.");}});
+  // gera os dois formatos e troca a prévia conforme a aba
+  const blobs={},files={};let cur="feed";
+  const canFiles=f=>!!(navigator.canShare&&navigator.canShare({files:[f]}));
+  const steps={
+    feed:["Toque em INSTAGRAM e escolha <b>Feed</b> no menu (ou baixe a imagem). O texto da legenda já é copiado.","No Instagram, toque em <b>+</b> e escolha <b>Post</b>.","Selecione a imagem da Bússola e, na legenda, toque e segure para <b>colar</b> o texto."],
+    story:["Toque em INSTAGRAM e escolha <b>Stories</b> no menu (ou baixe a imagem).","No Instagram, deslize para a direita ou toque em <b>+</b> e escolha <b>Story</b>.","Selecione a imagem e use o adesivo <b>Link</b> para colocar o endereço do teste: "+esc(url.replace("https://",""))]
   };
-  let blob=null;
-  makeCard(r,A,lv,sorted,key).then(c=>c.toBlob(b=>{
-    blob=b;if(!b) return;
-    const img=document.getElementById("cardimg");if(img) img.src=URL.createObjectURL(b);
-    const file=new File([b],"bussola-politica.png",{type:"image/png"});
-    const nb=document.getElementById("native");
-    if(nb&&navigator.canShare&&navigator.canShare({files:[file]})){
-      nb.hidden=false;
-      nb.onclick=()=>navigator.share({files:[file],text:txt}).catch(()=>{});
+  const showFmt=f=>{
+    cur=f;
+    document.querySelectorAll(".seg button").forEach(b=>b.setAttribute("aria-selected",b.dataset.fmt===f));
+    document.getElementById("instafmt").textContent=f==="feed"?"FEED":"STORIES";
+    const img=document.getElementById("cardimg");img.width=1080;img.height=f==="feed"?1350:1920;img.style.aspectRatio=f==="feed"?"1080/1350":"1080/1920";
+    if(blobs[f]) img.src=URL.createObjectURL(blobs[f]); else img.removeAttribute("src");
+    document.getElementById("howsteps").innerHTML=steps[f].map(t=>`<li>${t}</li>`).join("");
+  };
+  document.querySelectorAll(".seg button").forEach(b=>b.onclick=()=>showFmt(b.dataset.fmt));
+  ["feed","story"].forEach(f=>makeCard(r,A,lv,sorted,key,f).then(c=>c.toBlob(b=>{
+    if(!b) return;blobs[f]=b;files[f]=new File([b],`bussola-politica-${f==="feed"?"feed":"stories"}.png`,{type:"image/png"});
+    if(f===cur) showFmt(cur);
+    const box=document.getElementById("withimg");
+    if(f==="feed"&&box&&canFiles(files.feed)){box.hidden=false;document.getElementById("native").onclick=()=>navigator.share({files:[files[cur]],text:txt}).catch(()=>{});}
+  },"image/png")));
+  showFmt("feed");
+  const download=()=>{
+    if(!blobs[cur]){toast("A imagem ainda está sendo gerada. Tente de novo em um instante.");return false;}
+    const a=document.createElement("a");a.href=URL.createObjectURL(blobs[cur]);a.download=files[cur].name;
+    document.body.appendChild(a);a.click();a.remove();return true;
+  };
+  document.getElementById("dl").onclick=()=>{if(download()) toast("Imagem baixada.");};
+  document.getElementById("insta").onclick=()=>{
+    const f=files[cur];
+    if(!f){toast("A imagem ainda está sendo gerada. Tente de novo em um instante.");return;}
+    // o Instagram só recebe imagens pelo menu de compartilhar do celular; sem ele, baixa e orienta
+    copyCaption();
+    if(canFiles(f)){
+      navigator.share({files:[f]}).then(()=>toast("Pronto! Continue no Instagram.")).catch(()=>{});
+      toast(`Legenda copiada. No menu, escolha Instagram e depois ${cur==="feed"?"Feed":"Stories"}.`);
+    } else if(download()){
+      toast("Imagem baixada e legenda copiada. O Instagram só publica pelo app do celular: siga os passos acima.");
+      document.getElementById("howig").scrollIntoView({behavior:"smooth",block:"nearest"});
     }
-  },"image/png"));
-  document.getElementById("dl").onclick=()=>{
-    if(!blob){toast("A imagem ainda está sendo gerada. Tente de novo em um instante.");return;}
-    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="bussola-politica.png";
-    document.body.appendChild(a);a.click();a.remove();toast("Imagem baixada.");
   };
 }
 
