@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bússola Política</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<meta name="description" content="Teste rápido, baseado em estudos científicos, para entender seu posicionamento político: economia, costumes, valores morais e convivência democrática.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Bússola Política">
+<meta property="og:description" content="Teste rápido, baseado em estudos científicos, para entender seu posicionamento político: economia, costumes, valores morais e convivência democrática.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23fff' stroke='%231a1a2c' stroke-width='2.5'/%3E%3Cpath d='M16 5 L19.5 16 L16 27 L12.5 16 Z' fill='%23c8384f'/%3E%3Cpath d='M16 5 L19.5 16 L12.5 16 Z' fill='%232c66c4'/%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<style>
+/* Layout: cartão único central, uma rodada de ordenação por vez; teclas inspiradas na urna eletrônica (CONFIRMA verde, CORRIGE laranja); resultado em mapa 2D, réguas, termômetro democrático e radar moral */
+:root{
+  --bg:#f1f0f5; --surface:#ffffff; --surface2:#e8e7ef; --ink:#1a1a2c; --mute:#5c5a72; --line:#d8d6e2;
+  --left:#c8384f; --right:#2c66c4; --prog:#7a4fc4; --cons:#a86c06;
+  --confirma:#1d8a4a; --confirma-ink:#ffffff; --corrige:#e0751c; --corrige-ink:#1a1a2c;
+  --ok:#23864f; --warn:#a87a00; --hot:#c75b12; --crit:#c42a36;
+  --ok-s:#e1f2e7; --warn-s:#f8efd0; --hot-s:#fbe6d6; --crit-s:#fadfe1;
+  --me:#1a1a2c; --typ-l:#c8384f; --typ-r:#2c66c4;
+  --disp:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11111c; --surface:#1a1a29; --surface2:#242436; --ink:#ecebf5; --mute:#a3a1b8; --line:#30304a;
+  --left:#ff6f84; --right:#6ea2ff; --prog:#b18cff; --cons:#f0b440;
+  --confirma:#2fb866; --confirma-ink:#08180e; --corrige:#ff9a4a; --corrige-ink:#1a1006;
+  --ok:#4fcf83; --warn:#f0c050; --hot:#ff9a55; --crit:#ff6b72;
+  --ok-s:#11291b; --warn-s:#2f260c; --hot-s:#33200f; --crit-s:#3a161b;
+  --me:#ffffff; --typ-l:#ff6f84; --typ-r:#6ea2ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11111c; --surface:#1a1a29; --surface2:#242436; --ink:#ecebf5; --mute:#a3a1b8; --line:#30304a;
+  --left:#ff6f84; --right:#6ea2ff; --prog:#b18cff; --cons:#f0b440;
+  --confirma:#2fb866; --confirma-ink:#08180e; --corrige:#ff9a4a; --corrige-ink:#1a1006;
+  --ok:#4fcf83; --warn:#f0c050; --hot:#ff9a55; --crit:#ff6b72;
+  --ok-s:#11291b; --warn-s:#2f260c; --hot-s:#33200f; --crit-s:#3a161b;
+  --me:#ffffff; --typ-l:#ff6f84; --typ-r:#6ea2ff; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+h1,h2,h3{font-family:var(--disp);margin:0;text-wrap:balance;line-height:1.08;letter-spacing:-.01em}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--right);outline-offset:2px;border-radius:6px}
+.app{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.mono{font-family:var(--mono)}
+.label{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.muted{color:var(--mute)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+@media (max-width:520px){.card{padding:18px}}
+
+/* topo */
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:19px}
+.logo svg{width:30px;height:30px}
+
+/* abertura */
+.hero{display:grid;grid-template-columns:1fr 210px;gap:24px;align-items:center}
+@media (max-width:620px){.hero{grid-template-columns:1fr}.hero .mini{max-width:200px;justify-self:center}}
+.hero h1{font-size:clamp(32px,6vw,50px);font-weight:800}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--left),var(--prog),var(--right));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{font-size:18px;margin-top:14px;max-width:52ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);background:var(--surface2);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.basis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:560px){.basis{grid-template-columns:1fr}}
+.basis div{min-width:0}
+.basis b{display:block;font-family:var(--disp);font-size:17px;margin-bottom:2px}
+.basis p{font-size:14.5px;color:var(--mute)}
+
+/* teclas da urna */
+.keys{display:flex;gap:10px;flex-wrap:wrap}
+.key{font-family:var(--mono);font-weight:700;letter-spacing:.06em;font-size:14px;border:0;border-radius:8px;padding:13px 22px;
+  box-shadow:inset 0 -4px 0 rgba(0,0,0,.22);transition:transform .08s}
+.key:active{transform:translateY(2px);box-shadow:inset 0 -2px 0 rgba(0,0,0,.22)}
+.key-confirma{background:var(--confirma);color:var(--confirma-ink)}
+.key-corrige{background:var(--corrige);color:var(--corrige-ink)}
+.key-branco{background:var(--surface2);color:var(--ink);border:1px solid var(--line)}
+.key[disabled]{opacity:.35;cursor:default}
+
+/* quiz */
+.progress{display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:8px;border-radius:99px;background:var(--surface2);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);border-radius:99px;transition:width .3s}
+.secnum{font-family:var(--mono);font-size:13px;color:var(--mute)}
+.qcard{display:flex;flex-direction:column;gap:18px}
+.qcard h2{font-size:clamp(26px,5vw,36px);font-weight:800}
+.howto{font-size:15.5px;max-width:58ch}
+.rank{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ritem{display:grid;grid-template-columns:40px 30px minmax(0,1fr) auto;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 8px 6px 2px;transition:opacity .15s}
+.ritem p{font-size:15.5px;line-height:1.35}
+.handle{touch-action:none;cursor:grab;align-self:stretch;display:grid;place-items:center;color:var(--mute);border-radius:8px;min-height:44px;background:none;border:0;padding:0}
+.handle:active{cursor:grabbing}
+.badge{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:13px;background:var(--ink);color:var(--surface)}
+.ritem.no{background:var(--surface2)}
+.ritem.no p{color:var(--mute)}
+.ritem.no .badge{background:transparent;color:var(--crit);border:2px solid var(--crit)}
+.ritem.drag{border-color:var(--ink);box-shadow:0 8px 24px rgba(0,0,0,.22);position:relative;z-index:2}
+.mv{display:flex;flex-direction:column;gap:2px}
+.mv button{background:var(--surface2);border:1px solid var(--line);border-radius:6px;width:30px;height:22px;font-size:11px;line-height:1;color:var(--ink);padding:0}
+.mv button[disabled]{opacity:.3;cursor:default}
+.ritem.cut{background:var(--crit-s);border:2px dashed var(--crit);grid-template-columns:40px minmax(0,1fr) auto}
+.ritem.cut p{font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--crit);line-height:1.4}
+.ritem.cut .handle{color:var(--crit)}
+.fade{animation:fade .28s ease-out}
+@keyframes fade{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none}.bar i{transition:none}}
+.facts-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:620px){.facts-list{grid-template-columns:1fr}}
+.didyou{background:var(--surface2);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.didyou p{font-size:15px}
+.didyou cite{font-style:normal;font-size:12.5px;color:var(--mute)}
+/* resultado */
+.rhead h1{font-size:clamp(34px,7vw,56px);font-weight:800;margin-top:6px}
+.rhead .desc{font-size:18px;margin-top:10px;max-width:56ch}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pill{font-size:13.5px;font-weight:600;border-radius:999px;padding:5px 12px;background:var(--surface2)}
+.pill b{font-family:var(--mono);font-weight:700}
+.myth{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+@media (max-width:560px){.myth{grid-template-columns:1fr}}
+.myth > div{border-radius:14px;padding:14px 16px;min-width:0}
+.myth .m1{background:var(--surface2)}
+.myth .m1 p{text-decoration:line-through;text-decoration-color:var(--crit);text-decoration-thickness:2px;font-family:var(--disp);font-size:19px;font-weight:700;margin-top:4px}
+.myth .m2{border:1px solid var(--line)}
+.myth .m2 p{margin-top:4px;font-size:15px}
+.sechead{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.sechead h2{font-size:26px;font-weight:800}
+.sechead p{color:var(--mute);font-size:15px;max-width:62ch}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}}
+svg text{font-family:var(--sans)}
+.map{width:100%;max-width:380px;height:auto;display:block;margin:0 auto}
+.rulers{display:flex;flex-direction:column;gap:22px}
+.ruler .rtop{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px}
+.ruler .rtop b{font-family:var(--disp);font-size:17px}
+.ruler .val{font-family:var(--mono);font-size:13px;color:var(--mute)}
+.track{position:relative;height:14px;border-radius:99px}
+.track.eco{background:linear-gradient(90deg,var(--left),var(--surface2) 50%,var(--right))}
+.track.soc{background:linear-gradient(90deg,var(--prog),var(--surface2) 50%,var(--cons))}
+.track.thermo{background:linear-gradient(90deg,var(--ok) 0 25%,var(--warn) 25% 45%,var(--hot) 45% 65%,var(--crit) 65%)}
+.track.inten{background:var(--surface2)}
+.track.inten i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--mute)}
+.marker{position:absolute;top:50%;width:24px;height:24px;margin-left:-12px;margin-top:-12px;border-radius:50%;background:var(--surface);border:4px solid var(--me);box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.ticks{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-top:6px;gap:6px}
+.ticks span:last-child{text-align:right}
+.note{font-size:13.5px;color:var(--mute)}
+.level{display:flex;gap:14px;align-items:flex-start;border-radius:14px;padding:16px 18px;margin-top:18px}
+.level .big{font-family:var(--mono);font-weight:700;font-size:34px;line-height:1}
+.level h3{font-size:20px;font-weight:800}
+.level p{font-size:15px;margin-top:4px}
+.lv-ok{background:var(--ok-s)}.lv-ok .big,.lv-ok h3{color:var(--ok)}
+.lv-warn{background:var(--warn-s)}.lv-warn .big,.lv-warn h3{color:var(--warn)}
+.lv-hot{background:var(--hot-s)}.lv-hot .big,.lv-hot h3{color:var(--hot)}
+.lv-crit{background:var(--crit-s)}.lv-crit .big,.lv-crit h3{color:var(--crit)}
+.redline{margin-top:16px;border:2px solid var(--crit);border-radius:14px;padding:16px 18px}
+.redline h3{font-size:18px;color:var(--crit);font-weight:800}
+.redline ul{margin:8px 0 0;padding-left:20px;font-size:15px}
+.history{margin-top:16px;border:1px dashed var(--line);border-radius:14px;padding:16px 18px}
+.history h3{font-size:18px;font-weight:800}
+.history p{font-size:15px;margin-top:6px}
+.history .who{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.history .chip{white-space:normal}
+.radar{width:100%;max-width:380px;height:auto;display:block;margin:0 auto}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mute);justify-content:center;margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:16px;height:0;border-top:3px solid;display:inline-block}
+.found-list{display:flex;flex-direction:column;gap:10px}
+.found-row{display:grid;grid-template-columns:118px minmax(0,1fr) 40px;gap:10px;align-items:center;font-size:14.5px}
+.found-row .fb{height:8px;border-radius:99px;background:var(--surface2);overflow:hidden}
+.found-row .fb i{display:block;height:100%;background:var(--ink)}
+.found-row .n{font-family:var(--mono);font-size:13px;text-align:right}
+.found-row.top b{color:var(--ink)}
+.bridges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:620px){.bridges{grid-template-columns:1fr}}
+.bridge{border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.bridge.mine{border:2px solid var(--ink)}
+.bridge .bh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.bridge .bh b{font-family:var(--disp);font-size:19px}
+.bridge .tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--surface);border-radius:6px;padding:2px 7px;white-space:nowrap}
+.bridge .both{font-weight:600;font-size:15px}
+.side{display:grid;grid-template-columns:8px minmax(0,1fr);gap:10px;font-size:14px}
+.side::before{content:"";border-radius:4px}
+.side.l::before{background:var(--left)}.side.r::before{background:var(--right)}
+.side em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);display:block}
+.opposite{margin-top:16px;background:var(--surface2);border-radius:14px;padding:16px 18px;font-size:15.5px}
+.leaders{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media (max-width:620px){.leaders{grid-template-columns:1fr}}
+.leaders h3{font-size:16px;font-family:var(--mono);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:10px}
+.person{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;padding-block:10px;border-top:1px solid var(--line)}
+.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:16px;background:var(--surface2)}
+.person b{display:block;font-size:16px}
+.person span{font-size:14px;color:var(--mute)}
+.near{margin-top:14px;font-size:14.5px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.toast{font-size:14px;color:var(--ok);font-weight:600}
+.refs{font-size:13.5px;color:var(--mute);padding-left:18px;margin:10px 0 0;display:flex;flex-direction:column;gap:5px}
+.refs i{color:var(--ink)}
+details summary{cursor:pointer;font-family:var(--disp);font-weight:700;font-size:18px}
+.limits{font-size:14px;color:var(--mute);margin-top:12px;display:flex;flex-direction:column;gap:6px}
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+
+<script>
+(function(){
+const SECS=[
+ {id:"eco",n:1,name:"Economia",cut:true,
+  how:"Arraste as afirmações para ordenar da que você <b>mais concorda</b> (topo) para a que <b>menos concorda</b>. Depois, coloque a linha vermelha logo acima das que você <b>não aceita</b>.",
+  fact:"Para o filósofo Norberto Bobbio, o que melhor separa esquerda e direita é a atitude diante da desigualdade. Mas economia e costumes são dimensões diferentes: dá para estar à esquerda numa e à direita na outra.",
+  cite:"Bobbio, Direita e Esquerda (1994) · Feldman & Johnston, Political Psychology (2014)"},
+ {id:"soc",n:2,name:"Costumes",cut:true,
+  how:"Ordene da que você <b>mais concorda</b> para a que <b>menos concorda</b>. Depois, coloque a linha vermelha logo acima das que você <b>não aceita</b>.",
+  fact:"Pesquisas brasileiras que medem economia e costumes separadamente, como as do Datafolha, encontram muita gente que quer um Estado presente na economia e, ao mesmo tempo, valores tradicionais nos costumes.",
+  cite:"Datafolha, levantamentos sobre valores e ideologia · Treier & Hillygus, Public Opinion Quarterly (2009)"},
+ {id:"mor",n:3,name:"Valores",cut:false,
+  how:"Quando você julga se algo é certo ou errado, o que pesa mais? Ordene do <b>mais importante</b> (topo) para o <b>menos importante</b>.",
+  fact:"Pela Teoria dos Fundamentos Morais, ninguém é “sem moral”. Progressistas e conservadores usam os mesmos receptores morais, com pesos diferentes.",
+  cite:"Graham, Haidt & Nosek, JPSP (2009) · Atari et al., MFQ-2, JPSP (2023)"},
+ {id:"rad",n:4,name:"Democracia",cut:true,
+  how:"Ordene da que você <b>mais concorda</b> para a que <b>menos concorda</b>. Depois, coloque a linha vermelha logo acima das que você <b>não aceita</b>. Seja sincero: nada sai do seu navegador.",
+  fact:"Um estudo da More in Common mostrou que as pessoas imaginam o outro lado quase duas vezes mais extremo do que ele realmente é.",
+  cite:"Yudkin, Hawkins & Dixon, The Perception Gap (2019)"}
+];
+
+// d: +1 = concordar puxa para direita (eco) / conservador (soc) / radicalização (rad); -1 = o contrário
+const Q=[
+ {id:"e1",s:"eco",d:-1,t:"O governo deve garantir saúde e educação públicas de qualidade para todos, mesmo que isso exija impostos mais altos."},
+ {id:"e2",s:"eco",d:1,t:"Empresas privadas geralmente prestam serviços melhores e mais baratos do que empresas estatais."},
+ {id:"e3",s:"eco",d:-1,t:"Quem ganha muito deveria pagar uma proporção bem maior de impostos do que paga hoje."},
+ {id:"e4",s:"eco",d:1,t:"Flexibilizar as leis trabalhistas ajuda a criar mais empregos."},
+ {id:"e5",s:"eco",d:-1,t:"Setores estratégicos, como petróleo e energia, devem ficar sob controle do Estado."},
+ {id:"e6",s:"eco",d:1,t:"Cortar impostos e burocracia ajuda mais os pobres do que ampliar programas sociais."},
+ {id:"s1",s:"soc",d:1,t:"Os valores tradicionais da família devem orientar as leis do país."},
+ {id:"s2",s:"soc",d:-1,t:"O aborto deveria ser uma decisão da mulher, e não um crime."},
+ {id:"s3",s:"soc",d:1,t:"Penas mais duras e mais polícia nas ruas são o principal caminho para reduzir a violência."},
+ {id:"s4",s:"soc",d:-1,t:"O uso de maconha por adultos deveria ser legalizado e regulamentado."},
+ {id:"s5",s:"soc",d:1,t:"Cidadãos sem antecedentes criminais deveriam ter o direito de andar armados para se defender."},
+ {id:"s6",s:"soc",d:-1,t:"Cotas raciais nas universidades são necessárias para corrigir desigualdades históricas."},
+ {id:"m_care",s:"mor",f:"care",t:"Se alguém sofreu, foi humilhado ou tratado com crueldade."},
+ {id:"m_eq",s:"mor",f:"eq",t:"Se as pessoas acabam com condições de vida parecidas, sem grandes desigualdades."},
+ {id:"m_prop",s:"mor",f:"prop",t:"Se cada pessoa recebe de acordo com seu esforço e mérito."},
+ {id:"m_loy",s:"mor",f:"loy",t:"Se alguém foi leal à sua família, comunidade ou país."},
+ {id:"m_auth",s:"mor",f:"auth",t:"Se alguém respeitou as tradições e as autoridades legítimas."},
+ {id:"m_pur",s:"mor",f:"pur",t:"Se algo é degradante, indecente ou ofende o que é considerado sagrado."},
+ {id:"m_lib",s:"mor",f:"lib",t:"Se alguém teve sua liberdade de escolha restringida pelo governo ou por outras pessoas."},
+ {id:"r1",s:"rad",d:-1,flagNo:"Não aceitar o resultado de eleições quando o seu lado perde",t:"Aceito o resultado das eleições, mesmo quando o meu lado perde."},
+ {id:"r2",s:"rad",d:1,t:"Quem vota no lado oposto, em geral, é mal-intencionado ou mal-informado."},
+ {id:"r3",s:"rad",d:1,flag:"Aceitar violência como forma de defender ideias políticas",t:"Em algumas situações, a violência é uma forma justificável de defender minhas ideias políticas."},
+ {id:"r4",s:"rad",d:1,flag:"Aceitar fechar o Congresso ou ignorar a Justiça",t:"Numa crise grave, seria aceitável fechar o Congresso ou ignorar decisões da Justiça por um tempo."},
+ {id:"r5",s:"rad",d:1,flag:"Aceitar censurar ou fechar a imprensa crítica",t:"Veículos de imprensa que atacam o meu lado deveriam ser censurados ou fechados."},
+ {id:"r6",s:"rad",d:-1,t:"Já mudei de opinião sobre algum tema político depois de ouvir bons argumentos do outro lado."},
+ {id:"r7",s:"rad",d:-1,t:"A maioria das pessoas que pensa diferente de mim também quer o bem do país."}
+];
+const F=[
+ {id:"care",n:"Cuidado",both:"Ninguém quer ver gente sofrendo.",l:"Proteger os vulneráveis com SUS, assistência social e direitos garantidos.",r:"Proteger por meio da família, da comunidade, da caridade e da segurança pública."},
+ {id:"eq",n:"Igualdade",both:"Regras que valham para todos.",l:"Diminuir a distância entre ricos e pobres e entre grupos sociais.",r:"Igualdade perante a lei, sem privilégios para castas, corporações ou políticos."},
+ {id:"prop",n:"Mérito",both:"Quem contribui merece reconhecimento.",l:"Salário justo para quem trabalha; combater quem enriquece sem produzir, como a sonegação.",r:"Recompensar o esforço e a iniciativa; não premiar quem se acomoda."},
+ {id:"loy",n:"Lealdade",both:"Ninguém se salva sozinho.",l:"Solidariedade com a classe trabalhadora, os movimentos e a comunidade.",r:"Patriotismo, a nação, a família e os grupos de pertencimento."},
+ {id:"auth",n:"Autoridade",both:"Uma sociedade precisa de regras estáveis.",l:"Respeito às instituições democráticas, à ciência e ao Estado de direito.",r:"Respeito à ordem, às tradições, à hierarquia e às forças de segurança."},
+ {id:"pur",n:"Pureza",both:"Há coisas que não se deve corromper.",l:"Natureza preservada, comida sem veneno, política limpa de corrupção.",r:"Dignidade do corpo, moral, fé e aquilo que é considerado sagrado."},
+ {id:"lib",n:"Liberdade",both:"Desconfiar do poder concentrado.",l:"Liberdade contra a opressão: do corpo, da expressão e das minorias.",r:"Liberdade contra o peso do Estado: impostos, regulação e controle."}
+];
+// Padrões ilustrativos (0-100), inspirados nos resultados médios de Graham, Haidt & Nosek (2009)
+const TYP_RAW={l:{care:86,eq:80,prop:48,loy:36,auth:32,pur:26,lib:62},r:{care:70,eq:42,prop:78,loy:68,auth:72,pur:66,lib:70}};
+const rankObj=o=>{const k=Object.keys(o).sort((a,b)=>o[b]-o[a]);const n=k.length,r={};k.forEach((x,i)=>r[x]=(n-1-i)/(n-1)*100);return r;};
+const TYP={l:rankObj(TYP_RAW.l),r:rankObj(TYP_RAW.r)};
+
+// grade 3x3, chave "linha-coluna": linha = costumes (0 prog, 1 centro, 2 cons), coluna = economia (0 esq, 1 centro, 2 dir)
+const ARCH={
+ "0-0":{n:"Utopista Solidário",d:"Você quer um Estado ativo contra a desigualdade e, ao mesmo tempo, ampla liberdade individual nos costumes.",
+   myth:"“Quer tudo de graça e é contra a família.”",truth:"Essa visão costuma nascer do fundamento do cuidado: ninguém escolhe onde nasce, e direitos básicos garantidos são o ponto de partida para cada um seguir o próprio caminho.",
+   br:[["Darcy Ribeiro","Antropólogo e senador; escola pública em tempo integral"],["Luiza Erundina","Ex-prefeita de São Paulo; pauta social e direitos civis"],["Guilherme Boulos","Ministro e ex-deputado; moradia e movimentos sociais"]],
+   w:[["Bernie Sanders","EUA; saúde universal e taxação dos mais ricos"],["José “Pepe” Mujica","Uruguai; legalizou maconha e casamento igualitário"],["Olof Palme","Suécia; Estado de bem-estar e direitos civis"]]},
+ "1-0":{n:"Social-Democrata Raiz",d:"Você aposta num Estado de bem-estar forte, com pragmatismo e moderação nos temas de costumes.",
+   myth:"“É comunista disfarçado.”",truth:"A social-democracia nasceu como alternativa ao comunismo: economia de mercado e democracia, com uma rede de proteção social.",
+   br:[["Luiz Inácio Lula da Silva","Presidente; transferência de renda e política de alianças"],["Leonel Brizola","Trabalhismo e educação pública (CIEPs)"],["João Goulart","Presidente deposto em 1964; reformas de base"]],
+   w:[["Willy Brandt","Alemanha; social-democracia e reaproximação com o Leste"],["Clement Attlee","Reino Unido; criou o sistema público de saúde (NHS)"],["Michelle Bachelet","Chile; proteção social e direitos humanos"]]},
+ "2-0":{n:"Trabalhista Tradicional",d:"Você defende um Estado que protege o trabalhador e a economia nacional, e valoriza tradição, fé e ordem nos costumes.",
+   myth:"“Essa combinação não existe.”",truth:"É um dos perfis mais comuns no Brasil e na América Latina. O trabalhismo de Vargas e o peronismo uniam proteção social a valores tradicionais.",
+   br:[["Getúlio Vargas","CLT e Petrobras; também governou como ditador no Estado Novo"],["Ciro Gomes","Nacional-desenvolvimentismo e indústria nacional"]],
+   w:[["Juan Domingo Perón","Argentina; direitos trabalhistas e nacionalismo"],["Andrés Manuel López Obrador","México; programas sociais e discurso de valores tradicionais"]]},
+ "0-1":{n:"Liberal Cosmopolita",d:"Você prefere soluções econômicas de meio-termo e defende com força as liberdades individuais e a diversidade.",
+   myth:"“É isentão e não se posiciona.”",truth:"A moderação econômica costuma vir de olhar as evidências caso a caso. Nos costumes, a posição é clara: liberdade e direitos iguais.",
+   br:[["Fernando Henrique Cardoso","Presidente; Plano Real e agenda de direitos humanos"],["Mário Covas","Governador; responsabilidade fiscal e centro-esquerda"]],
+   w:[["Barack Obama","EUA; reforma da saúde e casamento igualitário"],["Emmanuel Macron","França; centro reformista e pró-União Europeia"],["Justin Trudeau","Canadá; diversidade e legalização da maconha"]]},
+ "1-1":{n:"Equilibrista Pragmático",d:"Você evita os polos: mistura ideias dos dois lados e julga cada tema pelo resultado.",
+   myth:"“Fica em cima do muro.”",truth:"Boa parte do eleitorado está aqui. Muita gente tem opiniões fortes, só que em direções diferentes conforme o tema, e a média fica no centro.",
+   br:[["Juscelino Kubitschek","Presidente; desenvolvimentismo e “50 anos em 5”"],["Ulysses Guimarães","Liderou a Constituinte de 1988"],["Tancredo Neves","Articulador da transição democrática"]],
+   w:[["Angela Merkel","Alemanha; consenso e gestão de crises"],["Bill Clinton","EUA; a “terceira via” entre Estado e mercado"]]},
+ "2-1":{n:"Conservador Moderado",d:"Você valoriza tradição, família e ordem, com uma visão econômica equilibrada entre Estado e mercado.",
+   myth:"“É retrógrado.”",truth:"Para o conservadorismo clássico de Edmund Burke, mudar com prudência protege o que levou gerações para ser construído. A oposição é a rupturas, não a mudanças.",
+   br:[["Geraldo Alckmin","Ex-governador; gestão fiscal e perfil católico tradicional"],["José Sarney","Presidente da transição; política tradicional e conciliadora"]],
+   w:[["Konrad Adenauer","Alemanha; democracia cristã no pós-guerra"],["Charles de Gaulle","França; nação forte e Estado planejador"]]},
+ "0-2":{n:"Libertário de Mercado",d:"Você quer o Estado longe da sua carteira e também da sua vida privada.",
+   myth:"“Só pensa em dinheiro.”",truth:"O centro dessa visão é a liberdade. A mesma desconfiança do poder que leva a rejeitar impostos altos leva a rejeitar censura e controle sobre escolhas pessoais.",
+   br:[["Joaquim Nabuco","Liberal e abolicionista no século XIX"],["Roberto Campos","Economista e diplomata; defesa do livre mercado"],["João Amoêdo","Fundador do Partido Novo"]],
+   w:[["Mark Rutte","Holanda; liberalismo econômico e social"],["Gary Johnson","EUA; candidato libertário à presidência"],["Milton Friedman","Economista; pensador do livre mercado"]]},
+ "1-2":{n:"Reformista de Mercado",d:"Você acredita que mercado, responsabilidade fiscal e menos burocracia geram prosperidade, com moderação nos costumes.",
+   myth:"“Defende só os ricos.”",truth:"A defesa da estabilidade fiscal costuma vir da memória da inflação, que corrói justamente a renda de quem é mais pobre.",
+   br:[["Henrique Meirelles","Ex-presidente do Banco Central e ministro da Fazenda"],["Romeu Zema","Governador de Minas; ajuste fiscal e privatizações"]],
+   w:[["Sebastián Piñera","Chile; centro-direita de mercado"],["Mauricio Macri","Argentina; abertura econômica"]]},
+ "2-2":{n:"Conservador Clássico",d:"Você combina livre mercado, responsabilidade individual e valores tradicionais de família, fé e ordem.",
+   myth:"“Não se importa com os pobres.”",truth:"Essa visão também nasce do cuidado, só que pela via da família, da comunidade, da caridade e da segurança, e não principalmente pelo Estado.",
+   br:[["Carlos Lacerda","Governador da Guanabara; liberal e anticomunista"],["Jair Bolsonaro","Ex-presidente; pauta de costumes e liberalização econômica"]],
+   w:[["Ronald Reagan","EUA; menos impostos e valores tradicionais"],["Margaret Thatcher","Reino Unido; privatizações e ordem"],["Javier Milei","Argentina; corte radical do Estado e pauta conservadora"]]}
+};
+
+const HIST={
+ l:{t:"Até onde essa lógica já levou, à esquerda",p:"Quando a busca por igualdade passou a justificar o fim de eleições livres, da imprensa e da oposição, o resultado foram regimes autoritários:",who:["Josef Stálin · URSS","Fidel Castro · Cuba","Nicolás Maduro · Venezuela"]},
+ r:{t:"Até onde essa lógica já levou, à direita",p:"Quando a defesa da ordem e da nação passou a justificar fechar o Congresso, censurar e perseguir opositores, o resultado foram ditaduras:",who:["Emílio G. Médici · Brasil, ditadura militar","Augusto Pinochet · Chile","Francisco Franco · Espanha"]},
+ c:{t:"O autoritarismo não tem lado fixo",p:"O Brasil já viveu versões de matizes diferentes: o Estado Novo de Vargas e a ditadura militar de 1964. Nos dois casos, a justificativa era uma crise que “exigia” suspender as regras.",who:["Estado Novo · 1937–1945","Ditadura militar · 1964–1985"]}
+};
+
+// ---------- estado ----------
+const CUT="__cut";
+const totalB=SECS.length;
+let state={step:-1,orders:{},done:{}};
+const app=document.getElementById("app");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const qById=Object.fromEntries(Q.map(q=>[q.id,q]));
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function orderFor(s){
+  if(!state.orders[s.id]){const ids=shuffle(Q.filter(q=>q.s===s.id).map(q=>q.id));state.orders[s.id]=s.cut?ids.concat(CUT):ids;}
+  return state.orders[s.id];
+}
+
+const LOGO='<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 5 L19.5 16 L16 27 L12.5 16 Z" fill="var(--left)"/><path d="M16 5 L19.5 16 L12.5 16 Z" fill="var(--right)"/><circle cx="16" cy="16" r="2.2" fill="currentColor"/></svg>';
+function top(extra){return '<div class="top"><div class="logo">'+LOGO+'Bússola Política</div>'+(extra||"")+'</div>';}
+
+function render(){
+  if(state.step<0) return renderIntro();
+  if(state.step<totalB) return renderBlock(SECS[state.step]);
+  renderResult();
+}
+function go(n){state.step=Math.max(-1,Math.min(totalB,n));render();window.scrollTo({top:0});}
+
+function renderIntro(){
+  app.innerHTML=top()+`
+  <section class="card fade">
+    <div class="hero">
+      <div>
+        <p class="label">Teste de posicionamento político</p>
+        <h1 style="margin-top:8px">Esquerda, direita… ou <em>bem mais nuances</em> do que isso?</h1>
+        <p class="lead">Quatro rodadas rápidas. Em cada uma, você coloca afirmações em ordem de prioridade e separa o que aceita do que rejeita. No fim, vê onde está, o que valoriza e como convive com quem pensa diferente.</p>
+        <div class="facts"><span class="chip">4 rodadas</span><span class="chip">26 afirmações</span><span class="chip">≈ 4 minutos</span><span class="chip">respostas ficam só com você</span></div>
+      </div>
+      <svg class="mini" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><linearGradient id="gx" x1="0" x2="1"><stop offset="0" stop-color="var(--left)"/><stop offset="1" stop-color="var(--right)"/></linearGradient>
+        <linearGradient id="gy" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--cons)"/><stop offset="1" stop-color="var(--prog)"/></linearGradient></defs>
+        <rect x="10" y="10" width="180" height="180" rx="16" fill="url(#gx)" opacity=".16"/>
+        <rect x="10" y="10" width="180" height="180" rx="16" fill="url(#gy)" opacity=".16"/>
+        <line x1="100" y1="16" x2="100" y2="184" stroke="var(--mute)" stroke-dasharray="3 4"/><line x1="16" y1="100" x2="184" y2="100" stroke="var(--mute)" stroke-dasharray="3 4"/>
+        <circle cx="58" cy="132" r="6" fill="var(--left)"/><circle cx="146" cy="60" r="6" fill="var(--right)"/><circle cx="72" cy="58" r="6" fill="var(--cons)"/><circle cx="138" cy="142" r="6" fill="var(--prog)"/>
+        <circle cx="108" cy="92" r="11" fill="var(--surface)" stroke="var(--ink)" stroke-width="4"/>
+        <text x="100" y="30" text-anchor="middle" font-size="11" fill="var(--mute)">conservador</text>
+        <text x="100" y="180" text-anchor="middle" font-size="11" fill="var(--mute)">progressista</text>
+      </svg>
+    </div>
+    <div class="keys" style="margin-top:24px"><button class="key key-confirma" id="start">CONFIRMA · começar</button></div>
+  </section>
+  <section class="card">
+    <p class="label" style="margin-bottom:14px">No que o teste se baseia</p>
+    <div class="basis">
+      <div><b>Duas dimensões, não uma</b><p>Economia e costumes medidos separadamente, como propõem Eysenck e a pesquisa de Feldman & Johnston (2014).</p></div>
+      <div><b>Fundamentos morais</b><p>Os sete “receptores morais” da teoria de Jonathan Haidt e colegas, na versão atualizada MFQ-2 (2023).</p></div>
+      <div><b>Termômetro democrático</b><p>Os sinais de alerta de Levitsky & Ziblatt e os traços de extremismo descritos por van Prooijen & Krouwel (2019).</p></div>
+      <div><b>Escolha forçada</b><p>Ordenar, em vez de dar notas, reduz a tendência de concordar com tudo e de responder o que “pega bem” (Brown & Maydeu-Olivares, 2011).</p></div>
+    </div>
+  </section>`;
+  document.getElementById("start").onclick=()=>go(0);
+}
+
+function progressHtml(){
+  const done=SECS.filter(s=>state.done[s.id]).length;
+  return '<div class="progress"><div class="bar"><i style="width:'+(done/totalB*100)+'%"></i></div><span class="mono muted" style="font-size:13px">'+done+'/'+totalB+'</span></div>';
+}
+
+const GRIP='<svg width="16" height="22" viewBox="0 0 16 22" aria-hidden="true"><g fill="currentColor"><circle cx="5" cy="5" r="2"/><circle cx="11" cy="5" r="2"/><circle cx="5" cy="11" r="2"/><circle cx="11" cy="11" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="11" cy="17" r="2"/></g></svg>';
+function renderBlock(s){
+  app.innerHTML=top('<span class="label">Rodada '+s.n+' de '+totalB+'</span>')+progressHtml()+`
+  <section class="card qcard fade">
+    <span class="secnum">RODADA ${s.n} DE ${totalB}</span>
+    <h2>${esc(s.name)}</h2>
+    <p class="howto">${s.how}</p>
+    <ol class="rank" id="rank" aria-label="Afirmações em ordem"></ol>
+    ${s.cut?'<p class="note">Se você concorda com todas, deixe a linha vermelha no fim. Se não concorda com nenhuma, leve-a para o topo.</p>':""}
+    <div class="keys">
+      <button class="key key-corrige" id="back">CORRIGE</button>
+      <button class="key key-confirma" id="next">CONFIRMA · ${s.n<totalB?"próxima rodada":"ver resultado"}</button>
+    </div>
+  </section>`;
+  drawList(s);
+  document.getElementById("back").onclick=()=>go(state.step-1);
+  document.getElementById("next").onclick=()=>{state.done[s.id]=true;go(state.step+1);};
+}
+function drawList(s){
+  const ol=document.getElementById("rank"),ord=orderFor(s);
+  const ci=ord.indexOf(CUT);
+  ol.innerHTML=ord.map((id,i)=>{
+    const first=i===0,last=i===ord.length-1;
+    const mv=`<span class="mv"><button data-mv="-1" data-id="${id}" aria-label="Subir"${first?" disabled":""}>▲</button><button data-mv="1" data-id="${id}" aria-label="Descer"${last?" disabled":""}>▼</button></span>`;
+    if(id===CUT) return `<li class="ritem cut" data-id="${CUT}"><button class="handle" aria-label="Arrastar a linha">${GRIP}</button><p>↑ concordo<br>↓ não concordo</p>${mv}</li>`;
+    const no=ci>=0&&i>ci;
+    return `<li class="ritem${no?" no":""}" data-id="${id}"><button class="handle" aria-label="Arrastar">${GRIP}</button><span class="badge">${no?"✕":i+1}</span><p>${esc(qById[id].t)}</p>${mv}</li>`;
+  }).join("");
+  ol.querySelectorAll("[data-mv]").forEach(b=>b.onclick=()=>{
+    const o=state.orders[s.id],i=o.indexOf(b.dataset.id),j=i+(+b.dataset.mv);
+    if(j<0||j>=o.length) return;[o[i],o[j]]=[o[j],o[i]];drawList(s);
+    const nb=ol.querySelector(`[data-id="${b.dataset.id}"][data-mv="${b.dataset.mv}"]`);if(nb&&!nb.disabled)nb.focus();
+  });
+  ol.querySelectorAll(".handle").forEach(h=>h.addEventListener("pointerdown",e=>startDrag(e,h.closest("li"),s)));
+}
+function startDrag(e,li,s){
+  e.preventDefault();
+  const ol=li.parentNode;li.classList.add("drag");
+  const move=ev=>{
+    const y=ev.clientY;
+    const others=[...ol.children].filter(c=>c!==li);
+    const before=others.find(c=>{const r=c.getBoundingClientRect();return y<r.top+r.height/2;});
+    if(before){if(li.nextSibling!==before) ol.insertBefore(li,before);} else if(ol.lastChild!==li) ol.appendChild(li);
+    if(y<60) window.scrollBy(0,-12); else if(y>window.innerHeight-60) window.scrollBy(0,12);
+  };
+  const up=()=>{
+    window.removeEventListener("pointermove",move);window.removeEventListener("pointerup",up);window.removeEventListener("pointercancel",up);
+    state.orders[s.id]=[...ol.children].map(c=>c.dataset.id);drawList(s);
+  };
+  // escuta na janela: mover o item no DOM derrubaria a captura do ponteiro
+  window.addEventListener("pointermove",move);window.addEventListener("pointerup",up);window.addEventListener("pointercancel",up);
+}
+
+// ---------- cálculo ----------
+// Cada item vira uma nota de -1 a +1: acima da linha, de +1 (topo) a +0,4; abaixo, de -0,4 a -1 (último = rejeição mais forte).
+function itemScores(sid){
+  const o=state.orders[sid]||[],ci=o.indexOf(CUT);
+  const above=ci<0?o:o.slice(0,ci),below=ci<0?[]:o.slice(ci+1),sc={};
+  above.forEach((id,i)=>sc[id]=0.4+0.6*(above.length===1?1:(above.length-1-i)/(above.length-1)));
+  below.forEach((id,j)=>sc[id]=-(0.4+0.6*(below.length===1?1:j/(below.length-1))));
+  return {sc,below};
+}
+function axis(sid){
+  const {sc}=itemScores(sid);let num=0,den=0;
+  Object.keys(sc).forEach(id=>{num+=sc[id]*qById[id].d;den+=Math.abs(sc[id]);});
+  return den?num/den*10:0;
+}
+function rankScores(order){const n=order.length,o={};order.forEach((k,i)=>o[k]=(n-1-i)/(n-1)*100);return o;}
+function compute(){
+  const eco=axis("eco"),soc=axis("soc");
+  const mo=(state.orders.mor||[]).map(id=>qById[id].f);
+  const mor=mo.length?rankScores(mo):Object.fromEntries(F.map(f=>[f.id,50]));
+  let rad=(axis("rad")/10+1)/2*100;
+  const {below}=itemScores("rad");
+  const flags=Q.filter(q=>q.s==="rad"&&((q.flag&&state.orders.rad&&!below.includes(q.id))||(q.flagNo&&below.includes(q.id)))).map(q=>q.flag||q.flagNo);
+  if(flags.length&&rad<45) rad=45;
+  const col=eco<-3?0:eco>3?2:1, row=soc<-3?0:soc>3?2:1;
+  const inten=Math.min(100,Math.sqrt(eco*eco+soc*soc)/(10*Math.SQRT2)*100);
+  return {eco,soc,mor,rad,flags,col,row,inten};
+}
+function ecoLabel(v){const a=Math.abs(v),s=v<0?"esquerda":"direita";if(a<1.5)return"Centro";if(a<3)return"Centro-"+s;if(a<6.5)return s[0].toUpperCase()+s.slice(1);return s[0].toUpperCase()+s.slice(1)+" forte";}
+function socLabel(v){const a=Math.abs(v),s=v<0?"progressista":"conservador";if(a<1.5)return"Centro";if(a<3)return"Levemente "+s;if(a<6.5)return s[0].toUpperCase()+s.slice(1);return"Muito "+s;}
+function radLevel(r){
+  if(r<25)return{c:"ok",n:"Democrata pluralista",p:"Você pode discordar com firmeza, mas aceita as regras do jogo e reconhece a legitimidade de quem pensa diferente."};
+  if(r<45)return{c:"warn",n:"Polarização em atenção",p:"Há sinais de desconfiança forte em relação ao outro lado. É comum hoje, mas é o primeiro degrau do que os pesquisadores chamam de polarização afetiva."};
+  if(r<65)return{c:"hot",n:"Traços radicais",p:"Algumas respostas relativizam regras democráticas ou tratam opositores como inimigos. Estudos mostram que é assim que a radicalização costuma começar."};
+  return{c:"crit",n:"Pensamento extremista",p:"Suas respostas priorizam rejeição ao outro lado e aceitação de medidas autoritárias ou violentas. É o padrão que a pesquisa associa ao extremismo, à esquerda ou à direita."};
+}
+const fmt=v=>(v>0?"+":v<0?"−":"")+Math.abs(v).toFixed(1).replace(".",",");
+function mapSvg(r){
+  const S=13.5,cx=180,cy=180,x=cx+r.eco*S,y=cy-r.soc*S,lv=radLevel(r.rad);
+  let g="";for(let i=-10;i<=10;i+=5){const p=i*S;g+=`<line x1="${cx+p}" y1="45" x2="${cx+p}" y2="315" stroke="var(--line)"/><line x1="45" y1="${cy-p}" x2="315" y2="${cy-p}" stroke="var(--line)"/>`;}
+  const b=3*S;
+  return `<svg class="map" viewBox="0 0 360 360" role="img" aria-label="Mapa político: economia ${fmt(r.eco)}, costumes ${fmt(r.soc)}">
+  <defs><linearGradient id="mx" x1="0" x2="1"><stop offset="0" stop-color="var(--left)"/><stop offset=".5" stop-color="var(--surface)"/><stop offset="1" stop-color="var(--right)"/></linearGradient>
+  <linearGradient id="my" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--cons)"/><stop offset=".5" stop-color="var(--surface)"/><stop offset="1" stop-color="var(--prog)"/></linearGradient></defs>
+  <rect x="45" y="45" width="270" height="270" fill="url(#mx)" opacity=".22"/><rect x="45" y="45" width="270" height="270" fill="url(#my)" opacity=".22"/>
+  ${g}
+  <rect x="${cx-b}" y="${cy-b}" width="${2*b}" height="${2*b}" fill="none" stroke="var(--mute)" stroke-dasharray="4 4"/>
+  <line x1="45" y1="${cy}" x2="315" y2="${cy}" stroke="var(--mute)" stroke-width="1.5"/><line x1="${cx}" y1="45" x2="${cx}" y2="315" stroke="var(--mute)" stroke-width="1.5"/>
+  <text x="180" y="34" text-anchor="middle" font-size="13" font-weight="700" fill="var(--cons)">CONSERVADOR</text>
+  <text x="180" y="336" text-anchor="middle" font-size="13" font-weight="700" fill="var(--prog)">PROGRESSISTA</text>
+  <text x="24" y="180" text-anchor="middle" font-size="13" font-weight="700" fill="var(--left)" transform="rotate(-90 24 180)">ESQUERDA</text>
+  <text x="336" y="180" text-anchor="middle" font-size="13" font-weight="700" fill="var(--right)" transform="rotate(90 336 180)">DIREITA</text>
+  <text x="${cx}" y="${cy-b-6}" text-anchor="middle" font-size="10" fill="var(--mute)">zona de centro</text>
+  <circle cx="${x}" cy="${y}" r="20" fill="var(--${lv.c})" opacity=".28"/>
+  <circle cx="${x}" cy="${y}" r="10" fill="var(--surface)" stroke="var(--me)" stroke-width="4"/>
+  <text x="${x}" y="${y<70?y+34:y-22}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">você</text>
+  </svg>`;
+}
+function ruler(title,cls,v,lo,hi,label){
+  const pct=(v+10)/20*100;
+  return `<div class="ruler"><div class="rtop"><b>${title}</b><span class="val">${label} · ${fmt(v)}</span></div>
+  <div class="track ${cls}"><span class="marker" style="left:${pct}%"></span></div>
+  <div class="ticks"><span>${lo}</span><span>centro</span><span>${hi}</span></div></div>`;
+}
+function radarSvg(m){
+  const cx=190,cy=160,R=112,n=F.length;
+  const pt=(i,v)=>{const a=-Math.PI/2+i*2*Math.PI/n;return[cx+Math.cos(a)*R*v/100,cy+Math.sin(a)*R*v/100];};
+  const poly=o=>F.map((f,i)=>pt(i,o[f.id]).map(z=>z.toFixed(1)).join(",")).join(" ");
+  let rings="";[25,50,75,100].forEach(v=>rings+=`<polygon points="${poly(Object.fromEntries(F.map(f=>[f.id,v])))}" fill="none" stroke="var(--line)"/>`);
+  let spokes="",labels="";
+  F.forEach((f,i)=>{const[a,b]=pt(i,100);spokes+=`<line x1="${cx}" y1="${cy}" x2="${a}" y2="${b}" stroke="var(--line)"/>`;
+    const[lx,ly]=pt(i,122);const anchor=Math.abs(lx-cx)<8?"middle":lx<cx?"end":"start";
+    labels+=`<text x="${lx}" y="${ly+4}" text-anchor="${anchor}" font-size="13" font-weight="600" fill="var(--ink)">${f.n}</text>`;});
+  const dots=F.map((f,i)=>{const[a,b]=pt(i,m[f.id]);return`<circle cx="${a}" cy="${b}" r="4" fill="var(--me)"/>`}).join("");
+  return `<svg class="radar" viewBox="0 0 380 310" role="img" aria-label="Radar dos fundamentos morais">${rings}${spokes}
+  <polygon points="${poly(TYP.l)}" fill="none" stroke="var(--typ-l)" stroke-width="2" stroke-dasharray="5 4"/>
+  <polygon points="${poly(TYP.r)}" fill="none" stroke="var(--typ-r)" stroke-width="2" stroke-dasharray="5 4"/>
+  <polygon points="${poly(m)}" fill="var(--me)" fill-opacity=".14" stroke="var(--me)" stroke-width="2.5"/>${dots}${labels}</svg>`;
+}
+const initials=n=>n.replace(/[“”"]/g,"").split(" ").filter(w=>w.length>2&&w[0]===w[0].toUpperCase()).map(w=>w[0]).slice(0,2).join("");
+
+function renderResult(){
+  const r=compute(),key=r.row+"-"+r.col,A=ARCH[key],lv=radLevel(r.rad);
+  const sorted=[...F].sort((a,b)=>r.mor[b.id]-r.mor[a.id]);const top3=sorted.slice(0,3).map(f=>f.id);
+  const opp=ARCH[(2-r.row)+"-"+(2-r.col)];
+  const side=r.eco<-2?"l":r.eco>2?"r":r.soc>2?"r":r.soc<-2?"l":"c";
+  const H=HIST[side];
+  // vizinho mais próximo na grade, para "também perto de você"
+  const nc=r.col===1?(r.eco<0?0:2):1, nr=r.row;const near=Math.abs(r.eco)>1.8&&Math.abs(r.eco)<4.2&&key!==(nr+"-"+nc)?ARCH[nr+"-"+nc]:null;
+  const people=(list)=>list.map(p=>`<div class="person"><span class="avatar" aria-hidden="true">${initials(p[0])}</span><div><b>${esc(p[0])}</b><span>${esc(p[1])}</span></div></div>`).join("");
+  const sim=(a,b)=>{const d=F.reduce((s,f)=>s+Math.abs(r.mor[f.id]-TYP[b][f.id]),0)/F.length;return Math.round(100-d);};
+
+  app.innerHTML=top('<button class="key key-branco" id="redo2" style="padding:9px 14px;font-size:12px">REFAZER</button>')+`
+  <section class="card rhead fade">
+    <p class="label">Seu perfil</p>
+    <h1>${esc(A.n)}</h1>
+    <p class="desc">${esc(A.d)}</p>
+    <div class="pills">
+      <span class="pill">Economia: ${ecoLabel(r.eco)} <b>${fmt(r.eco)}</b></span>
+      <span class="pill">Costumes: ${socLabel(r.soc)} <b>${fmt(r.soc)}</b></span>
+      <span class="pill" style="background:var(--${lv.c}-s);color:var(--${lv.c})">Termômetro democrático: <b>${Math.round(r.rad)}/100</b></span>
+    </div>
+    <div class="myth">
+      <div class="m1"><span class="label">O estereótipo</span><p>${esc(A.myth)}</p></div>
+      <div class="m2"><span class="label">O que a pesquisa mostra</span><p>${esc(A.truth)}</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="sechead"><p class="label">Mapa e réguas</p><h2>Onde você está</h2><p>O eixo horizontal mede economia (de −10 a +10); o vertical, costumes. O quadrado tracejado é a zona de centro.</p></div>
+    <div class="grid2">
+      ${mapSvg(r)}
+      <div class="rulers">
+        ${ruler("Economia","eco",r.eco,"Estado / igualdade","Mercado / livre-iniciativa",ecoLabel(r.eco))}
+        ${ruler("Costumes","soc",r.soc,"Progressista","Conservador",socLabel(r.soc))}
+        <div class="ruler"><div class="rtop"><b>Intensidade ideológica</b><span class="val">${Math.round(r.inten)}/100</span></div>
+          <div class="track inten"><i style="width:${r.inten}%"></i></div>
+          <p class="note" style="margin-top:8px">Distância do centro. Ter posições firmes não é extremismo: isso quem mede é o termômetro abaixo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="sechead"><p class="label">Termômetro democrático</p><h2>Como você lida com quem pensa diferente</h2><p>Mede aceitação das regras democráticas, legitimidade dos opositores, tolerância à violência e abertura a mudar de ideia. Independe de ser de esquerda ou de direita.</p></div>
+    <div class="ruler"><div class="track thermo"><span class="marker" style="left:${r.rad}%"></span></div>
+      <div class="ticks"><span>pluralista</span><span>atenção</span><span>radical</span><span>extremista</span></div></div>
+    <div class="level lv-${lv.c}"><span class="big">${Math.round(r.rad)}</span><div><h3>${lv.n}</h3><p>${lv.p}</p></div></div>
+    ${r.flags.length?`<div class="redline"><h3>Linhas vermelhas que você cruzou</h3><p style="font-size:15px;margin-top:4px">Pela posição em que você colocou a linha “não concordo”, você aceitou ideias que Levitsky & Ziblatt apontam como sinais clássicos de ruptura democrática:</p><ul>${r.flags.map(f=>`<li>${esc(f)}</li>`).join("")}</ul><p class="note" style="margin-top:8px">Esses pontos aparecem mesmo que estejam no fim da sua lista, porque aceitar qualquer um deles, sozinho, já fere uma regra básica da democracia.</p></div>`:""}
+    ${r.rad>=45?`<div class="history"><h3>${H.t}</h3><p>${H.p}</p><div class="who">${H.who.map(w=>`<span class="chip">${esc(w)}</span>`).join("")}</div><p class="note" style="margin-top:10px">Ninguém está dizendo que você é como eles. O ponto é mostrar onde essa lógica costuma terminar quando deixa de ter freios.</p></div>`:""}
+  </section>
+
+  <section class="card">
+    <div class="sechead"><p class="label">Fundamentos morais</p><h2>Seu paladar moral</h2><p>A forma mostra a ordem de prioridade que você deu aos sete valores. As linhas tracejadas mostram a ordem típica de progressistas e conservadores, segundo Graham, Haidt & Nosek (2009). São referências ilustrativas, não pessoas reais.</p></div>
+    <div class="grid2">
+      <div>${radarSvg(r.mor)}
+        <div class="legend"><span><i style="border-color:var(--me)"></i>você</span><span><i style="border-color:var(--typ-l);border-top-style:dashed"></i>progressista médio</span><span><i style="border-color:var(--typ-r);border-top-style:dashed"></i>conservador médio</span></div></div>
+      <div class="found-list">
+        ${sorted.map(f=>`<div class="found-row${top3.includes(f.id)?" top":""}"><span>${top3.includes(f.id)?"<b>"+f.n+"</b>":f.n}</span><span class="fb"><i style="width:${r.mor[f.id]}%"></i></span><span class="n">${sorted.indexOf(f)+1}º</span></div>`).join("")}
+        <p class="note" style="margin-top:6px">Semelhança com o padrão progressista: <b class="mono">${sim(r.mor,"l")}%</b> · com o conservador: <b class="mono">${sim(r.mor,"r")}%</b></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="sechead"><p class="label">Pontes</p><h2>O mesmo valor, visto dos dois lados</h2><p>Esquerda e direita costumam defender os mesmos valores por caminhos diferentes. Seus três mais fortes estão destacados.</p></div>
+    <div class="bridges">
+      ${[...F].sort((a,b)=>top3.includes(b.id)-top3.includes(a.id)).map(f=>`<div class="bridge${top3.includes(f.id)?" mine":""}">
+        <div class="bh"><b>${f.n}</b>${top3.includes(f.id)?'<span class="tag">forte em você</span>':""}</div>
+        <p class="both">${esc(f.both)}</p>
+        <div class="side l"><div><em>pela esquerda</em>${esc(f.l)}</div></div>
+        <div class="side r"><div><em>pela direita</em>${esc(f.r)}</div></div></div>`).join("")}
+    </div>
+    <div class="opposite"><span class="label">Seu oposto no mapa</span><p style="margin-top:4px">${key==="1-1"?"Como você está no centro, seu “oposto” é qualquer polo. Seu ponto forte é entender os dois lados.":`É o perfil <b>${esc(opp.n)}</b>. Vocês provavelmente discordam em boa parte das propostas, mas há grande chance de que os dois valorizem <b>${esc(sorted[0].n.toLowerCase())}</b>, cada um do seu jeito: “${esc(sorted[0].both)}”`}</p></div>
+  </section>
+
+  <section class="card">
+    <div class="sechead"><p class="label">Você sabia?</p><h2>O que a pesquisa diz</h2></div>
+    <div class="facts-list">${SECS.map(x=>`<div class="didyou"><p>${esc(x.fact)}</p><cite>${esc(x.cite)}</cite></div>`).join("")}</div>
+  </section>
+
+  <section class="card">
+    <div class="sechead"><p class="label">Quem pensou parecido</p><h2>Líderes com postura próxima à sua</h2><p>Posições aproximadas, estimadas pela postura pública predominante de cada um. Ninguém é um ponto fixo, e semelhança de ideias não significa endosso.</p></div>
+    <div class="leaders"><div><h3>Brasil</h3>${people(A.br)}</div><div><h3>Mundo</h3>${people(A.w)}</div></div>
+    ${near?`<p class="near">Você está perto da fronteira com o perfil <b>${esc(near.n)}</b>, de nomes como ${esc(near.br[0][0])} e ${esc(near.w[0][0])}.</p>`:""}
+  </section>
+
+  <section class="card">
+    <div class="actions"><button class="key key-confirma" id="copy">COPIAR RESULTADO</button><button class="key key-corrige" id="redo">REFAZER TESTE</button><span class="toast" id="toast" role="status"></span></div>
+    <textarea id="copytext" readonly hidden style="width:100%;margin-top:12px;min-height:110px;font:inherit;background:var(--surface2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px"></textarea>
+  </section>
+
+  <section class="card">
+    <details><summary>Base científica e limitações</summary>
+      <div class="limits">
+        <p>Este é um instrumento educativo, inspirado em escalas científicas, mas não validado psicometricamente. Com poucas afirmações por dimensão, mudar uma posição na lista pode mover bastante o resultado. Use-o como ponto de partida para reflexão, não como diagnóstico.</p>
+        <p>Cada rodada tem o mesmo número de afirmações associadas a cada lado e aparece em ordem aleatória. A ordenação (escolha forçada) reduz o viés de concordar com tudo; a linha “não concordo” preserva a informação sobre o que você rejeita, que a ordenação sozinha perderia.</p>
+      </div>
+      <ol class="refs">
+        <li>Eysenck, H. J. (1954). <i>The Psychology of Politics</i>.</li>
+        <li>Bobbio, N. (1994). <i>Direita e Esquerda: razões e significados de uma distinção política</i>.</li>
+        <li>Jost, J. T., Glaser, J., Kruglanski, A. W., & Sulloway, F. J. (2003). Political conservatism as motivated social cognition. <i>Psychological Bulletin</i>.</li>
+        <li>Brown, A., & Maydeu-Olivares, A. (2011). Item response modeling of forced-choice questionnaires. <i>Educational and Psychological Measurement</i>.</li>
+        <li>Graham, J., Haidt, J., & Nosek, B. A. (2009). Liberals and conservatives rely on different sets of moral foundations. <i>JPSP</i>.</li>
+        <li>Treier, S., & Hillygus, D. S. (2009). The nature of political ideology in the contemporary electorate. <i>Public Opinion Quarterly</i>.</li>
+        <li>Haidt, J. (2012). <i>A Mente Moralista</i>.</li>
+        <li>Toner, K., Leary, M. R., Asher, M. W., & Jongman-Sereno, K. P. (2013). Feeling superior is a bipartisan issue. <i>Psychological Science</i>.</li>
+        <li>Feldman, S., & Johnston, C. (2014). Understanding the determinants of political ideology. <i>Political Psychology</i>.</li>
+        <li>Levitsky, S., & Ziblatt, D. (2018). <i>Como as Democracias Morrem</i>.</li>
+        <li>Iyengar, S., Lelkes, Y., Levendusky, M., Malhotra, N., & Westwood, S. J. (2019). The origins and consequences of affective polarization. <i>Annual Review of Political Science</i>.</li>
+        <li>van Prooijen, J.-W., & Krouwel, A. P. M. (2019). Psychological features of extreme political ideologies. <i>Current Directions in Psychological Science</i>.</li>
+        <li>Yudkin, D., Hawkins, S., & Dixon, T. (2019). <i>The Perception Gap</i>. More in Common.</li>
+        <li>Zmigrod, L. (2020). The role of cognitive rigidity in political ideologies. <i>Current Opinion in Behavioral Sciences</i>.</li>
+        <li>Costello, T. H., et al. (2022). Clarifying the structure and nature of left-wing authoritarianism. <i>JPSP</i>.</li>
+        <li>Kalmoe, N. P., & Mason, L. (2022). <i>Radical American Partisanship</i>.</li>
+        <li>Atari, M., Haidt, J., Graham, J., et al. (2023). Morality beyond the WEIRD (MFQ-2). <i>JPSP</i>.</li>
+      </ol>
+    </details>
+  </section>`;
+
+  const txt=`Meu resultado na Bússola Política: ${A.n}.
+Economia: ${ecoLabel(r.eco)} (${fmt(r.eco)}) · Costumes: ${socLabel(r.soc)} (${fmt(r.soc)})
+Termômetro democrático: ${Math.round(r.rad)}/100 (${lv.n})
+Valores mais fortes: ${sorted.slice(0,3).map(f=>f.n).join(", ")}
+Líderes com postura parecida: ${A.br[0][0]}, ${A.w[0][0]}`;
+  const redo=()=>{state={step:-1,orders:{},done:{}};render();window.scrollTo({top:0});};
+  document.getElementById("redo").onclick=redo;document.getElementById("redo2").onclick=redo;
+  document.getElementById("copy").onclick=()=>{
+    const t=document.getElementById("toast"),ta=document.getElementById("copytext");
+    const fallback=()=>{ta.value=txt;ta.hidden=false;ta.select();t.textContent="Selecione e copie o texto abaixo.";};
+    try{navigator.clipboard.writeText(txt).then(()=>{t.textContent="Resultado copiado."},fallback);}catch(e){fallback();}
+  };
+}
+
+function start(data){
+  if(data&&data.state&&typeof data.state.step==="number") state=data.state;
+  render();
+}
+window.claude?.hot?.snapshot?.(()=>({state}));
+window.claude?.hot?.ready ? window.claude.hot.ready(start) : start(window.claude?.hot?.data ?? {});
+})();
+</script>
+</body>
+</html>

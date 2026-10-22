@@ -62,3 +62,7 @@ vendor/             # html2canvas (local, para export sem CDN)
 ## Privacidade
 
 Tudo roda no seu navegador. Nada é enviado a servidores além das chamadas que **você** faz à API da Anthropic quando a chave está configurada.
+
+## Bússola Política
+
+Teste de posicionamento político em `bussola/index.html` (página estática, sem dependências além do Google Fonts). Quatro rodadas de ordenação: economia, costumes, valores morais e convivência democrática. O resultado mostra o mapa, as réguas, o termômetro democrático, o radar moral e líderes com postura parecida. As respostas ficam só no navegador de quem faz o teste.
