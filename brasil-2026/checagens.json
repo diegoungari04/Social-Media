@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-21T08:59:52-03:00",
+ "atualizado": "2026-10-22T09:00:47-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -2201,6 +2201,21 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/flavio-bolsonaro-mente-recorde-falencias-empresas/"
+   }
+  },
+  {
+   "id": "b-pisa-ranking",
+   "data": "2026-10-21",
+   "tipo": "boato",
+   "sobre": "lula",
+   "efeito": "ataca",
+   "ia": false,
+   "afirmacao": "O Brasil só caiu no ranking do Pisa entre 2000 e 2025, prova de que a educação piorou com Lula.",
+   "veredito": "sem_contexto",
+   "explicacao": "O Aos Fatos classificou a comparação como enganosa: em 2000 só 32 países fizeram a prova e em 2025 foram 91, então as posições não se comparam. Pelas notas, o Brasil melhorou um pouco nas três áreas.",
+   "fonte": {
+    "nome": "Aos Fatos",
+    "url": "https://aosfatos.org/noticias/comparacao-posicoes-brasil-pisa/"
    }
   }
  ]
