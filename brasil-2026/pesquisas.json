@@ -1,6 +1,6 @@
 {
- "atualizado": "2026-10-21T15:00:00-03:00",
- "janela_inicio": "2026-10-13",
+ "atualizado": "2026-10-22T09:00:47-03:00",
+ "janela_inicio": "2026-10-12",
  "nota": "Resultados em votos totais divulgados pelos institutos; registro conferido nos dados abertos do TSE.",
  "itens": [
   {
@@ -232,6 +232,46 @@
    "lula": 45,
    "flavio": 48,
    "reg": "BR-02952/2026"
+  },
+  {
+   "inst": "Quaest",
+   "ini": "2026-10-17",
+   "fim": "2026-10-20",
+   "n": 2154,
+   "me": 2.0,
+   "lula": 44,
+   "flavio": 45,
+   "reg": "BR-08535/2026"
+  },
+  {
+   "inst": "Palver",
+   "ini": "2026-10-16",
+   "fim": "2026-10-20",
+   "n": 5000,
+   "me": 2.4,
+   "lula": 48,
+   "flavio": 50,
+   "reg": "BR-04612/2026"
+  },
+  {
+   "inst": "Gerp",
+   "ini": "2026-10-17",
+   "fim": "2026-10-20",
+   "n": 2400,
+   "me": 2.0,
+   "lula": 45,
+   "flavio": 50,
+   "reg": "BR-03835/2026"
+  },
+  {
+   "inst": "Ideia",
+   "ini": "2026-10-15",
+   "fim": "2026-10-19",
+   "n": 1500,
+   "me": 2.5,
+   "lula": 46,
+   "flavio": 48,
+   "reg": "BR-08251/2026"
   }
  ]
 }
