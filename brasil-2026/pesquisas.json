@@ -1,6 +1,6 @@
 {
- "atualizado": "2026-10-22T09:00:47-03:00",
- "janela_inicio": "2026-10-12",
+ "atualizado": "2026-10-23T09:00:48-03:00",
+ "janela_inicio": "2026-10-14",
  "nota": "Resultados em votos totais divulgados pelos institutos; registro conferido nos dados abertos do TSE.",
  "itens": [
   {
@@ -272,6 +272,16 @@
    "lula": 46,
    "flavio": 48,
    "reg": "BR-08251/2026"
+  },
+  {
+   "inst": "Datafolha",
+   "ini": "2026-10-20",
+   "fim": "2026-10-22",
+   "n": 2520,
+   "me": 2.0,
+   "lula": 46,
+   "flavio": 47,
+   "reg": "BR-09709/2026"
   }
  ]
 }
