@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-23T09:00:48-03:00",
+ "atualizado": "2026-10-24T09:01:49-03:00",
  "janela_inicio": "2026-10-14",
  "nota": "Resultados em votos totais divulgados pelos institutos; registro conferido nos dados abertos do TSE.",
  "itens": [
@@ -282,6 +282,26 @@
    "lula": 46,
    "flavio": 47,
    "reg": "BR-09709/2026"
+  },
+  {
+   "inst": "Real Time Big Data",
+   "ini": "2026-10-19",
+   "fim": "2026-10-22",
+   "n": 2000,
+   "me": 2.0,
+   "lula": 45,
+   "flavio": 49,
+   "reg": "BR-09670/2026"
+  },
+  {
+   "inst": "Vox Brasil",
+   "ini": "2026-10-20",
+   "fim": "2026-10-22",
+   "n": 2100,
+   "me": 2.15,
+   "lula": 45.4,
+   "flavio": 44.3,
+   "reg": "BR-03259/2026"
   }
  ]
 }

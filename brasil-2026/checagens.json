@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-10-23T09:00:48-03:00",
+ "atualizado": "2026-10-24T09:01:49-03:00",
  "itens": [
   {
    "id": "b-bandeira",
@@ -2231,6 +2231,694 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://aosfatos.org/noticias/falso-audio-lula-roberta-luchsinger-cnn/"
+   }
+  },
+  {
+   "id": "globo-debate-01",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Nós herdamos 6.000 obras paradas.” (debate na Globo)",
+   "veredito": "subestimado",
+   "explicacao": "Painel do TCU mostrava 8,6 mil obras paralisadas em agosto de 2022, último mês do governo Bolsonaro. Em abril de 2026 eram 4,2 mil.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-02",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“...mais de 11.500 obras paralisadas do atual governo.” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "O TCU contou 11.944 obras paralisadas em 2024, mas o total inclui projetos de vários governos. O painel mais recente (abril de 2026) registra 4.215.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-03",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Eu tinha acabado com a fome nesse país em 2012.” (debate na Globo)",
+   "veredito": "exagerado",
+   "explicacao": "A FAO reconheceu a saída do Mapa da Fome em 2014, no governo Dilma, e a fome não foi eliminada: os subnutridos caíram de 19 milhões (2002) para 3,4 milhões (2013).",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-04",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Quando eu voltei, tinha 33 milhões de pessoas passando fome.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Inquérito da Rede Penssan de 2022 apontou 33,1 milhões de pessoas em insegurança alimentar grave.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-05",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“...barra de chocolate, que antes tinha 120g, agora tem só 80g.” (debate na Globo)",
+   "veredito": "falso",
+   "explicacao": "Barras de 80 g já eram vendidas em 2022, no governo Bolsonaro. A redução das embalagens é gradual desde os anos 1990.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-06",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Abrimos 700 novos mercados nesse país.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "O Ministério da Agricultura contabiliza 700 aberturas de mercado para produtos agropecuários desde 2023, em 99 destinos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-07",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“...rodovia muito importante, que liga Porto Velho a Manaus, que é a BR-319.” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "A BR-319 foi inaugurada em 1976. A licença ambiental para a recuperação saiu em 2022, no governo Bolsonaro; o asfaltamento foi retomado em 2024, no governo Lula.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-08",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Você já gastou mais de R$ 400 bilhões para tentar se reeleger.” (debate na Globo)",
+   "veredito": "exagerado",
+   "explicacao": "Ferramenta do Estadão soma R$ 405 bilhões em medidas com impacto no orçamento no ano eleitoral, mas inclui R$ 73,2 bi em renúncias e só R$ 51,1 bi ficam fora do orçamento aprovado. Não há prova de finalidade eleitoral.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-09",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“O presidente Bolsonaro passou o Bolsa Família para, no mínimo, R$ 600.” (debate na Globo)",
+   "veredito": "exagerado",
+   "explicacao": "O Auxílio Brasil foi criado com mínimo de R$ 400. Os R$ 600 vieram em 2022 por emenda constitucional válida só até o fim daquele ano, e o orçamento de 2023 previa R$ 400.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-10",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“E nós fizemos o Marco Legal do Saneamento Básico.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "O marco de 2020 saiu de projeto enviado pelo governo Bolsonaro; a meta é 99% de água e 90% de esgoto até 2033.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-11",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“A região Centro-Oeste é a região que mais produz alimentos no nosso Brasil.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Segundo o Ministério da Agricultura, o Centro-Oeste tem o maior valor bruto da produção agropecuária: R$ 431,2 bilhões.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-12",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“O atual governo tá deixando uma dívida aí de 11 trilhões de reais para você, trabalhador, pagar.” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "R$ 11,1 trilhões (82,9% do PIB) é a dívida bruta do governo geral, que inclui estados e municípios. A dívida pública federal era de R$ 9,29 trilhões.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-13",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Você chamou o Bolsa Família de ‘bolsa farelo’.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Flávio usou o termo em 2011 e em post posterior nas redes; as publicações foram apagadas, mas recuperadas pela imprensa.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-14",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“A taxa de juros oficial no Brasil hoje está aí em torno de 14%.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "A Selic está em 13,75%, o mesmo nível de dezembro de 2022.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-15",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“A economia não crescia acima de 3% desde que eu deixei a presidência em 2010.” (debate na Globo)",
+   "veredito": "falso",
+   "explicacao": "O IBGE registra crescimento de 3,9% em 2011, 3,0% em 2013, 4,8% em 2021 e 3,0% em 2022. A Lupa já tinha desmentido a frase quatro vezes.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-16",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "Em 2022, a previsão era de Selic de cerca de 7% para 2025, mas hoje ela está em cerca de 14%. (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "A projeção de 7,75% era expectativa do mercado (Focus), não meta do governo. A Selic ficou em 13,75% de agosto de 2022 a agosto de 2023.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-17",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Sabe quem concluiu as obras da transposição do Rio São Francisco? Jair Messias Bolsonaro.” (debate na Globo)",
+   "veredito": "exagerado",
+   "explicacao": "O governo Bolsonaro inaugurou trechos em 2020 e 2022, mas a obra, iniciada em 2007, ainda não foi concluída; o Eixo Leste opera parcialmente desde 2017.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-18",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Nunca se exportou tanto neste país.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "O Brasil exportou US$ 348,3 bilhões em 2025, recorde da série iniciada em 1997.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-19",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“São mais de 80 milhões de brasileiros que estão com as contas atrasadas.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "A Serasa contava 83,9 milhões de inadimplentes em agosto de 2026, cerca de 51% dos adultos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-20",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "Diz que é mentira que Bolsonaro imitou pessoas com falta de ar. (debate na Globo)",
+   "veredito": "falso",
+   "explicacao": "Em duas lives de 2021, Bolsonaro imitou uma pessoa com falta de ar ao criticar orientação do então ministro Mandetta.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-21",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Você não tem vergonha de deixar o país quebrado desse jeito?” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "A dívida chegou a 82,9% do PIB e houve déficit primário em 2024 e 2025, mas o PIB cresceu 3,2% (2023), 3,4% (2024) e 2,3% (2025), e o emprego formal bateu recorde.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-22",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Ele é o pai do Tigrinho.” (debate na Globo)",
+   "veredito": "falso",
+   "explicacao": "As apostas de quota fixa foram legalizadas pela Lei 13.756/2018, sancionada por Temer. O governo Lula regulamentou e passou a tributar o setor em 2023.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-23",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“O ‘tigrinho’ foi criado por vocês em 2022.” (debate na Globo)",
+   "veredito": "falso",
+   "explicacao": "As apostas online foram legalizadas em 2018, no governo Temer. O governo Bolsonaro não regulamentou o setor no prazo de quatro anos.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-24",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“...ladrão de celular não tem que ser preso porque é só roubar para uma cervejinha.” (debate na Globo)",
+   "veredito": "falso",
+   "explicacao": "Boato desmentido desde 2020: trechos de entrevista de 2017 foram editados. Lula falava de violência ligada à desesperança, e a cerveja era sobre torcidas rivais.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-25",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Na Argentina, a pobreza chegou a 40%.” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "Segundo o Indec, a pobreza bateu 52,4% no 1º semestre de 2024, caiu para 28% no fim de 2025 e voltou a 32,3% no 1º semestre de 2026.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-26",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Nosso superávit comercial foi para quase R$ 85 bilhões.” (debate na Globo)",
+   "veredito": "subestimado",
+   "explicacao": "Lula trocou a moeda e citou uma projeção: os US$ 84,4 bilhões são a previsão do MDIC para 2026, em dólares. De janeiro a setembro, o saldo foi de US$ 62,4 bilhões.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-27",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Nós fizemos a lei da pequena e média empresa.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Lula sancionou a Lei Complementar 123/2006, que criou o Simples Nacional. A lei não é nova.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-28",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“No governo do pai dele, quem tomava vacina ia virar gay. E ia virar jacaré.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Em dezembro de 2020, Bolsonaro brincou que quem tomasse a vacina poderia virar jacaré ou homem passar a ‘falar fino’. A fala de Lula é uma paráfrase.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-29",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Lula, explica esses R$ 30 milhões, onde foram parar?” (debate na Globo)",
+   "veredito": "sem_evidencias",
+   "explicacao": "A Veja noticiou suposto depoimento de Vorcaro sobre R$ 30 milhões para documentário sobre Lula. Não há prova do pagamento, e PGR e PF negaram a existência do depoimento.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-30",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“...o juro real [do Plano Safra] chega a ficar próximo de 20%.” (debate na Globo)",
+   "veredito": "falso",
+   "explicacao": "As taxas nominais do Plano Safra 2026/27 vão de 8% a 12,5% ao ano. Descontada a inflação, a maior fica perto de 7,9% reais.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-31",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Fomos nós que demos o maior reajuste da história para os professores: 33%.” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "O reajuste de 33,24% saiu em 2022, no governo Bolsonaro, mas decorria da lei do piso de 2008, sancionada por Lula, e o governo tentou barrá-lo.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-32",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“...perdão de uma dívida de quase 15 bilhões para 4 milhões de MEIs.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Lei sancionada em 21/10/2026; o governo estima 3,6 milhões de MEIs beneficiados e R$ 12,57 bilhões em dívidas. São estimativas.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-33",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Está faltando até dipirona na Unidade Básica de Saúde.” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "Medicamentos básicos nas UBS são responsabilidade dos municípios. Não há levantamento nacional de 2026, só relatos locais; houve falta generalizada em 2022.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-34",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Moradores de rua que dobraram durante o seu governo.” (debate na Globo)",
+   "veredito": "exagerado",
+   "explicacao": "O Ipea estimou 281,5 mil em 2022; o CadÚnico registra 399,8 mil hoje, alta de cerca de 42%. Nenhuma fonte mostra que dobrou.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-35",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Você é uma pessoa ali que é contra a maioridade penal.” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "Em 15/10/2026, na Globo, Lula disse apoiar a redução para 16 anos em crimes hediondos. Em 2015 ele criticou a PEC sobre o tema.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-36",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“[A morte da menina Ana Clara] era uma troca de tiros numa comunidade conflagrada.” (debate na Globo)",
+   "veredito": "sem_evidencias",
+   "explicacao": "O Ministério Público diz que a viatura não tinha marcas de tiro e a perícia só achou munição do PM; moradores negam tiroteio. Flávio integra a defesa do policial.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-37",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“O Brasil voltou a ser um grande cemitério de obras.” (debate na Globo)",
+   "veredito": "exagerado",
+   "explicacao": "O painel do TCU mostra queda das obras paralisadas de 8,6 mil (agosto de 2022) para 4,2 mil (abril de 2026).",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-38",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“A Polícia Federal acabou de fazer um relatório sobre esse filme que não tem dinheiro público nele.” (debate na Globo)",
+   "veredito": "sem_evidencias",
+   "explicacao": "Documentos da PF revelados pelo Intercept Brasil apontam que recursos do filme ‘Dark Horse’ vieram do Banco Master por meio de fraudes. A PF investiga lavagem de dinheiro.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-39",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Quando ele fala que vai comprar dívida dos devedores, ele tá copiando uma coisa que eu já mandei pro Senado.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "A MP 1.393/2026, de 25/9, criou o Desenrola Brasil 3.0 e permite à União comprar carteiras de dívidas de pessoas físicas. Precisa ser aprovada pelo Congresso até 23/11.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-40",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Eu vou criar a casa da mulher brasileira.” (debate na Globo)",
+   "veredito": "falso",
+   "explicacao": "As Casas da Mulher Brasileira existem desde 2013, criadas no governo Dilma; 13 unidades funcionam hoje.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-41",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“...a espera para uma cirurgia de câncer de tireoide ultrapassou os 700 dias.” (debate na Globo)",
+   "veredito": "verdadeiro",
+   "explicacao": "Relatório do TCU de junho de 2026 registrou espera de 719 dias em 2025 (75 em 2024, 421 em 2023 e 1.121 em 2022).",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-42",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "flavio",
+   "quem": "Flávio Bolsonaro",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“Eu nunca fui investigado por causa de envolvimento com milícia.” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "Flávio não é alvo formal, mas um assessor negociou emendas com miliciano condenado, investigado pela PF em 2026, e ele empregou mãe e esposa do miliciano Adriano da Nóbrega.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
+   }
+  },
+  {
+   "id": "globo-debate-43",
+   "data": "2026-10-23",
+   "tipo": "fala",
+   "sobre": "lula",
+   "quem": "Lula",
+   "ia": false,
+   "evento": "globo-debate",
+   "afirmacao": "“No túnel de Santos, quem tá colocando dinheiro para fazer somos nós, tanto do orçamento quanto o financiamento do BNDES.” (debate na Globo)",
+   "veredito": "sem_contexto",
+   "explicacao": "O túnel custa R$ 6,8 bilhões; R$ 5,14 bi são públicos, divididos igualmente entre União e Estado de São Paulo, e o resto é privado.",
+   "fonte": {
+    "nome": "Agência Lupa",
+    "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
    }
   }
  ]
