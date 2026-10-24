@@ -512,7 +512,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
 .bs-cta b{display:block;font-size:clamp(19px,2.6vw,24px);font-weight:800;line-height:1.2}
 .bs-cta p{margin:6px 0 0;font-size:14.5px;color:var(--mute);max-width:62ch}
 .bs-go{font-weight:700;font-size:15px;white-space:nowrap;background:var(--ink);color:var(--bg);border-radius:6px;padding:10px 16px}
-@media (max-width:640px){.bs-cta{grid-template-columns:auto minmax(0,1fr)}.bs-go{grid-column:1/-1;text-align:center}}
+@media (max-width:640px){.bs-cta{grid-template-columns:minmax(0,1fr);gap:12px}.bs-ic{display:none}.bs-go{text-align:center}}
+.hero .bs-cta{margin:22px 0 0;background:rgba(255,255,255,.04);border-color:var(--hero-line);border-left-color:var(--hl);color:var(--hero-ink)}
+.hero .bs-cta:hover{border-color:var(--hero-mute);border-left-color:var(--hl)}
+.hero .bs-cta p{color:var(--hero-mute)}
+.hero .bs-k{color:var(--hl)}
+.hero .bs-go{background:var(--hl);color:#0e1726}
 </style></head><body>
 
 <header class="hero">
@@ -532,6 +537,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
     <p><b id="daysLbl">dias para o 2º turno</b><br>Domingo, 25 de outubro de 2026</p>
    </div>
   </div>
+  <a class="bs-cta" href="https://diegoungari04.github.io/Social-Media/bussola/" target="_blank" rel="noopener" aria-label="Fazer o teste da Bússola Política (abre em nova aba)">
+   <span class="bs-ic" aria-hidden="true">🧭</span>
+   <span><span class="bs-k">Bússola Política · teste rápido</span><b>Esquerda, direita… ou bem mais nuances do que isso?</b><p>Antes de comparar os candidatos, descubra onde você se encaixa: 26 afirmações sobre economia, costumes, valores e democracia, baseadas em estudos científicos. Leva uns 4 minutos e suas respostas ficam só com você.</p></span>
+   <span class="bs-go">Fazer o teste ↗</span>
+  </a>
   <section class="pq" id="pesquisas" aria-labelledby="h-pq" hidden>
    <div class="pq-h"><span id="h-pq">2º turno · média das pesquisas registradas</span><span id="pqUpd"></span></div>
    <div class="pq-top">
@@ -544,7 +554,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
    <p class="pq-note" id="pqNote"></p>
   </section>
   <button type="button" class="hero-srch" id="heroSrch"><span aria-hidden="true">🔍</span> Buscar no guia: 6x1, Moraes, Bolsa Família, Master…<kbd>/</kbd></button>
-  <a class="bs-hero" href="https://diegoungari04.github.io/Social-Media/bussola/" target="_blank" rel="noopener"><span aria-hidden="true">🧭</span> Antes de comparar os candidatos, descubra onde você está: faça a Bússola Política ↗</a>
   <div class="vices"><span><i class="dot" style="background:var(--lu)"></i>Lula · vice Geraldo Alckmin (PSB)</span><span><i class="dot" style="background:var(--fl)"></i>Flávio Bolsonaro · vice Alfredo Gaspar</span></div>
  </div>
 </header>
@@ -639,12 +648,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  </div>
  <p class="note">Este guia não recomenda voto. A conclusão de cada tema mede só a eficácia provável da proposta segundo a evidência disponível. Há um viés conhecido nessa régua: propostas de continuidade, que ampliam o que já existe, têm mais dados por definição; propostas de mudança parecem menos testadas mesmo quando poderiam funcionar. Quanto pesa cada tema é escolha de quem lê.</p>
 </section>
-
-<a class="bs-cta" href="https://diegoungari04.github.io/Social-Media/bussola/" target="_blank" rel="noopener" aria-label="Fazer o teste da Bússola Política (abre em nova aba)">
- <span class="bs-ic" aria-hidden="true">🧭</span>
- <span><span class="bs-k">Bússola Política · teste rápido</span><b>Esquerda, direita… ou bem mais nuances do que isso?</b><p>Viu as propostas? Agora veja onde você se encaixa: 26 afirmações sobre economia, costumes, valores e democracia, baseadas em estudos científicos. Leva uns 4 minutos e suas respostas ficam só com você.</p></span>
- <span class="bs-go">Fazer o teste ↗</span>
-</a>
 
 <section class="blk" id="trajetoria" aria-labelledby="h-tra">
  <div class="sh"><span class="num">05</span><h2 id="h-tra">Trajetória: o que cada um <span class="hl">já entregou</span></h2></div>
