@@ -729,7 +729,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  </div>
  <div class="fk-fil">
   <div class="tabs" role="group" aria-label="Sobre quem" id="fkWho"></div>
-  <div class="seg" role="group" aria-label="Tipo" id="fkTipo"><button data-t="" aria-pressed="true">Tudo</button><button data-t="boato" aria-pressed="false">Boatos na internet</button><button data-t="fala" aria-pressed="false">Falas dos candidatos</button><button data-t="globo" aria-pressed="false">Entrevistas na Globo</button><button data-t="band" aria-pressed="false">Debate na Band</button></div>
+  <div class="seg" role="group" aria-label="Tipo" id="fkTipo"><button data-t="" aria-pressed="true">Tudo</button><button data-t="boato" aria-pressed="false">Boatos na internet</button><button data-t="fala" aria-pressed="false">Falas dos candidatos</button><button data-t="globo" aria-pressed="false">Entrevistas na Globo</button><button data-t="band" aria-pressed="false">Debate na Band</button><button data-t="globo-debate" aria-pressed="false">Debate na Globo</button></div>
   <div class="seg" role="group" aria-label="Veredito" id="fkVer"><button data-v="" aria-pressed="true">Todos</button><button data-v="falso" aria-pressed="false">Mito</button><button data-v="verdadeiro" aria-pressed="false">Verdade</button><button data-v="parcial" aria-pressed="false">Exagerado ou sem contexto</button></div>
  </div>
  <div class="fk-grid" id="fkGrid"><p class="meta">Carregando checagens…</p></div>
@@ -1389,7 +1389,7 @@ function fkCard(x){const v=VER[x.veredito]||VER.sem_evidencias;const ef=x.tipo==
   return `<article class="fk" data-fk="${x.id}" style="--sc:${v[1]}"><span class="stamp">${v[0]}</span><q>${x.afirmacao}</q><p>${x.explicacao}</p><div class="tags"><span class="t-${x.sobre}">${x.tipo==="fala"?"Fala de "+(x.quem||SOB[x.sobre]):"Boato"+(ef?" · "+ef:"")}</span>${x.ia?'<span class="t-ia">Feito com IA</span>':""}<span>${fmtD(x.data)}</span></div><a class="src" href="${x.fonte.url}" rel="noopener" target="_blank">${x.fonte.nome} ↗</a></article>`}
 const vOk=x=>!fkV||(fkV==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===fkV);
 const VORD={falso:0,exagerado:1,subestimado:1,sem_contexto:1,sem_evidencias:1,verdadeiro:2};
-const EVT={globo:{t:"nas sabatinas dos dois candidatos à TV Globo",d:{lula:"Sabatina de 15/10",flavio:"Sabatina de 16/10"},dif:"o que a agência checou em cada entrevista"},band:{t:"no debate entre os dois candidatos na Band, em 18/10",d:{lula:"Debate de 18/10",flavio:"Debate de 18/10"},dif:"o que cada um disse e o que a agência checou no debate"}};
+const EVT={globo:{t:"nas sabatinas dos dois candidatos à TV Globo",d:{lula:"Sabatina de 15/10",flavio:"Sabatina de 16/10"},dif:"o que a agência checou em cada entrevista"},band:{t:"no debate entre os dois candidatos na Band, em 18/10",d:{lula:"Debate de 18/10",flavio:"Debate de 18/10"},dif:"o que cada um disse e o que a agência checou no debate"},"globo-debate":{t:"no último debate entre os dois candidatos, na Globo, em 23/10",d:{lula:"Debate de 23/10",flavio:"Debate de 23/10"},dif:"o que cada um disse e o que a agência checou no debate"}};
 function renderGlobo(ev){
  const E=EVT[ev],G=FK.filter(x=>x.evento===ev);
  const c=k=>G.filter(x=>vOk(x)&&(k==="parcial"?!["falso","verdadeiro"].includes(x.veredito):x.veredito===k)).length;
