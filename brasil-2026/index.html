@@ -512,7 +512,32 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
 .bs-cta b{display:block;font-size:clamp(19px,2.6vw,24px);font-weight:800;line-height:1.2}
 .bs-cta p{margin:6px 0 0;font-size:14.5px;color:var(--mute);max-width:62ch}
 .bs-go{font-weight:700;font-size:15px;white-space:nowrap;background:var(--ink);color:var(--bg);border-radius:6px;padding:10px 16px}
-@media (max-width:640px){.bs-cta{grid-template-columns:auto minmax(0,1fr)}.bs-go{grid-column:1/-1;text-align:center}}
+@media (max-width:640px){.bs-cta{grid-template-columns:minmax(0,1fr);gap:12px}.bs-ic{display:none}.bs-go{text-align:center}}
+.hero .bs-cta{margin:22px 0 0;background:rgba(255,255,255,.04);border-color:var(--hero-line);border-left-color:var(--hl);color:var(--hero-ink)}
+.hero .bs-cta:hover{border-color:var(--hero-mute);border-left-color:var(--hl)}
+.hero .bs-cta p{color:var(--hero-mute)}
+.hero .bs-k{color:var(--hl)}
+.hero .bs-go{background:var(--hl);color:#0e1726}
+/* comparação entre checadores do debate */
+.cx{border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:16px 18px;margin:0 0 22px}
+.cx-k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
+.cx h3{font-size:clamp(22px,3.4vw,30px);font-weight:850;font-stretch:70%;margin:0}
+.cx>p{font-size:14px;color:var(--mute);margin:6px 0 14px;max-width:78ch}
+.cx-row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 18px;padding:12px 0;border-top:1px solid var(--line)}
+.cx-who b{display:block;font-size:15px}
+.cx-who small{display:block;font-size:12px;color:var(--mute);line-height:1.4;margin-top:2px}
+.cx-who .tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:1px 5px;margin-top:5px;color:var(--mute)}
+.cx-who .tag.ok{border-color:var(--ok);color:var(--ok)}
+.cx-b{display:grid;grid-template-columns:62px minmax(0,1fr) auto;gap:4px 10px;align-items:center;margin:3px 0}
+.cx-b .nm{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px}
+.cx-b .nm i{width:8px;height:8px;border-radius:50%;flex:none}
+.cx-b .fm-stack{height:14px}
+.cx-b .n{font-family:var(--mono);font-size:11.5px;color:var(--mute);white-space:nowrap}
+.cx-b .n b{color:var(--risk)}
+.cx-leg{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;color:var(--mute);margin:10px 0 0}
+.cx-leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.cx-note{font-size:13px;color:var(--mute);margin:10px 0 0;max-width:80ch;line-height:1.5}
+@media (max-width:640px){.cx-row{grid-template-columns:1fr}.cx-b{grid-template-columns:54px minmax(0,1fr)}.cx-b .n{grid-column:1/-1;margin:-2px 0 4px}}
 </style></head><body>
 
 <header class="hero">
@@ -532,6 +557,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
     <p><b id="daysLbl">dias para o 2º turno</b><br>Domingo, 25 de outubro de 2026</p>
    </div>
   </div>
+  <a class="bs-cta" href="https://diegoungari04.github.io/Social-Media/bussola/" target="_blank" rel="noopener" aria-label="Fazer o teste da Bússola Política (abre em nova aba)">
+   <span class="bs-ic" aria-hidden="true">🧭</span>
+   <span><span class="bs-k">Bússola Política · teste rápido</span><b>Esquerda, direita… ou bem mais nuances do que isso?</b><p>Antes de comparar os candidatos, descubra onde você se encaixa: 26 afirmações sobre economia, costumes, valores e democracia, baseadas em estudos científicos. Leva uns 4 minutos e suas respostas ficam só com você.</p></span>
+   <span class="bs-go">Fazer o teste ↗</span>
+  </a>
   <section class="pq" id="pesquisas" aria-labelledby="h-pq" hidden>
    <div class="pq-h"><span id="h-pq">2º turno · média das pesquisas registradas</span><span id="pqUpd"></span></div>
    <div class="pq-top">
@@ -544,7 +574,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
    <p class="pq-note" id="pqNote"></p>
   </section>
   <button type="button" class="hero-srch" id="heroSrch"><span aria-hidden="true">🔍</span> Buscar no guia: 6x1, Moraes, Bolsa Família, Master…<kbd>/</kbd></button>
-  <a class="bs-hero" href="https://diegoungari04.github.io/Social-Media/bussola/" target="_blank" rel="noopener"><span aria-hidden="true">🧭</span> Antes de comparar os candidatos, descubra onde você está: faça a Bússola Política ↗</a>
   <div class="vices"><span><i class="dot" style="background:var(--lu)"></i>Lula · vice Geraldo Alckmin (PSB)</span><span><i class="dot" style="background:var(--fl)"></i>Flávio Bolsonaro · vice Alfredo Gaspar</span></div>
  </div>
 </header>
@@ -640,12 +669,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
  <p class="note">Este guia não recomenda voto. A conclusão de cada tema mede só a eficácia provável da proposta segundo a evidência disponível. Há um viés conhecido nessa régua: propostas de continuidade, que ampliam o que já existe, têm mais dados por definição; propostas de mudança parecem menos testadas mesmo quando poderiam funcionar. Quanto pesa cada tema é escolha de quem lê.</p>
 </section>
 
-<a class="bs-cta" href="https://diegoungari04.github.io/Social-Media/bussola/" target="_blank" rel="noopener" aria-label="Fazer o teste da Bússola Política (abre em nova aba)">
- <span class="bs-ic" aria-hidden="true">🧭</span>
- <span><span class="bs-k">Bússola Política · teste rápido</span><b>Esquerda, direita… ou bem mais nuances do que isso?</b><p>Viu as propostas? Agora veja onde você se encaixa: 26 afirmações sobre economia, costumes, valores e democracia, baseadas em estudos científicos. Leva uns 4 minutos e suas respostas ficam só com você.</p></span>
- <span class="bs-go">Fazer o teste ↗</span>
-</a>
-
 <section class="blk" id="trajetoria" aria-labelledby="h-tra">
  <div class="sh"><span class="num">05</span><h2 id="h-tra">Trajetória: o que cada um <span class="hl">já entregou</span></h2></div>
  <p class="intro">Conquistas documentadas ao longo da vida pública, com a fonte e, quando necessário, a ressalva. Os cargos são diferentes: Lula governou o país por três mandatos; Flávio foi deputado estadual e é senador. Por isso as listas não se comparam item a item. Use o seletor para ver também os candidatos a vice, que assumem em caso de ausência ou vacância do presidente.</p>
@@ -695,6 +718,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
    <div class="fm-card"><h4>Boatos na internet</h4><p class="fm-sub">Quantos boatos checados atacam cada candidato e quantos tentam favorecê-lo.</p><div id="fmVit"></div><div class="fm-leg"><span><i style="background:var(--ink)"></i>Atacam</span><span><i class="hatch"></i>Favorecem</span></div></div>
   </div>
   <p class="fm-note" id="fmNote"></p>
+ </div>
+ <div class="cx" id="checadores" aria-labelledby="h-cx">
+  <span class="cx-k">Debate da Globo · 23/10</span>
+  <h3 id="h-cx">Como cada checador avaliou o último debate</h3>
+  <p>Cada organização escolhe quais falas checar e usa critérios próprios, por isso os números não batem entre si. Compare a proporção de falas falsas de cada candidato dentro de cada checador, não os totais entre checadores.</p>
+  <div id="cxRows"></div>
+  <div class="cx-leg"><span><i style="background:var(--risk)"></i>Falsa</span><span><i style="background:var(--warn)"></i>Imprecisa (exagerada, sem contexto, sem provas, subestimada)</span><span><i style="background:var(--ok)"></i>Verdadeira</span></div>
+  <p class="cx-note" id="cxNote"></p>
  </div>
  <div class="fk-fil">
   <div class="tabs" role="group" aria-label="Sobre quem" id="fkWho"></div>
@@ -1378,6 +1409,19 @@ function renderFK(){
 }
 $("#fkWho").innerHTML=[["","Todos"],["lula","Lula"],["flavio","Flávio"],["vices","Vices"],["eleicao","Eleição e urnas"]].map(([k,l],i)=>`<button data-w="${k}" aria-pressed="${!i}">${l}</button>`).join("");
 [["#fkWho","w",v=>fkW=v],["#fkTipo","t",v=>fkT=v],["#fkVer","v",v=>fkV=v]].forEach(([id,a,set])=>$(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;set(b.dataset[a]);$(id).querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFK()}));
+
+/* comparação entre checadores (debate Globo, 23/10) */
+const CX=[
+ {nm:"Agência Lupa",tag:"IFCN",ok:1,url:"https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/",d:"Selos próprios (falso, exagerado, falta contexto, insustentável…).",lula:[2,6,8],flavio:[6,16,5]},
+ {nm:"Aos Fatos",tag:"IFCN",ok:1,url:"https://www.aosfatos.org/noticias/checamos-flavio-bolsonaro-lula-debate-globo/",d:"Classificação feita por este guia a partir do texto de cada checagem; 5 itens sem veredito claro ficaram de fora.",lula:[1,4,16],flavio:[9,6,5]},
+ {nm:"ICL Notícias",tag:"Fora da IFCN",ok:0,url:"https://iclnoticias.com.br/comeca-o-debate-entre-lula-e-flavio-bolsonaro-com-checagem-do-icl-siga/",d:"Checagem ao vivo publicada no site do ICL. Amostra pequena: 12 falas.",lula:[0,0,4],flavio:[6,2,0]},
+ {nm:"Ranking dos Políticos",tag:"Fora da IFCN",ok:0,url:"https://ranking.org.br/",d:"Totais divulgados pela organização e reproduzidos pela imprensa (Brasil Paralelo, Blog do BG). Checa um número bem maior de falas, inclusive afirmações simples.",lula:[9,25,28],flavio:[5,19,48]}
+];
+(function(){
+ const bar=(k,nm,a)=>{const n=a[0]+a[1]+a[2],pc=x=>Math.round(100*x/n);return `<div class="cx-b"><span class="nm"><i style="background:var(--${k})"></i>${nm}</span><div class="fm-stack" role="img" aria-label="${nm}: ${a[0]} falsas, ${a[1]} imprecisas, ${a[2]} verdadeiras de ${n} falas checadas">${a[0]?`<span style="width:${100*a[0]/n}%;background:var(--risk)"></span>`:""}${a[1]?`<span style="width:${100*a[1]/n}%;background:var(--warn)"></span>`:""}${a[2]?`<span style="width:${100*a[2]/n}%;background:var(--ok)"></span>`:""}</div><span class="n"><b>${pc(a[0])}% falsas</b> · ${a[0]}/${a[1]}/${a[2]} de ${n}</span></div>`};
+ $("#cxRows").innerHTML=CX.map(c=>`<div class="cx-row"><div class="cx-who"><b><a href="${c.url}" target="_blank" rel="noopener">${c.nm} ↗</a></b><span class="tag ${c.ok?"ok":""}">${c.tag}</span><small>${c.d}</small></div><div>${bar("lu","Lula",c.lula)}${bar("fl","Flávio",c.flavio)}</div></div>`).join("");
+ $("#cxNote").innerHTML="Os números ao lado de cada barra seguem a ordem falsas/imprecisas/verdadeiras. As duas agências certificadas pela IFCN (Lupa e Aos Fatos) apontam proporção maior de falas falsas de Flávio. Entre os checadores fora da IFCN, o ICL vai na mesma direção, com amostra pequena, e o Ranking dos Políticos, que checou muito mais falas, aponta o inverso. O g1 Fato ou Fake e a rede de checagem em tempo real da Fenaj com a RNCD, Intercom e SBPJor também acompanharam o debate, mas não publicaram placar consolidado. A seção de checagens deste guia usa só agências da IFCN.";
+})();
 fetch("checagens.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
  FK=(d.itens||[]).sort((a,b)=>String(b.data).localeCompare(String(a.data)));
  const u=new Date(d.atualizado);$("#fkUpd").textContent=isNaN(u)?d.atualizado:u.toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"});
