@@ -1,0 +1,305 @@
+{
+ "atualizado": "2026-10-26",
+ "mandato": "2027-2030",
+ "inicio": "2027-01-01",
+ "fonte_promessas": "Plano de governo registrado no TSE e declarações de campanha (2026)",
+ "itens": [
+  {
+   "id": "contas-1",
+   "tema": "Contas públicas e juros",
+   "promessa": "Manter o arcabouço fiscal criado em 2023",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "contas-2",
+   "tema": "Contas públicas e juros",
+   "promessa": "Rever benefícios e isenções tributárias a empresas",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "contas-3",
+   "tema": "Contas públicas e juros",
+   "promessa": "Cobrar mais imposto de quem tem renda muito alta (imposto mínimo)",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "estado-1",
+   "tema": "Estado, estatais e privatizações",
+   "promessa": "Estado indutor do desenvolvimento, com o Novo PAC (investimento público e privado)",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "estado-2",
+   "tema": "Estado, estatais e privatizações",
+   "promessa": "Manter estatais estratégicas, como Petrobras, Correios e bancos públicos",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "estado-3",
+   "tema": "Estado, estatais e privatizações",
+   "promessa": "Concessões e PPPs em rodovias, portos e aeroportos",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "tributos-1",
+   "tema": "Impostos e custo de vida",
+   "promessa": "Concluir a reforma tributária do consumo no cronograma (2026–2033)",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "tributos-2",
+   "tema": "Impostos e custo de vida",
+   "promessa": "Manter a isenção de IR até R$ 5 mil e o imposto mínimo sobre altas rendas",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "tributos-3",
+   "tema": "Impostos e custo de vida",
+   "promessa": "Cashback de impostos para famílias de baixa renda",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "trabalho-1",
+   "tema": "Trabalho e jornada (6x1)",
+   "promessa": "Fim da escala 6x1",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "trabalho-2",
+   "tema": "Trabalho e jornada (6x1)",
+   "promessa": "Jornada de 40 horas semanais sem redução de salário",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "trabalho-3",
+   "tema": "Trabalho e jornada (6x1)",
+   "promessa": "Regular o trabalho por aplicativos (remuneração e previdência)",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "seguranca-1",
+   "tema": "Segurança e crime organizado",
+   "promessa": "Aprovar a PEC da Segurança e criar o Ministério da Segurança Pública",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "seguranca-2",
+   "tema": "Segurança e crime organizado",
+   "promessa": "Asfixia financeira das facções (rastrear e bloquear o dinheiro)",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "seguranca-3",
+   "tema": "Segurança e crime organizado",
+   "promessa": "Ampliar forças integradas entre polícias (FICCOs), inclusive na Amazônia",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "educacao-1",
+   "tema": "Educação",
+   "promessa": "Ampliar escolas em tempo integral",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "educacao-2",
+   "tema": "Educação",
+   "promessa": "Mais vagas em creches públicas",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "educacao-3",
+   "tema": "Educação",
+   "promessa": "Manter o Pé-de-Meia e o Compromisso Criança Alfabetizada",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "educacao-4",
+   "tema": "Educação",
+   "promessa": "Novas escolas e retomada de obras paradas pelo Novo PAC",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "social-1",
+   "tema": "Pobreza, renda e cuidados",
+   "promessa": "Ampliar o Bolsa Família",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "social-2",
+   "tema": "Pobreza, renda e cuidados",
+   "promessa": "Aumento real do salário mínimo",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "social-3",
+   "tema": "Pobreza, renda e cuidados",
+   "promessa": "Política Nacional de Cuidados e “cuidotecas” para crianças de 3 a 12 anos",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "social-4",
+   "tema": "Pobreza, renda e cuidados",
+   "promessa": "Cozinhas comunitárias e restaurantes populares",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "saude-1",
+   "tema": "Saúde e envelhecimento",
+   "promessa": "Política Nacional de Envelhecimento Ativo",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "saude-2",
+   "tema": "Saúde e envelhecimento",
+   "promessa": "Levar o atendimento domiciliar ao idoso (PADI) a mais de 2.600 municípios",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "saude-3",
+   "tema": "Saúde e envelhecimento",
+   "promessa": "Ampliar e fiscalizar instituições de longa permanência",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "saude-4",
+   "tema": "Saúde e envelhecimento",
+   "promessa": "Reduzir filas de especialistas (Agora Tem Especialistas)",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "ambiente-1",
+   "tema": "Meio ambiente e clima",
+   "promessa": "Zerar o desmatamento ilegal em todos os biomas até 2030",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "ambiente-2",
+   "tema": "Meio ambiente e clima",
+   "promessa": "Transição energética e indústria verde como eixos de desenvolvimento",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "ambiente-3",
+   "tema": "Meio ambiente e clima",
+   "promessa": "Fundo de florestas tropicais (TFFF) lançado na COP30",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "instituicoes-1",
+   "tema": "Instituições e governabilidade",
+   "promessa": "Reorganizar as emendas parlamentares para priorizar programas do governo",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "instituicoes-2",
+   "tema": "Instituições e governabilidade",
+   "promessa": "Reforma política",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  },
+  {
+   "id": "instituicoes-3",
+   "tema": "Instituições e governabilidade",
+   "promessa": "Conselho de soberania digital e regulação das plataformas",
+   "status": "nao_iniciada",
+   "nota": "",
+   "fonte": null,
+   "atualizado": "2026-10-26"
+  }
+ ]
+}
