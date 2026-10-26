@@ -14,7 +14,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/04/lula-nao-jogou-bandeira-do-brasil-no-chao-apos-votar-simbolo-foi-entregue-a-fotografo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-pedofilia",
@@ -29,7 +30,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/lula-discursa-cancer-de-prostata-nao-sobre-defesa-pedofilia/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-celular",
@@ -44,7 +46,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-waack",
@@ -59,7 +62,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://aosfatos.org/noticias/william-waack-lula-golpe-eleicoes"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-bets",
@@ -74,7 +78,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/temer-lula-bets/"
-   }
+   },
+   "escopo": "governo"
   },
   {
    "id": "b-36",
@@ -89,7 +94,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/06/02/e-falso-que-pf-abriu-codigo-fonte-e-revelou-que-lula-teve-36-dos-votos-em-2022/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-jn78",
@@ -104,7 +110,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/06/26/e-deepfake-video-do-jornal-nacional-sobre-pesquisa-com-78-para-flavio-bolsonaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-zeca",
@@ -119,7 +126,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/08/13/e-falso-que-zeca-pagodinho-declarou-apoio-a-flavio-bolsonaro-video-e-deepfake/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-milei",
@@ -134,7 +142,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/08/28/deepfake-usa-imagem-de-milei-para-atacar-lula-e-declarar-apoio-a-flavio-bolsonaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-55",
@@ -149,7 +158,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/09/08/video-usa-ia-para-criar-falsa-pesquisa-que-da-55-dos-votos-a-flavio-bolsonaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-bocadeurna",
@@ -164,7 +174,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/04/e-falsa-pesquisa-de-boca-de-urna-que-mostra-flavio-eleito-em-1o-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-salario",
@@ -179,7 +190,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/09/04/e-deepfake-video-de-flavio-bolsonaro-prometendo-salario-minimo-de-r-3-mil/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-elefante",
@@ -194,7 +206,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/04/foto-de-flavio-bolsonaro-com-elefante-abatido-foi-gerada-por-ia/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-desiste",
@@ -209,7 +222,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/09/18/e-falso-que-flavio-bolsonaro-nao-disputara-as-eleicoes/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-mandado",
@@ -224,7 +238,8 @@
    "fonte": {
     "nome": "Decisão da 16ª Vara Cível de Brasília, noticiada pela imprensa",
     "url": "https://tagteam.harvard.edu/hub_feeds/3884/feed_items/17269532"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-provadevida",
@@ -239,7 +254,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/falso-voto-eleicoes-prova-vida-inss/"
-   }
+   },
+   "escopo": "governo"
   },
   {
    "id": "f-lula-3pct",
@@ -254,7 +270,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-pena",
@@ -269,7 +286,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-nobrega",
@@ -284,7 +302,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-vereador",
@@ -299,7 +318,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-fome0",
@@ -314,7 +334,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-export",
@@ -329,7 +350,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-entrevista-de-lula-no-flow/"
-   }
+   },
+   "escopo": "governo"
   },
   {
    "id": "f-fl-censura",
@@ -344,7 +366,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-fome",
@@ -359,7 +382,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-bets",
@@ -374,7 +398,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-pix",
@@ -389,7 +414,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/"
-   }
+   },
+   "escopo": "governo"
   },
   {
    "id": "f-fl-urnas",
@@ -404,7 +430,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-cpi",
@@ -419,7 +446,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-juro",
@@ -434,7 +462,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/08/28/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-ao-jornal-nacional/"
-   }
+   },
+   "escopo": "governo"
   },
   {
    "id": "f-fl-abst",
@@ -449,7 +478,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/01/ao-vivo-checagem-da-live-de-flavio-bolsonaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-dias-diferentes",
@@ -464,7 +494,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/04/e-falso-que-lulistas-e-bolsonaristas-devem-votar-em-dias-e-horarios-diferentes/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-g20",
@@ -479,7 +510,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-superavit8",
@@ -494,7 +526,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-fome2",
@@ -509,7 +542,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-reeleicao",
@@ -524,7 +558,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-endividados",
@@ -539,7 +574,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
-   }
+   },
+   "escopo": "governo"
   },
   {
    "id": "f-fl-350bi",
@@ -554,7 +590,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-stf4",
@@ -569,7 +606,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/noticias/2026/10/04/apos-confirmacao-do-2o-turno-lula-erra-sobre-superavit-e-flavio-sobre-reeleicao-e-endividamento/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-conhece-vorcaro",
@@ -584,7 +622,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/flavio-mentiu-ao-menos-43-vezes-sobre-envolvimento-com-vorcaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-e-mentira",
@@ -599,7 +638,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/flavio-mentiu-ao-menos-43-vezes-sobre-envolvimento-com-vorcaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-pf-sem-crime",
@@ -614,7 +654,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/05/27/e-falso-que-pf-concluiu-falta-de-crime-em-mensagens-entre-flavio-bolsonaro-e-vorcaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-lula-indicou-moraes",
@@ -629,7 +670,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/lula-flavio-crise-stf/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-flavio-votou-moraes",
@@ -644,7 +686,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/lula-flavio-crise-stf/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-centavo-publico",
@@ -659,7 +702,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/lula-flavio-crise-stf/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-pl-senado-fraude",
@@ -674,7 +718,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/06/comparacao-entre-votos-para-senado-e-presidencia-do-pl-nao-e-indicio-de-fraude/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-lula-preso-ia",
@@ -689,7 +734,8 @@
    "fonte": {
     "nome": "Agência Lupa (monitor VigIA)",
     "url": "https://www.agencialupa.org/jornalismo/2026/10/07/conteudos-com-ia-circulam-em-periodo-proibido-pela-lei-eleitoral/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-telejornal-flavio-passa",
@@ -704,7 +750,8 @@
    "fonte": {
     "nome": "Agência Lupa (monitor VigIA)",
     "url": "https://www.agencialupa.org/jornalismo/2026/10/07/conteudos-com-ia-circulam-em-periodo-proibido-pela-lei-eleitoral/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-flavio-debate-deepfake",
@@ -719,7 +766,8 @@
    "fonte": {
     "nome": "Agência Lupa (monitor VigIA)",
     "url": "https://www.agencialupa.org/jornalismo/2026/10/07/conteudos-com-ia-circulam-em-periodo-proibido-pela-lei-eleitoral/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-lula-pobres",
@@ -734,7 +782,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/08/video-antigo-de-lula-e-editado-para-sugerir-que-petista-criticou-pobres/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-lula-nordestinos",
@@ -749,7 +798,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/falas-lula-nordestinos/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-lula-milho",
@@ -764,7 +814,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/09/e-falso-que-lula-comparou-mulheres-a-milho-em-declaracao-que-faz-alusao-a-pedofilia/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-colinhas-bahia",
@@ -779,7 +830,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/08/e-falso-que-mesarios-na-bahia-distribuiram-colinhas-do-pt-na-fila-de-votacao/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-flavio-cortes-deepfake",
@@ -794,7 +846,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/flavio-cortes-pensoes-deepfake/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-paulista-droga",
@@ -809,7 +862,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/12/video-de-mulher-com-suposta-droga-nao-e-de-ato-pro-lula-em-sp/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-paulista-pichacao-ia",
@@ -824,7 +878,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/12/imagem-de-trabalhadora-limpando-pichacoes-na-paulista-foi-gerada-por-ia/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-paulista-umbanda",
@@ -839,7 +894,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/jornalismo/2026/10/12/video-de-homem-cantando-ponto-de-umbanda-nao-foi-gravado-em-ato-de-lula-em-sp/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-presos-90",
@@ -854,7 +910,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/12/e-falso-que-mais-de-90-dos-presos-votaram-em-lula/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-quadrilha-petista",
@@ -869,7 +926,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/eleicoes/2026/10/12/video-mostra-operacao-contra-empresa-contratada-pela-prefeitura-de-maceio-nao-contra-quadrilha-petista/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-flavio-5498-media",
@@ -884,7 +942,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/12/e-falso-que-flavio-bolsonaro-teve-5498-no-1o-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-russia-eua",
@@ -899,7 +958,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/14/e-falso-que-russia-ameacou-os-eua-em-defesa-do-brasil/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-marcola-lula",
@@ -914,7 +974,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/15/e-falso-que-marcola-tenha-declarado-voto-em-lula/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-zico-fora-lula",
@@ -929,7 +990,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/jornalismo/2026/10/15/e-falsa-imagem-de-zico-com-faixa-de-fora-lula/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-22mi",
@@ -945,7 +1007,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-indonesia",
@@ -961,7 +1024,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-33mi",
@@ -977,7 +1041,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-2010",
@@ -993,7 +1058,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-fmi",
@@ -1009,7 +1075,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-pf-doc",
@@ -1025,7 +1092,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-darkhorse",
@@ -1041,7 +1109,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-bf600",
@@ -1057,7 +1126,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-pf27",
@@ -1073,7 +1143,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-dino-demonio",
@@ -1089,7 +1160,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-renan-l-ia",
@@ -1104,7 +1176,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/16/e-falsa-imagem-que-mostra-renan-santos-fazendo-o-l-de-lula/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-cirio-ato-flavio",
@@ -1119,7 +1192,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/video-cirio-nazare-ato-flavio/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-ossos-fortaleza",
@@ -1134,7 +1208,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/16/videos-de-doacao-de-ossos-em-fortaleza-circulam-fora-de-contexto-e-nao-tem-relacao-com-o-governo-lula/"
-   }
+   },
+   "escopo": "governo"
   },
   {
    "id": "f-lula-ministerios",
@@ -1150,7 +1225,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-78endiv",
@@ -1166,7 +1242,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-fome2014",
@@ -1182,7 +1259,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-6milobras",
@@ -1198,7 +1276,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-judiciario",
@@ -1214,7 +1293,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-china20",
@@ -1230,7 +1310,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-alemanha",
@@ -1246,7 +1327,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-lula-deficit28",
@@ -1262,7 +1344,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/15/ao-vivo-checagem-da-entrevista-de-lula-na-tv-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-11tri",
@@ -1278,7 +1361,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-350bi-globo",
@@ -1294,7 +1378,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-filme30mi",
@@ -1310,7 +1395,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-margem-plano",
@@ -1326,7 +1412,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-margem-lula",
@@ -1342,7 +1429,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-juros7",
@@ -1358,7 +1446,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-patrocinio",
@@ -1374,7 +1463,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-moro",
@@ -1390,7 +1480,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-legitima",
@@ -1406,7 +1497,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-dino-injustica",
@@ -1422,7 +1514,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-dino-mare",
@@ -1438,7 +1531,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-pf-bolsonaro",
@@ -1454,7 +1548,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-armas",
@@ -1470,7 +1565,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/16/ao-vivo-checagem-da-entrevista-de-flavio-bolsonaro-na-globo/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-flavio-farmacia",
@@ -1485,7 +1581,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/flavio-bolsonaro-farmacia-popular/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-01",
@@ -1501,7 +1598,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-02",
@@ -1517,7 +1615,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-03",
@@ -1533,7 +1632,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-04",
@@ -1549,7 +1649,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-05",
@@ -1565,7 +1666,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-06",
@@ -1581,7 +1683,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-07",
@@ -1597,7 +1700,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-08",
@@ -1613,7 +1717,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-09",
@@ -1629,7 +1734,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-10",
@@ -1645,7 +1751,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-11",
@@ -1661,7 +1768,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-12",
@@ -1677,7 +1785,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-13",
@@ -1693,7 +1802,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-14",
@@ -1709,7 +1819,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-15",
@@ -1725,7 +1836,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-16",
@@ -1741,7 +1853,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-17",
@@ -1757,7 +1870,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-18",
@@ -1773,7 +1887,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-19",
@@ -1789,7 +1904,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-20",
@@ -1805,7 +1921,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-21",
@@ -1821,7 +1938,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-22",
@@ -1837,7 +1955,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-23",
@@ -1853,7 +1972,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-24",
@@ -1869,7 +1989,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-25",
@@ -1885,7 +2006,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-26",
@@ -1901,7 +2023,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-27",
@@ -1917,7 +2040,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-28",
@@ -1933,7 +2057,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-29",
@@ -1949,7 +2074,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-30",
@@ -1965,7 +2091,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-31",
@@ -1981,7 +2108,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-32",
@@ -1997,7 +2125,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-33",
@@ -2013,7 +2142,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-34",
@@ -2029,7 +2159,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-35",
@@ -2045,7 +2176,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-36",
@@ -2061,7 +2193,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-37",
@@ -2077,7 +2210,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-38",
@@ -2093,7 +2227,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-39",
@@ -2109,7 +2244,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-40",
@@ -2125,7 +2261,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "band-41",
@@ -2141,7 +2278,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/18/ao-vivo-checagem-do-debate-entre-lula-e-flavio-bolsonaro-na-band/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-cnn-compra-votos",
@@ -2156,7 +2294,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/19/reportagem-da-cnn-brasil-sobre-compra-de-votos-nao-cita-flavio-bolsonaro/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-flavio-aposent70",
@@ -2171,7 +2310,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/20/e-falso-que-flavio-bolsonaro-propos-elevar-idade-minima-da-aposentadoria-para-70-anos/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "b-urnas-eua-2019",
@@ -2186,7 +2326,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/verificacao/2026/10/20/post-distorce-video-de-2019-sobre-urnas-dos-eua/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "f-fl-falencias",
@@ -2201,7 +2342,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://www.aosfatos.org/noticias/flavio-bolsonaro-mente-recorde-falencias-empresas/"
-   }
+   },
+   "escopo": "governo"
   },
   {
    "id": "b-pisa-ranking",
@@ -2216,7 +2358,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://aosfatos.org/noticias/comparacao-posicoes-brasil-pisa/"
-   }
+   },
+   "escopo": "governo"
   },
   {
    "id": "b-lula-audio-luchsinger",
@@ -2231,7 +2374,8 @@
    "fonte": {
     "nome": "Aos Fatos",
     "url": "https://aosfatos.org/noticias/falso-audio-lula-roberta-luchsinger-cnn/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-01",
@@ -2247,7 +2391,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-02",
@@ -2263,7 +2408,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-03",
@@ -2279,7 +2425,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-04",
@@ -2295,7 +2442,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-05",
@@ -2311,7 +2459,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-06",
@@ -2327,7 +2476,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-07",
@@ -2343,7 +2493,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-08",
@@ -2359,7 +2510,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-09",
@@ -2375,7 +2527,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-10",
@@ -2391,7 +2544,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-11",
@@ -2407,7 +2561,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-12",
@@ -2423,7 +2578,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-13",
@@ -2439,7 +2595,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-14",
@@ -2455,7 +2612,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-15",
@@ -2471,7 +2629,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-16",
@@ -2487,7 +2646,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-17",
@@ -2503,7 +2663,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-18",
@@ -2519,7 +2680,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-19",
@@ -2535,7 +2697,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-20",
@@ -2551,7 +2714,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-21",
@@ -2567,7 +2731,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-22",
@@ -2583,7 +2748,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-23",
@@ -2599,7 +2765,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-24",
@@ -2615,7 +2782,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-25",
@@ -2631,7 +2799,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-26",
@@ -2647,7 +2816,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-27",
@@ -2663,7 +2833,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-28",
@@ -2679,7 +2850,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-29",
@@ -2695,7 +2867,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-30",
@@ -2711,7 +2884,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-31",
@@ -2727,7 +2901,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-32",
@@ -2743,7 +2918,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-33",
@@ -2759,7 +2935,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-34",
@@ -2775,7 +2952,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-35",
@@ -2791,7 +2969,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-36",
@@ -2807,7 +2986,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-37",
@@ -2823,7 +3003,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-38",
@@ -2839,7 +3020,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-39",
@@ -2855,7 +3037,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-40",
@@ -2871,7 +3054,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-41",
@@ -2887,7 +3071,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-42",
@@ -2903,7 +3088,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   },
   {
    "id": "globo-debate-43",
@@ -2919,7 +3105,8 @@
    "fonte": {
     "nome": "Agência Lupa",
     "url": "https://www.agencialupa.org/checagem/2026/10/23/ao-vivo-checagem-do-ultimo-debate-entre-lula-e-flavio-bolsonaro-no-segundo-turno/"
-   }
+   },
+   "escopo": "eleicao"
   }
  ]
 }
