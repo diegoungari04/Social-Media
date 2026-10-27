@@ -584,6 +584,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
 .cg-more{font:inherit;font-weight:600;margin:12px 0 0;padding:9px 16px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink);cursor:pointer}
 .cg-note{font-size:13.5px;color:var(--mute);max-width:80ch;margin:10px 0 0;line-height:1.5}
 .upd{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.ai-box{border:1px solid var(--line);border-left:4px solid #7c5cd6;background:var(--panel2);border-radius:6px;padding:12px 14px;margin:14px 0 10px}
+.ai-tag{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#7c5cd6;border:1.5px solid #7c5cd6;border-radius:999px;padding:2px 10px;margin:0 0 8px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ai-box{border-left-color:#a78bfa}:root:not([data-theme="light"]) .ai-tag{color:#a78bfa;border-color:#a78bfa}}
+:root[data-theme="dark"] .ai-box{border-left-color:#a78bfa}:root[data-theme="dark"] .ai-tag{color:#a78bfa;border-color:#a78bfa}
+.ai-box p{margin:0 0 8px;font-size:15px;line-height:1.55;max-width:80ch}
+.ai-box small{display:block;font-size:12.5px;color:var(--mute);line-height:1.45}
 </style></head><body>
 
 <header class="hero">
@@ -639,6 +645,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,tr:focus-visible{outl
    <figcaption id="hisCap"></figcaption>
    <div class="his-chart" id="hisChart"></div>
    <div class="his-leg" id="hisLeg"></div>
+   <div class="ai-box" id="hisAi"><span class="ai-tag">✦ Insight gerado por IA</span><p id="hisAiT"></p><small>Leitura de contexto produzida com inteligência artificial a partir dos dados do gráfico e de fontes públicas. Pode conter imprecisões: confira os números no gráfico e nas fontes.</small></div>
    <p class="his-note" id="hisNote"></p>
    <p class="src" id="hisSrc"></p>
   </figure>
@@ -1021,37 +1028,37 @@ const PRES=[["Sarney",1985*12+2],["Collor",1990*12+2],["Itamar",1992*12+9],["FHC
 const TERMS=[["Sarney",1985],["Collor/Itamar",1990],["FHC 1",1995],["FHC 2",1999],["Lula 1",2003],["Lula 2",2007],["Dilma 1",2011],["Dilma 2/Temer",2015],["Bolsonaro",2019],["Lula 3",2023]];
 const MES=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
 const HI=[
-{id:"des",t:"Desemprego",n:"Taxa de desemprego",u:"%",d:1,m:1,old:2,
+{id:"des",ai:"A série nacional (PNAD Contínua) começa em 2012. O desemprego subiu de 6,6% no fim de 2014 para cerca de 14% em 2017, com a recessão de 2015–2016, e bateu o recorde de 14,9% em 2020, na pandemia. Desde 2021 cai de forma contínua e está nos menores níveis da série, perto de 5%. Ponto de atenção: desemprego baixo não quer dizer emprego de qualidade; a informalidade segue perto de 4 em cada 10 ocupados.",t:"Desemprego",n:"Taxa de desemprego",u:"%",d:1,m:1,old:2,
  note:"Três pesquisas diferentes do IBGE: a PME antiga (até 2002) e a nova (2002–2012) cobriam só 6 regiões metropolitanas; a PNAD Contínua (desde 2012) cobre o país inteiro. As linhas tracejadas são as séries antigas: os valores não são diretamente comparáveis com os de hoje.",
  src:"IBGE (PME e PNAD Contínua), via Banco Central, séries SGS 1620, 10777 e 24369."},
-{id:"ipca",t:"Inflação",n:"Inflação acumulada em 12 meses (IPCA)",u:"%",d:1,m:1,log:1,
+{id:"ipca",ai:"O gráfico mostra duas eras. Até 1994, os preços subiam milhares por cento ao ano (6.821% em 12 meses em abril de 1990), e vários planos econômicos fracassaram antes do Real. Depois de 1994, a inflação ficou em um dígito na maior parte do tempo, com picos ligados a choques: a crise cambial de 2002–2003 (17,2%), a recessão com reajuste de preços administrados em 2015 (10,7%) e a combinação de pandemia, dólar alto e guerra na Ucrânia em 2021–2022 (12,1%). Desde 1999 o país adota metas de inflação; o teto atual é 4,5%.",t:"Inflação",n:"Inflação acumulada em 12 meses (IPCA)",u:"%",d:1,m:1,log:1,
  note:"Escala logarítmica: cada linha de grade vale 10 vezes a anterior. Sem ela, a hiperinflação, que chegou a 6.821% em 12 meses em abril de 1990, esconderia todo o resto. O Plano Real, de 1994, derrubou a inflação para um dígito.",
  src:"IBGE, IPCA, via Banco Central, série SGS 13522."},
-{id:"selic",t:"Juros (Selic)",n:"Selic efetiva, anualizada (média do mês)",u:"%",d:1,m:1,log:1,
+{id:"selic",ai:"Os juros acompanham a inflação: na hiperinflação chegaram a centenas de milhares por cento ao ano. Depois do Real, ficaram muito altos para segurar o dólar (acima de 40% em 1999). A Selic caiu à mínima histórica de 1,9% ao ano em 2020, na pandemia, e voltou a subir rápido quando a inflação disparou (13,65% no fim de 2022). Os juros reais do Brasil seguem entre os mais altos do mundo, reflexo de inflação persistente e da desconfiança sobre a dívida pública.",t:"Juros (Selic)",n:"Selic efetiva, anualizada (média do mês)",u:"%",d:1,m:1,log:1,
  note:"Escala logarítmica. Antes do Plano Real os juros acompanhavam a hiperinflação e, anualizados, passaram de 400.000% em 1990. Para comparar juros entre épocas, o mais justo é descontar a inflação (juro real).",
  src:"Banco Central, série SGS 4189."},
-{id:"div",t:"Dívida bruta",n:"Dívida bruta do governo geral",u:"% do PIB",d:1,m:1,
+{id:"div",ai:"Na metodologia atual (desde 2006), a dívida bruta caiu para cerca de 51% do PIB em 2013, subiu forte com a recessão e os déficits de 2014–2016 e chegou ao recorde de 87,7% do PIB em 2020, com os gastos da pandemia. Caiu em 2021–2022, ajudada pela inflação alta (que infla o PIB em reais) e por receitas extras, e volta a subir desde 2023. Com juros altos, a dívida cresce sozinha: estabilizá-la exige superávit primário perto de 2% do PIB, segundo a IFI do Senado.",t:"Dívida bruta",n:"Dívida bruta do governo geral",u:"% do PIB",d:1,m:1,
  note:"A série do Banco Central com a metodologia atual começa em dezembro de 2006. Por isso o gráfico começa em 2006 e os governos anteriores ficam de fora.",
  src:"Banco Central, série SGS 13762."},
-{id:"pib",t:"PIB",n:"Crescimento real do PIB no ano",u:"%",d:1,bar:1,
+{id:"pib",ai:"O crescimento oscila muito e costuma acompanhar o cenário externo. As maiores quedas foram em 1990 (−4,3%, Plano Collor), em 2015–2016 (−3,5% e −3,3%, recessão) e em 2020 (−3,3%, pandemia). Os anos de alta forte coincidiram com bons preços de commodities ou com recuperação depois de crises, como 2010 (7,5%). Desde 2021 o país cresce entre 2% e 3,5% ao ano, bem acima da média da década anterior (perto de zero), mas ainda um ritmo modesto para um país de renda média.",t:"PIB",n:"Crescimento real do PIB no ano",u:"%",d:1,bar:1,
  note:"Cada barra é um ano. 2026 ainda não fechou; o mercado projeta perto de 2%.",
  src:"IBGE, Contas Nacionais, via Banco Central, série SGS 7326."},
-{id:"pov",t:"Extrema pobreza",n:"População abaixo de US$ 3 por dia (linha internacional)",u:"% da pop.",d:1,
+{id:"pov",ai:"A extrema pobreza (linha internacional de US$ 3 por dia) caiu de cerca de 30% da população no fim dos anos 1980 para menos de 5% em 2014. As quedas mais fortes vieram com o Plano Real, que acabou com a hiperinflação que corroía a renda dos mais pobres, e, nos anos 2000, com valorização do salário mínimo, emprego e programas de transferência de renda. A pobreza voltou a subir na recessão de 2015–2017, despencou em 2020 com o auxílio emergencial e subiu de novo em 2021, quando o auxílio diminuiu. Em 2024 ficou em 3%, perto do menor nível da série.",t:"Extrema pobreza",n:"População abaixo de US$ 3 por dia (linha internacional)",u:"% da pop.",d:1,
  note:"É a linha internacional do Banco Mundial, diferente da linha do IBGE citada no cenário. Não há dado em 1991, 1994, 2000 e 2010 (anos de censo ou sem pesquisa). A queda de 2020 veio do auxílio emergencial na pandemia e se reverteu em 2021.",
  src:"Banco Mundial, Poverty and Inequality Platform (a partir das PNADs do IBGE), indicador SI.POV.DDAY."},
-{id:"hom",t:"Homicídios",n:"Homicídios por 100 mil habitantes",u:"",d:1,
+{id:"hom",ai:"A taxa de homicídios subiu quase sem parar dos anos 1990 até o pico de 31,2 por 100 mil habitantes em 2017 e caiu forte desde então, para 19,3 em 2023, o menor nível em três décadas. Especialistas atribuem a queda a vários fatores ao mesmo tempo: envelhecimento da população (menos jovens, as maiores vítimas), mudanças na disputa entre facções, políticas estaduais de segurança e, em parte, piora no registro das mortes, que aumenta os chamados “homicídios ocultos”. Segurança pública é sobretudo responsabilidade dos estados.",t:"Homicídios",n:"Homicídios por 100 mil habitantes",u:"",d:1,
  note:"Série do Banco Mundial/UNODC com base no SIM/DataSUS, disponível de 1990 a 2023. O Atlas da Violência, citado no cenário, usa outra estimativa (20,1 em 2024).",
  src:"Banco Mundial/UNODC, indicador VC.IHR.PSRC.P5."},
-{id:"cesta",t:"Cesta básica",n:"Custo da cesta básica em São Paulo, em % do salário mínimo",u:"% do SM",d:1,m:1,
+{id:"cesta",ai:"Medida em salários mínimos, a cesta básica ficou bem mais acessível em 30 anos: custava mais de um salário inteiro no início do Real (124% em janeiro de 1995), chegou a 44% em 2012 e ficou perto da metade do mínimo até 2019, puxada pela valorização real do salário mínimo. Voltou a pesar mais na pandemia, quando o preço dos alimentos disparou (65% no fim de 2022), e recuou desde então. A leitura depende das duas pontas: o preço da comida (clima, dólar, commodities) e o valor do salário mínimo.",t:"Cesta básica",n:"Custo da cesta básica em São Paulo, em % do salário mínimo",u:"% do SM",d:1,m:1,
  note:"Medir a cesta como fatia do salário mínimo permite comparar épocas com moedas diferentes (cruzeiro, cruzado, cruzeiro real e real). Quanto menor, mais barata a comida em relação ao salário. A cesta do DIEESE reúne 13 alimentos básicos para um adulto por mês; o DIEESE costuma usar o salário mínimo líquido (descontada a Previdência), aqui usamos o valor bruto. O vaivém até 1994 vem da hiperinflação: o salário era reajustado de tempos em tempos, enquanto os preços subiam todo dia.",
  src:"DIEESE, Pesquisa Nacional da Cesta Básica (São Paulo), e salário mínimo vigente, via Ipeadata (séries CESBTOTAL e MTE12_SALMIN12)."},
-{id:"gas",t:"Gasolina",n:"Preço médio da gasolina ao consumidor, em reais de hoje",u:"R$/litro",d:2,
+{id:"gas",ai:"Corrigida pela inflação, a gasolina mais que dobrou de preço entre 1995 e 2001, durante a abertura do setor (Lei do Petróleo, 1997) e o fim gradual dos preços controlados, concluído em 2002. O preço real caiu aos poucos até 2014, em parte porque a Petrobras segurou reajustes entre 2011 e 2014, o que gerou prejuízos à estatal. Desde 2016 a Petrobras acompanha mais de perto o mercado internacional, e os picos seguem o petróleo e o dólar, como em 2021–2022. Impostos também pesam: o corte do ICMS em meados de 2022 ajuda a explicar a queda seguinte.",t:"Gasolina",n:"Preço médio da gasolina ao consumidor, em reais de hoje",u:"R$/litro",d:2,
  note:"Valores corrigidos pela inflação (IPCA) para reais do mês mais recente, para comparar anos diferentes. A série começa em 1995: antes do Plano Real, a hiperinflação, as trocas de moeda e os preços tabelados pelo governo tornam os números de Sarney, Collor e Itamar não comparáveis. Cada ponto é a média do ano; o preço depende também do petróleo e do dólar, não só do governo.",
  src:"ANP, preço médio anual da gasolina, via Ipeadata (ANP_PRGASOL); deflator: IPCA (Banco Central, SGS 433)."},
-{id:"amz",t:"Desmatamento Amazônia",n:"Desmatamento na Amazônia Legal por ano",u:"km²",d:0,
+{id:"amz",ai:"O desmatamento teve dois grandes picos: 1995 (29 mil km²) e 2004 (27,8 mil km²). Caiu mais de 80% até 2012 (4,6 mil km²), com o Plano de Combate ao Desmatamento (PPCDAm), o monitoramento por satélite quase em tempo real e a restrição de crédito a quem desmata. Voltou a subir de 2015 a 2021 (13 mil km²), com enfraquecimento da fiscalização, e caiu de novo desde 2022, chegando a 5,8 mil km² em 2025. Preço de commodities e dólar também influenciam a pressão sobre a floresta.",t:"Desmatamento Amazônia",n:"Desmatamento na Amazônia Legal por ano",u:"km²",d:0,
  note:"O “ano Prodes” vai de agosto a julho: 2025 é de agosto de 2024 a julho de 2025. O valor de 2025 ainda é a estimativa preliminar.",
  src:"Inpe, Prodes Amazônia (taxas consolidadas; 2025 preliminar)."},
-{id:"cer",t:"Desmatamento Cerrado",n:"Desmatamento no Cerrado por ano",u:"km²",d:0,
+{id:"cer",ai:"A série anual comparável do Cerrado é curta, só desde 2019. O desmatamento subiu até 11 mil km² em 2023 e caiu desde então, para 7,2 mil km² em 2025. Diferentemente da Amazônia, boa parte do desmatamento no Cerrado pode ser legal: o Código Florestal exige reserva menor no bioma (20% a 35% da propriedade, contra 80% na floresta amazônica), o que limita o efeito da fiscalização.",t:"Desmatamento Cerrado",n:"Desmatamento no Cerrado por ano",u:"km²",d:0,
  note:"O Inpe só tem taxa anual comparável do Cerrado inteiro a partir de 2019; antes, a medição era feita a cada dois anos e com outra base. Por isso só aparecem os dois últimos governos.",
  src:"Inpe, Prodes Cerrado (2025 preliminar)."}
 ];
@@ -1063,7 +1070,7 @@ function hRef(h){const segs=hSeries(h),last=segs[segs.length-1].at(-1);
  if(h.m){const mo=last[0]%12;return{lab:MES[mo],get:y=>{const x=y*12+mo;for(const s of segs){const p=s.find(q=>q[0]===x);if(p)return[p[1],s!==segs.at(-1)]}return null},x:y=>y*12+mo,yr:t=>t+3}}
  const k=last[0]-2023;return{lab:"",k,get:y=>{const p=segs[0].find(q=>q[0]===y);return p?[p[1],false]:null},x:y=>y,yr:t=>t+k}}
 let hisId="des";
-function renderHis(id){hisId=id;const h=HI.find(x=>x.id===id);
+function renderHis(id){hisId=id;const h=HI.find(x=>x.id===id);$("#hisAi").hidden=!h.ai;$("#hisAiT").textContent=h.ai||"";
  $("#hisTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-selected",b.dataset.id===id));
  const segs=hSeries(h),ref=hRef(h),M=!!h.m,last=segs.at(-1).at(-1);
  const lastLab=M?`${MES[last[0]%12]}/${Math.floor(last[0]/12)}`:(h.id==="amz"||h.id==="cer"?`${last[0]} (ago/${last[0]-1}–jul/${last[0]})`:String(last[0]));
