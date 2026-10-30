@@ -12,6 +12,7 @@ Séries do Ipeadata (www.ipeadata.gov.br):
          dividido pelo salário mínimo vigente (MTE12_SALMIN12): % do salário mínimo
   gas    Preço médio anual da gasolina ao consumidor (ANP, ANP_PRGASOL), a partir de 1995,
          em reais do último mês do IPCA (deflator: IPCA, SGS 433)
+Projeções: Boletim Focus do Banco Central (API Olinda, ExpectativasMercadoAnuais), mediana do ano corrente e do seguinte.
 
 Uso: python3 indicadores.py <saida.json>
 """
@@ -74,6 +75,29 @@ media_ano = {a: sum(v for k, v in idx.items() if k // 12 == a) / sum(1 for k in 
 gas = [(int(x["VALDATA"][:4]), x["VALVALOR"] / 1000) for x in ipea("ANP_PRGASOL") if int(x["VALDATA"][:4]) >= 1995]
 out["series"]["gas"] = [[a, round(v * idx[ult] / media_ano[a], 2)] for a, v in gas if a in media_ano]
 out["ultimo"]["gas"] = {"valor": round(gas[-1][1], 2), "ano": gas[-1][0], "real_ref": f"{ult % 12 + 1:02d}/{ult // 12}"}
+
+# projeções de mercado: Boletim Focus (Banco Central), mediana mais recente
+FOCUS = {"ipca": ("IPCA", None), "selic": ("Selic", None), "pib": ("PIB Total", None), "div": ("Dívida bruta do governo geral", None),
+         "des": ("Taxa de desocupação", None), "cesta": ("IPCA Alimentação no domicílio", None), "cambio": ("Câmbio", None)}
+ano = datetime.date.today().year
+url = ("https://olinda.bcb.gov.br/olinda/servico/Expectativas/versao/v1/odata/ExpectativasMercadoAnuais?$format=json&$top=2000"
+       f"&$orderby=Data%20desc&$filter=Data%20ge%20'{(datetime.date.today() - datetime.timedelta(days=21)).isoformat()}'")
+fx = None
+for t in range(5):
+    try:
+        fx = json.load(urllib.request.urlopen(url, timeout=120))["value"]; break
+    except Exception:
+        time.sleep(5 * (t + 1))
+if fx:
+    data = max(x["Data"] for x in fx)
+    out["projecoes"] = {"fonte": "Banco Central, Boletim Focus (mediana)", "data": data, "itens": {}}
+    for k, (ind, _) in FOCUS.items():
+        anos = {}
+        for x in fx:
+            if x["Data"] == data and x["Indicador"] == ind and x.get("baseCalculo") == 0 and x["DataReferencia"] in (str(ano), str(ano + 1)):
+                anos[x["DataReferencia"]] = round(x["Mediana"], 2)
+        if anos:
+            out["projecoes"]["itens"][k] = anos
 
 json.dump(out, open(sys.argv[1], "w"), ensure_ascii=False, separators=(",", ":"))
 print({k: v for k, v in out["ultimo"].items()})
