@@ -84,6 +84,16 @@ section > .wrap{display:grid;gap:22px}
 .sec-head h2{font-size:clamp(30px,6.5vw,40px)}
 .sec-head p{color:var(--muted);max-width:60ch}
 
+/* anfitriões */
+.hosts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:600px){.hosts{grid-template-columns:1fr}}
+.host{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.host > div{min-width:0;display:grid;gap:4px}
+.host .mono{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:26px;background:var(--mata);color:var(--mata-ink);box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--sol)}
+.host:nth-child(2) .mono{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--arara)}
+.host h3{font-size:24px}
+.host p{color:var(--muted);font-size:15.5px}
+
 /* combinados */
 .rules{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
 .rule{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
@@ -196,6 +206,7 @@ footer small{opacity:.7;font-size:13px}
 
 <nav aria-label="Seções">
   <div class="wrap">
+    <a href="#anfitrioes">Quem somos</a>
     <a href="#combinados">Combinados</a>
     <a href="#wifi">Wi-Fi</a>
     <a href="#como-chegar">Como chegar</a>
@@ -206,6 +217,33 @@ footer small{opacity:.7;font-size:13px}
 </nav>
 
 <main>
+<section id="anfitrioes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Seus anfitriões</span>
+      <h2>Prazer, Diego e Uhala</h2>
+      <p>A nossa casa fica aqui mesmo, no terreno, junto com a Kora e o Remy. O Bangalô Arara foi feito à mão, com alma e afeto, para quem quer desacelerar no meio da mata da Mantiqueira. A gente adora receber e indicar os nossos cantinhos favoritos de São Xico.</p>
+    </div>
+    <div class="hosts">
+      <article class="host">
+        <span class="mono" aria-hidden="true">D</span>
+        <div>
+          <h3>Diego</h3>
+          <p>Recebe hóspedes no Airbnb há 8 anos e montou o Guia de São Xico desta página. Vegetariano ou vegano? Pode perguntar: ele sabe onde comer bem.</p>
+        </div>
+      </article>
+      <article class="host">
+        <span class="mono" aria-hidden="true">U</span>
+        <div>
+          <h3>Uhala</h3>
+          <p>Divide com o Diego o cuidado do bangalô e o atendimento aos hóspedes, do check-in às dicas do dia a dia.</p>
+        </div>
+      </article>
+    </div>
+    <p class="note">Precisa de algo durante a estadia? Fale com a gente pelo chat da reserva no Airbnb. Costumamos responder em até 1 hora.</p>
+  </div>
+</section>
+
 <section id="combinados">
   <div class="wrap">
     <div class="sec-head">
