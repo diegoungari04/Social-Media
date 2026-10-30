@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bangalô Arara</title>
+<meta name="description" content="Guia do hóspede do Bangalô Arara em São Francisco Xavier: combinados da casa, Wi-Fi, como chegar e dicas de São Xico.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Bangalô Arara · Guia do hóspede">
+<meta property="og:description" content="Guia do hóspede do Bangalô Arara em São Francisco Xavier: combinados da casa, Wi-Fi, como chegar e dicas de São Xico.">
+<meta property="og:url" content="https://diegoungari04.github.io/Social-Media/bangalo-arara/">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: guia de bolso, uma coluna estreita com faixas de mata; adesivos recortados do cartaz antigo */
+:root{
+  --paper:#f7f5f0;
+  --card:#fffdf8;
+  --ink:#1f2a22;
+  --muted:#5b6a5f;
+  --line:#dcd8cc;
+  --mata:#24402f;
+  --mata-ink:#f2efe4;
+  --arara:#c8352b;
+  --sol:#e9b23c;
+  --ceu:#2f6f9f;
+  --f-display:"Young Serif", Georgia, "Times New Roman", serif;
+  --f-body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#141b16; --card:#1c251f; --ink:#ece8dc; --muted:#a7b2a9; --line:#2f3b33;
+  --mata:#0e1510; --mata-ink:#ece8dc; --arara:#ef6a5c; --sol:#f0c260; --ceu:#7fb4dc; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#141b16; --card:#1c251f; --ink:#ece8dc; --muted:#a7b2a9; --line:#2f3b33;
+  --mata:#0e1510; --mata-ink:#ece8dc; --arara:#ef6a5c; --sol:#f0c260; --ceu:#7fb4dc; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sol);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+strong{font-weight:800}
+
+/* stripe: as penas da arara */
+.feathers{height:6px;background:linear-gradient(90deg,var(--arara) 0 40%,var(--sol) 40% 70%,var(--ceu) 70% 100%)}
+
+/* hero */
+.hero{background:var(--mata);color:var(--mata-ink)}
+.hero .wrap{padding-block:44px 40px;display:grid;gap:18px}
+.eyebrow{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.hero h1{font-size:clamp(44px,11vw,76px)}
+.hero h1 em{font-style:normal;color:var(--sol)}
+.hero p.lede{font-size:19px;max-width:34ch;opacity:.92}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;opacity:.85;padding:0;margin:0;list-style:none}
+.facts li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sol);margin-right:8px;vertical-align:middle}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--paper)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:8px}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{flex:none;text-decoration:none;font-weight:700;font-size:14.5px;padding:7px 12px;border-radius:999px;color:var(--muted)}
+nav a:hover{background:var(--card);color:var(--ink)}
+
+section{padding-block:48px 8px}
+section > .wrap{display:grid;gap:22px}
+.sec-head{display:grid;gap:6px}
+.sec-head .eyebrow{color:var(--arara);opacity:1}
+.sec-head h2{font-size:clamp(30px,6.5vw,40px)}
+.sec-head p{color:var(--muted);max-width:60ch}
+
+/* combinados */
+.rules{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.rule{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.rule .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--card);border:1px solid var(--line);color:var(--arara)}
+.rule .ic svg{width:22px;height:22px}
+.rule h3{font-family:var(--f-body);font-weight:800;font-size:17.5px;line-height:1.3;margin-bottom:3px}
+.rule p{color:var(--muted)}
+.rule > div{min-width:0}
+.time{font-family:var(--f-mono);font-size:.92em;color:var(--ink);background:color-mix(in srgb,var(--sol) 28%,transparent);padding:1px 6px;border-radius:5px}
+
+.stickers{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.stickers img{display:block;height:auto}
+.stickers figure{margin:0;display:grid;gap:6px;justify-items:center}
+.stickers figcaption{font-size:13.5px;color:var(--muted)}
+.stickers .sticker{background:#f7f5f0;border-radius:18px;padding:6px}
+.pet-note{flex:1 1 240px;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:grid;gap:6px}
+.pet-note h3{font-size:22px}
+.pet-note p{color:var(--muted)}
+
+/* wifi */
+.wifi{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:14px}
+.kv{display:grid;gap:4px}
+.kv .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kv .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.kv .v{font-family:var(--f-mono);font-size:17px;word-break:break-all;user-select:all;min-width:0}
+.copy{font:inherit;font-size:14px;font-weight:700;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+.copy:hover{border-color:var(--muted)}
+.copy.ok{background:var(--mata);color:var(--mata-ink);border-color:var(--mata)}
+.signal{display:flex;gap:12px;align-items:flex-start;color:var(--muted);font-size:15.5px}
+.signal svg{flex:none;width:22px;height:22px;color:var(--ceu);margin-top:2px}
+
+/* como chegar */
+.route{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
+.route li{display:grid;grid-template-columns:28px 1fr;gap:14px;padding-bottom:22px;position:relative}
+.route li::before{content:"";position:absolute;left:13px;top:26px;bottom:0;width:2px;background:var(--line)}
+.route li:last-child::before{display:none}
+.route .dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--mata);background:var(--paper);display:grid;place-items:center;font-family:var(--f-mono);font-size:12.5px;color:var(--ink)}
+.route li:last-child .dot{background:var(--arara);border-color:var(--arara);color:#fff}
+.route h3{font-family:var(--f-body);font-weight:800;font-size:17px;line-height:1.3;margin-bottom:2px}
+.route p{color:var(--muted)}
+.route > li > div{min-width:0}
+.distances{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.distances div{background:var(--card);padding:14px 12px;display:grid;gap:2px}
+.distances b{font-family:var(--f-display);font-weight:400;font-size:26px;font-variant-numeric:tabular-nums;line-height:1.1}
+.distances span{font-size:13.5px;color:var(--muted);line-height:1.35}
+@media (max-width:440px){.distances{grid-template-columns:1fr}.distances div{grid-template-columns:96px 1fr;align-items:baseline}}
+
+/* dicas */
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips a{text-decoration:none;font-size:14.5px;font-weight:700;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:6px 14px}
+.chips a:hover{color:var(--ink);border-color:var(--muted)}
+.group{display:grid;gap:14px;padding-top:14px;scroll-margin-top:64px}
+.group-head{display:grid;gap:4px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.group-head h3{font-size:26px}
+.group-head p{color:var(--muted);max-width:60ch;font-size:15.5px}
+.places{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:600px){.places{grid-template-columns:1fr}}
+.place{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
+.place .tag{justify-self:start;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:6px;color:var(--ink)}
+.tag.ceu{background:color-mix(in srgb,var(--ceu) 20%,transparent)}
+.tag.mata{background:color-mix(in srgb,var(--muted) 16%,transparent)}
+.tag.sol{background:color-mix(in srgb,var(--sol) 32%,transparent)}
+.tag.arara{background:color-mix(in srgb,var(--arara) 18%,transparent)}
+.place h3{font-size:22px}
+.place p{color:var(--muted);font-size:15.5px}
+.place .meta{font-family:var(--f-mono);font-size:13px;color:var(--ink)}
+.place .acts{display:flex;gap:16px;flex-wrap:wrap}
+.place a.map{font-weight:700;font-size:14.5px;color:var(--arara);text-decoration:none}
+.place a.map:hover{text-decoration:underline}
+.place.featured{grid-column:1/-1;border-color:var(--arara)}
+.note{font-size:14.5px;color:var(--muted)}
+/* casa */
+.house{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:600px){.house{grid-template-columns:1fr}}
+.house > div{border-top:3px solid var(--mata);padding-top:12px;display:grid;gap:4px;min-width:0}
+.house h3{font-family:var(--f-body);font-weight:800;font-size:17px}
+.house p{color:var(--muted);font-size:15.5px}
+
+/* footer */
+footer{margin-top:56px;background:var(--mata);color:var(--mata-ink)}
+footer .wrap{padding-block:40px;display:grid;gap:16px}
+footer h2{font-size:32px}
+footer p{opacity:.88;max-width:52ch}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{text-decoration:none;font-weight:700;font-size:15px;border:1px solid color-mix(in srgb,var(--mata-ink) 40%,transparent);border-radius:999px;padding:9px 16px}
+.links a:hover{background:color-mix(in srgb,var(--mata-ink) 12%,transparent)}
+footer small{opacity:.7;font-size:13px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="feathers"></div>
+  <div class="wrap">
+    <span class="eyebrow">São Francisco Xavier · Serra da Mantiqueira</span>
+    <h1>Bem-vindos ao <em>Bangalô Arara</em></h1>
+    <p class="lede">Um cantinho feito à mão, com alma e afeto, no meio da mata. Aqui está tudo o que você precisa para chegar e aproveitar São Xico.</p>
+    <ul class="facts">
+      <li>Para 2 pessoas</li>
+      <li>Lareira a lenha</li>
+      <li>2 km da Cachoeira Pedro David</li>
+      <li>4 km do centrinho</li>
+    </ul>
+  </div>
+</header>
+
+<nav aria-label="Seções">
+  <div class="wrap">
+    <a href="#combinados">Combinados</a>
+    <a href="#wifi">Wi-Fi</a>
+    <a href="#como-chegar">Como chegar</a>
+    <a href="#dicas">Guia de São Xico</a>
+    <a href="#bangalo">No bangalô</a>
+    <a href="#contato">Contato</a>
+  </div>
+</nav>
+
+<main>
+<section id="combinados">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Antes de tudo</span>
+      <h2>Combinados importantes</h2>
+      <p>Queremos que você se sinta à vontade e aproveite ao máximo o Bangalô Arara. Para isso, vamos fazer alguns combinados.</p>
+    </div>
+
+    <div class="stickers">
+      <figure>
+        <img class="sticker" src="data:image/webp;base64,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" width="200" height="241" alt="Adesivos da Kora, uma husky, e do Remy, um border collie">
+        <figcaption>Kora e Remy</figcaption>
+      </figure>
+      <div class="pet-note">
+        <h3>Temos dois cachorros</h3>
+        <p>A <strong>Kora</strong> e o <strong>Remy</strong> são muito dóceis e sociáveis. Eles passam a maior parte do tempo na nossa casa, mas em alguns momentos podem circular pela área externa.</p>
+      </div>
+    </div>
+
+    <ol class="rules">
+      <li class="rule">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>
+        <div>
+          <h3>Silêncio depois das <span class="time">23h</span></h3>
+          <p>Para manter o clima tranquilo da região, não é permitido fazer festas nem barulho alto após as 23h. Há vizinhos em propriedades próximas.</p>
+        </div>
+      </li>
+      <li class="rule">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.2-6.1"/></svg></span>
+        <div>
+          <h3>Cuide do espaço e da natureza</h3>
+          <p><strong>Zele</strong> pelo bangalô, <strong>recolha</strong> o lixo que gerar e <strong>respeite</strong> a flora e a fauna. Nós é que ocupamos o espaço deles, e agora é nosso dever preservá-lo.</p>
+        </div>
+      </li>
+      <li class="rule">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg></span>
+        <div>
+          <h3>Respeito em todas as relações</h3>
+          <p>Não toleramos nenhuma forma de discriminação. Aqui todo mundo é bem-vindo.</p>
+        </div>
+      </li>
+      <li class="rule">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <div>
+          <h3>Só entra quem está na reserva</h3>
+          <p>Por questões de segurança, é expressamente proibida a entrada de pessoas que não estejam na reserva.</p>
+        </div>
+      </li>
+      <li class="rule">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01M7 20v-4M12 20v-8M17 20V8"/><path d="m22 4-4 4M18 4l4 4"/></svg></span>
+        <div>
+          <h3>Sinal de celular limitado</h3>
+          <p>O sinal funciona em poucos pontos do terreno. Um convite perfeito para <strong>desacelerar</strong> e se <strong>desconectar</strong>. Para o que precisar, use o Wi-Fi.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="wifi">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Internet</span>
+      <h2>Wi-Fi</h2>
+    </div>
+    <div class="wifi">
+      <div class="kv">
+        <span class="k">Rede</span>
+        <div class="row"><span class="v" id="wifi-ssid">Starlink Uhala e Diego</span><button class="copy" type="button" data-copy="wifi-ssid">Copiar</button></div>
+      </div>
+      <div class="kv">
+        <span class="k">Senha</span>
+        <div class="row"><span class="v">No QR Code do bangalô</span></div>
+      </div>
+      <div class="signal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14 0M1.4 9a16 16 0 0 1 21.2 0M8.5 16.4a6 6 0 0 1 7 0M12 20h.01"/></svg>
+        <p>Para conectar, escaneie o QR Code que fica no bangalô com a câmera do celular. Se tiver qualquer problema, peça a senha pelo chat da reserva no Airbnb.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-chegar">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">A caminho</span>
+      <h2>Como chegar</h2>
+      <p>São Francisco Xavier é um distrito de São José dos Campos, no alto da Serra da Mantiqueira. O jeito mais prático de chegar é de carro.</p>
+    </div>
+
+    <div class="distances">
+      <div><b>~150 km</b><span>de São Paulo, cerca de 2h30 de estrada</span></div>
+      <div><b>4 km</b><span>do centrinho de São Xico até o bangalô</span></div>
+      <div><b>2 km</b><span>do bangalô até a Cachoeira Pedro David</span></div>
+    </div>
+
+    <ol class="route">
+      <li>
+        <span class="dot">1</span>
+        <div>
+          <h3>Baixe o mapa offline antes de sair</h3>
+          <p>O sinal some no caminho e no terreno. No Google Maps ou no Waze, salve a região de São Francisco Xavier para usar sem internet.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot">2</span>
+        <div>
+          <h3>Vá até São José dos Campos</h3>
+          <p>Saindo de São Paulo, pegue a Via Dutra ou a Carvalho Pinto até São José dos Campos. De lá, siga as placas para Monteiro Lobato e São Francisco Xavier.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot">3</span>
+        <div>
+          <h3>Suba a serra com calma</h3>
+          <p>A estrada é sinuosa e tem trechos de neblina. Dirija devagar, principalmente à noite, e tente chegar ainda com luz do dia.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot">4</span>
+        <div>
+          <h3>Use a localização exata da reserva</h3>
+          <p>O endereço e o pin do bangalô aparecem no app do Airbnb depois da confirmação. Se ficar em dúvida no caminho, mande mensagem pelo chat da reserva.</p>
+        </div>
+      </li>
+      <li>
+        <span class="dot" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </span>
+        <div>
+          <h3>Chegou</h3>
+          <p>Tem estacionamento gratuito dentro da propriedade. A Kora e o Remy talvez venham dar oi.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="dicas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Primeira vez em São Xico?</span>
+      <h2>Guia do Diego</h2>
+      <p>Os lugares que a gente indica de verdade. Horários e acessos mudam com a estação, então vale confirmar antes de ir.</p>
+    </div>
+
+    <div class="chips" aria-label="Categorias do guia">
+      <a href="#comer">Para comer bem</a>
+      <a href="#cachoeiras">Cachoeiras e trilhas</a>
+      <a href="#padarias">Padarias e mercado</a>
+      <a href="#locais">Produtos locais</a>
+      <a href="#conselhos">Conselhos</a>
+    </div>
+
+    <div class="group" id="comer">
+      <div class="group-head">
+        <h3>Para comer bem</h3>
+        <p>É difícil errar quando o assunto é comida em SFX. Com influência mineira, a culinária local esbanja tempero e sabores memoráveis. Para quem é vegetariano ou vegano como eu, pode vir tranquilo: praticamente todos os lugares têm opções excelentes.</p>
+      </div>
+      <div class="places">
+        <article class="place featured">
+          <span class="tag sol">Entrega no bangalô</span>
+          <h3>Artesão Restaurante e Pizzaria</h3>
+          <p>Pode pedir sem medo! Eles fazem entrega no Bangalô e chega absurdamente rápido.</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Artes%C3%A3o+Restaurante+e+Pizzaria+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="place">
+          <span class="tag mata">Restaurante</span>
+          <h3>Casa da Rosa</h3>
+          <p>Um ambiente aconchegante para quem quer comer muito bem. A Rosa é uma chef sensacional e não deixa nada a desejar em relação a chefs de restaurantes famosos de São Paulo. Eu juro.</p>
+          <div class="acts">
+            <a class="map" href="https://www.instagram.com/casadarosa_sfx" target="_blank" rel="noopener">@casadarosa_sfx →</a>
+            <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+da+Rosa+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+          </div>
+        </article>
+        <article class="place">
+          <span class="tag mata">Almoço</span>
+          <h3>Restaurante Sal da Terra</h3>
+          <p>Excelente para almoçar, com opção a quilo ou buffet livre. No deck dos fundos tem uma bela vista para as montanhas, e o atendimento é de primeira.</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Restaurante+Sal+da+Terra+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="place">
+          <span class="tag mata">Cafeteria</span>
+          <h3>A Casa Imã</h3>
+          <p>Excelente cafeteria a poucos minutos da cidade. Se você está em busca de um lugar que vai render belas fotos, pode ir sem medo.</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=A+Casa+Im%C3%A3+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="place">
+          <span class="tag arara">Reserve antes</span>
+          <h3>A Soberana Cozinha Caipira</h3>
+          <p>Um dos restaurantes mais recomendados de SFX. O chef cozinha para poucas pessoas e de forma exclusiva, por isso é essencial reservar com antecedência.</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=A+Soberana+Cozinha+Caipira+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="group" id="cachoeiras">
+      <div class="group-head">
+        <h3>Cachoeiras e trilhas</h3>
+        <p>Se você quer se refrescar ou se aventurar pela Mantiqueira, confira algumas opções de passeio.</p>
+      </div>
+      <div class="places">
+        <article class="place featured">
+          <span class="tag ceu">Cachoeira · a 2 km</span>
+          <h3>Cachoeira Pedro David</h3>
+          <p>Fica a 2 km da propriedade e é parada obrigatória em SFX. Tem ótima estrutura, com estacionamento e restaurante próximos. Está dentro de uma área de proteção ambiental, então ali vale só banho e contemplação.</p>
+          <span class="meta">Aberta das 7h às 18h</span>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Cachoeira+Pedro+David+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="place">
+          <span class="tag mata">Trilha · ~1h30</span>
+          <h3>Espaço Garden Margarida</h3>
+          <p>O lugar para quem tem pouco tempo! No mesmo espaço tem uma trilha de cerca de 1h30, restaurante, pedalinho na lagoa e espaços para descanso.</p>
+          <span class="meta">R$ 40 por pessoa, sendo R$ 15 em consumação</span>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Espa%C3%A7o+Garden+Margarida+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="place">
+          <span class="tag mata">Trilha · 8 cachoeiras</span>
+          <h3>Pousada Águas do Alto</h3>
+          <p>Reúne trilhas de vários tamanhos, entre elas uma das mais famosas da cidade, com 8 cachoeiras. Fica em frente ao Espaço Garden Margarida e tem o Restaurante Angelim.</p>
+          <span class="meta">Taxa por pessoa</span>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Pousada+%C3%81guas+do+Alto+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="place">
+          <span class="tag ceu">Cachoeira</span>
+          <h3>Cachoeira do Roncador</h3>
+          <p>Outra cachoeira da região para variar o banho de rio.</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Cachoeira+do+Roncador+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="place">
+          <span class="tag sol">Mirante</span>
+          <h3>Pedra de São Francisco</h3>
+          <p>Também chamada de Pedra do Porquinho, é o cartão-postal do distrito. A maior parte do caminho é de carro, por estrada de terra, e o fim é cerca de 1 km a pé. A visita é gratuita.</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Pedra+do+Porquinho+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="group" id="padarias">
+      <div class="group-head">
+        <h3>Padarias e mercado</h3>
+      </div>
+      <div class="places">
+        <article class="place">
+          <span class="tag mata">Padaria</span>
+          <h3>Bruno · Pães Artesanais</h3>
+          <p>Uma grande variedade de doces e pães que valem a pena conhecer.</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Bruno+P%C3%A3es+Artesanais+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="place">
+          <span class="tag mata">Padaria</span>
+          <h3>Padaria Vale Verde</h3>
+          <p>Não se deixe levar pela fachada: é o melhor exemplo do básico bem feito. Pão francês, pães artesanais, sonhos, carolinas e bombas, tudo maravilhoso!</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Padaria+Vale+Verde+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+        <article class="place featured">
+          <span class="tag sol">Mercado</span>
+          <h3>Quitanda da Serra</h3>
+          <p>Um mercadinho bem completo para abastecer a estadia.</p>
+          <span class="meta">Todos os dias, 8h às 19h · domingo até 12h</span>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Quitanda+da+Serra+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="group" id="locais">
+      <div class="group-head">
+        <h3>Produtos locais</h3>
+      </div>
+      <div class="places">
+        <article class="place featured">
+          <span class="tag arara">Artesanato</span>
+          <h3>Com Tato</h3>
+          <p>A loja reúne 5 marcas de artesãs e artesãos locais, com peças exclusivas e autorais: xícaras, decoração, luminárias de madeira, roupas, bolsas, colares, ímãs e mais.</p>
+          <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Com+Tato+S%C3%A3o+Francisco+Xavier" target="_blank" rel="noopener">Abrir no mapa →</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="group" id="conselhos">
+      <div class="group-head">
+        <h3>Conselhos para a viagem</h3>
+      </div>
+      <div class="house">
+        <div>
+          <h3>Traga repelente</h3>
+          <p>Na cidade e na zona rural é comum ter pernilongos, muriçocas, vespas e abelhas. Recomendamos muito que você traga repelente.</p>
+        </div>
+        <div>
+          <h3>Sente muito frio? Venha preparado</h3>
+          <p>As noites costumam esfriar bastante. Se você é friorento, traga roupas quentes e cobertores mais grossos.</p>
+        </div>
+        <div>
+          <h3>Veja a dificuldade das trilhas</h3>
+          <p>A região é montanhosa e tem trilhas bem avançadas. Com crianças, idosos ou sem experiência em montanha, confira o nível de cada trilha antes de ir.</p>
+        </div>
+        <div>
+          <h3>Reserve os restaurantes concorridos</h3>
+          <p>Em feriados e fins de semana, os mais procurados lotam. Para A Soberana, a reserva é obrigatória.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">Leve seu lixo de volta das trilhas e cachoeiras. Nessa mata vivem bichos como a jacutinga, aquela ave do nosso cartaz.</p>
+  </div>
+</section>
+<section id="bangalo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Durante a estadia</span>
+      <h2>No bangalô</h2>
+    </div>
+    <div class="house">
+      <div>
+        <h3>Lareira a lenha</h3>
+        <p>Deixe uma janela entreaberta enquanto estiver acesa e nunca saia com o fogo aceso. Antes de dormir, espere a brasa baixar.</p>
+      </div>
+      <div>
+        <h3>Check-in e check-out</h3>
+        <p>Os horários estão na sua reserva do Airbnb. Precisa chegar ou sair em outro horário? Fale com a gente antes.</p>
+      </div>
+      <div>
+        <h3>Vai trazer seu pet?</h3>
+        <p>Pets são bem-vindos. Avise antes da chegada para a gente apresentar seu bichinho à Kora e ao Remy com calma.</p>
+      </div>
+      <div>
+        <h3>Lixo</h3>
+        <p>Separe o reciclável do orgânico. Bichos da mata adoram restos de comida, então mantenha o lixo bem fechado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contato">
+  <div class="feathers"></div>
+  <div class="wrap">
+    <h2>Diego e Uhala</h2>
+    <p>Qualquer dúvida, antes ou durante a estadia, fale com a gente pelo chat da reserva no Airbnb. Costumamos responder em até 1 hora.</p>
+    <div class="links">
+      <a href="https://www.instagram.com/bangaloararasfx" target="_blank" rel="noopener">Instagram @bangaloararasfx</a>
+      <a href="https://www.airbnb.com.br/rooms/1663346024138344389" target="_blank" rel="noopener">Ver anúncio no Airbnb</a>
+    </div>
+    <small>Bangalô Arara · São Francisco Xavier, São José dos Campos – SP</small>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var el = document.getElementById(btn.dataset.copy);
+    var text = el.textContent;
+    function done(){ btn.textContent='Copiado'; btn.classList.add('ok'); setTimeout(function(){ btn.textContent='Copiar'; btn.classList.remove('ok'); },1800); }
+    function fallback(){ var r=document.createRange(); r.selectNodeContents(el); var s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Selecionado'; }
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch(e){ fallback(); }
+  });
+});
+</script>
+</body>
+</html>
