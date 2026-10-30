@@ -114,6 +114,11 @@ section > .wrap{display:grid;gap:22px}
 .copy.ok{background:var(--mata);color:var(--mata-ink);border-color:var(--mata)}
 .signal{display:flex;gap:12px;align-items:flex-start;color:var(--muted);font-size:15.5px}
 .signal svg{flex:none;width:22px;height:22px;color:var(--ceu);margin-top:2px}
+.qr-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.qr{display:block;width:200px;height:200px;background:#fff;padding:12px;border-radius:12px;border:1px solid var(--line);image-rendering:pixelated;box-sizing:content-box}
+.qr-help{flex:1 1 240px;min-width:0;display:grid;gap:6px}
+.qr-help .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.qr-help p{color:var(--muted);font-size:15.5px}
 
 /* como chegar */
 .route{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
@@ -276,15 +281,19 @@ footer small{opacity:.7;font-size:13px}
     <div class="wifi">
       <div class="kv">
         <span class="k">Rede</span>
-        <div class="row"><span class="v" id="wifi-ssid">Starlink Uhala e Diego</span><button class="copy" type="button" data-copy="wifi-ssid">Copiar</button></div>
+        <div class="row"><span class="v" id="wifi-ssid">Starlink Uhala e Diego 2</span><button class="copy" type="button" data-copy="wifi-ssid">Copiar</button></div>
       </div>
-      <div class="kv">
-        <span class="k">Senha</span>
-        <div class="row"><span class="v">No QR Code do bangalô</span></div>
+      <div class="qr-row">
+        <img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIAAQAAAADcA+lXAAABWGlDQ1BJQ0MgUHJvZmlsZQAAeJx9kLFLw1AQxr9WpaB1EB0cHDKJQ5SSCro4tBVEcQhVweqUvqapkMZHkiIFN/+Bgv+BCs5uFoc6OjgIopPo5uSk4KLleS+JpCJ6j+N+fO+74zggOW5wbvcDqDu+W1zKK5ulLSX1jAS9IAzm8Zyur0r+rj/j/T703k7LWb///43Biukxqp+UGcZdH0ioxPqezyXvE4+5tBRxS7IV8onkcsjngWe9WCC+JlZYzagQvxCr5R7d6uG63WDRDnL7tOlsrMk5lBNYxA48cNgw0IQCHdk//LOBv4BdcjfhUp+FGnzqyZEiJ5jEy3DAMAOVWEOGUpN3ju53F91PjbWDJ2ChI4S4iLWVDnA2Rydrx9rUPDAyBFy1ueEagdRHmaxWgddTYLgEjN5Qz7ZXzWrh9uk8MPAoxNskkDoEui0hPo6E6B5T8wNw6XwBA6diE8HYWhMAAAOcSURBVHja7Z1NbuJAEIXfw0jOzrmBcxNzM8zN8E3gBnhnJMybRbfbDZlZjSP1jF6vOoZ8SCWV6r9M4e/ODgYYYEAZAOiZ/1XrBuC46HinnpImtErnkn//KAvRAAM2BNSLoj0ANJLIVd1WZeUu6WimmBaiAQaUBRhJJh0eKAGodcHAXtyj1hA+nvkZNJtkvFqIBhhQkq8cHGRAj3RFJUk6A9QDdbgCQKMLOqWrfWUDDPhJQKceAO78er1GZ9pCNMCAogGNJK0Z5qMws9EFAzWz1oQrSa4/JknRDFuIBhiwIeDOePbx4Yl6ALjyKFa6M/NvQ2gbz5eFaIABRUWub+eGbrGzqbQzLV+u9O1YiAYYUI46P2OZqEeKbI/6fu2UOcgItSUnogwwYGNtDIa0h6QJjc6IGWJJeu2wePmnxsbVAAOKNK6XYEZTR1T17iCfcx1OdtbG1QADSgJQE4BWJCpNsaVKd36gldQDc8xZAQDG9dq4pcoAA7YFiB8YSUpLuphajevxiUrTkmKWbrjygKzgYyEaYEA5vnKIdy/BK55e67ex8aJeykSVbgA6JYvs0NcAAzaNXBevNWWfYoa41XmJZy/ryEBKTzkRZYAB5RlX6YZWUqrJ9oi+cheuKRFV6YY2dB7XTkQZYEBhgD20q2MKWTPzq4CB4HMm0F4AADMbAZ3I5z0+tRANMGBjX1mK2admNa6tFObeFXzlpbx7hjuiDDCgUF95WkPfdLKibabDDzTLwJ4TUQYYUKY6ZzrchPSVYuibtVSl5Rcxr+xJWwMM2BxQL5ufZn7Ex2S8nnbJznKHmWSnMzSz8WieAQYUB1Aa00Ml6cpD+CRspZF0Z+xqnLkHcOUBoEZvpTHAgO1d3VDl6YMKvozmpaLtW6XWkasBBhQLaDSE/PHIVif2SI0X3MUGxwMYbC95AGRf2QADCvWVP8P0QBb61poADMxn+xTXNg6MiaiBvYVogAHb+srf1ljkw+7LAsbcVw4W2WlhAwwoS53/9O6Bet2nGqJgUA+87Jty6GuAAaWpc/bygrQIOetXfjkpkyVvpTHAgJ8AZO8eGHnId0Qha46iHss3lWJcC9EAA4oFpDcD1ZJOvynatsG4jl7IaoABP+Hq3sI1lWeV5vHeJ21viOmpyZO2BhjwL0Su+RLVZ5q/xbftb45cDTCgJMAewJ3Zg/ETAFgJuH4NBLVM2maWmEA9jbQQDTBgQwD9wngDDPhfAL8AAylX8qVi06MAAAAASUVORK5CYII=" width="200" height="200" alt="QR Code para conectar à rede Starlink Uhala e Diego 2">
+        <div class="qr-help">
+          <span class="k">Como conectar</span>
+          <p>Aponte a câmera de outro aparelho para o QR Code e toque em <strong>Conectar</strong>.</p>
+          <p>Está vendo esta página no próprio celular? Tire um print e abra na Galeria ou em Fotos: o celular reconhece o QR Code e oferece a conexão. No iPhone, também dá para tocar e segurar a imagem.</p>
+        </div>
       </div>
       <div class="signal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14 0M1.4 9a16 16 0 0 1 21.2 0M8.5 16.4a6 6 0 0 1 7 0M12 20h.01"/></svg>
-        <p>Para conectar, escaneie o QR Code que fica no bangalô com a câmera do celular. Se tiver qualquer problema, peça a senha pelo chat da reserva no Airbnb.</p>
+        <p>O mesmo QR Code está impresso no bangalô. Se tiver qualquer problema para conectar, fale com a gente pelo chat da reserva no Airbnb.</p>
       </div>
     </div>
   </div>
